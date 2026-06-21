@@ -1,0 +1,1007 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="6878pt" height="1679pt" viewBox="0.00 0.00 6878.00 1679.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1674.6)">
+<title>classes</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-1674.6 6874.44,-1674.6 6874.44,4 -4,4"/>
+<!-- qstrader.alpha_model.alpha_model.AlphaModel -->
+<g id="node1" class="node">
+<title>qstrader.alpha_model.alpha_model.AlphaModel</title>
+<polygon fill="none" stroke="black" points="125.56,-716.7 125.56,-791.1 212.32,-791.1 212.32,-716.7 125.56,-716.7"/>
+<text xml:space="preserve" text-anchor="start" x="133.56" y="-774.5" font-family="Times,serif" font-size="14.00">AlphaModel</text>
+<polyline fill="none" stroke="black" points="125.56,-766.3 212.32,-766.3"/>
+<polyline fill="none" stroke="black" points="125.56,-741.5 212.32,-741.5"/>
+<text xml:space="preserve" text-anchor="start" x="167.19" y="-724.9" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.asset.asset.Asset -->
+<g id="node2" class="node">
+<title>qstrader.asset.asset.Asset</title>
+<polygon fill="none" stroke="black" points="442.94,-716.7 442.94,-791.1 496.94,-791.1 496.94,-716.7 442.94,-716.7"/>
+<text xml:space="preserve" text-anchor="start" x="453.94" y="-774.5" font-family="Times,serif" font-size="14.00">Asset</text>
+<polyline fill="none" stroke="black" points="442.94,-766.3 496.05,-766.3"/>
+<polyline fill="none" stroke="black" points="442.94,-741.5 496.05,-741.5"/>
+<text xml:space="preserve" text-anchor="start" x="467.75" y="-724.9" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.signals.buffer.AssetPriceBuffers -->
+<g id="node3" class="node">
+<title>qstrader.signals.buffer.AssetPriceBuffers</title>
+<polygon fill="none" stroke="black" points="611.97,-160.1 611.97,-284.9 739.91,-284.9 739.91,-160.1 611.97,-160.1"/>
+<text xml:space="preserve" text-anchor="start" x="625.01" y="-268.3" font-family="Times,serif" font-size="14.00">AssetPriceBuffers</text>
+<polyline fill="none" stroke="black" points="611.97,-260.1 739.91,-260.1"/>
+<text xml:space="preserve" text-anchor="start" x="633.56" y="-243.5" font-family="Times,serif" font-size="14.00">assets</text>
+<text xml:space="preserve" text-anchor="start" x="633.56" y="-226.7" font-family="Times,serif" font-size="14.00">lookbacks : list</text>
+<text xml:space="preserve" text-anchor="start" x="633.56" y="-209.9" font-family="Times,serif" font-size="14.00">prices : dict</text>
+<polyline fill="none" stroke="black" points="611.97,-201.7 739.91,-201.7"/>
+<text xml:space="preserve" text-anchor="start" x="619.97" y="-185.1" font-family="Times,serif" font-size="14.00">add_asset(asset)</text>
+<text xml:space="preserve" text-anchor="start" x="619.97" y="-168.3" font-family="Times,serif" font-size="14.00">append(asset, price)</text>
+</g>
+<!-- qstrader.signals.signal.Signal -->
+<g id="node40" class="node">
+<title>qstrader.signals.signal.Signal</title>
+<polygon fill="none" stroke="black" points="811.97,-674.7 811.97,-833.1 939.91,-833.1 939.91,-674.7 811.97,-674.7"/>
+<text xml:space="preserve" text-anchor="start" x="858.05" y="-816.5" font-family="Times,serif" font-size="14.00">Signal</text>
+<polyline fill="none" stroke="black" points="811.97,-808.3 939.91,-808.3"/>
+<text xml:space="preserve" text-anchor="start" x="847.56" y="-791.7" font-family="Times,serif" font-size="14.00">assets</text>
+<text xml:space="preserve" text-anchor="start" x="847.56" y="-774.9" font-family="Times,serif" font-size="14.00">buffers</text>
+<text xml:space="preserve" text-anchor="start" x="847.56" y="-758.1" font-family="Times,serif" font-size="14.00">lookbacks</text>
+<text xml:space="preserve" text-anchor="start" x="847.56" y="-741.3" font-family="Times,serif" font-size="14.00">start_dt</text>
+<text xml:space="preserve" text-anchor="start" x="847.56" y="-724.5" font-family="Times,serif" font-size="14.00">universe</text>
+<polyline fill="none" stroke="black" points="811.97,-716.3 939.91,-716.3"/>
+<text xml:space="preserve" text-anchor="start" x="819.97" y="-699.7" font-family="Times,serif" font-size="14.00">append(asset, price)</text>
+<text xml:space="preserve" text-anchor="start" x="819.97" y="-682.9" font-family="Times,serif" font-size="14.00">update_assets(dt)</text>
+</g>
+<!-- qstrader.signals.buffer.AssetPriceBuffers&#45;&gt;qstrader.signals.signal.Signal -->
+<g id="edge33" class="edge">
+<title>qstrader.signals.buffer.AssetPriceBuffers-&gt;qstrader.signals.signal.Signal</title>
+<path fill="none" stroke="black" d="M694.89,-285.03C708.98,-329.71 729.11,-391.47 748.94,-445 776.34,-518.96 810.6,-601.52 836.63,-662.52"/>
+<polygon fill="black" stroke="black" points="836.65,-662.56 842.68,-666.5 841.36,-673.59 835.33,-669.65 836.65,-662.56"/>
+<text xml:space="preserve" text-anchor="middle" x="781.52" y="-467.2" font-family="Times,serif" font-size="14.00" fill="green">buffers</text>
+</g>
+<!-- qstrader.data.backtest_data_handler.BacktestDataHandler -->
+<g id="node4" class="node">
+<title>qstrader.data.backtest_data_handler.BacktestDataHandler</title>
+<polygon fill="none" stroke="black" points="1936.61,-674.7 1936.61,-833.1 2415.27,-833.1 2415.27,-674.7 1936.61,-674.7"/>
+<text xml:space="preserve" text-anchor="start" x="2116.08" y="-816.5" font-family="Times,serif" font-size="14.00">BacktestDataHandler</text>
+<polyline fill="none" stroke="black" points="1936.61,-808.3 2415.27,-808.3"/>
+<text xml:space="preserve" text-anchor="start" x="2104.8" y="-791.7" font-family="Times,serif" font-size="14.00">data_sources : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="2104.8" y="-774.9" font-family="Times,serif" font-size="14.00">universe</text>
+<polyline fill="none" stroke="black" points="1936.61,-766.7 2415.27,-766.7"/>
+<text xml:space="preserve" text-anchor="start" x="1944.61" y="-750.1" font-family="Times,serif" font-size="14.00">get_asset_latest_ask_price(dt, asset_symbol)</text>
+<text xml:space="preserve" text-anchor="start" x="1944.61" y="-733.3" font-family="Times,serif" font-size="14.00">get_asset_latest_bid_ask_price(dt, asset_symbol)</text>
+<text xml:space="preserve" text-anchor="start" x="1944.61" y="-716.5" font-family="Times,serif" font-size="14.00">get_asset_latest_bid_price(dt, asset_symbol)</text>
+<text xml:space="preserve" text-anchor="start" x="1944.61" y="-699.7" font-family="Times,serif" font-size="14.00">get_asset_latest_mid_price(dt, asset_symbol)</text>
+<text xml:space="preserve" text-anchor="start" x="1944.61" y="-682.9" font-family="Times,serif" font-size="14.00">get_assets_historical_range_close_price(start_dt, end_dt, asset_symbols, adjusted)</text>
+</g>
+<!-- qstrader.trading.backtest.BacktestTradingSession -->
+<g id="node5" class="node">
+<title>qstrader.trading.backtest.BacktestTradingSession</title>
+<polygon fill="none" stroke="black" points="1442.14,-1063.3 1442.14,-1557.7 1595.75,-1557.7 1595.75,-1063.3 1442.14,-1063.3"/>
+<text xml:space="preserve" text-anchor="start" x="1451.29" y="-1541.1" font-family="Times,serif" font-size="14.00">BacktestTradingSession</text>
+<polyline fill="none" stroke="black" points="1442.14,-1532.9 1595.75,-1532.9"/>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1516.3" font-family="Times,serif" font-size="14.00">account_name : str</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1499.5" font-family="Times,serif" font-size="14.00">alpha_model</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1482.7" font-family="Times,serif" font-size="14.00">broker</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1465.9" font-family="Times,serif" font-size="14.00">burn_in_dt : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1449.1" font-family="Times,serif" font-size="14.00">data_handler</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1432.3" font-family="Times,serif" font-size="14.00">end_dt</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1415.5" font-family="Times,serif" font-size="14.00">equity_curve : list</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1398.7" font-family="Times,serif" font-size="14.00">exchange</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1381.9" font-family="Times,serif" font-size="14.00">fee_model</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1365.1" font-family="Times,serif" font-size="14.00">initial_cash : float</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1348.3" font-family="Times,serif" font-size="14.00">long_only : bool</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1331.5" font-family="Times,serif" font-size="14.00">portfolio_id : str</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1314.7" font-family="Times,serif" font-size="14.00">portfolio_name : str</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1297.9" font-family="Times,serif" font-size="14.00">qts</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1281.1" font-family="Times,serif" font-size="14.00">rebalance : str</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1264.3" font-family="Times,serif" font-size="14.00">rebalance_schedule : list</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1247.5" font-family="Times,serif" font-size="14.00">rebalance_weekday</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1230.7" font-family="Times,serif" font-size="14.00">risk_model : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1213.9" font-family="Times,serif" font-size="14.00">signals : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1197.1" font-family="Times,serif" font-size="14.00">sim_engine</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1180.3" font-family="Times,serif" font-size="14.00">start_dt</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1163.5" font-family="Times,serif" font-size="14.00">target_allocations : list</text>
+<text xml:space="preserve" text-anchor="start" x="1450.14" y="-1146.7" font-family="Times,serif" font-size="14.00">universe</text>
+<polyline fill="none" stroke="black" points="1442.14,-1138.5 1595.75,-1138.5"/>
+<text xml:space="preserve" text-anchor="start" x="1452.47" y="-1121.9" font-family="Times,serif" font-size="14.00">get_equity_curve()</text>
+<text xml:space="preserve" text-anchor="start" x="1452.47" y="-1105.1" font-family="Times,serif" font-size="14.00">get_target_allocations()</text>
+<text xml:space="preserve" text-anchor="start" x="1452.47" y="-1088.3" font-family="Times,serif" font-size="14.00">output_holdings()</text>
+<text xml:space="preserve" text-anchor="start" x="1452.47" y="-1071.5" font-family="Times,serif" font-size="14.00">run(results)</text>
+</g>
+<!-- qstrader.data.backtest_data_handler.BacktestDataHandler&#45;&gt;qstrader.trading.backtest.BacktestTradingSession -->
+<g id="edge29" class="edge">
+<title>qstrader.data.backtest_data_handler.BacktestDataHandler-&gt;qstrader.trading.backtest.BacktestTradingSession</title>
+<path fill="none" stroke="black" d="M2121.23,-833.51C2076.09,-891.96 2006.68,-968.49 1926.94,-1010 1897.04,-1025.57 1668.42,-1037.66 1606.85,-1064.64"/>
+<polygon fill="black" stroke="black" points="1607.05,-1064.53 1603.88,-1071.01 1596.68,-1070.57 1599.85,-1064.1 1607.05,-1064.53"/>
+<text xml:space="preserve" text-anchor="middle" x="1852.3" y="-1032.2" font-family="Times,serif" font-size="14.00" fill="green">data_handler</text>
+</g>
+<!-- qstrader.trading.trading_session.TradingSession -->
+<g id="node50" class="node">
+<title>qstrader.trading.trading_session.TradingSession</title>
+<polygon fill="none" stroke="black" points="1467.39,-1595.7 1467.39,-1670.1 1570.49,-1670.1 1570.49,-1595.7 1467.39,-1595.7"/>
+<text xml:space="preserve" text-anchor="start" x="1475.39" y="-1653.5" font-family="Times,serif" font-size="14.00">TradingSession</text>
+<polyline fill="none" stroke="black" points="1467.39,-1645.3 1570.49,-1645.3"/>
+<polyline fill="none" stroke="black" points="1467.39,-1620.5 1570.49,-1620.5"/>
+<text xml:space="preserve" text-anchor="start" x="1504.56" y="-1604.9" font-family="Times,serif" font-style="italic" font-size="14.00">run</text>
+<text xml:space="preserve" text-anchor="start" x="1524" y="-1604.9" font-family="Times,serif" font-size="14.00">()</text>
+</g>
+<!-- qstrader.trading.backtest.BacktestTradingSession&#45;&gt;qstrader.trading.trading_session.TradingSession -->
+<g id="edge25" class="edge">
+<title>qstrader.trading.backtest.BacktestTradingSession-&gt;qstrader.trading.trading_session.TradingSession</title>
+<path fill="none" stroke="black" d="M1518.94,-1557.99C1518.94,-1567.21 1518.94,-1575.88 1518.94,-1583.82"/>
+<polygon fill="none" stroke="black" points="1515.44,-1583.77 1518.94,-1593.77 1522.44,-1583.77 1515.44,-1583.77"/>
+</g>
+<!-- qstrader.broker.broker.Broker -->
+<g id="node6" class="node">
+<title>qstrader.broker.broker.Broker</title>
+<polygon fill="none" stroke="black" points="1613.49,-1197.7 1613.49,-1423.3 1934.39,-1423.3 1934.39,-1197.7 1613.49,-1197.7"/>
+<text xml:space="preserve" text-anchor="start" x="1754.5" y="-1406.7" font-family="Times,serif" font-size="14.00">Broker</text>
+<polyline fill="none" stroke="black" points="1613.49,-1398.5 1934.39,-1398.5"/>
+<polyline fill="none" stroke="black" points="1613.49,-1373.7 1934.39,-1373.7"/>
+<text xml:space="preserve" text-anchor="start" x="1621.49" y="-1358.1" font-family="Times,serif" font-style="italic" font-size="14.00">create_portfolio</text>
+<text xml:space="preserve" text-anchor="start" x="1712.48" y="-1358.1" font-family="Times,serif" font-size="14.00">(portfolio_id, name)</text>
+<text xml:space="preserve" text-anchor="start" x="1621.49" y="-1344.1" font-family="Times,serif" font-style="italic" font-size="14.00">get_account_cash_balance</text>
+<text xml:space="preserve" text-anchor="start" x="1773.89" y="-1344.1" font-family="Times,serif" font-size="14.00">(currency)</text>
+<text xml:space="preserve" text-anchor="start" x="1621.49" y="-1330.1" font-family="Times,serif" font-style="italic" font-size="14.00">get_account_total_equity</text>
+<text xml:space="preserve" text-anchor="start" x="1763.79" y="-1330.1" font-family="Times,serif" font-size="14.00">()</text>
+<text xml:space="preserve" text-anchor="start" x="1621.49" y="-1316.1" font-family="Times,serif" font-style="italic" font-size="14.00">get_portfolio_as_dict</text>
+<text xml:space="preserve" text-anchor="start" x="1742.04" y="-1316.1" font-family="Times,serif" font-size="14.00">(portfolio_id)</text>
+<text xml:space="preserve" text-anchor="start" x="1621.49" y="-1302.1" font-family="Times,serif" font-style="italic" font-size="14.00">get_portfolio_cash_balance</text>
+<text xml:space="preserve" text-anchor="start" x="1778.58" y="-1302.1" font-family="Times,serif" font-size="14.00">(portfolio_id)</text>
+<text xml:space="preserve" text-anchor="start" x="1621.49" y="-1288.1" font-family="Times,serif" font-style="italic" font-size="14.00">get_portfolio_total_equity</text>
+<text xml:space="preserve" text-anchor="start" x="1768.48" y="-1288.1" font-family="Times,serif" font-size="14.00">(portfolio_id)</text>
+<text xml:space="preserve" text-anchor="start" x="1621.49" y="-1274.1" font-family="Times,serif" font-style="italic" font-size="14.00">list_all_portfolios</text>
+<text xml:space="preserve" text-anchor="start" x="1721.84" y="-1274.1" font-family="Times,serif" font-size="14.00">()</text>
+<text xml:space="preserve" text-anchor="start" x="1621.49" y="-1260.1" font-family="Times,serif" font-style="italic" font-size="14.00">submit_order</text>
+<text xml:space="preserve" text-anchor="start" x="1696.94" y="-1260.1" font-family="Times,serif" font-size="14.00">(portfolio_id, order)</text>
+<text xml:space="preserve" text-anchor="start" x="1621.49" y="-1246.1" font-family="Times,serif" font-style="italic" font-size="14.00">subscribe_funds_to_account</text>
+<text xml:space="preserve" text-anchor="start" x="1781.7" y="-1246.1" font-family="Times,serif" font-size="14.00">(amount)</text>
+<text xml:space="preserve" text-anchor="start" x="1621.49" y="-1232.1" font-family="Times,serif" font-style="italic" font-size="14.00">subscribe_funds_to_portfolio</text>
+<text xml:space="preserve" text-anchor="start" x="1786.39" y="-1232.1" font-family="Times,serif" font-size="14.00">(portfolio_id, amount)</text>
+<text xml:space="preserve" text-anchor="start" x="1621.49" y="-1218.1" font-family="Times,serif" font-style="italic" font-size="14.00">withdraw_funds_from_account</text>
+<text xml:space="preserve" text-anchor="start" x="1796.5" y="-1218.1" font-family="Times,serif" font-size="14.00">(amount)</text>
+<text xml:space="preserve" text-anchor="start" x="1621.49" y="-1204.1" font-family="Times,serif" font-style="italic" font-size="14.00">withdraw_funds_from_portfolio</text>
+<text xml:space="preserve" text-anchor="start" x="1801.19" y="-1204.1" font-family="Times,serif" font-size="14.00">(portfolio_id, amount)</text>
+</g>
+<!-- qstrader.system.rebalance.buy_and_hold.BuyAndHoldRebalance -->
+<g id="node7" class="node">
+<title>qstrader.system.rebalance.buy_and_hold.BuyAndHoldRebalance</title>
+<polygon fill="none" stroke="black" points="2768.07,-176.9 2768.07,-268.1 2917.81,-268.1 2917.81,-176.9 2768.07,-176.9"/>
+<text xml:space="preserve" text-anchor="start" x="2776.07" y="-251.5" font-family="Times,serif" font-size="14.00">BuyAndHoldRebalance</text>
+<polyline fill="none" stroke="black" points="2768.07,-243.3 2917.81,-243.3"/>
+<text xml:space="preserve" text-anchor="start" x="2799.4" y="-226.7" font-family="Times,serif" font-size="14.00">rebalances : list</text>
+<text xml:space="preserve" text-anchor="start" x="2799.4" y="-209.9" font-family="Times,serif" font-size="14.00">start_dt</text>
+<polyline fill="none" stroke="black" points="2768.07,-201.7 2917.81,-201.7"/>
+<text xml:space="preserve" text-anchor="start" x="2841.19" y="-185.1" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.system.rebalance.rebalance.Rebalance -->
+<g id="node37" class="node">
+<title>qstrader.system.rebalance.rebalance.Rebalance</title>
+<polygon fill="none" stroke="black" points="3007.18,-716.7 3007.18,-791.1 3136.71,-791.1 3136.71,-716.7 3007.18,-716.7"/>
+<text xml:space="preserve" text-anchor="start" x="3042.79" y="-774.5" font-family="Times,serif" font-size="14.00">Rebalance</text>
+<polyline fill="none" stroke="black" points="3007.18,-766.3 3136.71,-766.3"/>
+<polyline fill="none" stroke="black" points="3007.18,-741.5 3136.71,-741.5"/>
+<text xml:space="preserve" text-anchor="start" x="3015.18" y="-725.9" font-family="Times,serif" font-style="italic" font-size="14.00">output_rebalances</text>
+<text xml:space="preserve" text-anchor="start" x="3119.38" y="-725.9" font-family="Times,serif" font-size="14.00">()</text>
+</g>
+<!-- qstrader.system.rebalance.buy_and_hold.BuyAndHoldRebalance&#45;&gt;qstrader.system.rebalance.rebalance.Rebalance -->
+<g id="edge21" class="edge">
+<title>qstrader.system.rebalance.buy_and_hold.BuyAndHoldRebalance-&gt;qstrader.system.rebalance.rebalance.Rebalance</title>
+<path fill="none" stroke="black" d="M2858.83,-268.45C2875.02,-313.49 2901.32,-384.61 2926.94,-445 2966.79,-538.9 3018.83,-646.17 3048.5,-706.08"/>
+<polygon fill="none" stroke="black" points="3045.34,-707.59 3052.92,-714.99 3051.61,-704.48 3045.34,-707.59"/>
+</g>
+<!-- qstrader.data.daily_bar_csv.CSVDailyBarDataSource -->
+<g id="node8" class="node">
+<title>qstrader.data.daily_bar_csv.CSVDailyBarDataSource</title>
+<polygon fill="none" stroke="black" points="3387.36,-126.5 3387.36,-318.5 3696.52,-318.5 3696.52,-126.5 3387.36,-126.5"/>
+<text xml:space="preserve" text-anchor="start" x="3470.01" y="-301.9" font-family="Times,serif" font-size="14.00">CSVDailyBarDataSource</text>
+<polyline fill="none" stroke="black" points="3387.36,-293.7 3696.52,-293.7"/>
+<text xml:space="preserve" text-anchor="start" x="3464.57" y="-277.1" font-family="Times,serif" font-size="14.00">adjust_prices : bool</text>
+<text xml:space="preserve" text-anchor="start" x="3464.57" y="-260.3" font-family="Times,serif" font-size="14.00">asset_bar_frames : dict</text>
+<text xml:space="preserve" text-anchor="start" x="3464.57" y="-243.5" font-family="Times,serif" font-size="14.00">asset_bid_ask_frames : dict</text>
+<text xml:space="preserve" text-anchor="start" x="3464.57" y="-226.7" font-family="Times,serif" font-size="14.00">asset_type</text>
+<text xml:space="preserve" text-anchor="start" x="3464.57" y="-209.9" font-family="Times,serif" font-size="14.00">csv_dir</text>
+<text xml:space="preserve" text-anchor="start" x="3464.57" y="-193.1" font-family="Times,serif" font-size="14.00">csv_symbols : NoneType</text>
+<polyline fill="none" stroke="black" points="3387.36,-184.9 3696.52,-184.9"/>
+<text xml:space="preserve" text-anchor="start" x="3395.36" y="-168.3" font-family="Times,serif" font-size="14.00">get_ask(dt, asset)</text>
+<text xml:space="preserve" text-anchor="start" x="3395.36" y="-151.5" font-family="Times,serif" font-size="14.00">get_assets_historical_closes(start_dt, end_dt, assets)</text>
+<text xml:space="preserve" text-anchor="start" x="3395.36" y="-134.7" font-family="Times,serif" font-size="14.00">get_bid(dt, asset)</text>
+</g>
+<!-- qstrader.asset.cash.Cash -->
+<g id="node9" class="node">
+<title>qstrader.asset.cash.Cash</title>
+<polygon fill="none" stroke="black" points="353.62,-176.9 353.62,-268.1 458.27,-268.1 458.27,-176.9 353.62,-176.9"/>
+<text xml:space="preserve" text-anchor="start" x="391.94" y="-251.5" font-family="Times,serif" font-size="14.00">Cash</text>
+<polyline fill="none" stroke="black" points="353.62,-243.3 458.27,-243.3"/>
+<text xml:space="preserve" text-anchor="start" x="361.62" y="-226.7" font-family="Times,serif" font-size="14.00">cash_like : bool</text>
+<text xml:space="preserve" text-anchor="start" x="361.62" y="-209.9" font-family="Times,serif" font-size="14.00">currency : str</text>
+<polyline fill="none" stroke="black" points="353.62,-201.7 458.27,-201.7"/>
+<text xml:space="preserve" text-anchor="start" x="404.19" y="-185.1" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.asset.cash.Cash&#45;&gt;qstrader.asset.asset.Asset -->
+<g id="edge3" class="edge">
+<title>qstrader.asset.cash.Cash-&gt;qstrader.asset.asset.Asset</title>
+<path fill="none" stroke="black" d="M411.34,-268.18C423.3,-367.07 451.91,-603.72 464.18,-705.28"/>
+<polygon fill="none" stroke="black" points="460.67,-705.39 465.35,-714.9 467.62,-704.55 460.67,-705.39"/>
+</g>
+<!-- qstrader.simulation.daily_bday.DailyBusinessDaySimulationEngine -->
+<g id="node10" class="node">
+<title>qstrader.simulation.daily_bday.DailyBusinessDaySimulationEngine</title>
+<polygon fill="none" stroke="black" points="1060.28,-683.1 1060.28,-824.7 1281.6,-824.7 1281.6,-683.1 1060.28,-683.1"/>
+<text xml:space="preserve" text-anchor="start" x="1068.28" y="-808.1" font-family="Times,serif" font-size="14.00">DailyBusinessDaySimulationEngine</text>
+<polyline fill="none" stroke="black" points="1060.28,-799.9 1281.6,-799.9"/>
+<text xml:space="preserve" text-anchor="start" x="1083.85" y="-783.3" font-family="Times,serif" font-size="14.00">business_days : DatetimeIndex</text>
+<text xml:space="preserve" text-anchor="start" x="1083.85" y="-766.5" font-family="Times,serif" font-size="14.00">ending_day</text>
+<text xml:space="preserve" text-anchor="start" x="1083.85" y="-749.7" font-family="Times,serif" font-size="14.00">post_market : bool</text>
+<text xml:space="preserve" text-anchor="start" x="1083.85" y="-732.9" font-family="Times,serif" font-size="14.00">pre_market : bool</text>
+<text xml:space="preserve" text-anchor="start" x="1083.85" y="-716.1" font-family="Times,serif" font-size="14.00">starting_day</text>
+<polyline fill="none" stroke="black" points="1060.28,-707.9 1281.6,-707.9"/>
+<text xml:space="preserve" text-anchor="start" x="1169.19" y="-691.3" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.simulation.daily_bday.DailyBusinessDaySimulationEngine&#45;&gt;qstrader.trading.backtest.BacktestTradingSession -->
+<g id="edge34" class="edge">
+<title>qstrader.simulation.daily_bday.DailyBusinessDaySimulationEngine-&gt;qstrader.trading.backtest.BacktestTradingSession</title>
+<path fill="none" stroke="black" d="M1198.87,-825.19C1220.85,-877.63 1253.73,-950.23 1289.94,-1010 1332.33,-1079.98 1387.92,-1153.02 1433.71,-1209.45"/>
+<polygon fill="black" stroke="black" points="1433.7,-1209.44 1440.59,-1211.56 1441.28,-1218.74 1434.39,-1216.61 1433.7,-1209.44"/>
+<text xml:space="preserve" text-anchor="middle" x="1344.01" y="-1032.2" font-family="Times,serif" font-size="14.00" fill="green">sim_engine</text>
+</g>
+<!-- qstrader.simulation.sim_engine.SimulationEngine -->
+<g id="node44" class="node">
+<title>qstrader.simulation.sim_engine.SimulationEngine</title>
+<polygon fill="none" stroke="black" points="1112.39,-1273.3 1112.39,-1347.7 1229.49,-1347.7 1229.49,-1273.3 1112.39,-1273.3"/>
+<text xml:space="preserve" text-anchor="start" x="1120.39" y="-1331.1" font-family="Times,serif" font-size="14.00">SimulationEngine</text>
+<polyline fill="none" stroke="black" points="1112.39,-1322.9 1229.49,-1322.9"/>
+<polyline fill="none" stroke="black" points="1112.39,-1298.1 1229.49,-1298.1"/>
+<text xml:space="preserve" text-anchor="start" x="1169.19" y="-1281.5" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.simulation.daily_bday.DailyBusinessDaySimulationEngine&#45;&gt;qstrader.simulation.sim_engine.SimulationEngine -->
+<g id="edge19" class="edge">
+<title>qstrader.simulation.daily_bday.DailyBusinessDaySimulationEngine-&gt;qstrader.simulation.sim_engine.SimulationEngine</title>
+<path fill="none" stroke="black" d="M1170.94,-825.14C1170.94,-939.7 1170.94,-1163.79 1170.94,-1261.75"/>
+<polygon fill="none" stroke="black" points="1167.44,-1261.54 1170.94,-1271.54 1174.44,-1261.54 1167.44,-1261.54"/>
+</g>
+<!-- qstrader.system.rebalance.daily.DailyRebalance -->
+<g id="node11" class="node">
+<title>qstrader.system.rebalance.daily.DailyRebalance</title>
+<polygon fill="none" stroke="black" points="2936.12,-160.1 2936.12,-284.9 3047.76,-284.9 3047.76,-160.1 2936.12,-160.1"/>
+<text xml:space="preserve" text-anchor="start" x="2947.24" y="-268.3" font-family="Times,serif" font-size="14.00">DailyRebalance</text>
+<polyline fill="none" stroke="black" points="2936.12,-260.1 3047.76,-260.1"/>
+<text xml:space="preserve" text-anchor="start" x="2944.12" y="-243.5" font-family="Times,serif" font-size="14.00">end_date</text>
+<text xml:space="preserve" text-anchor="start" x="2944.12" y="-226.7" font-family="Times,serif" font-size="14.00">market_time : str</text>
+<text xml:space="preserve" text-anchor="start" x="2944.12" y="-209.9" font-family="Times,serif" font-size="14.00">rebalances</text>
+<text xml:space="preserve" text-anchor="start" x="2944.12" y="-193.1" font-family="Times,serif" font-size="14.00">start_date</text>
+<polyline fill="none" stroke="black" points="2936.12,-184.9 3047.76,-184.9"/>
+<text xml:space="preserve" text-anchor="start" x="2990.19" y="-168.3" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.system.rebalance.daily.DailyRebalance&#45;&gt;qstrader.system.rebalance.rebalance.Rebalance -->
+<g id="edge22" class="edge">
+<title>qstrader.system.rebalance.daily.DailyRebalance-&gt;qstrader.system.rebalance.rebalance.Rebalance</title>
+<path fill="none" stroke="black" d="M3001.27,-285.27C3017.41,-392.07 3050.2,-609.04 3064.73,-705.19"/>
+<polygon fill="none" stroke="black" points="3061.23,-705.44 3066.18,-714.8 3068.15,-704.39 3061.23,-705.44"/>
+</g>
+<!-- qstrader.portcon.order_sizer.dollar_weighted.DollarWeightedCashBufferedOrderSizer -->
+<g id="node12" class="node">
+<title>qstrader.portcon.order_sizer.dollar_weighted.DollarWeightedCashBufferedOrderSizer</title>
+<polygon fill="none" stroke="black" points="3714.27,-160.1 3714.27,-284.9 3959.62,-284.9 3959.62,-160.1 3714.27,-160.1"/>
+<text xml:space="preserve" text-anchor="start" x="3722.27" y="-268.3" font-family="Times,serif" font-size="14.00">DollarWeightedCashBufferedOrderSizer</text>
+<polyline fill="none" stroke="black" points="3714.27,-260.1 3959.62,-260.1"/>
+<text xml:space="preserve" text-anchor="start" x="3751.82" y="-243.5" font-family="Times,serif" font-size="14.00">broker</text>
+<text xml:space="preserve" text-anchor="start" x="3751.82" y="-226.7" font-family="Times,serif" font-size="14.00">broker_portfolio_id</text>
+<text xml:space="preserve" text-anchor="start" x="3751.82" y="-209.9" font-family="Times,serif" font-size="14.00">cash_buffer_percentage : float</text>
+<text xml:space="preserve" text-anchor="start" x="3751.82" y="-193.1" font-family="Times,serif" font-size="14.00">data_handler</text>
+<polyline fill="none" stroke="black" points="3714.27,-184.9 3959.62,-184.9"/>
+<text xml:space="preserve" text-anchor="start" x="3835.19" y="-168.3" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.portcon.order_sizer.order_sizer.OrderSizer -->
+<g id="node28" class="node">
+<title>qstrader.portcon.order_sizer.order_sizer.OrderSizer</title>
+<polygon fill="none" stroke="black" points="3917.23,-716.7 3917.23,-791.1 3994.65,-791.1 3994.65,-716.7 3917.23,-716.7"/>
+<text xml:space="preserve" text-anchor="start" x="3925.23" y="-774.5" font-family="Times,serif" font-size="14.00">OrderSizer</text>
+<polyline fill="none" stroke="black" points="3917.23,-766.3 3994.65,-766.3"/>
+<polyline fill="none" stroke="black" points="3917.23,-741.5 3994.65,-741.5"/>
+<text xml:space="preserve" text-anchor="start" x="3954.19" y="-724.9" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.portcon.order_sizer.dollar_weighted.DollarWeightedCashBufferedOrderSizer&#45;&gt;qstrader.portcon.order_sizer.order_sizer.OrderSizer -->
+<g id="edge14" class="edge">
+<title>qstrader.portcon.order_sizer.dollar_weighted.DollarWeightedCashBufferedOrderSizer-&gt;qstrader.portcon.order_sizer.order_sizer.OrderSizer</title>
+<path fill="none" stroke="black" d="M3850.83,-285.27C3874.83,-392.07 3923.6,-609.04 3945.22,-705.19"/>
+<polygon fill="none" stroke="black" points="3941.77,-705.84 3947.38,-714.82 3948.6,-704.3 3941.77,-705.84"/>
+</g>
+<!-- qstrader.asset.universe.dynamic.DynamicUniverse -->
+<g id="node13" class="node">
+<title>qstrader.asset.universe.dynamic.DynamicUniverse</title>
+<polygon fill="none" stroke="black" points="4192.01,-185.3 4192.01,-259.7 4309.87,-259.7 4309.87,-185.3 4192.01,-185.3"/>
+<text xml:space="preserve" text-anchor="start" x="4200.01" y="-243.1" font-family="Times,serif" font-size="14.00">DynamicUniverse</text>
+<polyline fill="none" stroke="black" points="4192.01,-234.9 4309.87,-234.9"/>
+<text xml:space="preserve" text-anchor="start" x="4219.45" y="-218.3" font-family="Times,serif" font-size="14.00">asset_dates</text>
+<polyline fill="none" stroke="black" points="4192.01,-210.1 4309.87,-210.1"/>
+<text xml:space="preserve" text-anchor="start" x="4212.45" y="-193.5" font-family="Times,serif" font-size="14.00">get_assets(dt)</text>
+</g>
+<!-- qstrader.asset.universe.universe.Universe -->
+<g id="node52" class="node">
+<title>qstrader.asset.universe.universe.Universe</title>
+<polygon fill="none" stroke="black" points="4267.06,-716.7 4267.06,-791.1 4360.82,-791.1 4360.82,-716.7 4267.06,-716.7"/>
+<text xml:space="preserve" text-anchor="start" x="4288.67" y="-774.5" font-family="Times,serif" font-size="14.00">Universe</text>
+<polyline fill="none" stroke="black" points="4267.06,-766.3 4360.82,-766.3"/>
+<polyline fill="none" stroke="black" points="4267.06,-741.5 4360.82,-741.5"/>
+<text xml:space="preserve" text-anchor="start" x="4275.06" y="-725.9" font-family="Times,serif" font-style="italic" font-size="14.00">get_assets</text>
+<text xml:space="preserve" text-anchor="start" x="4332.61" y="-725.9" font-family="Times,serif" font-size="14.00">(dt)</text>
+</g>
+<!-- qstrader.asset.universe.dynamic.DynamicUniverse&#45;&gt;qstrader.asset.universe.universe.Universe -->
+<g id="edge5" class="edge">
+<title>qstrader.asset.universe.dynamic.DynamicUniverse-&gt;qstrader.asset.universe.universe.Universe</title>
+<path fill="none" stroke="black" d="M4255.27,-259.89C4266.36,-353.11 4295.8,-600.49 4308.25,-705.11"/>
+<polygon fill="none" stroke="black" points="4304.74,-705.24 4309.4,-714.75 4311.7,-704.41 4304.74,-705.24"/>
+</g>
+<!-- qstrader.system.rebalance.end_of_month.EndOfMonthRebalance -->
+<g id="node14" class="node">
+<title>qstrader.system.rebalance.end_of_month.EndOfMonthRebalance</title>
+<polygon fill="none" stroke="black" points="3065.46,-160.1 3065.46,-284.9 3214.42,-284.9 3214.42,-160.1 3065.46,-160.1"/>
+<text xml:space="preserve" text-anchor="start" x="3073.46" y="-268.3" font-family="Times,serif" font-size="14.00">EndOfMonthRebalance</text>
+<polyline fill="none" stroke="black" points="3065.46,-260.1 3214.42,-260.1"/>
+<text xml:space="preserve" text-anchor="start" x="3092.12" y="-243.5" font-family="Times,serif" font-size="14.00">end_dt</text>
+<text xml:space="preserve" text-anchor="start" x="3092.12" y="-226.7" font-family="Times,serif" font-size="14.00">market_time : str</text>
+<text xml:space="preserve" text-anchor="start" x="3092.12" y="-209.9" font-family="Times,serif" font-size="14.00">rebalances</text>
+<text xml:space="preserve" text-anchor="start" x="3092.12" y="-193.1" font-family="Times,serif" font-size="14.00">start_dt</text>
+<polyline fill="none" stroke="black" points="3065.46,-184.9 3214.42,-184.9"/>
+<text xml:space="preserve" text-anchor="start" x="3138.19" y="-168.3" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.system.rebalance.end_of_month.EndOfMonthRebalance&#45;&gt;qstrader.system.rebalance.rebalance.Rebalance -->
+<g id="edge23" class="edge">
+<title>qstrader.system.rebalance.end_of_month.EndOfMonthRebalance-&gt;qstrader.system.rebalance.rebalance.Rebalance</title>
+<path fill="none" stroke="black" d="M3132.01,-285.27C3118.3,-391.96 3090.48,-608.6 3078.11,-704.9"/>
+<polygon fill="none" stroke="black" points="3074.64,-704.44 3076.84,-714.8 3081.58,-705.33 3074.64,-704.44"/>
+</g>
+<!-- qstrader.portcon.optimiser.equal_weight.EqualWeightPortfolioOptimiser -->
+<g id="node15" class="node">
+<title>qstrader.portcon.optimiser.equal_weight.EqualWeightPortfolioOptimiser</title>
+<polygon fill="none" stroke="black" points="4444.12,-176.9 4444.12,-268.1 4639.76,-268.1 4639.76,-176.9 4444.12,-176.9"/>
+<text xml:space="preserve" text-anchor="start" x="4452.12" y="-251.5" font-family="Times,serif" font-size="14.00">EqualWeightPortfolioOptimiser</text>
+<polyline fill="none" stroke="black" points="4444.12,-243.3 4639.76,-243.3"/>
+<text xml:space="preserve" text-anchor="start" x="4470.8" y="-226.7" font-family="Times,serif" font-size="14.00">data_handler : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="4470.8" y="-209.9" font-family="Times,serif" font-size="14.00">scale : float</text>
+<polyline fill="none" stroke="black" points="4444.12,-201.7 4639.76,-201.7"/>
+<text xml:space="preserve" text-anchor="start" x="4540.19" y="-185.1" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.portcon.optimiser.optimiser.PortfolioOptimiser -->
+<g id="node33" class="node">
+<title>qstrader.portcon.optimiser.optimiser.PortfolioOptimiser</title>
+<polygon fill="none" stroke="black" points="4587.06,-716.7 4587.06,-791.1 4708.83,-791.1 4708.83,-716.7 4587.06,-716.7"/>
+<text xml:space="preserve" text-anchor="start" x="4595.06" y="-774.5" font-family="Times,serif" font-size="14.00">PortfolioOptimiser</text>
+<polyline fill="none" stroke="black" points="4587.06,-766.3 4708.83,-766.3"/>
+<polyline fill="none" stroke="black" points="4587.06,-741.5 4708.83,-741.5"/>
+<text xml:space="preserve" text-anchor="start" x="4646.19" y="-724.9" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.portcon.optimiser.equal_weight.EqualWeightPortfolioOptimiser&#45;&gt;qstrader.portcon.optimiser.optimiser.PortfolioOptimiser -->
+<g id="edge12" class="edge">
+<title>qstrader.portcon.optimiser.equal_weight.EqualWeightPortfolioOptimiser-&gt;qstrader.portcon.optimiser.optimiser.PortfolioOptimiser</title>
+<path fill="none" stroke="black" d="M4550.89,-268.18C4570.69,-367.07 4618.07,-603.72 4638.41,-705.28"/>
+<polygon fill="none" stroke="black" points="4634.94,-705.8 4640.34,-714.92 4641.81,-704.43 4634.94,-705.8"/>
+</g>
+<!-- qstrader.asset.equity.Equity -->
+<g id="node16" class="node">
+<title>qstrader.asset.equity.Equity</title>
+<polygon fill="none" stroke="black" points="476.4,-160.1 476.4,-284.9 593.49,-284.9 593.49,-160.1 476.4,-160.1"/>
+<text xml:space="preserve" text-anchor="start" x="516.28" y="-268.3" font-family="Times,serif" font-size="14.00">Equity</text>
+<polyline fill="none" stroke="black" points="476.4,-260.1 593.49,-260.1"/>
+<text xml:space="preserve" text-anchor="start" x="484.4" y="-243.5" font-family="Times,serif" font-size="14.00">cash_like : bool</text>
+<text xml:space="preserve" text-anchor="start" x="484.4" y="-226.7" font-family="Times,serif" font-size="14.00">name</text>
+<text xml:space="preserve" text-anchor="start" x="484.4" y="-209.9" font-family="Times,serif" font-size="14.00">symbol</text>
+<text xml:space="preserve" text-anchor="start" x="484.4" y="-193.1" font-family="Times,serif" font-size="14.00">tax_exempt : bool</text>
+<polyline fill="none" stroke="black" points="476.4,-184.9 593.49,-184.9"/>
+<text xml:space="preserve" text-anchor="start" x="533.19" y="-168.3" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.asset.equity.Equity&#45;&gt;qstrader.asset.asset.Asset -->
+<g id="edge4" class="edge">
+<title>qstrader.asset.equity.Equity-&gt;qstrader.asset.asset.Asset</title>
+<path fill="none" stroke="black" d="M527.36,-285.27C514.26,-391.96 487.66,-608.6 475.84,-704.9"/>
+<polygon fill="none" stroke="black" points="472.36,-704.45 474.62,-714.8 479.31,-705.3 472.36,-704.45"/>
+</g>
+<!-- qstrader.exchange.exchange.Exchange -->
+<g id="node17" class="node">
+<title>qstrader.exchange.exchange.Exchange</title>
+<polygon fill="none" stroke="black" points="2767.51,-1273.3 2767.51,-1347.7 2920.37,-1347.7 2920.37,-1273.3 2767.51,-1273.3"/>
+<text xml:space="preserve" text-anchor="start" x="2816.34" y="-1331.1" font-family="Times,serif" font-size="14.00">Exchange</text>
+<polyline fill="none" stroke="black" points="2767.51,-1322.9 2920.37,-1322.9"/>
+<polyline fill="none" stroke="black" points="2767.51,-1298.1 2920.37,-1298.1"/>
+<text xml:space="preserve" text-anchor="start" x="2775.51" y="-1282.5" font-family="Times,serif" font-style="italic" font-size="14.00">is_open_at_datetime</text>
+<text xml:space="preserve" text-anchor="start" x="2892.16" y="-1282.5" font-family="Times,serif" font-size="14.00">(dt)</text>
+</g>
+<!-- qstrader.execution.execution_algo.execution_algo.ExecutionAlgorithm -->
+<g id="node18" class="node">
+<title>qstrader.execution.execution_algo.execution_algo.ExecutionAlgorithm</title>
+<polygon fill="none" stroke="black" points="4907.4,-716.7 4907.4,-791.1 5038.49,-791.1 5038.49,-716.7 4907.4,-716.7"/>
+<text xml:space="preserve" text-anchor="start" x="4915.4" y="-774.5" font-family="Times,serif" font-size="14.00">ExecutionAlgorithm</text>
+<polyline fill="none" stroke="black" points="4907.4,-766.3 5038.49,-766.3"/>
+<polyline fill="none" stroke="black" points="4907.4,-741.5 5038.49,-741.5"/>
+<text xml:space="preserve" text-anchor="start" x="4971.19" y="-724.9" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.execution.execution_handler.ExecutionHandler -->
+<g id="node19" class="node">
+<title>qstrader.execution.execution_handler.ExecutionHandler</title>
+<polygon fill="none" stroke="black" points="1310.19,-143.3 1310.19,-301.7 1481.69,-301.7 1481.69,-143.3 1310.19,-143.3"/>
+<text xml:space="preserve" text-anchor="start" x="1345.02" y="-285.1" font-family="Times,serif" font-size="14.00">ExecutionHandler</text>
+<polyline fill="none" stroke="black" points="1310.19,-276.9 1481.69,-276.9"/>
+<text xml:space="preserve" text-anchor="start" x="1318.19" y="-260.3" font-family="Times,serif" font-size="14.00">broker</text>
+<text xml:space="preserve" text-anchor="start" x="1318.19" y="-243.5" font-family="Times,serif" font-size="14.00">broker_portfolio_id</text>
+<text xml:space="preserve" text-anchor="start" x="1318.19" y="-226.7" font-family="Times,serif" font-size="14.00">data_handler : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="1318.19" y="-209.9" font-family="Times,serif" font-size="14.00">execution_algo : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="1318.19" y="-193.1" font-family="Times,serif" font-size="14.00">submit_orders : bool</text>
+<text xml:space="preserve" text-anchor="start" x="1318.19" y="-176.3" font-family="Times,serif" font-size="14.00">universe</text>
+<polyline fill="none" stroke="black" points="1310.19,-168.1 1481.69,-168.1"/>
+<text xml:space="preserve" text-anchor="start" x="1394.19" y="-151.5" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.system.qts.QuantTradingSystem -->
+<g id="node36" class="node">
+<title>qstrader.system.qts.QuantTradingSystem</title>
+<polygon fill="none" stroke="black" points="1299.34,-641.1 1299.34,-866.7 1482.54,-866.7 1482.54,-641.1 1299.34,-641.1"/>
+<text xml:space="preserve" text-anchor="start" x="1331.06" y="-850.1" font-family="Times,serif" font-size="14.00">QuantTradingSystem</text>
+<polyline fill="none" stroke="black" points="1299.34,-841.9 1482.54,-841.9"/>
+<text xml:space="preserve" text-anchor="start" x="1307.34" y="-825.3" font-family="Times,serif" font-size="14.00">alpha_model</text>
+<text xml:space="preserve" text-anchor="start" x="1307.34" y="-808.5" font-family="Times,serif" font-size="14.00">broker</text>
+<text xml:space="preserve" text-anchor="start" x="1307.34" y="-791.7" font-family="Times,serif" font-size="14.00">broker_portfolio_id</text>
+<text xml:space="preserve" text-anchor="start" x="1307.34" y="-774.9" font-family="Times,serif" font-size="14.00">data_handler</text>
+<text xml:space="preserve" text-anchor="start" x="1307.34" y="-758.1" font-family="Times,serif" font-size="14.00">execution_handler</text>
+<text xml:space="preserve" text-anchor="start" x="1307.34" y="-741.3" font-family="Times,serif" font-size="14.00">long_only : bool</text>
+<text xml:space="preserve" text-anchor="start" x="1307.34" y="-724.5" font-family="Times,serif" font-size="14.00">portfolio_construction_model</text>
+<text xml:space="preserve" text-anchor="start" x="1307.34" y="-707.7" font-family="Times,serif" font-size="14.00">risk_model : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="1307.34" y="-690.9" font-family="Times,serif" font-size="14.00">submit_orders : bool</text>
+<text xml:space="preserve" text-anchor="start" x="1307.34" y="-674.1" font-family="Times,serif" font-size="14.00">universe</text>
+<polyline fill="none" stroke="black" points="1299.34,-665.9 1482.54,-665.9"/>
+<text xml:space="preserve" text-anchor="start" x="1389.19" y="-649.3" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.execution.execution_handler.ExecutionHandler&#45;&gt;qstrader.system.qts.QuantTradingSystem -->
+<g id="edge31" class="edge">
+<title>qstrader.execution.execution_handler.ExecutionHandler-&gt;qstrader.system.qts.QuantTradingSystem</title>
+<path fill="none" stroke="black" d="M1395.2,-302.18C1394.39,-388.14 1393.07,-527.01 1392.12,-627.92"/>
+<polygon fill="black" stroke="black" points="1392.12,-628.06 1396.06,-634.09 1392.01,-640.06 1388.06,-634.02 1392.12,-628.06"/>
+<text xml:space="preserve" text-anchor="middle" x="1445.29" y="-467.2" font-family="Times,serif" font-size="14.00" fill="green">execution_handler</text>
+</g>
+<!-- qstrader.broker.fee_model.fee_model.FeeModel -->
+<g id="node20" class="node">
+<title>qstrader.broker.fee_model.fee_model.FeeModel</title>
+<polygon fill="none" stroke="black" points="2433.48,-716.7 2433.48,-791.1 2750.4,-791.1 2750.4,-716.7 2433.48,-716.7"/>
+<text xml:space="preserve" text-anchor="start" x="2563.56" y="-774.5" font-family="Times,serif" font-size="14.00">FeeModel</text>
+<polyline fill="none" stroke="black" points="2433.48,-766.3 2750.4,-766.3"/>
+<polyline fill="none" stroke="black" points="2433.48,-741.5 2750.4,-741.5"/>
+<text xml:space="preserve" text-anchor="start" x="2441.48" y="-725.9" font-family="Times,serif" font-style="italic" font-size="14.00">calc_total_cost</text>
+<text xml:space="preserve" text-anchor="start" x="2527.02" y="-725.9" font-family="Times,serif" font-size="14.00">(asset, quantity, consideration, broker)</text>
+</g>
+<!-- qstrader.alpha_model.fixed_signals.FixedSignalsAlphaModel -->
+<g id="node21" class="node">
+<title>qstrader.alpha_model.fixed_signals.FixedSignalsAlphaModel</title>
+<polygon fill="none" stroke="black" points="0,-168.5 0,-276.5 159.88,-276.5 159.88,-168.5 0,-168.5"/>
+<text xml:space="preserve" text-anchor="start" x="8" y="-259.9" font-family="Times,serif" font-size="14.00">FixedSignalsAlphaModel</text>
+<polyline fill="none" stroke="black" points="0,-251.7 159.88,-251.7"/>
+<text xml:space="preserve" text-anchor="start" x="8.8" y="-235.1" font-family="Times,serif" font-size="14.00">data_handler : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="8.8" y="-218.3" font-family="Times,serif" font-size="14.00">signal_weights</text>
+<text xml:space="preserve" text-anchor="start" x="8.8" y="-201.5" font-family="Times,serif" font-size="14.00">universe : NoneType</text>
+<polyline fill="none" stroke="black" points="0,-193.3 159.88,-193.3"/>
+<text xml:space="preserve" text-anchor="start" x="78.19" y="-176.7" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.alpha_model.fixed_signals.FixedSignalsAlphaModel&#45;&gt;qstrader.alpha_model.alpha_model.AlphaModel -->
+<g id="edge1" class="edge">
+<title>qstrader.alpha_model.fixed_signals.FixedSignalsAlphaModel-&gt;qstrader.alpha_model.alpha_model.AlphaModel</title>
+<path fill="none" stroke="black" d="M88.88,-276.68C106.27,-380.09 144.37,-606.75 160.96,-705.43"/>
+<polygon fill="none" stroke="black" points="157.47,-705.76 162.58,-715.04 164.37,-704.6 157.47,-705.76"/>
+</g>
+<!-- qstrader.portcon.optimiser.fixed_weight.FixedWeightPortfolioOptimiser -->
+<g id="node22" class="node">
+<title>qstrader.portcon.optimiser.fixed_weight.FixedWeightPortfolioOptimiser</title>
+<polygon fill="none" stroke="black" points="4657.51,-185.3 4657.51,-259.7 4852.38,-259.7 4852.38,-185.3 4657.51,-185.3"/>
+<text xml:space="preserve" text-anchor="start" x="4665.51" y="-243.1" font-family="Times,serif" font-size="14.00">FixedWeightPortfolioOptimiser</text>
+<polyline fill="none" stroke="black" points="4657.51,-234.9 4852.38,-234.9"/>
+<text xml:space="preserve" text-anchor="start" x="4683.8" y="-218.3" font-family="Times,serif" font-size="14.00">data_handler : NoneType</text>
+<polyline fill="none" stroke="black" points="4657.51,-210.1 4852.38,-210.1"/>
+<text xml:space="preserve" text-anchor="start" x="4753.19" y="-193.5" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.portcon.optimiser.fixed_weight.FixedWeightPortfolioOptimiser&#45;&gt;qstrader.portcon.optimiser.optimiser.PortfolioOptimiser -->
+<g id="edge13" class="edge">
+<title>qstrader.portcon.optimiser.fixed_weight.FixedWeightPortfolioOptimiser-&gt;qstrader.portcon.optimiser.optimiser.PortfolioOptimiser</title>
+<path fill="none" stroke="black" d="M4747.59,-259.89C4728.75,-353.11 4678.75,-600.49 4657.6,-705.11"/>
+<polygon fill="none" stroke="black" points="4654.2,-704.28 4655.65,-714.77 4661.06,-705.67 4654.2,-704.28"/>
+</g>
+<!-- qstrader.statistics.json_statistics.JSONStatistics -->
+<g id="node23" class="node">
+<title>qstrader.statistics.json_statistics.JSONStatistics</title>
+<polygon fill="none" stroke="black" points="5092.81,-109.7 5092.81,-335.3 5279.07,-335.3 5279.07,-109.7 5092.81,-109.7"/>
+<text xml:space="preserve" text-anchor="start" x="5143.93" y="-318.7" font-family="Times,serif" font-size="14.00">JSONStatistics</text>
+<polyline fill="none" stroke="black" points="5092.81,-310.5 5279.07,-310.5"/>
+<text xml:space="preserve" text-anchor="start" x="5100.81" y="-293.9" font-family="Times,serif" font-size="14.00">benchmark_curve : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="5100.81" y="-277.1" font-family="Times,serif" font-size="14.00">benchmark_id : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="5100.81" y="-260.3" font-family="Times,serif" font-size="14.00">benchmark_name : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="5100.81" y="-243.5" font-family="Times,serif" font-size="14.00">equity_curve</text>
+<text xml:space="preserve" text-anchor="start" x="5100.81" y="-226.7" font-family="Times,serif" font-size="14.00">output_filename : str</text>
+<text xml:space="preserve" text-anchor="start" x="5100.81" y="-209.9" font-family="Times,serif" font-size="14.00">periods : int</text>
+<text xml:space="preserve" text-anchor="start" x="5100.81" y="-193.1" font-family="Times,serif" font-size="14.00">statistics : dict</text>
+<text xml:space="preserve" text-anchor="start" x="5100.81" y="-176.3" font-family="Times,serif" font-size="14.00">strategy_id : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="5100.81" y="-159.5" font-family="Times,serif" font-size="14.00">strategy_name : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="5100.81" y="-142.7" font-family="Times,serif" font-size="14.00">target_allocations</text>
+<polyline fill="none" stroke="black" points="5092.81,-134.5 5279.07,-134.5"/>
+<text xml:space="preserve" text-anchor="start" x="5163.01" y="-117.9" font-family="Times,serif" font-size="14.00">to_file()</text>
+</g>
+<!-- qstrader.portcon.order_sizer.long_short.LongShortLeveragedOrderSizer -->
+<g id="node24" class="node">
+<title>qstrader.portcon.order_sizer.long_short.LongShortLeveragedOrderSizer</title>
+<polygon fill="none" stroke="black" points="3977.75,-160.1 3977.75,-284.9 4174.13,-284.9 4174.13,-160.1 3977.75,-160.1"/>
+<text xml:space="preserve" text-anchor="start" x="3985.75" y="-268.3" font-family="Times,serif" font-size="14.00">LongShortLeveragedOrderSizer</text>
+<polyline fill="none" stroke="black" points="3977.75,-260.1 4174.13,-260.1"/>
+<text xml:space="preserve" text-anchor="start" x="4015.69" y="-243.5" font-family="Times,serif" font-size="14.00">broker</text>
+<text xml:space="preserve" text-anchor="start" x="4015.69" y="-226.7" font-family="Times,serif" font-size="14.00">broker_portfolio_id</text>
+<text xml:space="preserve" text-anchor="start" x="4015.69" y="-209.9" font-family="Times,serif" font-size="14.00">data_handler</text>
+<text xml:space="preserve" text-anchor="start" x="4015.69" y="-193.1" font-family="Times,serif" font-size="14.00">gross_leverage : float</text>
+<polyline fill="none" stroke="black" points="3977.75,-184.9 4174.13,-184.9"/>
+<text xml:space="preserve" text-anchor="start" x="4074.19" y="-168.3" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.portcon.order_sizer.long_short.LongShortLeveragedOrderSizer&#45;&gt;qstrader.portcon.order_sizer.order_sizer.OrderSizer -->
+<g id="edge15" class="edge">
+<title>qstrader.portcon.order_sizer.long_short.LongShortLeveragedOrderSizer-&gt;qstrader.portcon.order_sizer.order_sizer.OrderSizer</title>
+<path fill="none" stroke="black" d="M4061.94,-285.27C4037.73,-392.07 3988.55,-609.04 3966.76,-705.19"/>
+<polygon fill="none" stroke="black" points="3963.37,-704.3 3964.57,-714.82 3970.2,-705.85 3963.37,-704.3"/>
+</g>
+<!-- qstrader.execution.execution_algo.market_order.MarketOrderExecutionAlgorithm -->
+<g id="node25" class="node">
+<title>qstrader.execution.execution_algo.market_order.MarketOrderExecutionAlgorithm</title>
+<polygon fill="none" stroke="black" points="4870.86,-185.3 4870.86,-259.7 5075.02,-259.7 5075.02,-185.3 4870.86,-185.3"/>
+<text xml:space="preserve" text-anchor="start" x="4878.86" y="-243.1" font-family="Times,serif" font-size="14.00">MarketOrderExecutionAlgorithm</text>
+<polyline fill="none" stroke="black" points="4870.86,-234.9 5075.02,-234.9"/>
+<polyline fill="none" stroke="black" points="4870.86,-210.1 5075.02,-210.1"/>
+<text xml:space="preserve" text-anchor="start" x="4971.19" y="-193.5" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.execution.execution_algo.market_order.MarketOrderExecutionAlgorithm&#45;&gt;qstrader.execution.execution_algo.execution_algo.ExecutionAlgorithm -->
+<g id="edge11" class="edge">
+<title>qstrader.execution.execution_algo.market_order.MarketOrderExecutionAlgorithm-&gt;qstrader.execution.execution_algo.execution_algo.ExecutionAlgorithm</title>
+<path fill="none" stroke="black" d="M4972.94,-259.89C4972.94,-353.01 4972.94,-599.99 4972.94,-704.79"/>
+<polygon fill="none" stroke="black" points="4969.44,-704.74 4972.94,-714.74 4976.44,-704.74 4969.44,-704.74"/>
+</g>
+<!-- qstrader.signals.momentum.MomentumSignal -->
+<g id="node26" class="node">
+<title>qstrader.signals.momentum.MomentumSignal</title>
+<polygon fill="none" stroke="black" points="758.39,-185.3 758.39,-259.7 875.5,-259.7 875.5,-185.3 758.39,-185.3"/>
+<text xml:space="preserve" text-anchor="start" x="766.39" y="-243.1" font-family="Times,serif" font-size="14.00">MomentumSignal</text>
+<polyline fill="none" stroke="black" points="758.39,-234.9 875.5,-234.9"/>
+<polyline fill="none" stroke="black" points="758.39,-210.1 875.5,-210.1"/>
+<text xml:space="preserve" text-anchor="start" x="815.19" y="-193.5" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.signals.momentum.MomentumSignal&#45;&gt;qstrader.signals.signal.Signal -->
+<g id="edge16" class="edge">
+<title>qstrader.signals.momentum.MomentumSignal-&gt;qstrader.signals.signal.Signal</title>
+<path fill="none" stroke="black" d="M821,-259.89C830.18,-342.26 852.77,-545.02 865.95,-663.27"/>
+<polygon fill="none" stroke="black" points="862.44,-663.39 867.03,-672.94 869.4,-662.62 862.44,-663.39"/>
+</g>
+<!-- qstrader.execution.order.Order -->
+<g id="node27" class="node">
+<title>qstrader.execution.order.Order</title>
+<polygon fill="none" stroke="black" points="5296.83,-134.9 5296.83,-310.1 5417.05,-310.1 5417.05,-134.9 5296.83,-134.9"/>
+<text xml:space="preserve" text-anchor="start" x="5340.62" y="-293.5" font-family="Times,serif" font-size="14.00">Order</text>
+<polyline fill="none" stroke="black" points="5296.83,-285.3 5417.05,-285.3"/>
+<text xml:space="preserve" text-anchor="start" x="5304.83" y="-268.7" font-family="Times,serif" font-size="14.00">asset</text>
+<text xml:space="preserve" text-anchor="start" x="5304.83" y="-251.9" font-family="Times,serif" font-size="14.00">commission : float</text>
+<text xml:space="preserve" text-anchor="start" x="5304.83" y="-235.1" font-family="Times,serif" font-size="14.00">created_dt</text>
+<text xml:space="preserve" text-anchor="start" x="5304.83" y="-218.3" font-family="Times,serif" font-size="14.00">cur_dt</text>
+<text xml:space="preserve" text-anchor="start" x="5304.83" y="-201.5" font-family="Times,serif" font-size="14.00">direction</text>
+<text xml:space="preserve" text-anchor="start" x="5304.83" y="-184.7" font-family="Times,serif" font-size="14.00">order_id : str</text>
+<text xml:space="preserve" text-anchor="start" x="5304.83" y="-167.9" font-family="Times,serif" font-size="14.00">quantity</text>
+<polyline fill="none" stroke="black" points="5296.83,-159.7 5417.05,-159.7"/>
+<text xml:space="preserve" text-anchor="start" x="5355.19" y="-143.1" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.broker.fee_model.percent_fee_model.PercentFeeModel -->
+<g id="node29" class="node">
+<title>qstrader.broker.fee_model.percent_fee_model.PercentFeeModel</title>
+<polygon fill="none" stroke="black" points="2434.27,-176.9 2434.27,-268.1 2749.61,-268.1 2749.61,-176.9 2434.27,-176.9"/>
+<text xml:space="preserve" text-anchor="start" x="2542.57" y="-251.5" font-family="Times,serif" font-size="14.00">PercentFeeModel</text>
+<polyline fill="none" stroke="black" points="2434.27,-243.3 2749.61,-243.3"/>
+<text xml:space="preserve" text-anchor="start" x="2527.78" y="-226.7" font-family="Times,serif" font-size="14.00">commission_pct : float</text>
+<text xml:space="preserve" text-anchor="start" x="2527.78" y="-209.9" font-family="Times,serif" font-size="14.00">tax_pct : float</text>
+<polyline fill="none" stroke="black" points="2434.27,-201.7 2749.61,-201.7"/>
+<text xml:space="preserve" text-anchor="start" x="2442.27" y="-185.1" font-family="Times,serif" font-size="14.00">calc_total_cost(asset, quantity, consideration, broker)</text>
+</g>
+<!-- qstrader.broker.fee_model.percent_fee_model.PercentFeeModel&#45;&gt;qstrader.broker.fee_model.fee_model.FeeModel -->
+<g id="edge7" class="edge">
+<title>qstrader.broker.fee_model.percent_fee_model.PercentFeeModel-&gt;qstrader.broker.fee_model.fee_model.FeeModel</title>
+<path fill="none" stroke="black" d="M2591.94,-268.18C2591.94,-366.97 2591.94,-603.24 2591.94,-704.97"/>
+<polygon fill="none" stroke="black" points="2588.44,-704.89 2591.94,-714.89 2595.44,-704.89 2588.44,-704.89"/>
+</g>
+<!-- qstrader.broker.portfolio.portfolio.Portfolio -->
+<g id="node30" class="node">
+<title>qstrader.broker.portfolio.portfolio.Portfolio</title>
+<polygon fill="none" stroke="black" points="5339.91,-557.1 5339.91,-950.7 5711.98,-950.7 5711.98,-557.1 5339.91,-557.1"/>
+<text xml:space="preserve" text-anchor="start" x="5501.05" y="-934.1" font-family="Times,serif" font-size="14.00">Portfolio</text>
+<polyline fill="none" stroke="black" points="5339.91,-925.9 5711.98,-925.9"/>
+<text xml:space="preserve" text-anchor="start" x="5435.74" y="-909.3" font-family="Times,serif" font-size="14.00">cash</text>
+<text xml:space="preserve" text-anchor="start" x="5435.74" y="-892.5" font-family="Times,serif" font-size="14.00">currency : str</text>
+<text xml:space="preserve" text-anchor="start" x="5435.74" y="-875.7" font-family="Times,serif" font-size="14.00">current_dt</text>
+<text xml:space="preserve" text-anchor="start" x="5435.74" y="-858.9" font-family="Times,serif" font-size="14.00">history : list</text>
+<text xml:space="preserve" text-anchor="start" x="5435.74" y="-842.1" font-family="Times,serif" font-size="14.00">logger : NoneType, RootLogger</text>
+<text xml:space="preserve" text-anchor="start" x="5435.74" y="-825.3" font-family="Times,serif" font-size="14.00">name : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="5435.74" y="-808.5" font-family="Times,serif" font-size="14.00">portfolio_id : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="5435.74" y="-791.7" font-family="Times,serif" font-size="14.00">pos_handler</text>
+<text xml:space="preserve" text-anchor="start" x="5435.74" y="-774.9" font-family="Times,serif" font-size="14.00">start_dt</text>
+<text xml:space="preserve" text-anchor="start" x="5435.74" y="-758.1" font-family="Times,serif" font-size="14.00">starting_cash : float</text>
+<text xml:space="preserve" text-anchor="start" x="5435.74" y="-741.3" font-family="Times,serif" font-size="14.00">total_equity</text>
+<text xml:space="preserve" text-anchor="start" x="5435.74" y="-724.5" font-family="Times,serif" font-size="14.00">total_market_value</text>
+<text xml:space="preserve" text-anchor="start" x="5435.74" y="-707.7" font-family="Times,serif" font-size="14.00">total_pnl</text>
+<text xml:space="preserve" text-anchor="start" x="5435.74" y="-690.9" font-family="Times,serif" font-size="14.00">total_realised_pnl</text>
+<text xml:space="preserve" text-anchor="start" x="5435.74" y="-674.1" font-family="Times,serif" font-size="14.00">total_unrealised_pnl</text>
+<polyline fill="none" stroke="black" points="5339.91,-665.9 5711.98,-665.9"/>
+<text xml:space="preserve" text-anchor="start" x="5347.91" y="-649.3" font-family="Times,serif" font-size="14.00">history_to_df()</text>
+<text xml:space="preserve" text-anchor="start" x="5347.91" y="-632.5" font-family="Times,serif" font-size="14.00">portfolio_to_dict()</text>
+<text xml:space="preserve" text-anchor="start" x="5347.91" y="-615.7" font-family="Times,serif" font-size="14.00">subscribe_funds(dt, amount)</text>
+<text xml:space="preserve" text-anchor="start" x="5347.91" y="-598.9" font-family="Times,serif" font-size="14.00">transact_asset(txn)</text>
+<text xml:space="preserve" text-anchor="start" x="5347.91" y="-582.1" font-family="Times,serif" font-size="14.00">update_market_value_of_asset(asset, current_price, current_dt)</text>
+<text xml:space="preserve" text-anchor="start" x="5347.91" y="-565.3" font-family="Times,serif" font-size="14.00">withdraw_funds(dt, amount)</text>
+</g>
+<!-- qstrader.portcon.pcm.PortfolioConstructionModel -->
+<g id="node31" class="node">
+<title>qstrader.portcon.pcm.PortfolioConstructionModel</title>
+<polygon fill="none" stroke="black" points="1117.61,-118.1 1117.61,-326.9 1292.27,-326.9 1292.27,-118.1 1117.61,-118.1"/>
+<text xml:space="preserve" text-anchor="start" x="1125.61" y="-310.3" font-family="Times,serif" font-size="14.00">PortfolioConstructionModel</text>
+<polyline fill="none" stroke="black" points="1117.61,-302.1 1292.27,-302.1"/>
+<text xml:space="preserve" text-anchor="start" x="1133.8" y="-285.5" font-family="Times,serif" font-size="14.00">alpha_model : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="1133.8" y="-268.7" font-family="Times,serif" font-size="14.00">broker</text>
+<text xml:space="preserve" text-anchor="start" x="1133.8" y="-251.9" font-family="Times,serif" font-size="14.00">broker_portfolio_id</text>
+<text xml:space="preserve" text-anchor="start" x="1133.8" y="-235.1" font-family="Times,serif" font-size="14.00">cost_model : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="1133.8" y="-218.3" font-family="Times,serif" font-size="14.00">data_handler : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="1133.8" y="-201.5" font-family="Times,serif" font-size="14.00">optimiser</text>
+<text xml:space="preserve" text-anchor="start" x="1133.8" y="-184.7" font-family="Times,serif" font-size="14.00">order_sizer</text>
+<text xml:space="preserve" text-anchor="start" x="1133.8" y="-167.9" font-family="Times,serif" font-size="14.00">risk_model : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="1133.8" y="-151.1" font-family="Times,serif" font-size="14.00">universe</text>
+<polyline fill="none" stroke="black" points="1117.61,-142.9 1292.27,-142.9"/>
+<text xml:space="preserve" text-anchor="start" x="1203.19" y="-126.3" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.portcon.pcm.PortfolioConstructionModel&#45;&gt;qstrader.system.qts.QuantTradingSystem -->
+<g id="edge32" class="edge">
+<title>qstrader.portcon.pcm.PortfolioConstructionModel-&gt;qstrader.system.qts.QuantTradingSystem</title>
+<path fill="none" stroke="black" d="M1185.9,-327.14C1182.47,-378.43 1188.28,-438.13 1222.75,-479.8 1242.73,-503.95 1267.53,-476.95 1290.94,-497.8 1328.85,-531.56 1352.53,-581.51 1367.26,-628.27"/>
+<polygon fill="black" stroke="black" points="1367.28,-628.36 1372.84,-632.96 1370.73,-639.85 1365.18,-635.26 1367.28,-628.36"/>
+<text xml:space="preserve" text-anchor="middle" x="1306.34" y="-467.2" font-family="Times,serif" font-size="14.00" fill="green">portfolio_construction_model</text>
+</g>
+<!-- qstrader.broker.portfolio.portfolio_event.PortfolioEvent -->
+<g id="node32" class="node">
+<title>qstrader.broker.portfolio.portfolio_event.PortfolioEvent</title>
+<polygon fill="none" stroke="black" points="5635.1,-126.5 5635.1,-318.5 5868.78,-318.5 5868.78,-126.5 5635.1,-126.5"/>
+<text xml:space="preserve" text-anchor="start" x="5710.72" y="-301.9" font-family="Times,serif" font-size="14.00">PortfolioEvent</text>
+<polyline fill="none" stroke="black" points="5635.1,-293.7 5868.78,-293.7"/>
+<text xml:space="preserve" text-anchor="start" x="5720.84" y="-277.1" font-family="Times,serif" font-size="14.00">balance</text>
+<text xml:space="preserve" text-anchor="start" x="5720.84" y="-260.3" font-family="Times,serif" font-size="14.00">credit</text>
+<text xml:space="preserve" text-anchor="start" x="5720.84" y="-243.5" font-family="Times,serif" font-size="14.00">debit</text>
+<text xml:space="preserve" text-anchor="start" x="5720.84" y="-226.7" font-family="Times,serif" font-size="14.00">description</text>
+<text xml:space="preserve" text-anchor="start" x="5720.84" y="-209.9" font-family="Times,serif" font-size="14.00">dt</text>
+<text xml:space="preserve" text-anchor="start" x="5720.84" y="-193.1" font-family="Times,serif" font-size="14.00">type</text>
+<polyline fill="none" stroke="black" points="5635.1,-184.9 5868.78,-184.9"/>
+<text xml:space="preserve" text-anchor="start" x="5643.1" y="-168.3" font-family="Times,serif" font-size="14.00">create_subscription(dt, credit, balance)</text>
+<text xml:space="preserve" text-anchor="start" x="5643.1" y="-151.5" font-family="Times,serif" font-size="14.00">create_withdrawal(dt, debit, balance)</text>
+<text xml:space="preserve" text-anchor="start" x="5643.1" y="-134.7" font-family="Times,serif" font-size="14.00">to_dict()</text>
+</g>
+<!-- qstrader.broker.portfolio.position.Position -->
+<g id="node34" class="node">
+<title>qstrader.broker.portfolio.position.Position</title>
+<polygon fill="none" stroke="black" points="5886.94,-0.5 5886.94,-444.5 6122.94,-444.5 6122.94,-0.5 5886.94,-0.5"/>
+<text xml:space="preserve" text-anchor="start" x="5981.99" y="-427.9" font-family="Times,serif" font-size="14.00">Position</text>
+<polyline fill="none" stroke="black" points="5886.94,-419.7 6122.94,-419.7"/>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-403.1" font-family="Times,serif" font-size="14.00">asset</text>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-386.3" font-family="Times,serif" font-size="14.00">avg_bought</text>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-369.5" font-family="Times,serif" font-size="14.00">avg_price</text>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-352.7" font-family="Times,serif" font-size="14.00">avg_sold</text>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-335.9" font-family="Times,serif" font-size="14.00">buy_commission</text>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-319.1" font-family="Times,serif" font-size="14.00">buy_quantity</text>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-302.3" font-family="Times,serif" font-size="14.00">commission</text>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-285.5" font-family="Times,serif" font-size="14.00">current_dt</text>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-268.7" font-family="Times,serif" font-size="14.00">current_price</text>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-251.9" font-family="Times,serif" font-size="14.00">direction</text>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-235.1" font-family="Times,serif" font-size="14.00">market_value</text>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-218.3" font-family="Times,serif" font-size="14.00">net_incl_commission</text>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-201.5" font-family="Times,serif" font-size="14.00">net_quantity</text>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-184.7" font-family="Times,serif" font-size="14.00">net_total</text>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-167.9" font-family="Times,serif" font-size="14.00">realised_pnl</text>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-151.1" font-family="Times,serif" font-size="14.00">sell_commission</text>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-134.3" font-family="Times,serif" font-size="14.00">sell_quantity</text>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-117.5" font-family="Times,serif" font-size="14.00">total_bought</text>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-100.7" font-family="Times,serif" font-size="14.00">total_pnl</text>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-83.9" font-family="Times,serif" font-size="14.00">total_sold</text>
+<text xml:space="preserve" text-anchor="start" x="5945.06" y="-67.1" font-family="Times,serif" font-size="14.00">unrealised_pnl</text>
+<polyline fill="none" stroke="black" points="5886.94,-58.9 6122.94,-58.9"/>
+<text xml:space="preserve" text-anchor="start" x="5894.94" y="-42.3" font-family="Times,serif" font-size="14.00">open_from_transaction(transaction)</text>
+<text xml:space="preserve" text-anchor="start" x="5894.94" y="-25.5" font-family="Times,serif" font-size="14.00">transact(transaction)</text>
+<text xml:space="preserve" text-anchor="start" x="5894.94" y="-8.7" font-family="Times,serif" font-size="14.00">update_current_price(market_price, dt)</text>
+</g>
+<!-- qstrader.broker.portfolio.position_handler.PositionHandler -->
+<g id="node35" class="node">
+<title>qstrader.broker.portfolio.position_handler.PositionHandler</title>
+<polygon fill="none" stroke="black" points="5434.74,-151.7 5434.74,-293.3 5617.14,-293.3 5617.14,-151.7 5434.74,-151.7"/>
+<text xml:space="preserve" text-anchor="start" x="5480.44" y="-276.7" font-family="Times,serif" font-size="14.00">PositionHandler</text>
+<polyline fill="none" stroke="black" points="5434.74,-268.5 5617.14,-268.5"/>
+<text xml:space="preserve" text-anchor="start" x="5460.23" y="-251.9" font-family="Times,serif" font-size="14.00">positions : OrderedDict</text>
+<polyline fill="none" stroke="black" points="5434.74,-243.7 5617.14,-243.7"/>
+<text xml:space="preserve" text-anchor="start" x="5442.74" y="-227.1" font-family="Times,serif" font-size="14.00">total_market_value()</text>
+<text xml:space="preserve" text-anchor="start" x="5442.74" y="-210.3" font-family="Times,serif" font-size="14.00">total_pnl()</text>
+<text xml:space="preserve" text-anchor="start" x="5442.74" y="-193.5" font-family="Times,serif" font-size="14.00">total_realised_pnl()</text>
+<text xml:space="preserve" text-anchor="start" x="5442.74" y="-176.7" font-family="Times,serif" font-size="14.00">total_unrealised_pnl()</text>
+<text xml:space="preserve" text-anchor="start" x="5442.74" y="-159.9" font-family="Times,serif" font-size="14.00">transact_position(transaction)</text>
+</g>
+<!-- qstrader.broker.portfolio.position_handler.PositionHandler&#45;&gt;qstrader.broker.portfolio.portfolio.Portfolio -->
+<g id="edge27" class="edge">
+<title>qstrader.broker.portfolio.position_handler.PositionHandler-&gt;qstrader.broker.portfolio.portfolio.Portfolio</title>
+<path fill="none" stroke="black" d="M5525.94,-293.53C5525.94,-357.34 5525.94,-454.91 5525.94,-543.74"/>
+<polygon fill="black" stroke="black" points="5525.94,-543.88 5529.94,-549.88 5525.94,-555.88 5521.94,-549.88 5525.94,-543.88"/>
+<text xml:space="preserve" text-anchor="middle" x="5560.16" y="-467.2" font-family="Times,serif" font-size="14.00" fill="green">pos_handler</text>
+</g>
+<!-- qstrader.system.qts.QuantTradingSystem&#45;&gt;qstrader.trading.backtest.BacktestTradingSession -->
+<g id="edge35" class="edge">
+<title>qstrader.system.qts.QuantTradingSystem-&gt;qstrader.trading.backtest.BacktestTradingSession</title>
+<path fill="none" stroke="black" d="M1416.84,-867.13C1429.09,-920.21 1444.27,-985.97 1459.15,-1050.42"/>
+<polygon fill="black" stroke="black" points="1459.12,-1050.29 1464.36,-1055.23 1461.81,-1061.98 1456.57,-1057.03 1459.12,-1050.29"/>
+<text xml:space="preserve" text-anchor="middle" x="1463.11" y="-1032.2" font-family="Times,serif" font-size="14.00" fill="green">qts</text>
+</g>
+<!-- qstrader.risk_model.risk_model.RiskModel -->
+<g id="node38" class="node">
+<title>qstrader.risk_model.risk_model.RiskModel</title>
+<polygon fill="none" stroke="black" points="6140.83,-185.3 6140.83,-259.7 6219.06,-259.7 6219.06,-185.3 6140.83,-185.3"/>
+<text xml:space="preserve" text-anchor="start" x="6148.83" y="-243.1" font-family="Times,serif" font-size="14.00">RiskModel</text>
+<polyline fill="none" stroke="black" points="6140.83,-234.9 6219.06,-234.9"/>
+<polyline fill="none" stroke="black" points="6140.83,-210.1 6219.06,-210.1"/>
+<text xml:space="preserve" text-anchor="start" x="6178.19" y="-193.5" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.signals.sma.SMASignal -->
+<g id="node39" class="node">
+<title>qstrader.signals.sma.SMASignal</title>
+<polygon fill="none" stroke="black" points="893.88,-185.3 893.88,-259.7 976,-259.7 976,-185.3 893.88,-185.3"/>
+<text xml:space="preserve" text-anchor="start" x="901.88" y="-243.1" font-family="Times,serif" font-size="14.00">SMASignal</text>
+<polyline fill="none" stroke="black" points="893.88,-234.9 976,-234.9"/>
+<polyline fill="none" stroke="black" points="893.88,-210.1 976,-210.1"/>
+<text xml:space="preserve" text-anchor="start" x="933.19" y="-193.5" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.signals.sma.SMASignal&#45;&gt;qstrader.signals.signal.Signal -->
+<g id="edge17" class="edge">
+<title>qstrader.signals.sma.SMASignal-&gt;qstrader.signals.signal.Signal</title>
+<path fill="none" stroke="black" d="M930.89,-259.89C921.71,-342.26 899.11,-545.02 885.93,-663.27"/>
+<polygon fill="none" stroke="black" points="882.48,-662.62 884.85,-672.94 889.44,-663.39 882.48,-662.62"/>
+</g>
+<!-- qstrader.signals.signals_collection.SignalsCollection -->
+<g id="node41" class="node">
+<title>qstrader.signals.signals_collection.SignalsCollection</title>
+<polygon fill="none" stroke="black" points="6237.17,-168.5 6237.17,-276.5 6352.72,-276.5 6352.72,-168.5 6237.17,-168.5"/>
+<text xml:space="preserve" text-anchor="start" x="6245.17" y="-259.9" font-family="Times,serif" font-size="14.00">SignalsCollection</text>
+<polyline fill="none" stroke="black" points="6237.17,-251.7 6352.72,-251.7"/>
+<text xml:space="preserve" text-anchor="start" x="6258.79" y="-235.1" font-family="Times,serif" font-size="14.00">data_handler</text>
+<text xml:space="preserve" text-anchor="start" x="6258.79" y="-218.3" font-family="Times,serif" font-size="14.00">signals</text>
+<text xml:space="preserve" text-anchor="start" x="6258.79" y="-201.5" font-family="Times,serif" font-size="14.00">warmup : int</text>
+<polyline fill="none" stroke="black" points="6237.17,-193.3 6352.72,-193.3"/>
+<text xml:space="preserve" text-anchor="start" x="6266.18" y="-176.7" font-family="Times,serif" font-size="14.00">update(dt)</text>
+</g>
+<!-- qstrader.broker.simulated_broker.SimulatedBroker -->
+<g id="node42" class="node">
+<title>qstrader.broker.simulated_broker.SimulatedBroker</title>
+<polygon fill="none" stroke="black" points="1595.74,-498.3 1595.74,-1009.5 1918.14,-1009.5 1918.14,-498.3 1595.74,-498.3"/>
+<text xml:space="preserve" text-anchor="start" x="1709.12" y="-992.9" font-family="Times,serif" font-size="14.00">SimulatedBroker</text>
+<polyline fill="none" stroke="black" points="1595.74,-984.7 1918.14,-984.7"/>
+<text xml:space="preserve" text-anchor="start" x="1658.97" y="-968.1" font-family="Times,serif" font-size="14.00">account_id : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="1658.97" y="-951.3" font-family="Times,serif" font-size="14.00">base_currency : str</text>
+<text xml:space="preserve" text-anchor="start" x="1658.97" y="-934.5" font-family="Times,serif" font-size="14.00">cash_balances : dict</text>
+<text xml:space="preserve" text-anchor="start" x="1658.97" y="-917.7" font-family="Times,serif" font-size="14.00">current_dt</text>
+<text xml:space="preserve" text-anchor="start" x="1658.97" y="-900.9" font-family="Times,serif" font-size="14.00">data_handler</text>
+<text xml:space="preserve" text-anchor="start" x="1658.97" y="-884.1" font-family="Times,serif" font-size="14.00">exchange</text>
+<text xml:space="preserve" text-anchor="start" x="1658.97" y="-867.3" font-family="Times,serif" font-size="14.00">fee_model</text>
+<text xml:space="preserve" text-anchor="start" x="1658.97" y="-850.5" font-family="Times,serif" font-size="14.00">initial_funds : float</text>
+<text xml:space="preserve" text-anchor="start" x="1658.97" y="-833.7" font-family="Times,serif" font-size="14.00">market_impact_model : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="1658.97" y="-816.9" font-family="Times,serif" font-size="14.00">open_orders : dict</text>
+<text xml:space="preserve" text-anchor="start" x="1658.97" y="-800.1" font-family="Times,serif" font-size="14.00">portfolios : dict</text>
+<text xml:space="preserve" text-anchor="start" x="1658.97" y="-783.3" font-family="Times,serif" font-size="14.00">slippage_model : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="1658.97" y="-766.5" font-family="Times,serif" font-size="14.00">start_dt</text>
+<polyline fill="none" stroke="black" points="1595.74,-758.3 1918.14,-758.3"/>
+<text xml:space="preserve" text-anchor="start" x="1603.74" y="-741.7" font-family="Times,serif" font-size="14.00">create_portfolio(portfolio_id, name)</text>
+<text xml:space="preserve" text-anchor="start" x="1603.74" y="-724.9" font-family="Times,serif" font-size="14.00">get_account_cash_balance(currency)</text>
+<text xml:space="preserve" text-anchor="start" x="1603.74" y="-708.1" font-family="Times,serif" font-size="14.00">get_account_total_equity()</text>
+<text xml:space="preserve" text-anchor="start" x="1603.74" y="-691.3" font-family="Times,serif" font-size="14.00">get_account_total_market_value()</text>
+<text xml:space="preserve" text-anchor="start" x="1603.74" y="-674.5" font-family="Times,serif" font-size="14.00">get_portfolio_as_dict(portfolio_id)</text>
+<text xml:space="preserve" text-anchor="start" x="1603.74" y="-657.7" font-family="Times,serif" font-size="14.00">get_portfolio_cash_balance(portfolio_id)</text>
+<text xml:space="preserve" text-anchor="start" x="1603.74" y="-640.9" font-family="Times,serif" font-size="14.00">get_portfolio_total_equity(portfolio_id)</text>
+<text xml:space="preserve" text-anchor="start" x="1603.74" y="-624.1" font-family="Times,serif" font-size="14.00">get_portfolio_total_market_value(portfolio_id)</text>
+<text xml:space="preserve" text-anchor="start" x="1603.74" y="-607.3" font-family="Times,serif" font-size="14.00">list_all_portfolios()</text>
+<text xml:space="preserve" text-anchor="start" x="1603.74" y="-590.5" font-family="Times,serif" font-size="14.00">submit_order(portfolio_id, order)</text>
+<text xml:space="preserve" text-anchor="start" x="1603.74" y="-573.7" font-family="Times,serif" font-size="14.00">subscribe_funds_to_account(amount)</text>
+<text xml:space="preserve" text-anchor="start" x="1603.74" y="-556.9" font-family="Times,serif" font-size="14.00">subscribe_funds_to_portfolio(portfolio_id, amount)</text>
+<text xml:space="preserve" text-anchor="start" x="1603.74" y="-540.1" font-family="Times,serif" font-size="14.00">update(dt)</text>
+<text xml:space="preserve" text-anchor="start" x="1603.74" y="-523.3" font-family="Times,serif" font-size="14.00">withdraw_funds_from_account(amount)</text>
+<text xml:space="preserve" text-anchor="start" x="1603.74" y="-506.5" font-family="Times,serif" font-size="14.00">withdraw_funds_from_portfolio(portfolio_id, amount)</text>
+</g>
+<!-- qstrader.broker.simulated_broker.SimulatedBroker&#45;&gt;qstrader.trading.backtest.BacktestTradingSession -->
+<g id="edge28" class="edge">
+<title>qstrader.broker.simulated_broker.SimulatedBroker-&gt;qstrader.trading.backtest.BacktestTradingSession</title>
+<path fill="none" stroke="black" d="M1628.22,-1009.58C1620.1,-1027.48 1612.26,-1045.34 1604.94,-1062.8 1603.61,-1065.97 1602.28,-1069.18 1600.96,-1072.41"/>
+<polygon fill="black" stroke="black" points="1601.03,-1072.23 1602.49,-1079.29 1596.53,-1083.35 1595.07,-1076.29 1601.03,-1072.23"/>
+<text xml:space="preserve" text-anchor="middle" x="1637.96" y="-1032.2" font-family="Times,serif" font-size="14.00" fill="green">broker</text>
+</g>
+<!-- qstrader.broker.simulated_broker.SimulatedBroker&#45;&gt;qstrader.broker.broker.Broker -->
+<g id="edge9" class="edge">
+<title>qstrader.broker.simulated_broker.SimulatedBroker-&gt;qstrader.broker.broker.Broker</title>
+<path fill="none" stroke="black" d="M1764.76,-1009.88C1766.63,-1071.11 1768.56,-1133.8 1770.15,-1185.91"/>
+<polygon fill="none" stroke="black" points="1766.65,-1185.81 1770.45,-1195.69 1773.64,-1185.59 1766.65,-1185.81"/>
+</g>
+<!-- qstrader.exchange.simulated_exchange.SimulatedExchange -->
+<g id="node43" class="node">
+<title>qstrader.exchange.simulated_exchange.SimulatedExchange</title>
+<polygon fill="none" stroke="black" points="2767.91,-699.9 2767.91,-807.9 2919.98,-807.9 2919.98,-699.9 2767.91,-699.9"/>
+<text xml:space="preserve" text-anchor="start" x="2787.96" y="-791.3" font-family="Times,serif" font-size="14.00">SimulatedExchange</text>
+<polyline fill="none" stroke="black" points="2767.91,-783.1 2919.98,-783.1"/>
+<text xml:space="preserve" text-anchor="start" x="2802.73" y="-766.5" font-family="Times,serif" font-size="14.00">close_dt : time</text>
+<text xml:space="preserve" text-anchor="start" x="2802.73" y="-749.7" font-family="Times,serif" font-size="14.00">open_dt : time</text>
+<text xml:space="preserve" text-anchor="start" x="2802.73" y="-732.9" font-family="Times,serif" font-size="14.00">start_dt</text>
+<polyline fill="none" stroke="black" points="2767.91,-724.7 2919.98,-724.7"/>
+<text xml:space="preserve" text-anchor="start" x="2775.91" y="-708.1" font-family="Times,serif" font-size="14.00">is_open_at_datetime(dt)</text>
+</g>
+<!-- qstrader.exchange.simulated_exchange.SimulatedExchange&#45;&gt;qstrader.trading.backtest.BacktestTradingSession -->
+<g id="edge30" class="edge">
+<title>qstrader.exchange.simulated_exchange.SimulatedExchange-&gt;qstrader.trading.backtest.BacktestTradingSession</title>
+<path fill="none" stroke="black" d="M2842.85,-808.37C2838.45,-868.18 2821.31,-962.84 2758.94,-1010 2734.6,-1028.41 1735.78,-1042.22 1608.46,-1066.27"/>
+<polygon fill="black" stroke="black" points="1608.34,-1066.31 1603.76,-1071.88 1596.86,-1069.8 1601.44,-1064.23 1608.34,-1066.31"/>
+<text xml:space="preserve" text-anchor="middle" x="2470.39" y="-1032.2" font-family="Times,serif" font-size="14.00" fill="green">exchange</text>
+</g>
+<!-- qstrader.exchange.simulated_exchange.SimulatedExchange&#45;&gt;qstrader.exchange.exchange.Exchange -->
+<g id="edge10" class="edge">
+<title>qstrader.exchange.simulated_exchange.SimulatedExchange-&gt;qstrader.exchange.exchange.Exchange</title>
+<path fill="none" stroke="black" d="M2843.94,-808.33C2843.94,-916.29 2843.94,-1158.89 2843.94,-1261.84"/>
+<polygon fill="none" stroke="black" points="2840.44,-1261.6 2843.94,-1271.6 2847.44,-1261.6 2840.44,-1261.6"/>
+</g>
+<!-- qstrader.simulation.event.SimulationEvent -->
+<g id="node45" class="node">
+<title>qstrader.simulation.event.SimulationEvent</title>
+<polygon fill="none" stroke="black" points="6370.89,-176.9 6370.89,-268.1 6480.99,-268.1 6480.99,-176.9 6370.89,-176.9"/>
+<text xml:space="preserve" text-anchor="start" x="6378.89" y="-251.5" font-family="Times,serif" font-size="14.00">SimulationEvent</text>
+<polyline fill="none" stroke="black" points="6370.89,-243.3 6480.99,-243.3"/>
+<text xml:space="preserve" text-anchor="start" x="6395.23" y="-226.7" font-family="Times,serif" font-size="14.00">event_type</text>
+<text xml:space="preserve" text-anchor="start" x="6395.23" y="-209.9" font-family="Times,serif" font-size="14.00">ts</text>
+<polyline fill="none" stroke="black" points="6370.89,-201.7 6480.99,-201.7"/>
+<text xml:space="preserve" text-anchor="start" x="6424.19" y="-185.1" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.alpha_model.single_signal.SingleSignalAlphaModel -->
+<g id="node46" class="node">
+<title>qstrader.alpha_model.single_signal.SingleSignalAlphaModel</title>
+<polygon fill="none" stroke="black" points="177.78,-168.5 177.78,-276.5 336.1,-276.5 336.1,-168.5 177.78,-168.5"/>
+<text xml:space="preserve" text-anchor="start" x="185.78" y="-259.9" font-family="Times,serif" font-size="14.00">SingleSignalAlphaModel</text>
+<polyline fill="none" stroke="black" points="177.78,-251.7 336.1,-251.7"/>
+<text xml:space="preserve" text-anchor="start" x="185.8" y="-235.1" font-family="Times,serif" font-size="14.00">data_handler : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="185.8" y="-218.3" font-family="Times,serif" font-size="14.00">signal : float</text>
+<text xml:space="preserve" text-anchor="start" x="185.8" y="-201.5" font-family="Times,serif" font-size="14.00">universe</text>
+<polyline fill="none" stroke="black" points="177.78,-193.3 336.1,-193.3"/>
+<text xml:space="preserve" text-anchor="start" x="255.19" y="-176.7" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.alpha_model.single_signal.SingleSignalAlphaModel&#45;&gt;qstrader.alpha_model.alpha_model.AlphaModel -->
+<g id="edge2" class="edge">
+<title>qstrader.alpha_model.single_signal.SingleSignalAlphaModel-&gt;qstrader.alpha_model.alpha_model.AlphaModel</title>
+<path fill="none" stroke="black" d="M248.1,-276.68C230.91,-380.09 193.24,-606.75 176.83,-705.43"/>
+<polygon fill="none" stroke="black" points="173.42,-704.6 175.24,-715.04 180.33,-705.75 173.42,-704.6"/>
+</g>
+<!-- qstrader.asset.universe.static.StaticUniverse -->
+<g id="node47" class="node">
+<title>qstrader.asset.universe.static.StaticUniverse</title>
+<polygon fill="none" stroke="black" points="4327.73,-185.3 4327.73,-259.7 4426.15,-259.7 4426.15,-185.3 4327.73,-185.3"/>
+<text xml:space="preserve" text-anchor="start" x="4335.73" y="-243.1" font-family="Times,serif" font-size="14.00">StaticUniverse</text>
+<polyline fill="none" stroke="black" points="4327.73,-234.9 4426.15,-234.9"/>
+<text xml:space="preserve" text-anchor="start" x="4351.28" y="-218.3" font-family="Times,serif" font-size="14.00">asset_list</text>
+<polyline fill="none" stroke="black" points="4327.73,-210.1 4426.15,-210.1"/>
+<text xml:space="preserve" text-anchor="start" x="4338.45" y="-193.5" font-family="Times,serif" font-size="14.00">get_assets(dt)</text>
+</g>
+<!-- qstrader.asset.universe.static.StaticUniverse&#45;&gt;qstrader.asset.universe.universe.Universe -->
+<g id="edge6" class="edge">
+<title>qstrader.asset.universe.static.StaticUniverse-&gt;qstrader.asset.universe.universe.Universe</title>
+<path fill="none" stroke="black" d="M4372.61,-259.89C4361.52,-353.11 4332.08,-600.49 4319.63,-705.11"/>
+<polygon fill="none" stroke="black" points="4316.19,-704.41 4318.48,-714.75 4323.14,-705.24 4316.19,-704.41"/>
+</g>
+<!-- qstrader.statistics.statistics.Statistics -->
+<g id="node48" class="node">
+<title>qstrader.statistics.statistics.Statistics</title>
+<polygon fill="none" stroke="black" points="6544.35,-697.1 6544.35,-810.7 6643.53,-810.7 6643.53,-697.1 6544.35,-697.1"/>
+<text xml:space="preserve" text-anchor="start" x="6568.66" y="-794.1" font-family="Times,serif" font-size="14.00">Statistics</text>
+<polyline fill="none" stroke="black" points="6544.35,-785.9 6643.53,-785.9"/>
+<polyline fill="none" stroke="black" points="6544.35,-761.1 6643.53,-761.1"/>
+<text xml:space="preserve" text-anchor="start" x="6552.35" y="-745.5" font-family="Times,serif" font-style="italic" font-size="14.00">get_results</text>
+<text xml:space="preserve" text-anchor="start" x="6613.8" y="-745.5" font-family="Times,serif" font-size="14.00">()</text>
+<text xml:space="preserve" text-anchor="start" x="6552.35" y="-731.5" font-family="Times,serif" font-style="italic" font-size="14.00">plot_results</text>
+<text xml:space="preserve" text-anchor="start" x="6618.47" y="-731.5" font-family="Times,serif" font-size="14.00">()</text>
+<text xml:space="preserve" text-anchor="start" x="6552.35" y="-717.5" font-family="Times,serif" font-style="italic" font-size="14.00">save</text>
+<text xml:space="preserve" text-anchor="start" x="6577.23" y="-717.5" font-family="Times,serif" font-size="14.00">(filename)</text>
+<text xml:space="preserve" text-anchor="start" x="6552.35" y="-703.5" font-family="Times,serif" font-style="italic" font-size="14.00">update</text>
+<text xml:space="preserve" text-anchor="start" x="6590.46" y="-703.5" font-family="Times,serif" font-size="14.00">(dt)</text>
+</g>
+<!-- qstrader.statistics.tearsheet.TearsheetStatistics -->
+<g id="node49" class="node">
+<title>qstrader.statistics.tearsheet.TearsheetStatistics</title>
+<polygon fill="none" stroke="black" points="6498.86,-151.7 6498.86,-293.3 6689.02,-293.3 6689.02,-151.7 6498.86,-151.7"/>
+<text xml:space="preserve" text-anchor="start" x="6541.46" y="-276.7" font-family="Times,serif" font-size="14.00">TearsheetStatistics</text>
+<polyline fill="none" stroke="black" points="6498.86,-268.5 6689.02,-268.5"/>
+<text xml:space="preserve" text-anchor="start" x="6506.86" y="-251.9" font-family="Times,serif" font-size="14.00">benchmark_equity : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="6506.86" y="-235.1" font-family="Times,serif" font-size="14.00">periods : int</text>
+<text xml:space="preserve" text-anchor="start" x="6506.86" y="-218.3" font-family="Times,serif" font-size="14.00">strategy_equity</text>
+<text xml:space="preserve" text-anchor="start" x="6506.86" y="-201.5" font-family="Times,serif" font-size="14.00">title : NoneType</text>
+<polyline fill="none" stroke="black" points="6498.86,-193.3 6689.02,-193.3"/>
+<text xml:space="preserve" text-anchor="start" x="6532.12" y="-176.7" font-family="Times,serif" font-size="14.00">get_results(equity_df)</text>
+<text xml:space="preserve" text-anchor="start" x="6532.12" y="-159.9" font-family="Times,serif" font-size="14.00">plot_results(filename)</text>
+</g>
+<!-- qstrader.statistics.tearsheet.TearsheetStatistics&#45;&gt;qstrader.statistics.statistics.Statistics -->
+<g id="edge20" class="edge">
+<title>qstrader.statistics.tearsheet.TearsheetStatistics-&gt;qstrader.statistics.statistics.Statistics</title>
+<path fill="none" stroke="black" d="M6593.94,-293.53C6593.94,-395.81 6593.94,-584.82 6593.94,-685.56"/>
+<polygon fill="none" stroke="black" points="6590.44,-685.29 6593.94,-695.29 6597.44,-685.29 6590.44,-685.29"/>
+</g>
+<!-- qstrader.broker.transaction.transaction.Transaction -->
+<g id="node51" class="node">
+<title>qstrader.broker.transaction.transaction.Transaction</title>
+<polygon fill="none" stroke="black" points="6707.44,-118.1 6707.44,-326.9 6870.44,-326.9 6870.44,-118.1 6707.44,-118.1"/>
+<text xml:space="preserve" text-anchor="start" x="6755.9" y="-310.3" font-family="Times,serif" font-size="14.00">Transaction</text>
+<polyline fill="none" stroke="black" points="6707.44,-302.1 6870.44,-302.1"/>
+<text xml:space="preserve" text-anchor="start" x="6715.44" y="-285.5" font-family="Times,serif" font-size="14.00">asset</text>
+<text xml:space="preserve" text-anchor="start" x="6715.44" y="-268.7" font-family="Times,serif" font-size="14.00">commission : float</text>
+<text xml:space="preserve" text-anchor="start" x="6715.44" y="-251.9" font-family="Times,serif" font-size="14.00">cost_with_commission</text>
+<text xml:space="preserve" text-anchor="start" x="6715.44" y="-235.1" font-family="Times,serif" font-size="14.00">cost_without_commission</text>
+<text xml:space="preserve" text-anchor="start" x="6715.44" y="-218.3" font-family="Times,serif" font-size="14.00">direction</text>
+<text xml:space="preserve" text-anchor="start" x="6715.44" y="-201.5" font-family="Times,serif" font-size="14.00">dt</text>
+<text xml:space="preserve" text-anchor="start" x="6715.44" y="-184.7" font-family="Times,serif" font-size="14.00">order_id</text>
+<text xml:space="preserve" text-anchor="start" x="6715.44" y="-167.9" font-family="Times,serif" font-size="14.00">price</text>
+<text xml:space="preserve" text-anchor="start" x="6715.44" y="-151.1" font-family="Times,serif" font-size="14.00">quantity</text>
+<polyline fill="none" stroke="black" points="6707.44,-142.9 6870.44,-142.9"/>
+<text xml:space="preserve" text-anchor="start" x="6787.19" y="-126.3" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.signals.vol.VolatilitySignal -->
+<g id="node53" class="node">
+<title>qstrader.signals.vol.VolatilitySignal</title>
+<polygon fill="none" stroke="black" points="994.22,-185.3 994.22,-259.7 1099.66,-259.7 1099.66,-185.3 994.22,-185.3"/>
+<text xml:space="preserve" text-anchor="start" x="1002.22" y="-243.1" font-family="Times,serif" font-size="14.00">VolatilitySignal</text>
+<polyline fill="none" stroke="black" points="994.22,-234.9 1099.66,-234.9"/>
+<polyline fill="none" stroke="black" points="994.22,-210.1 1099.66,-210.1"/>
+<text xml:space="preserve" text-anchor="start" x="1045.19" y="-193.5" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.signals.vol.VolatilitySignal&#45;&gt;qstrader.signals.signal.Signal -->
+<g id="edge18" class="edge">
+<title>qstrader.signals.vol.VolatilitySignal-&gt;qstrader.signals.signal.Signal</title>
+<path fill="none" stroke="black" d="M1037.49,-260.17C1025.93,-304.29 1005.37,-380.47 984.94,-445 961.45,-519.2 931.82,-602.35 909.38,-663.52"/>
+<polygon fill="none" stroke="black" points="906.1,-662.28 905.94,-672.87 912.67,-664.69 906.1,-662.28"/>
+</g>
+<!-- qstrader.system.rebalance.weekly.WeeklyRebalance -->
+<g id="node54" class="node">
+<title>qstrader.system.rebalance.weekly.WeeklyRebalance</title>
+<polygon fill="none" stroke="black" points="3232.68,-151.7 3232.68,-293.3 3369.2,-293.3 3369.2,-151.7 3232.68,-151.7"/>
+<text xml:space="preserve" text-anchor="start" x="3250.03" y="-276.7" font-family="Times,serif" font-size="14.00">WeeklyRebalance</text>
+<polyline fill="none" stroke="black" points="3232.68,-268.5 3369.2,-268.5"/>
+<text xml:space="preserve" text-anchor="start" x="3240.68" y="-251.9" font-family="Times,serif" font-size="14.00">end_date</text>
+<text xml:space="preserve" text-anchor="start" x="3240.68" y="-235.1" font-family="Times,serif" font-size="14.00">pre_market_time : str</text>
+<text xml:space="preserve" text-anchor="start" x="3240.68" y="-218.3" font-family="Times,serif" font-size="14.00">rebalances</text>
+<text xml:space="preserve" text-anchor="start" x="3240.68" y="-201.5" font-family="Times,serif" font-size="14.00">start_date</text>
+<text xml:space="preserve" text-anchor="start" x="3240.68" y="-184.7" font-family="Times,serif" font-size="14.00">weekday</text>
+<polyline fill="none" stroke="black" points="3232.68,-176.5 3369.2,-176.5"/>
+<text xml:space="preserve" text-anchor="start" x="3299.19" y="-159.9" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.system.rebalance.weekly.WeeklyRebalance&#45;&gt;qstrader.system.rebalance.rebalance.Rebalance -->
+<g id="edge24" class="edge">
+<title>qstrader.system.rebalance.weekly.WeeklyRebalance-&gt;qstrader.system.rebalance.rebalance.Rebalance</title>
+<path fill="none" stroke="black" d="M3278.59,-293.63C3264,-337.6 3243.84,-395.19 3222.94,-445 3183.09,-539.97 3128.15,-647.19 3096.7,-706.73"/>
+<polygon fill="none" stroke="black" points="3093.79,-704.76 3092.2,-715.24 3099.97,-708.04 3093.79,-704.76"/>
+</g>
+<!-- qstrader.broker.fee_model.zero_fee_model.ZeroFeeModel -->
+<g id="node55" class="node">
+<title>qstrader.broker.fee_model.zero_fee_model.ZeroFeeModel</title>
+<polygon fill="none" stroke="black" points="1599.27,-185.3 1599.27,-259.7 1914.61,-259.7 1914.61,-185.3 1599.27,-185.3"/>
+<text xml:space="preserve" text-anchor="start" x="1715.34" y="-243.1" font-family="Times,serif" font-size="14.00">ZeroFeeModel</text>
+<polyline fill="none" stroke="black" points="1599.27,-234.9 1914.61,-234.9"/>
+<polyline fill="none" stroke="black" points="1599.27,-210.1 1914.61,-210.1"/>
+<text xml:space="preserve" text-anchor="start" x="1607.27" y="-193.5" font-family="Times,serif" font-size="14.00">calc_total_cost(asset, quantity, consideration, broker)</text>
+</g>
+<!-- qstrader.broker.fee_model.zero_fee_model.ZeroFeeModel&#45;&gt;qstrader.trading.backtest.BacktestTradingSession -->
+<g id="edge36" class="edge">
+<title>qstrader.broker.fee_model.zero_fee_model.ZeroFeeModel-&gt;qstrader.trading.backtest.BacktestTradingSession</title>
+<path fill="none" stroke="black" d="M1711.55,-259.96C1656.04,-307.75 1564.9,-397.39 1527.86,-497.8 1491.77,-595.64 1494.42,-851.65 1503.09,-1050.24"/>
+<polygon fill="none" stroke="black" points="1503.1,-1050.35 1507.36,-1056.16 1503.63,-1062.34 1499.37,-1056.52 1503.1,-1050.35"/>
+<text xml:space="preserve" text-anchor="middle" x="1557.4" y="-749.7" font-family="Times,serif" font-size="14.00" fill="green">fee_model</text>
+</g>
+<!-- qstrader.broker.fee_model.zero_fee_model.ZeroFeeModel&#45;&gt;qstrader.broker.fee_model.fee_model.FeeModel -->
+<g id="edge8" class="edge">
+<title>qstrader.broker.fee_model.zero_fee_model.ZeroFeeModel-&gt;qstrader.broker.fee_model.fee_model.FeeModel</title>
+<path fill="none" stroke="black" d="M1914.8,-259.78C2059.53,-299.25 2273.57,-373.87 2423.94,-497.8 2493.72,-555.31 2545.08,-649.38 2571.59,-705.79"/>
+<polygon fill="none" stroke="black" points="2568.4,-707.23 2575.77,-714.84 2574.76,-704.29 2568.4,-707.23"/>
+</g>
+<!-- qstrader.broker.fee_model.zero_fee_model.ZeroFeeModel&#45;&gt;qstrader.broker.simulated_broker.SimulatedBroker -->
+<g id="edge26" class="edge">
+<title>qstrader.broker.fee_model.zero_fee_model.ZeroFeeModel-&gt;qstrader.broker.simulated_broker.SimulatedBroker</title>
+<path fill="none" stroke="black" d="M1756.94,-259.89C1756.94,-307.75 1756.94,-396.26 1756.94,-485.22"/>
+<polygon fill="black" stroke="black" points="1756.94,-485.16 1760.94,-491.16 1756.94,-497.16 1752.94,-491.16 1756.94,-485.16"/>
+<text xml:space="preserve" text-anchor="middle" x="1786.48" y="-467.2" font-family="Times,serif" font-size="14.00" fill="green">fee_model</text>
+</g>
+</g>
+</svg>

@@ -1,0 +1,191 @@
+.
+|-- CHANGELOG.md
+|-- LICENSE
+|-- MANIFEST.in
+|-- README.md
+|-- dockerfiles
+|   |-- bionic
+|   |   `-- Dockerfile
+|   |-- centos8
+|   |   `-- Dockerfile
+|   |-- fedora33
+|   |   `-- Dockerfile
+|   `-- focal
+|       `-- Dockerfile
+|-- docs
+|   `-- file_tree.txt
+|-- examples
+|   |-- buy_and_hold.py
+|   |-- long_short.py
+|   |-- momentum_taa.py
+|   |-- sixty_forty.py
+|   `-- sixty_forty_fees.py
+|-- pyproject.toml
+|-- qstrader
+|   |-- __init__.py
+|   |-- alpha_model
+|   |   |-- __init__.py
+|   |   |-- alpha_model.py
+|   |   |-- fixed_signals.py
+|   |   `-- single_signal.py
+|   |-- asset
+|   |   |-- __init__.py
+|   |   |-- asset.py
+|   |   |-- cash.py
+|   |   |-- equity.py
+|   |   `-- universe
+|   |       |-- __init__.py
+|   |       |-- dynamic.py
+|   |       |-- static.py
+|   |       `-- universe.py
+|   |-- broker
+|   |   |-- __init__.py
+|   |   |-- broker.py
+|   |   |-- fee_model
+|   |   |   |-- __init__.py
+|   |   |   |-- fee_model.py
+|   |   |   |-- percent_fee_model.py
+|   |   |   `-- zero_fee_model.py
+|   |   |-- portfolio
+|   |   |   |-- __init__.py
+|   |   |   |-- portfolio.py
+|   |   |   |-- portfolio_event.py
+|   |   |   |-- position.py
+|   |   |   `-- position_handler.py
+|   |   |-- simulated_broker.py
+|   |   `-- transaction
+|   |       |-- __init__.py
+|   |       `-- transaction.py
+|   |-- data
+|   |   |-- __init__.py
+|   |   |-- backtest_data_handler.py
+|   |   `-- daily_bar_csv.py
+|   |-- exchange
+|   |   |-- __init__.py
+|   |   |-- exchange.py
+|   |   `-- simulated_exchange.py
+|   |-- execution
+|   |   |-- __init__.py
+|   |   |-- execution_algo
+|   |   |   |-- __init__.py
+|   |   |   |-- execution_algo.py
+|   |   |   `-- market_order.py
+|   |   |-- execution_handler.py
+|   |   `-- order.py
+|   |-- portcon
+|   |   |-- __init__.py
+|   |   |-- optimiser
+|   |   |   |-- __init__.py
+|   |   |   |-- equal_weight.py
+|   |   |   |-- fixed_weight.py
+|   |   |   `-- optimiser.py
+|   |   |-- order_sizer
+|   |   |   |-- __init__.py
+|   |   |   |-- dollar_weighted.py
+|   |   |   |-- long_short.py
+|   |   |   `-- order_sizer.py
+|   |   `-- pcm.py
+|   |-- risk_model
+|   |   |-- __init__.py
+|   |   `-- risk_model.py
+|   |-- settings.py
+|   |-- signals
+|   |   |-- __init__.py
+|   |   |-- buffer.py
+|   |   |-- momentum.py
+|   |   |-- signal.py
+|   |   |-- signals_collection.py
+|   |   |-- sma.py
+|   |   `-- vol.py
+|   |-- simulation
+|   |   |-- __init__.py
+|   |   |-- daily_bday.py
+|   |   |-- event.py
+|   |   `-- sim_engine.py
+|   |-- statistics
+|   |   |-- __init__.py
+|   |   |-- json_statistics.py
+|   |   |-- performance.py
+|   |   |-- statistics.py
+|   |   `-- tearsheet.py
+|   |-- system
+|   |   |-- __init__.py
+|   |   |-- qts.py
+|   |   `-- rebalance
+|   |       |-- __init__.py
+|   |       |-- buy_and_hold.py
+|   |       |-- daily.py
+|   |       |-- end_of_month.py
+|   |       |-- rebalance.py
+|   |       `-- weekly.py
+|   |-- trading
+|   |   |-- __init__.py
+|   |   |-- backtest.py
+|   |   `-- trading_session.py
+|   `-- utils
+|       |-- __init__.py
+|       `-- console.py
+|-- requirements
+|   |-- base.txt
+|   `-- tests.txt
+|-- scripts
+|   |-- __init__.py
+|   `-- static_backtest.py
+`-- tests
+    |-- conftest.py
+    |-- integration
+    |   |-- portcon
+    |   |   `-- test_pcm_e2e.py
+    |   `-- trading
+    |       |-- conftest.py
+    |       |-- fixtures
+    |       |   |-- ABC.csv
+    |       |   |-- DEF.csv
+    |       |   |-- GHI.csv
+    |       |   |-- long_short_history.dat
+    |       |   `-- sixty_forty_history.dat
+    |       `-- test_backtest_e2e.py
+    `-- unit
+        |-- alpha_model
+        |   |-- test_fixed_signals.py
+        |   `-- test_single_signal.py
+        |-- asset
+        |   |-- test_cash.py
+        |   `-- universe
+        |       |-- test_dynamic_universe.py
+        |       `-- test_static_universe.py
+        |-- broker
+        |   |-- fee_model
+        |   |   |-- test_percent_fee_model.py
+        |   |   `-- test_zero_fee_model.py
+        |   |-- portfolio
+        |   |   |-- test_portfolio.py
+        |   |   |-- test_position.py
+        |   |   `-- test_position_handler.py
+        |   |-- test_simulated_broker.py
+        |   `-- transaction
+        |       `-- test_transaction.py
+        |-- portcon
+        |   |-- optimiser
+        |   |   |-- test_equal_weight.py
+        |   |   `-- test_fixed_weight.py
+        |   |-- order_sizer
+        |   |   |-- test_dollar_weighted.py
+        |   |   `-- test_long_short.py
+        |   `-- test_pcm.py
+        |-- signals
+        |   |-- test_momentum.py
+        |   `-- test_sma.py
+        |-- simulation
+        |   |-- test_daily_bday.py
+        |   `-- test_event.py
+        |-- system
+        |   `-- rebalance
+        |       |-- test_buy_and_hold_rebalance.py
+        |       |-- test_daily_rebalance.py
+        |       |-- test_end_of_month_rebalance.py
+        |       `-- test_weekly_rebalance.py
+        `-- utils
+            `-- test_console.py
+
+53 directories, 135 files

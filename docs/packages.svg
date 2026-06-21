@@ -1,0 +1,906 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9309pt" height="332pt" viewBox="0.00 0.00 9309.00 332.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 328)">
+<title>packages</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-328 9305.18,-328 9305.18,4 -4,4"/>
+<!-- qstrader -->
+<g id="node1" class="node">
+<title>qstrader</title>
+<polygon fill="none" stroke="black" points="2268.24,-252 2207.15,-252 2207.15,-216 2268.24,-216 2268.24,-252"/>
+<text xml:space="preserve" text-anchor="start" x="2215.15" y="-229.8" font-family="Times,serif" font-size="14.00">qstrader</text>
+</g>
+<!-- qstrader.alpha_model -->
+<g id="node2" class="node">
+<title>qstrader.alpha_model</title>
+<polygon fill="none" stroke="black" points="3442.14,-36 3305.24,-36 3305.24,0 3442.14,0 3442.14,-36"/>
+<text xml:space="preserve" text-anchor="start" x="3313.24" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.alpha_model</text>
+</g>
+<!-- qstrader.alpha_model.alpha_model -->
+<g id="node3" class="node">
+<title>qstrader.alpha_model.alpha_model</title>
+<polygon fill="none" stroke="black" points="4609.05,-108 4396.34,-108 4396.34,-72 4609.05,-72 4609.05,-108"/>
+<text xml:space="preserve" text-anchor="start" x="4404.34" y="-85.8" font-family="Times,serif" font-size="14.00">qstrader.alpha_model.alpha_model</text>
+</g>
+<!-- qstrader.alpha_model.fixed_signals -->
+<g id="node4" class="node">
+<title>qstrader.alpha_model.fixed_signals</title>
+<polygon fill="none" stroke="black" points="4493.22,-36 4278.16,-36 4278.16,0 4493.22,0 4493.22,-36"/>
+<text xml:space="preserve" text-anchor="start" x="4286.16" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.alpha_model.fixed_signals</text>
+</g>
+<!-- qstrader.alpha_model.fixed_signals&#45;&gt;qstrader.alpha_model.alpha_model -->
+<g id="edge1" class="edge">
+<title>qstrader.alpha_model.fixed_signals-&gt;qstrader.alpha_model.alpha_model</title>
+<path fill="none" stroke="black" d="M4414.91,-36.48C4429.96,-45.49 4448.5,-56.58 4464.65,-66.24"/>
+<polygon fill="black" stroke="black" points="4472.8,-71.11 4461.9,-69.84 4469.55,-69.17 4464.22,-65.98 4464.22,-65.98 4464.22,-65.98 4469.55,-69.17 4466.53,-62.12 4472.8,-71.11"/>
+</g>
+<!-- qstrader.alpha_model.single_signal -->
+<g id="node5" class="node">
+<title>qstrader.alpha_model.single_signal</title>
+<polygon fill="none" stroke="black" points="4725.83,-36 4511.55,-36 4511.55,0 4725.83,0 4725.83,-36"/>
+<text xml:space="preserve" text-anchor="start" x="4519.55" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.alpha_model.single_signal</text>
+</g>
+<!-- qstrader.alpha_model.single_signal&#45;&gt;qstrader.alpha_model.alpha_model -->
+<g id="edge2" class="edge">
+<title>qstrader.alpha_model.single_signal-&gt;qstrader.alpha_model.alpha_model</title>
+<path fill="none" stroke="black" d="M4589.72,-36.48C4574.94,-45.4 4556.77,-56.37 4540.86,-65.97"/>
+<polygon fill="black" stroke="black" points="4532.34,-71.11 4538.58,-62.09 4535.58,-69.16 4540.9,-65.94 4540.9,-65.94 4540.9,-65.94 4535.58,-69.16 4543.23,-69.8 4532.34,-71.11"/>
+</g>
+<!-- qstrader.asset -->
+<g id="node6" class="node">
+<title>qstrader.asset</title>
+<polygon fill="none" stroke="black" points="4835.59,-36 4743.79,-36 4743.79,0 4835.59,0 4835.59,-36"/>
+<text xml:space="preserve" text-anchor="start" x="4751.79" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.asset</text>
+</g>
+<!-- qstrader.asset.asset -->
+<g id="node7" class="node">
+<title>qstrader.asset.asset</title>
+<polygon fill="none" stroke="black" points="2239.95,-180 2117.43,-180 2117.43,-144 2239.95,-144 2239.95,-180"/>
+<text xml:space="preserve" text-anchor="start" x="2125.43" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.asset.asset</text>
+</g>
+<!-- qstrader.asset.cash -->
+<g id="node8" class="node">
+<title>qstrader.asset.cash</title>
+<polygon fill="none" stroke="black" points="2166.78,-108 2046.6,-108 2046.6,-72 2166.78,-72 2166.78,-108"/>
+<text xml:space="preserve" text-anchor="start" x="2054.6" y="-85.8" font-family="Times,serif" font-size="14.00">qstrader.asset.cash</text>
+</g>
+<!-- qstrader.asset.cash&#45;&gt;qstrader.asset.asset -->
+<g id="edge3" class="edge">
+<title>qstrader.asset.cash-&gt;qstrader.asset.asset</title>
+<path fill="none" stroke="black" d="M2124.49,-108.3C2133.06,-116.63 2143.49,-126.78 2152.91,-135.93"/>
+<polygon fill="black" stroke="black" points="2159.98,-142.8 2149.67,-139.06 2157.26,-140.17 2152.81,-135.83 2152.81,-135.83 2152.81,-135.83 2157.26,-140.17 2155.94,-132.61 2159.98,-142.8"/>
+</g>
+<!-- qstrader.asset.equity -->
+<g id="node9" class="node">
+<title>qstrader.asset.equity</title>
+<polygon fill="none" stroke="black" points="2314.84,-108 2184.54,-108 2184.54,-72 2314.84,-72 2314.84,-108"/>
+<text xml:space="preserve" text-anchor="start" x="2192.54" y="-85.8" font-family="Times,serif" font-size="14.00">qstrader.asset.equity</text>
+</g>
+<!-- qstrader.asset.equity&#45;&gt;qstrader.asset.asset -->
+<g id="edge4" class="edge">
+<title>qstrader.asset.equity-&gt;qstrader.asset.asset</title>
+<path fill="none" stroke="black" d="M2232.14,-108.3C2223.63,-116.7 2213.25,-126.93 2203.91,-136.14"/>
+<polygon fill="black" stroke="black" points="2196.91,-143.04 2200.87,-132.81 2199.6,-140.39 2204.03,-136.02 2204.03,-136.02 2204.03,-136.02 2199.6,-140.39 2207.19,-139.22 2196.91,-143.04"/>
+</g>
+<!-- qstrader.asset.universe -->
+<g id="node10" class="node">
+<title>qstrader.asset.universe</title>
+<polygon fill="none" stroke="black" points="4996.06,-36 4853.33,-36 4853.33,0 4996.06,0 4996.06,-36"/>
+<text xml:space="preserve" text-anchor="start" x="4861.33" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.asset.universe</text>
+</g>
+<!-- qstrader.asset.universe.dynamic -->
+<g id="node11" class="node">
+<title>qstrader.asset.universe.dynamic</title>
+<polygon fill="none" stroke="black" points="5208.91,-36 5014.47,-36 5014.47,0 5208.91,0 5208.91,-36"/>
+<text xml:space="preserve" text-anchor="start" x="5022.47" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.asset.universe.dynamic</text>
+</g>
+<!-- qstrader.asset.universe.universe -->
+<g id="node13" class="node">
+<title>qstrader.asset.universe.universe</title>
+<polygon fill="none" stroke="black" points="5310.52,-108 5116.86,-108 5116.86,-72 5310.52,-72 5310.52,-108"/>
+<text xml:space="preserve" text-anchor="start" x="5124.86" y="-85.8" font-family="Times,serif" font-size="14.00">qstrader.asset.universe.universe</text>
+</g>
+<!-- qstrader.asset.universe.dynamic&#45;&gt;qstrader.asset.universe.universe -->
+<g id="edge5" class="edge">
+<title>qstrader.asset.universe.dynamic-&gt;qstrader.asset.universe.universe</title>
+<path fill="none" stroke="black" d="M5137.17,-36.48C5149.92,-45.24 5165.54,-55.96 5179.34,-65.42"/>
+<polygon fill="black" stroke="black" points="5187.54,-71.05 5176.74,-69.1 5184.42,-68.91 5179.29,-65.39 5179.29,-65.39 5179.29,-65.39 5184.42,-68.91 5181.84,-61.68 5187.54,-71.05"/>
+</g>
+<!-- qstrader.asset.universe.static -->
+<g id="node12" class="node">
+<title>qstrader.asset.universe.static</title>
+<polygon fill="none" stroke="black" points="5402.58,-36 5226.8,-36 5226.8,0 5402.58,0 5402.58,-36"/>
+<text xml:space="preserve" text-anchor="start" x="5234.8" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.asset.universe.static</text>
+</g>
+<!-- qstrader.asset.universe.static&#45;&gt;qstrader.asset.universe.universe -->
+<g id="edge6" class="edge">
+<title>qstrader.asset.universe.static-&gt;qstrader.asset.universe.universe</title>
+<path fill="none" stroke="black" d="M5289.47,-36.48C5276.84,-45.24 5261.37,-55.96 5247.71,-65.42"/>
+<polygon fill="black" stroke="black" points="5239.6,-71.05 5245.25,-61.65 5242.71,-68.89 5247.82,-65.35 5247.82,-65.35 5247.82,-65.35 5242.71,-68.89 5250.38,-69.05 5239.6,-71.05"/>
+</g>
+<!-- qstrader.broker -->
+<g id="node14" class="node">
+<title>qstrader.broker</title>
+<polygon fill="none" stroke="black" points="5521.26,-36 5420.13,-36 5420.13,0 5521.26,0 5521.26,-36"/>
+<text xml:space="preserve" text-anchor="start" x="5428.13" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.broker</text>
+</g>
+<!-- qstrader.broker.broker -->
+<g id="node15" class="node">
+<title>qstrader.broker.broker</title>
+<polygon fill="none" stroke="black" points="971.27,-180 830.11,-180 830.11,-144 971.27,-144 971.27,-180"/>
+<text xml:space="preserve" text-anchor="start" x="838.11" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.broker.broker</text>
+</g>
+<!-- qstrader.broker.fee_model -->
+<g id="node16" class="node">
+<title>qstrader.broker.fee_model</title>
+<polygon fill="none" stroke="black" points="5702.55,-36 5538.84,-36 5538.84,0 5702.55,0 5702.55,-36"/>
+<text xml:space="preserve" text-anchor="start" x="5546.84" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.broker.fee_model</text>
+</g>
+<!-- qstrader.broker.fee_model.fee_model -->
+<g id="node17" class="node">
+<title>qstrader.broker.fee_model.fee_model</title>
+<polygon fill="none" stroke="black" points="525.84,-252 299.54,-252 299.54,-216 525.84,-216 525.84,-252"/>
+<text xml:space="preserve" text-anchor="start" x="307.54" y="-229.8" font-family="Times,serif" font-size="14.00">qstrader.broker.fee_model.fee_model</text>
+</g>
+<!-- qstrader.broker.fee_model.percent_fee_model -->
+<g id="node18" class="node">
+<title>qstrader.broker.fee_model.percent_fee_model</title>
+<polygon fill="none" stroke="black" points="549.94,-180 275.45,-180 275.45,-144 549.94,-144 549.94,-180"/>
+<text xml:space="preserve" text-anchor="start" x="283.45" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.broker.fee_model.percent_fee_model</text>
+</g>
+<!-- qstrader.broker.fee_model.percent_fee_model&#45;&gt;qstrader.broker.fee_model.fee_model -->
+<g id="edge7" class="edge">
+<title>qstrader.broker.fee_model.percent_fee_model-&gt;qstrader.broker.fee_model.fee_model</title>
+<path fill="none" stroke="black" d="M412.69,-180.3C412.69,-187.68 412.69,-196.48 412.69,-204.75"/>
+<polygon fill="black" stroke="black" points="412.69,-214.68 408.19,-204.68 412.69,-210.9 412.69,-204.68 412.69,-204.68 412.69,-204.68 412.69,-210.9 417.19,-204.68 412.69,-214.68"/>
+</g>
+<!-- qstrader.broker.fee_model.zero_fee_model -->
+<g id="node19" class="node">
+<title>qstrader.broker.fee_model.zero_fee_model</title>
+<polygon fill="none" stroke="black" points="257.38,-180 0,-180 0,-144 257.38,-144 257.38,-180"/>
+<text xml:space="preserve" text-anchor="start" x="8" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.broker.fee_model.zero_fee_model</text>
+</g>
+<!-- qstrader.broker.fee_model.zero_fee_model&#45;&gt;qstrader.broker.fee_model.fee_model -->
+<g id="edge8" class="edge">
+<title>qstrader.broker.fee_model.zero_fee_model-&gt;qstrader.broker.fee_model.fee_model</title>
+<path fill="none" stroke="black" d="M199.62,-180.48C239.68,-190.36 289.89,-202.73 331.51,-212.99"/>
+<polygon fill="black" stroke="black" points="340.99,-215.33 330.2,-217.3 337.32,-214.42 331.28,-212.93 331.28,-212.93 331.28,-212.93 337.32,-214.42 332.36,-208.56 340.99,-215.33"/>
+</g>
+<!-- qstrader.broker.portfolio -->
+<g id="node20" class="node">
+<title>qstrader.broker.portfolio</title>
+<polygon fill="none" stroke="black" points="5874.5,-36 5720.88,-36 5720.88,0 5874.5,0 5874.5,-36"/>
+<text xml:space="preserve" text-anchor="start" x="5728.88" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.broker.portfolio</text>
+</g>
+<!-- qstrader.broker.portfolio.portfolio -->
+<g id="node21" class="node">
+<title>qstrader.broker.portfolio.portfolio</title>
+<polygon fill="none" stroke="black" points="811.75,-180 605.63,-180 605.63,-144 811.75,-144 811.75,-180"/>
+<text xml:space="preserve" text-anchor="start" x="613.63" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.broker.portfolio.portfolio</text>
+</g>
+<!-- qstrader.broker.portfolio.portfolio&#45;&gt;qstrader -->
+<g id="edge9" class="edge">
+<title>qstrader.broker.portfolio.portfolio-&gt;qstrader</title>
+<path fill="none" stroke="black" d="M812.07,-179.13C814.98,-179.44 817.85,-179.73 820.69,-180 1097.78,-206.13 1990.83,-227.45 2195.59,-232.07"/>
+<polygon fill="black" stroke="black" points="2205.5,-232.29 2195.41,-236.57 2201.72,-232.21 2195.51,-232.07 2195.51,-232.07 2195.51,-232.07 2201.72,-232.21 2195.61,-227.57 2205.5,-232.29"/>
+</g>
+<!-- qstrader.broker.portfolio.portfolio_event -->
+<g id="node22" class="node">
+<title>qstrader.broker.portfolio.portfolio_event</title>
+<polygon fill="none" stroke="black" points="1076.41,-252 832.98,-252 832.98,-216 1076.41,-216 1076.41,-252"/>
+<text xml:space="preserve" text-anchor="start" x="840.98" y="-229.8" font-family="Times,serif" font-size="14.00">qstrader.broker.portfolio.portfolio_event</text>
+</g>
+<!-- qstrader.broker.portfolio.portfolio&#45;&gt;qstrader.broker.portfolio.portfolio_event -->
+<g id="edge10" class="edge">
+<title>qstrader.broker.portfolio.portfolio-&gt;qstrader.broker.portfolio.portfolio_event</title>
+<path fill="none" stroke="black" d="M770.13,-180.48C804.46,-190.25 847.4,-202.47 883.22,-212.66"/>
+<polygon fill="black" stroke="black" points="892.44,-215.28 881.59,-216.88 888.8,-214.25 882.82,-212.55 882.82,-212.55 882.82,-212.55 888.8,-214.25 884.05,-208.22 892.44,-215.28"/>
+</g>
+<!-- qstrader.broker.portfolio.position_handler -->
+<g id="node24" class="node">
+<title>qstrader.broker.portfolio.position_handler</title>
+<polygon fill="none" stroke="black" points="815.3,-252 564.08,-252 564.08,-216 815.3,-216 815.3,-252"/>
+<text xml:space="preserve" text-anchor="start" x="572.08" y="-229.8" font-family="Times,serif" font-size="14.00">qstrader.broker.portfolio.position_handler</text>
+</g>
+<!-- qstrader.broker.portfolio.portfolio&#45;&gt;qstrader.broker.portfolio.position_handler -->
+<g id="edge11" class="edge">
+<title>qstrader.broker.portfolio.portfolio-&gt;qstrader.broker.portfolio.position_handler</title>
+<path fill="none" stroke="black" d="M704,-180.3C701.95,-187.85 699.5,-196.88 697.21,-205.32"/>
+<polygon fill="black" stroke="black" points="694.65,-214.72 692.93,-203.89 695.64,-211.07 697.27,-205.07 697.27,-205.07 697.27,-205.07 695.64,-211.07 701.62,-206.25 694.65,-214.72"/>
+</g>
+<!-- qstrader.settings -->
+<g id="node52" class="node">
+<title>qstrader.settings</title>
+<polygon fill="none" stroke="black" points="1452.38,-252 1345.01,-252 1345.01,-216 1452.38,-216 1452.38,-252"/>
+<text xml:space="preserve" text-anchor="start" x="1353.01" y="-229.8" font-family="Times,serif" font-size="14.00">qstrader.settings</text>
+</g>
+<!-- qstrader.broker.portfolio.portfolio&#45;&gt;qstrader.settings -->
+<g id="edge12" class="edge">
+<title>qstrader.broker.portfolio.portfolio-&gt;qstrader.settings</title>
+<path fill="none" stroke="black" d="M812.1,-178.92C814.99,-179.3 817.86,-179.66 820.69,-180 1006.43,-202.59 1226.8,-220.29 1333.86,-228.31"/>
+<polygon fill="black" stroke="black" points="1343.58,-229.04 1333.27,-232.78 1339.8,-228.76 1333.6,-228.29 1333.6,-228.29 1333.6,-228.29 1339.8,-228.76 1333.94,-223.81 1343.58,-229.04"/>
+</g>
+<!-- qstrader.broker.portfolio.position -->
+<g id="node23" class="node">
+<title>qstrader.broker.portfolio.position</title>
+<polygon fill="none" stroke="black" points="790.81,-324 588.57,-324 588.57,-288 790.81,-288 790.81,-324"/>
+<text xml:space="preserve" text-anchor="start" x="596.57" y="-301.8" font-family="Times,serif" font-size="14.00">qstrader.broker.portfolio.position</text>
+</g>
+<!-- qstrader.broker.portfolio.position_handler&#45;&gt;qstrader.broker.portfolio.position -->
+<g id="edge13" class="edge">
+<title>qstrader.broker.portfolio.position_handler-&gt;qstrader.broker.portfolio.position</title>
+<path fill="none" stroke="black" d="M689.69,-252.3C689.69,-259.68 689.69,-268.48 689.69,-276.75"/>
+<polygon fill="black" stroke="black" points="689.69,-286.68 685.19,-276.68 689.69,-282.9 689.69,-276.68 689.69,-276.68 689.69,-276.68 689.69,-282.9 694.19,-276.68 689.69,-286.68"/>
+</g>
+<!-- qstrader.broker.simulated_broker -->
+<g id="node25" class="node">
+<title>qstrader.broker.simulated_broker</title>
+<polygon fill="none" stroke="black" points="1051.99,-108 849.39,-108 849.39,-72 1051.99,-72 1051.99,-108"/>
+<text xml:space="preserve" text-anchor="start" x="857.39" y="-85.8" font-family="Times,serif" font-size="14.00">qstrader.broker.simulated_broker</text>
+</g>
+<!-- qstrader.broker.simulated_broker&#45;&gt;qstrader -->
+<g id="edge14" class="edge">
+<title>qstrader.broker.simulated_broker-&gt;qstrader</title>
+<path fill="none" stroke="black" d="M1052.22,-93.12C1186.93,-97.25 1416.62,-109.3 1492.69,-144 1513.86,-153.65 1509.42,-170.59 1530.69,-180 1651,-233.24 2063.37,-234.52 2196.14,-233.5"/>
+<polygon fill="black" stroke="black" points="2205.81,-233.41 2195.85,-238 2202.03,-233.44 2195.81,-233.5 2195.81,-233.5 2195.81,-233.5 2202.03,-233.44 2195.77,-229 2205.81,-233.41"/>
+</g>
+<!-- qstrader.broker.simulated_broker&#45;&gt;qstrader.broker.broker -->
+<g id="edge15" class="edge">
+<title>qstrader.broker.simulated_broker-&gt;qstrader.broker.broker</title>
+<path fill="none" stroke="black" d="M938.33,-108.3C932.58,-116.36 925.62,-126.11 919.25,-135.02"/>
+<polygon fill="black" stroke="black" points="913.62,-142.9 915.77,-132.15 915.82,-139.83 919.43,-134.77 919.43,-134.77 919.43,-134.77 915.82,-139.83 923.09,-137.38 913.62,-142.9"/>
+</g>
+<!-- qstrader.broker.simulated_broker&#45;&gt;qstrader.broker.fee_model.fee_model -->
+<g id="edge16" class="edge">
+<title>qstrader.broker.simulated_broker-&gt;qstrader.broker.fee_model.fee_model</title>
+<path fill="none" stroke="black" d="M849.08,-99.39C760.63,-107.92 639.98,-122.9 596.69,-144 575.78,-154.19 578.49,-167.77 558.69,-180 537.3,-193.21 512.13,-203.83 488.77,-211.99"/>
+<polygon fill="black" stroke="black" points="479.34,-215.18 487.37,-207.71 482.92,-213.97 488.81,-211.97 488.81,-211.97 488.81,-211.97 482.92,-213.97 490.25,-216.24 479.34,-215.18"/>
+</g>
+<!-- qstrader.broker.simulated_broker&#45;&gt;qstrader.broker.fee_model.zero_fee_model -->
+<g id="edge17" class="edge">
+<title>qstrader.broker.simulated_broker-&gt;qstrader.broker.fee_model.zero_fee_model</title>
+<path fill="none" stroke="black" d="M849.16,-97.43C717.77,-106.07 481.45,-122.71 268.66,-143.83"/>
+<polygon fill="black" stroke="black" points="258.8,-144.81 268.3,-139.34 262.56,-144.44 268.75,-143.82 268.75,-143.82 268.75,-143.82 262.56,-144.44 269.2,-148.3 258.8,-144.81"/>
+</g>
+<!-- qstrader.broker.simulated_broker&#45;&gt;qstrader.broker.portfolio.portfolio -->
+<g id="edge18" class="edge">
+<title>qstrader.broker.simulated_broker-&gt;qstrader.broker.portfolio.portfolio</title>
+<path fill="none" stroke="black" d="M890.25,-108.48C856.63,-118.21 814.6,-130.36 779.45,-140.53"/>
+<polygon fill="black" stroke="black" points="769.95,-143.28 778.31,-136.18 773.59,-142.23 779.56,-140.5 779.56,-140.5 779.56,-140.5 773.59,-142.23 780.81,-144.82 769.95,-143.28"/>
+</g>
+<!-- qstrader.broker.transaction.transaction -->
+<g id="node27" class="node">
+<title>qstrader.broker.transaction.transaction</title>
+<polygon fill="none" stroke="black" points="1258.18,-180 1027.21,-180 1027.21,-144 1258.18,-144 1258.18,-180"/>
+<text xml:space="preserve" text-anchor="start" x="1035.21" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.broker.transaction.transaction</text>
+</g>
+<!-- qstrader.broker.simulated_broker&#45;&gt;qstrader.broker.transaction.transaction -->
+<g id="edge19" class="edge">
+<title>qstrader.broker.simulated_broker-&gt;qstrader.broker.transaction.transaction</title>
+<path fill="none" stroke="black" d="M998.65,-108.48C1024.75,-118 1057.23,-129.84 1084.74,-139.87"/>
+<polygon fill="black" stroke="black" points="1093.87,-143.2 1082.94,-144 1090.32,-141.91 1084.48,-139.78 1084.48,-139.78 1084.48,-139.78 1090.32,-141.91 1086.02,-135.55 1093.87,-143.2"/>
+</g>
+<!-- qstrader.broker.simulated_broker&#45;&gt;qstrader.settings -->
+<g id="edge20" class="edge">
+<title>qstrader.broker.simulated_broker-&gt;qstrader.settings</title>
+<path fill="none" stroke="black" d="M961.62,-108.32C976.71,-131.65 1003.75,-171.27 1018.69,-180 1070.79,-210.42 1239.41,-224.33 1333.57,-229.86"/>
+<polygon fill="black" stroke="black" points="1343.46,-230.42 1333.22,-234.34 1339.68,-230.21 1333.48,-229.85 1333.48,-229.85 1333.48,-229.85 1339.68,-230.21 1333.73,-225.36 1343.46,-230.42"/>
+</g>
+<!-- qstrader.broker.transaction -->
+<g id="node26" class="node">
+<title>qstrader.broker.transaction</title>
+<polygon fill="none" stroke="black" points="6058.72,-36 5892.67,-36 5892.67,0 6058.72,0 6058.72,-36"/>
+<text xml:space="preserve" text-anchor="start" x="5900.67" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.broker.transaction</text>
+</g>
+<!-- qstrader.data -->
+<g id="node28" class="node">
+<title>qstrader.data</title>
+<polygon fill="none" stroke="black" points="6164.65,-36 6076.74,-36 6076.74,0 6164.65,0 6164.65,-36"/>
+<text xml:space="preserve" text-anchor="start" x="6084.74" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.data</text>
+</g>
+<!-- qstrader.data.backtest_data_handler -->
+<g id="node29" class="node">
+<title>qstrader.data.backtest_data_handler</title>
+<polygon fill="none" stroke="black" points="1529.98,-108 1313.41,-108 1313.41,-72 1529.98,-72 1529.98,-108"/>
+<text xml:space="preserve" text-anchor="start" x="1321.41" y="-85.8" font-family="Times,serif" font-size="14.00">qstrader.data.backtest_data_handler</text>
+</g>
+<!-- qstrader.data.daily_bar_csv -->
+<g id="node30" class="node">
+<title>qstrader.data.daily_bar_csv</title>
+<polygon fill="none" stroke="black" points="1483.66,-180 1313.72,-180 1313.72,-144 1483.66,-144 1483.66,-180"/>
+<text xml:space="preserve" text-anchor="start" x="1321.72" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.data.daily_bar_csv</text>
+</g>
+<!-- qstrader.data.daily_bar_csv&#45;&gt;qstrader -->
+<g id="edge21" class="edge">
+<title>qstrader.data.daily_bar_csv-&gt;qstrader</title>
+<path fill="none" stroke="black" d="M1483.94,-178.19C1488.58,-178.84 1493.19,-179.45 1497.69,-180 1762.54,-212.14 2083.26,-226.97 2196.05,-231.46"/>
+<polygon fill="black" stroke="black" points="2205.71,-231.84 2195.54,-235.94 2201.93,-231.69 2195.71,-231.44 2195.71,-231.44 2195.71,-231.44 2201.93,-231.69 2195.89,-226.95 2205.71,-231.84"/>
+</g>
+<!-- qstrader.data.daily_bar_csv&#45;&gt;qstrader.settings -->
+<g id="edge22" class="edge">
+<title>qstrader.data.daily_bar_csv-&gt;qstrader.settings</title>
+<path fill="none" stroke="black" d="M1398.69,-180.3C1398.69,-187.68 1398.69,-196.48 1398.69,-204.75"/>
+<polygon fill="black" stroke="black" points="1398.69,-214.68 1394.19,-204.68 1398.69,-210.9 1398.69,-204.68 1398.69,-204.68 1398.69,-204.68 1398.69,-210.9 1403.19,-204.68 1398.69,-214.68"/>
+</g>
+<!-- qstrader.exchange -->
+<g id="node31" class="node">
+<title>qstrader.exchange</title>
+<polygon fill="none" stroke="black" points="6300.41,-36 6182.97,-36 6182.97,0 6300.41,0 6300.41,-36"/>
+<text xml:space="preserve" text-anchor="start" x="6190.97" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.exchange</text>
+</g>
+<!-- qstrader.exchange.exchange -->
+<g id="node32" class="node">
+<title>qstrader.exchange.exchange</title>
+<polygon fill="none" stroke="black" points="1713.59,-180 1539.79,-180 1539.79,-144 1713.59,-144 1713.59,-180"/>
+<text xml:space="preserve" text-anchor="start" x="1547.79" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.exchange.exchange</text>
+</g>
+<!-- qstrader.exchange.simulated_exchange -->
+<g id="node33" class="node">
+<title>qstrader.exchange.simulated_exchange</title>
+<polygon fill="none" stroke="black" points="1821.31,-108 1586.07,-108 1586.07,-72 1821.31,-72 1821.31,-108"/>
+<text xml:space="preserve" text-anchor="start" x="1594.07" y="-85.8" font-family="Times,serif" font-size="14.00">qstrader.exchange.simulated_exchange</text>
+</g>
+<!-- qstrader.exchange.simulated_exchange&#45;&gt;qstrader.exchange.exchange -->
+<g id="edge23" class="edge">
+<title>qstrader.exchange.simulated_exchange-&gt;qstrader.exchange.exchange</title>
+<path fill="none" stroke="black" d="M1684.66,-108.3C1675.4,-116.72 1664.11,-126.98 1653.96,-136.21"/>
+<polygon fill="black" stroke="black" points="1646.68,-142.83 1651.05,-132.78 1649.47,-140.29 1654.07,-136.11 1654.07,-136.11 1654.07,-136.11 1649.47,-140.29 1657.1,-139.44 1646.68,-142.83"/>
+</g>
+<!-- qstrader.execution -->
+<g id="node34" class="node">
+<title>qstrader.execution</title>
+<polygon fill="none" stroke="black" points="6437.2,-36 6318.19,-36 6318.19,0 6437.2,0 6437.2,-36"/>
+<text xml:space="preserve" text-anchor="start" x="6326.19" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.execution</text>
+</g>
+<!-- qstrader.execution.execution_algo -->
+<g id="node35" class="node">
+<title>qstrader.execution.execution_algo</title>
+<polygon fill="none" stroke="black" points="6663.71,-36 6455.67,-36 6455.67,0 6663.71,0 6663.71,-36"/>
+<text xml:space="preserve" text-anchor="start" x="6463.67" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.execution.execution_algo</text>
+</g>
+<!-- qstrader.execution.execution_algo.execution_algo -->
+<g id="node36" class="node">
+<title>qstrader.execution.execution_algo.execution_algo</title>
+<polygon fill="none" stroke="black" points="3380.22,-252 3083.16,-252 3083.16,-216 3380.22,-216 3380.22,-252"/>
+<text xml:space="preserve" text-anchor="start" x="3091.16" y="-229.8" font-family="Times,serif" font-size="14.00">qstrader.execution.execution_algo.execution_algo</text>
+</g>
+<!-- qstrader.execution.execution_algo.market_order -->
+<g id="node37" class="node">
+<title>qstrader.execution.execution_algo.market_order</title>
+<polygon fill="none" stroke="black" points="3375.16,-180 3088.22,-180 3088.22,-144 3375.16,-144 3375.16,-180"/>
+<text xml:space="preserve" text-anchor="start" x="3096.22" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.execution.execution_algo.market_order</text>
+</g>
+<!-- qstrader.execution.execution_algo.market_order&#45;&gt;qstrader.execution.execution_algo.execution_algo -->
+<g id="edge24" class="edge">
+<title>qstrader.execution.execution_algo.market_order-&gt;qstrader.execution.execution_algo.execution_algo</title>
+<path fill="none" stroke="black" d="M3231.69,-180.3C3231.69,-187.68 3231.69,-196.48 3231.69,-204.75"/>
+<polygon fill="black" stroke="black" points="3231.69,-214.68 3227.19,-204.68 3231.69,-210.9 3231.69,-204.68 3231.69,-204.68 3231.69,-204.68 3231.69,-210.9 3236.19,-204.68 3231.69,-214.68"/>
+</g>
+<!-- qstrader.execution.execution_handler -->
+<g id="node38" class="node">
+<title>qstrader.execution.execution_handler</title>
+<polygon fill="none" stroke="black" points="3070.65,-180 2844.74,-180 2844.74,-144 3070.65,-144 3070.65,-180"/>
+<text xml:space="preserve" text-anchor="start" x="2852.74" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.execution.execution_handler</text>
+</g>
+<!-- qstrader.execution.order -->
+<g id="node39" class="node">
+<title>qstrader.execution.order</title>
+<polygon fill="none" stroke="black" points="2438.72,-252 2286.67,-252 2286.67,-216 2438.72,-216 2438.72,-252"/>
+<text xml:space="preserve" text-anchor="start" x="2294.67" y="-229.8" font-family="Times,serif" font-size="14.00">qstrader.execution.order</text>
+</g>
+<!-- qstrader.portcon -->
+<g id="node40" class="node">
+<title>qstrader.portcon</title>
+<polygon fill="none" stroke="black" points="6789.37,-36 6682.01,-36 6682.01,0 6789.37,0 6789.37,-36"/>
+<text xml:space="preserve" text-anchor="start" x="6690.01" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.portcon</text>
+</g>
+<!-- qstrader.portcon.optimiser -->
+<g id="node41" class="node">
+<title>qstrader.portcon.optimiser</title>
+<polygon fill="none" stroke="black" points="6971.56,-36 6807.82,-36 6807.82,0 6971.56,0 6971.56,-36"/>
+<text xml:space="preserve" text-anchor="start" x="6815.82" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.portcon.optimiser</text>
+</g>
+<!-- qstrader.portcon.optimiser.equal_weight -->
+<g id="node42" class="node">
+<title>qstrader.portcon.optimiser.equal_weight</title>
+<polygon fill="none" stroke="black" points="4672.02,-180 4429.36,-180 4429.36,-144 4672.02,-144 4672.02,-180"/>
+<text xml:space="preserve" text-anchor="start" x="4437.36" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.portcon.optimiser.equal_weight</text>
+</g>
+<!-- qstrader.portcon.optimiser.optimiser -->
+<g id="node44" class="node">
+<title>qstrader.portcon.optimiser.optimiser</title>
+<polygon fill="none" stroke="black" points="4412.75,-252 4192.63,-252 4192.63,-216 4412.75,-216 4412.75,-252"/>
+<text xml:space="preserve" text-anchor="start" x="4200.63" y="-229.8" font-family="Times,serif" font-size="14.00">qstrader.portcon.optimiser.optimiser</text>
+</g>
+<!-- qstrader.portcon.optimiser.equal_weight&#45;&gt;qstrader.portcon.optimiser.optimiser -->
+<g id="edge25" class="edge">
+<title>qstrader.portcon.optimiser.equal_weight-&gt;qstrader.portcon.optimiser.optimiser</title>
+<path fill="none" stroke="black" d="M4488.75,-180.48C4454.15,-190.25 4410.86,-202.47 4374.74,-212.66"/>
+<polygon fill="black" stroke="black" points="4365.45,-215.29 4373.85,-208.24 4369.08,-214.26 4375.07,-212.57 4375.07,-212.57 4375.07,-212.57 4369.08,-214.26 4376.29,-216.9 4365.45,-215.29"/>
+</g>
+<!-- qstrader.portcon.optimiser.fixed_weight -->
+<g id="node43" class="node">
+<title>qstrader.portcon.optimiser.fixed_weight</title>
+<polygon fill="none" stroke="black" points="4176.25,-180 3935.14,-180 3935.14,-144 4176.25,-144 4176.25,-180"/>
+<text xml:space="preserve" text-anchor="start" x="3943.14" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.portcon.optimiser.fixed_weight</text>
+</g>
+<!-- qstrader.portcon.optimiser.fixed_weight&#45;&gt;qstrader.portcon.optimiser.optimiser -->
+<g id="edge26" class="edge">
+<title>qstrader.portcon.optimiser.fixed_weight-&gt;qstrader.portcon.optimiser.optimiser</title>
+<path fill="none" stroke="black" d="M4117.38,-180.48C4151.85,-190.25 4194.96,-202.47 4230.93,-212.66"/>
+<polygon fill="black" stroke="black" points="4240.19,-215.29 4229.34,-216.89 4236.55,-214.25 4230.57,-212.56 4230.57,-212.56 4230.57,-212.56 4236.55,-214.25 4231.79,-208.23 4240.19,-215.29"/>
+</g>
+<!-- qstrader.portcon.order_sizer -->
+<g id="node45" class="node">
+<title>qstrader.portcon.order_sizer</title>
+<polygon fill="none" stroke="black" points="7163.6,-36 6989.78,-36 6989.78,0 7163.6,0 7163.6,-36"/>
+<text xml:space="preserve" text-anchor="start" x="6997.78" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.portcon.order_sizer</text>
+</g>
+<!-- qstrader.portcon.order_sizer.dollar_weighted -->
+<g id="node46" class="node">
+<title>qstrader.portcon.order_sizer.dollar_weighted</title>
+<polygon fill="none" stroke="black" points="3916.84,-180 3648.54,-180 3648.54,-144 3916.84,-144 3916.84,-180"/>
+<text xml:space="preserve" text-anchor="start" x="3656.54" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.portcon.order_sizer.dollar_weighted</text>
+</g>
+<!-- qstrader.portcon.order_sizer.order_sizer -->
+<g id="node48" class="node">
+<title>qstrader.portcon.order_sizer.order_sizer</title>
+<polygon fill="none" stroke="black" points="3770.84,-252 3530.55,-252 3530.55,-216 3770.84,-216 3770.84,-252"/>
+<text xml:space="preserve" text-anchor="start" x="3538.55" y="-229.8" font-family="Times,serif" font-size="14.00">qstrader.portcon.order_sizer.order_sizer</text>
+</g>
+<!-- qstrader.portcon.order_sizer.dollar_weighted&#45;&gt;qstrader.portcon.order_sizer.order_sizer -->
+<g id="edge27" class="edge">
+<title>qstrader.portcon.order_sizer.dollar_weighted-&gt;qstrader.portcon.order_sizer.order_sizer</title>
+<path fill="none" stroke="black" d="M3749.72,-180.48C3732.58,-189.57 3711.44,-200.78 3693.1,-210.51"/>
+<polygon fill="black" stroke="black" points="3684.32,-215.17 3691.04,-206.51 3687.66,-213.4 3693.15,-210.48 3693.15,-210.48 3693.15,-210.48 3687.66,-213.4 3695.26,-214.46 3684.32,-215.17"/>
+</g>
+<!-- qstrader.portcon.order_sizer.long_short -->
+<g id="node47" class="node">
+<title>qstrader.portcon.order_sizer.long_short</title>
+<polygon fill="none" stroke="black" points="3630.3,-180 3393.09,-180 3393.09,-144 3630.3,-144 3630.3,-180"/>
+<text xml:space="preserve" text-anchor="start" x="3401.09" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.portcon.order_sizer.long_short</text>
+</g>
+<!-- qstrader.portcon.order_sizer.long_short&#45;&gt;qstrader.portcon.order_sizer.order_sizer -->
+<g id="edge28" class="edge">
+<title>qstrader.portcon.order_sizer.long_short-&gt;qstrader.portcon.order_sizer.order_sizer</title>
+<path fill="none" stroke="black" d="M3546.41,-180.48C3564.62,-189.66 3587.13,-200.99 3606.57,-210.78"/>
+<polygon fill="black" stroke="black" points="3615.33,-215.19 3604.37,-214.71 3611.95,-213.49 3606.4,-210.69 3606.4,-210.69 3606.4,-210.69 3611.95,-213.49 3608.42,-206.67 3615.33,-215.19"/>
+</g>
+<!-- qstrader.portcon.pcm -->
+<g id="node49" class="node">
+<title>qstrader.portcon.pcm</title>
+<polygon fill="none" stroke="black" points="2430.17,-180 2295.21,-180 2295.21,-144 2430.17,-144 2430.17,-180"/>
+<text xml:space="preserve" text-anchor="start" x="2303.21" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.portcon.pcm</text>
+</g>
+<!-- qstrader.portcon.pcm&#45;&gt;qstrader -->
+<g id="edge29" class="edge">
+<title>qstrader.portcon.pcm-&gt;qstrader</title>
+<path fill="none" stroke="black" d="M2331.47,-180.48C2315.24,-189.57 2295.22,-200.78 2277.85,-210.51"/>
+<polygon fill="black" stroke="black" points="2269.58,-215.14 2276.1,-206.33 2272.88,-213.3 2278.3,-210.26 2278.3,-210.26 2278.3,-210.26 2272.88,-213.3 2280.5,-214.18 2269.58,-215.14"/>
+</g>
+<!-- qstrader.portcon.pcm&#45;&gt;qstrader.execution.order -->
+<g id="edge30" class="edge">
+<title>qstrader.portcon.pcm-&gt;qstrader.execution.order</title>
+<path fill="none" stroke="black" d="M2362.69,-180.3C2362.69,-187.68 2362.69,-196.48 2362.69,-204.75"/>
+<polygon fill="black" stroke="black" points="2362.69,-214.68 2358.19,-204.68 2362.69,-210.9 2362.69,-204.68 2362.69,-204.68 2362.69,-204.68 2362.69,-210.9 2367.19,-204.68 2362.69,-214.68"/>
+</g>
+<!-- qstrader.portcon.pcm&#45;&gt;qstrader.settings -->
+<g id="edge31" class="edge">
+<title>qstrader.portcon.pcm-&gt;qstrader.settings</title>
+<path fill="none" stroke="black" d="M2295,-174.07C2279.79,-176.29 2263.72,-178.41 2248.69,-180 1956.64,-210.82 1606.1,-225.72 1463.64,-230.85"/>
+<polygon fill="black" stroke="black" points="1453.75,-231.2 1463.58,-226.35 1457.52,-231.07 1463.74,-230.85 1463.74,-230.85 1463.74,-230.85 1457.52,-231.07 1463.9,-235.34 1453.75,-231.2"/>
+</g>
+<!-- qstrader.risk_model -->
+<g id="node50" class="node">
+<title>qstrader.risk_model</title>
+<polygon fill="none" stroke="black" points="7309.48,-36 7181.9,-36 7181.9,0 7309.48,0 7309.48,-36"/>
+<text xml:space="preserve" text-anchor="start" x="7189.9" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.risk_model</text>
+</g>
+<!-- qstrader.risk_model.risk_model -->
+<g id="node51" class="node">
+<title>qstrader.risk_model.risk_model</title>
+<polygon fill="none" stroke="black" points="7521.73,-36 7327.65,-36 7327.65,0 7521.73,0 7521.73,-36"/>
+<text xml:space="preserve" text-anchor="start" x="7335.65" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.risk_model.risk_model</text>
+</g>
+<!-- qstrader.signals -->
+<g id="node53" class="node">
+<title>qstrader.signals</title>
+<polygon fill="none" stroke="black" points="7643.43,-36 7539.95,-36 7539.95,0 7643.43,0 7643.43,-36"/>
+<text xml:space="preserve" text-anchor="start" x="7547.95" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.signals</text>
+</g>
+<!-- qstrader.signals.buffer -->
+<g id="node54" class="node">
+<title>qstrader.signals.buffer</title>
+<polygon fill="none" stroke="black" points="7985.28,-180 7844.1,-180 7844.1,-144 7985.28,-144 7985.28,-180"/>
+<text xml:space="preserve" text-anchor="start" x="7852.1" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.signals.buffer</text>
+</g>
+<!-- qstrader.signals.momentum -->
+<g id="node55" class="node">
+<title>qstrader.signals.momentum</title>
+<polygon fill="none" stroke="black" points="7832.07,-36 7661.32,-36 7661.32,0 7832.07,0 7832.07,-36"/>
+<text xml:space="preserve" text-anchor="start" x="7669.32" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.signals.momentum</text>
+</g>
+<!-- qstrader.signals.signal -->
+<g id="node56" class="node">
+<title>qstrader.signals.signal</title>
+<polygon fill="none" stroke="black" points="7984.9,-108 7844.48,-108 7844.48,-72 7984.9,-72 7984.9,-108"/>
+<text xml:space="preserve" text-anchor="start" x="7852.48" y="-85.8" font-family="Times,serif" font-size="14.00">qstrader.signals.signal</text>
+</g>
+<!-- qstrader.signals.momentum&#45;&gt;qstrader.signals.signal -->
+<g id="edge32" class="edge">
+<title>qstrader.signals.momentum-&gt;qstrader.signals.signal</title>
+<path fill="none" stroke="black" d="M7788.65,-36.48C7811.09,-45.83 7838.91,-57.43 7862.71,-67.34"/>
+<polygon fill="black" stroke="black" points="7871.85,-71.15 7860.89,-71.46 7868.36,-69.7 7862.62,-67.3 7862.62,-67.3 7862.62,-67.3 7868.36,-69.7 7864.35,-63.15 7871.85,-71.15"/>
+</g>
+<!-- qstrader.signals.signal&#45;&gt;qstrader.signals.buffer -->
+<g id="edge33" class="edge">
+<title>qstrader.signals.signal-&gt;qstrader.signals.buffer</title>
+<path fill="none" stroke="black" d="M7914.69,-108.3C7914.69,-115.68 7914.69,-124.48 7914.69,-132.75"/>
+<polygon fill="black" stroke="black" points="7914.69,-142.68 7910.19,-132.68 7914.69,-138.9 7914.69,-132.68 7914.69,-132.68 7914.69,-132.68 7914.69,-138.9 7919.19,-132.68 7914.69,-142.68"/>
+</g>
+<!-- qstrader.signals.signals_collection -->
+<g id="node57" class="node">
+<title>qstrader.signals.signals_collection</title>
+<polygon fill="none" stroke="black" points="8347.73,-36 8139.66,-36 8139.66,0 8347.73,0 8347.73,-36"/>
+<text xml:space="preserve" text-anchor="start" x="8147.66" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.signals.signals_collection</text>
+</g>
+<!-- qstrader.signals.sma -->
+<g id="node58" class="node">
+<title>qstrader.signals.sma</title>
+<polygon fill="none" stroke="black" points="7979.46,-36 7849.93,-36 7849.93,0 7979.46,0 7979.46,-36"/>
+<text xml:space="preserve" text-anchor="start" x="7857.93" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.signals.sma</text>
+</g>
+<!-- qstrader.signals.sma&#45;&gt;qstrader.signals.signal -->
+<g id="edge34" class="edge">
+<title>qstrader.signals.sma-&gt;qstrader.signals.signal</title>
+<path fill="none" stroke="black" d="M7914.69,-36.3C7914.69,-43.68 7914.69,-52.48 7914.69,-60.75"/>
+<polygon fill="black" stroke="black" points="7914.69,-70.68 7910.19,-60.68 7914.69,-66.9 7914.69,-60.68 7914.69,-60.68 7914.69,-60.68 7914.69,-66.9 7919.19,-60.68 7914.69,-70.68"/>
+</g>
+<!-- qstrader.signals.vol -->
+<g id="node59" class="node">
+<title>qstrader.signals.vol</title>
+<polygon fill="none" stroke="black" points="8122.13,-36 7997.26,-36 7997.26,0 8122.13,0 8122.13,-36"/>
+<text xml:space="preserve" text-anchor="start" x="8005.26" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.signals.vol</text>
+</g>
+<!-- qstrader.signals.vol&#45;&gt;qstrader.signals.signal -->
+<g id="edge35" class="edge">
+<title>qstrader.signals.vol-&gt;qstrader.signals.signal</title>
+<path fill="none" stroke="black" d="M8023.48,-36.48C8004.46,-45.66 7980.96,-57.01 7960.67,-66.8"/>
+<polygon fill="black" stroke="black" points="7951.79,-71.09 7958.84,-62.69 7955.2,-69.44 7960.8,-66.74 7960.8,-66.74 7960.8,-66.74 7955.2,-69.44 7962.76,-70.79 7951.79,-71.09"/>
+</g>
+<!-- qstrader.simulation -->
+<g id="node60" class="node">
+<title>qstrader.simulation</title>
+<polygon fill="none" stroke="black" points="8489.54,-36 8365.84,-36 8365.84,0 8489.54,0 8489.54,-36"/>
+<text xml:space="preserve" text-anchor="start" x="8373.84" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.simulation</text>
+</g>
+<!-- qstrader.simulation.daily_bday -->
+<g id="node61" class="node">
+<title>qstrader.simulation.daily_bday</title>
+<polygon fill="none" stroke="black" points="2028.4,-108 1838.99,-108 1838.99,-72 2028.4,-72 2028.4,-108"/>
+<text xml:space="preserve" text-anchor="start" x="1846.99" y="-85.8" font-family="Times,serif" font-size="14.00">qstrader.simulation.daily_bday</text>
+</g>
+<!-- qstrader.simulation.event -->
+<g id="node62" class="node">
+<title>qstrader.simulation.event</title>
+<polygon fill="none" stroke="black" points="2099.45,-180 1941.93,-180 1941.93,-144 2099.45,-144 2099.45,-180"/>
+<text xml:space="preserve" text-anchor="start" x="1949.93" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.simulation.event</text>
+</g>
+<!-- qstrader.simulation.daily_bday&#45;&gt;qstrader.simulation.event -->
+<g id="edge36" class="edge">
+<title>qstrader.simulation.daily_bday-&gt;qstrader.simulation.event</title>
+<path fill="none" stroke="black" d="M1955.2,-108.3C1965.86,-116.89 1978.92,-127.39 1990.57,-136.76"/>
+<polygon fill="black" stroke="black" points="1998.18,-142.89 1987.57,-140.13 1995.24,-140.52 1990.39,-136.62 1990.39,-136.62 1990.39,-136.62 1995.24,-140.52 1993.21,-133.11 1998.18,-142.89"/>
+</g>
+<!-- qstrader.simulation.sim_engine -->
+<g id="node63" class="node">
+<title>qstrader.simulation.sim_engine</title>
+<polygon fill="none" stroke="black" points="1923.56,-180 1731.82,-180 1731.82,-144 1923.56,-144 1923.56,-180"/>
+<text xml:space="preserve" text-anchor="start" x="1739.82" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.simulation.sim_engine</text>
+</g>
+<!-- qstrader.simulation.daily_bday&#45;&gt;qstrader.simulation.sim_engine -->
+<g id="edge37" class="edge">
+<title>qstrader.simulation.daily_bday-&gt;qstrader.simulation.sim_engine</title>
+<path fill="none" stroke="black" d="M1907.22,-108.48C1893.84,-117.32 1877.42,-128.16 1862.98,-137.7"/>
+<polygon fill="black" stroke="black" points="1854.85,-143.07 1860.71,-133.8 1858,-140.98 1863.19,-137.56 1863.19,-137.56 1863.19,-137.56 1858,-140.98 1865.67,-141.31 1854.85,-143.07"/>
+</g>
+<!-- qstrader.statistics -->
+<g id="node64" class="node">
+<title>qstrader.statistics</title>
+<polygon fill="none" stroke="black" points="8620.1,-36 8507.29,-36 8507.29,0 8620.1,0 8620.1,-36"/>
+<text xml:space="preserve" text-anchor="start" x="8515.29" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.statistics</text>
+</g>
+<!-- qstrader.statistics.json_statistics -->
+<g id="node65" class="node">
+<title>qstrader.statistics.json_statistics</title>
+<polygon fill="none" stroke="black" points="2643.13,-180 2448.26,-180 2448.26,-144 2643.13,-144 2643.13,-180"/>
+<text xml:space="preserve" text-anchor="start" x="2456.26" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.statistics.json_statistics</text>
+</g>
+<!-- qstrader.statistics.json_statistics&#45;&gt;qstrader -->
+<g id="edge38" class="edge">
+<title>qstrader.statistics.json_statistics-&gt;qstrader</title>
+<path fill="none" stroke="black" d="M2447.98,-180.14C2390.12,-190.68 2321.44,-203.95 2279.15,-215.98"/>
+<polygon fill="black" stroke="black" points="2269.63,-218.83 2277.92,-211.65 2273.26,-217.74 2279.21,-215.96 2279.21,-215.96 2279.21,-215.96 2273.26,-217.74 2280.5,-220.27 2269.63,-218.83"/>
+</g>
+<!-- qstrader.statistics.json_statistics&#45;&gt;qstrader.settings -->
+<g id="edge39" class="edge">
+<title>qstrader.statistics.json_statistics-&gt;qstrader.settings</title>
+<path fill="none" stroke="black" d="M2447.79,-178.98C2444.72,-179.35 2441.69,-179.69 2438.69,-180 2071.11,-218.46 1627.41,-229.29 1463.55,-232.1"/>
+<polygon fill="black" stroke="black" points="1453.93,-232.26 1463.85,-227.59 1457.71,-232.19 1463.92,-232.09 1463.92,-232.09 1463.92,-232.09 1457.71,-232.19 1464,-236.59 1453.93,-232.26"/>
+</g>
+<!-- qstrader.statistics.performance -->
+<g id="node66" class="node">
+<title>qstrader.statistics.performance</title>
+<polygon fill="none" stroke="black" points="2644.21,-252 2457.17,-252 2457.17,-216 2644.21,-216 2644.21,-252"/>
+<text xml:space="preserve" text-anchor="start" x="2465.17" y="-229.8" font-family="Times,serif" font-size="14.00">qstrader.statistics.performance</text>
+</g>
+<!-- qstrader.statistics.json_statistics&#45;&gt;qstrader.statistics.performance -->
+<g id="edge40" class="edge">
+<title>qstrader.statistics.json_statistics-&gt;qstrader.statistics.performance</title>
+<path fill="none" stroke="black" d="M2546.93,-180.3C2547.45,-187.68 2548.08,-196.48 2548.67,-204.75"/>
+<polygon fill="black" stroke="black" points="2549.38,-214.68 2544.18,-205.03 2549.11,-210.91 2548.67,-204.71 2548.67,-204.71 2548.67,-204.71 2549.11,-210.91 2553.16,-204.39 2549.38,-214.68"/>
+</g>
+<!-- qstrader.statistics.statistics -->
+<g id="node67" class="node">
+<title>qstrader.statistics.statistics</title>
+<polygon fill="none" stroke="black" points="2826.96,-252 2662.43,-252 2662.43,-216 2826.96,-216 2826.96,-252"/>
+<text xml:space="preserve" text-anchor="start" x="2670.43" y="-229.8" font-family="Times,serif" font-size="14.00">qstrader.statistics.statistics</text>
+</g>
+<!-- qstrader.statistics.tearsheet -->
+<g id="node68" class="node">
+<title>qstrader.statistics.tearsheet</title>
+<polygon fill="none" stroke="black" points="2826.72,-180 2660.66,-180 2660.66,-144 2826.72,-144 2826.72,-180"/>
+<text xml:space="preserve" text-anchor="start" x="2668.66" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.statistics.tearsheet</text>
+</g>
+<!-- qstrader.statistics.tearsheet&#45;&gt;qstrader -->
+<g id="edge41" class="edge">
+<title>qstrader.statistics.tearsheet-&gt;qstrader</title>
+<path fill="none" stroke="black" d="M2660.5,-178.71C2657.53,-179.16 2654.59,-179.59 2651.69,-180 2489.87,-202.7 2441.6,-176.05 2279.24,-216.12"/>
+<polygon fill="black" stroke="black" points="2269.56,-218.56 2278.16,-211.75 2273.22,-217.64 2279.25,-216.12 2279.25,-216.12 2279.25,-216.12 2273.22,-217.64 2280.35,-220.48 2269.56,-218.56"/>
+</g>
+<!-- qstrader.statistics.tearsheet&#45;&gt;qstrader.settings -->
+<g id="edge42" class="edge">
+<title>qstrader.statistics.tearsheet-&gt;qstrader.settings</title>
+<path fill="none" stroke="black" d="M2660.53,-178.91C2657.55,-179.31 2654.6,-179.67 2651.69,-180 2418.04,-206.4 1686.68,-225.98 1463.81,-231.46"/>
+<polygon fill="black" stroke="black" points="1453.87,-231.7 1463.75,-226.96 1457.65,-231.61 1463.86,-231.45 1463.86,-231.45 1463.86,-231.45 1457.65,-231.61 1463.97,-235.95 1453.87,-231.7"/>
+</g>
+<!-- qstrader.statistics.tearsheet&#45;&gt;qstrader.statistics.performance -->
+<g id="edge43" class="edge">
+<title>qstrader.statistics.tearsheet-&gt;qstrader.statistics.performance</title>
+<path fill="none" stroke="black" d="M2695.49,-180.48C2669.25,-190 2636.6,-201.84 2608.95,-211.87"/>
+<polygon fill="black" stroke="black" points="2599.76,-215.2 2607.63,-207.56 2603.32,-213.91 2609.16,-211.79 2609.16,-211.79 2609.16,-211.79 2603.32,-213.91 2610.7,-216.02 2599.76,-215.2"/>
+</g>
+<!-- qstrader.statistics.tearsheet&#45;&gt;qstrader.statistics.statistics -->
+<g id="edge44" class="edge">
+<title>qstrader.statistics.tearsheet-&gt;qstrader.statistics.statistics</title>
+<path fill="none" stroke="black" d="M2743.94,-180.3C2744.04,-187.68 2744.17,-196.48 2744.29,-204.75"/>
+<polygon fill="black" stroke="black" points="2744.43,-214.68 2739.79,-204.74 2744.38,-210.9 2744.29,-204.68 2744.29,-204.68 2744.29,-204.68 2744.38,-210.9 2748.79,-204.61 2744.43,-214.68"/>
+</g>
+<!-- qstrader.system -->
+<g id="node69" class="node">
+<title>qstrader.system</title>
+<polygon fill="none" stroke="black" points="8741.43,-36 8637.95,-36 8637.95,0 8741.43,0 8741.43,-36"/>
+<text xml:space="preserve" text-anchor="start" x="8645.95" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.system</text>
+</g>
+<!-- qstrader.system.qts -->
+<g id="node70" class="node">
+<title>qstrader.system.qts</title>
+<polygon fill="none" stroke="black" points="3046.35,-108 2923.03,-108 2923.03,-72 3046.35,-72 3046.35,-108"/>
+<text xml:space="preserve" text-anchor="start" x="2931.03" y="-85.8" font-family="Times,serif" font-size="14.00">qstrader.system.qts</text>
+</g>
+<!-- qstrader.system.qts&#45;&gt;qstrader.execution.execution_algo.market_order -->
+<g id="edge45" class="edge">
+<title>qstrader.system.qts-&gt;qstrader.execution.execution_algo.market_order</title>
+<path fill="none" stroke="black" d="M3046.38,-108.48C3080.85,-118.25 3123.96,-130.47 3159.93,-140.66"/>
+<polygon fill="black" stroke="black" points="3169.19,-143.29 3158.34,-144.89 3165.55,-142.25 3159.57,-140.56 3159.57,-140.56 3159.57,-140.56 3165.55,-142.25 3160.79,-136.23 3169.19,-143.29"/>
+</g>
+<!-- qstrader.system.qts&#45;&gt;qstrader.execution.execution_handler -->
+<g id="edge46" class="edge">
+<title>qstrader.system.qts-&gt;qstrader.execution.execution_handler</title>
+<path fill="none" stroke="black" d="M2978.02,-108.3C2975.08,-115.93 2971.55,-125.08 2968.26,-133.6"/>
+<polygon fill="black" stroke="black" points="2964.73,-142.76 2964.13,-131.81 2966.09,-139.23 2968.33,-133.43 2968.33,-133.43 2968.33,-133.43 2966.09,-139.23 2972.53,-135.05 2964.73,-142.76"/>
+</g>
+<!-- qstrader.system.qts&#45;&gt;qstrader.portcon.optimiser.fixed_weight -->
+<g id="edge47" class="edge">
+<title>qstrader.system.qts-&gt;qstrader.portcon.optimiser.fixed_weight</title>
+<path fill="none" stroke="black" d="M3046.51,-106.55C3049.61,-107.09 3052.68,-107.58 3055.69,-108 3435.44,-160.81 3538.21,-111.8 3924.07,-143.92"/>
+<polygon fill="black" stroke="black" points="3933.77,-144.74 3923.42,-148.38 3930,-144.42 3923.8,-143.9 3923.8,-143.9 3923.8,-143.9 3930,-144.42 3924.18,-139.41 3933.77,-144.74"/>
+</g>
+<!-- qstrader.system.qts&#45;&gt;qstrader.portcon.order_sizer.dollar_weighted -->
+<g id="edge48" class="edge">
+<title>qstrader.system.qts-&gt;qstrader.portcon.order_sizer.dollar_weighted</title>
+<path fill="none" stroke="black" d="M3046.52,-106.47C3049.61,-107.04 3052.68,-107.55 3055.69,-108 3309.37,-145.9 3378.81,-121.33 3637.5,-143.84"/>
+<polygon fill="black" stroke="black" points="3647.15,-144.7 3636.8,-148.3 3643.39,-144.36 3637.19,-143.82 3637.19,-143.82 3637.19,-143.82 3643.39,-144.36 3637.59,-139.33 3647.15,-144.7"/>
+</g>
+<!-- qstrader.system.qts&#45;&gt;qstrader.portcon.order_sizer.long_short -->
+<g id="edge49" class="edge">
+<title>qstrader.system.qts-&gt;qstrader.portcon.order_sizer.long_short</title>
+<path fill="none" stroke="black" d="M3046.55,-106.3C3049.64,-106.91 3052.69,-107.48 3055.69,-108 3196.65,-132.51 3236.19,-126.66 3381.68,-143.79"/>
+<polygon fill="black" stroke="black" points="3391.6,-144.97 3381.14,-148.25 3387.85,-144.52 3381.67,-143.79 3381.67,-143.79 3381.67,-143.79 3387.85,-144.52 3382.2,-139.32 3391.6,-144.97"/>
+</g>
+<!-- qstrader.system.qts&#45;&gt;qstrader.portcon.pcm -->
+<g id="edge50" class="edge">
+<title>qstrader.system.qts-&gt;qstrader.portcon.pcm</title>
+<path fill="none" stroke="black" d="M2922.68,-94.59C2823.25,-100.89 2621.9,-115.83 2441.65,-143.81"/>
+<polygon fill="black" stroke="black" points="2431.83,-145.35 2441.01,-139.35 2435.57,-144.76 2441.71,-143.8 2441.71,-143.8 2441.71,-143.8 2435.57,-144.76 2442.41,-148.24 2431.83,-145.35"/>
+</g>
+<!-- qstrader.system.rebalance -->
+<g id="node71" class="node">
+<title>qstrader.system.rebalance</title>
+<polygon fill="none" stroke="black" points="8919.99,-36 8759.39,-36 8759.39,0 8919.99,0 8919.99,-36"/>
+<text xml:space="preserve" text-anchor="start" x="8767.39" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.system.rebalance</text>
+</g>
+<!-- qstrader.system.rebalance.buy_and_hold -->
+<g id="node72" class="node">
+<title>qstrader.system.rebalance.buy_and_hold</title>
+<polygon fill="none" stroke="black" points="3308.79,-108 3064.59,-108 3064.59,-72 3308.79,-72 3308.79,-108"/>
+<text xml:space="preserve" text-anchor="start" x="3072.59" y="-85.8" font-family="Times,serif" font-size="14.00">qstrader.system.rebalance.buy_and_hold</text>
+</g>
+<!-- qstrader.system.rebalance.rebalance -->
+<g id="node75" class="node">
+<title>qstrader.system.rebalance.rebalance</title>
+<polygon fill="none" stroke="black" points="4411.55,-180 4193.83,-180 4193.83,-144 4411.55,-144 4411.55,-180"/>
+<text xml:space="preserve" text-anchor="start" x="4201.83" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.system.rebalance.rebalance</text>
+</g>
+<!-- qstrader.system.rebalance.buy_and_hold&#45;&gt;qstrader.system.rebalance.rebalance -->
+<g id="edge51" class="edge">
+<title>qstrader.system.rebalance.buy_and_hold-&gt;qstrader.system.rebalance.rebalance</title>
+<path fill="none" stroke="black" d="M3309.03,-107.22C3311.95,-107.5 3314.84,-107.76 3317.69,-108 3698.74,-140.56 3799.34,-108.81 4182.31,-143.74"/>
+<polygon fill="black" stroke="black" points="4192.22,-144.65 4181.85,-148.21 4188.46,-144.3 4182.26,-143.73 4182.26,-143.73 4182.26,-143.73 4188.46,-144.3 4182.68,-139.25 4192.22,-144.65"/>
+</g>
+<!-- qstrader.system.rebalance.daily -->
+<g id="node73" class="node">
+<title>qstrader.system.rebalance.daily</title>
+<polygon fill="none" stroke="black" points="3518.74,-108 3326.65,-108 3326.65,-72 3518.74,-72 3518.74,-108"/>
+<text xml:space="preserve" text-anchor="start" x="3334.65" y="-85.8" font-family="Times,serif" font-size="14.00">qstrader.system.rebalance.daily</text>
+</g>
+<!-- qstrader.system.rebalance.daily&#45;&gt;qstrader.system.rebalance.rebalance -->
+<g id="edge52" class="edge">
+<title>qstrader.system.rebalance.daily-&gt;qstrader.system.rebalance.rebalance</title>
+<path fill="none" stroke="black" d="M3519.05,-107.01C3521.96,-107.36 3524.85,-107.69 3527.69,-108 3815.33,-139.06 3892.39,-115.5 4182.57,-143.74"/>
+<polygon fill="black" stroke="black" points="4192.22,-144.69 4181.82,-148.19 4188.46,-144.32 4182.27,-143.71 4182.27,-143.71 4182.27,-143.71 4188.46,-144.32 4182.71,-139.23 4192.22,-144.69"/>
+</g>
+<!-- qstrader.system.rebalance.end_of_month -->
+<g id="node74" class="node">
+<title>qstrader.system.rebalance.end_of_month</title>
+<polygon fill="none" stroke="black" points="4101.57,-108 3855.81,-108 3855.81,-72 4101.57,-72 4101.57,-108"/>
+<text xml:space="preserve" text-anchor="start" x="3863.81" y="-85.8" font-family="Times,serif" font-size="14.00">qstrader.system.rebalance.end_of_month</text>
+</g>
+<!-- qstrader.system.rebalance.end_of_month&#45;&gt;qstrader.system.rebalance.rebalance -->
+<g id="edge53" class="edge">
+<title>qstrader.system.rebalance.end_of_month-&gt;qstrader.system.rebalance.rebalance</title>
+<path fill="none" stroke="black" d="M4059.61,-108.48C4105.61,-118.42 4163.35,-130.9 4211.01,-141.19"/>
+<polygon fill="black" stroke="black" points="4220.77,-143.3 4210.04,-145.59 4217.07,-142.5 4210.99,-141.19 4210.99,-141.19 4210.99,-141.19 4217.07,-142.5 4211.94,-136.79 4220.77,-143.3"/>
+</g>
+<!-- qstrader.system.rebalance.weekly -->
+<g id="node76" class="node">
+<title>qstrader.system.rebalance.weekly</title>
+<polygon fill="none" stroke="black" points="4377.96,-108 4173.43,-108 4173.43,-72 4377.96,-72 4377.96,-108"/>
+<text xml:space="preserve" text-anchor="start" x="4181.43" y="-85.8" font-family="Times,serif" font-size="14.00">qstrader.system.rebalance.weekly</text>
+</g>
+<!-- qstrader.system.rebalance.weekly&#45;&gt;qstrader.system.rebalance.rebalance -->
+<g id="edge54" class="edge">
+<title>qstrader.system.rebalance.weekly-&gt;qstrader.system.rebalance.rebalance</title>
+<path fill="none" stroke="black" d="M4282.37,-108.3C4285.31,-115.93 4288.84,-125.08 4292.12,-133.6"/>
+<polygon fill="black" stroke="black" points="4295.66,-142.76 4287.86,-135.05 4294.3,-139.23 4292.06,-133.43 4292.06,-133.43 4292.06,-133.43 4294.3,-139.23 4296.26,-131.81 4295.66,-142.76"/>
+</g>
+<!-- qstrader.trading -->
+<g id="node77" class="node">
+<title>qstrader.trading</title>
+<polygon fill="none" stroke="black" points="9041.81,-36 8937.57,-36 8937.57,0 9041.81,0 9041.81,-36"/>
+<text xml:space="preserve" text-anchor="start" x="8945.57" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.trading</text>
+</g>
+<!-- qstrader.trading.backtest -->
+<g id="node78" class="node">
+<title>qstrader.trading.backtest</title>
+<polygon fill="none" stroke="black" points="2326.5,-36 2172.88,-36 2172.88,0 2326.5,0 2326.5,-36"/>
+<text xml:space="preserve" text-anchor="start" x="2180.88" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.trading.backtest</text>
+</g>
+<!-- qstrader.trading.backtest&#45;&gt;qstrader -->
+<g id="edge55" class="edge">
+<title>qstrader.trading.backtest-&gt;qstrader</title>
+<path fill="none" stroke="black" d="M2287.47,-36.44C2301.5,-45.02 2315.89,-56.82 2323.69,-72 2331,-86.23 2329.92,-93.26 2323.69,-108 2314.77,-129.14 2300.6,-125.75 2286.69,-144 2272.03,-163.23 2259.02,-187.39 2250.1,-205.68"/>
+<polygon fill="black" stroke="black" points="2245.86,-214.59 2246.09,-203.63 2247.48,-211.18 2250.16,-205.56 2250.16,-205.56 2250.16,-205.56 2247.48,-211.18 2254.22,-207.5 2245.86,-214.59"/>
+</g>
+<!-- qstrader.trading.backtest&#45;&gt;qstrader.asset.equity -->
+<g id="edge56" class="edge">
+<title>qstrader.trading.backtest-&gt;qstrader.asset.equity</title>
+<path fill="none" stroke="black" d="M2249.69,-36.3C2249.69,-43.68 2249.69,-52.48 2249.69,-60.75"/>
+<polygon fill="black" stroke="black" points="2249.69,-70.68 2245.19,-60.68 2249.69,-66.9 2249.69,-60.68 2249.69,-60.68 2249.69,-60.68 2249.69,-66.9 2254.19,-60.68 2249.69,-70.68"/>
+</g>
+<!-- qstrader.trading.backtest&#45;&gt;qstrader.broker.fee_model.zero_fee_model -->
+<g id="edge57" class="edge">
+<title>qstrader.trading.backtest-&gt;qstrader.broker.fee_model.zero_fee_model</title>
+<path fill="none" stroke="black" d="M2172.42,-19.55C1959.69,-21.59 1347.58,-30.86 840.69,-72 634.67,-88.72 396.6,-121.15 254.58,-141.91"/>
+<polygon fill="black" stroke="black" points="244.88,-143.33 254.13,-137.43 248.63,-142.78 254.78,-141.88 254.78,-141.88 254.78,-141.88 248.63,-142.78 255.43,-146.33 244.88,-143.33"/>
+</g>
+<!-- qstrader.trading.backtest&#45;&gt;qstrader.broker.simulated_broker -->
+<g id="edge58" class="edge">
+<title>qstrader.trading.backtest-&gt;qstrader.broker.simulated_broker</title>
+<path fill="none" stroke="black" d="M2172.8,-23.14C1953.05,-34.99 1321.48,-69.02 1063.01,-82.95"/>
+<polygon fill="black" stroke="black" points="1053.32,-83.47 1063.07,-78.44 1057.1,-83.27 1063.31,-82.93 1063.31,-82.93 1063.31,-82.93 1057.1,-83.27 1063.55,-87.42 1053.32,-83.47"/>
+</g>
+<!-- qstrader.trading.backtest&#45;&gt;qstrader.data.backtest_data_handler -->
+<g id="edge59" class="edge">
+<title>qstrader.trading.backtest-&gt;qstrader.data.backtest_data_handler</title>
+<path fill="none" stroke="black" d="M2172.5,-23.19C2042.51,-30.59 1771.78,-47.57 1543.69,-72 1542.87,-72.09 1542.05,-72.18 1541.23,-72.27"/>
+<polygon fill="black" stroke="black" points="1531.61,-73.36 1541.04,-67.76 1535.37,-72.93 1541.55,-72.23 1541.55,-72.23 1541.55,-72.23 1535.37,-72.93 1542.06,-76.7 1531.61,-73.36"/>
+</g>
+<!-- qstrader.trading.backtest&#45;&gt;qstrader.data.daily_bar_csv -->
+<g id="edge60" class="edge">
+<title>qstrader.trading.backtest-&gt;qstrader.data.daily_bar_csv</title>
+<path fill="none" stroke="black" d="M2172.53,-18.68C2019.09,-19.08 1681.44,-25.41 1576.69,-72 1555.44,-81.45 1558.4,-95.64 1538.69,-108 1517.97,-120.99 1493.57,-131.6 1470.99,-139.81"/>
+<polygon fill="black" stroke="black" points="1461.57,-143.13 1469.51,-135.56 1465.14,-141.87 1471.01,-139.8 1471.01,-139.8 1471.01,-139.8 1465.14,-141.87 1472.5,-144.05 1461.57,-143.13"/>
+</g>
+<!-- qstrader.trading.backtest&#45;&gt;qstrader.exchange.simulated_exchange -->
+<g id="edge61" class="edge">
+<title>qstrader.trading.backtest-&gt;qstrader.exchange.simulated_exchange</title>
+<path fill="none" stroke="black" d="M2172.64,-28.52C2090.77,-38.68 1957.22,-55.39 1832.6,-71.63"/>
+<polygon fill="black" stroke="black" points="1822.94,-72.89 1832.27,-67.13 1826.69,-72.4 1832.85,-71.59 1832.85,-71.59 1832.85,-71.59 1826.69,-72.4 1833.44,-76.05 1822.94,-72.89"/>
+</g>
+<!-- qstrader.trading.backtest&#45;&gt;qstrader.settings -->
+<g id="edge62" class="edge">
+<title>qstrader.trading.backtest-&gt;qstrader.settings</title>
+<path fill="none" stroke="black" d="M2172.39,-20.47C1951.98,-25.05 1334.34,-40.64 1304.69,-72 1271.71,-106.88 1280.48,-138.55 1304.69,-180 1312.22,-192.89 1324.17,-202.89 1337.05,-210.55"/>
+<polygon fill="black" stroke="black" points="1345.48,-215.14 1334.54,-214.31 1342.16,-213.33 1336.7,-210.35 1336.7,-210.35 1336.7,-210.35 1342.16,-213.33 1338.85,-206.4 1345.48,-215.14"/>
+</g>
+<!-- qstrader.trading.backtest&#45;&gt;qstrader.simulation.daily_bday -->
+<g id="edge63" class="edge">
+<title>qstrader.trading.backtest-&gt;qstrader.simulation.daily_bday</title>
+<path fill="none" stroke="black" d="M2172.39,-36.12C2127.38,-46.09 2070.44,-58.71 2023.45,-69.12"/>
+<polygon fill="black" stroke="black" points="2013.86,-71.24 2022.65,-64.69 2017.55,-70.42 2023.62,-69.08 2023.62,-69.08 2023.62,-69.08 2017.55,-70.42 2024.59,-73.47 2013.86,-71.24"/>
+</g>
+<!-- qstrader.trading.backtest&#45;&gt;qstrader.system.qts -->
+<g id="edge64" class="edge">
+<title>qstrader.trading.backtest-&gt;qstrader.system.qts</title>
+<path fill="none" stroke="black" d="M2326.96,-26.36C2469.6,-39.94 2772.41,-68.78 2911.75,-82.05"/>
+<polygon fill="black" stroke="black" points="2921.49,-82.98 2911.11,-86.51 2917.73,-82.62 2911.53,-82.03 2911.53,-82.03 2911.53,-82.03 2917.73,-82.62 2911.96,-77.55 2921.49,-82.98"/>
+</g>
+<!-- qstrader.trading.backtest&#45;&gt;qstrader.system.rebalance.buy_and_hold -->
+<g id="edge65" class="edge">
+<title>qstrader.trading.backtest-&gt;qstrader.system.rebalance.buy_and_hold</title>
+<path fill="none" stroke="black" d="M2326.79,-22.44C2468.52,-29.12 2780.23,-45.48 3053.41,-71.81"/>
+<polygon fill="black" stroke="black" points="3063.13,-72.76 3052.74,-76.27 3059.37,-72.39 3053.18,-71.79 3053.18,-71.79 3053.18,-71.79 3059.37,-72.39 3053.61,-67.31 3063.13,-72.76"/>
+</g>
+<!-- qstrader.trading.backtest&#45;&gt;qstrader.system.rebalance.daily -->
+<g id="edge66" class="edge">
+<title>qstrader.trading.backtest-&gt;qstrader.system.rebalance.daily</title>
+<path fill="none" stroke="black" d="M2326.98,-19.9C2501.46,-22.57 2939.33,-32.82 3315.23,-71.81"/>
+<polygon fill="black" stroke="black" points="3325.13,-72.85 3314.71,-76.28 3321.36,-72.45 3315.18,-71.81 3315.18,-71.81 3315.18,-71.81 3321.36,-72.45 3315.65,-67.33 3325.13,-72.85"/>
+</g>
+<!-- qstrader.trading.backtest&#45;&gt;qstrader.system.rebalance.end_of_month -->
+<g id="edge67" class="edge">
+<title>qstrader.trading.backtest-&gt;qstrader.system.rebalance.end_of_month</title>
+<path fill="none" stroke="black" d="M2326.9,-20.78C2547.44,-26.07 3199.15,-43.17 3739.69,-72 3773.61,-73.81 3810.21,-76.19 3844.33,-78.6"/>
+<polygon fill="black" stroke="black" points="3854.1,-79.3 3843.8,-83.08 3850.33,-79.03 3844.12,-78.59 3844.12,-78.59 3844.12,-78.59 3850.33,-79.03 3844.44,-74.1 3854.1,-79.3"/>
+</g>
+<!-- qstrader.trading.backtest&#45;&gt;qstrader.system.rebalance.weekly -->
+<g id="edge68" class="edge">
+<title>qstrader.trading.backtest-&gt;qstrader.system.rebalance.weekly</title>
+<path fill="none" stroke="black" d="M2326.87,-20.43C2632.06,-26.22 3755.21,-48.66 4110.69,-72 4127.47,-73.1 4145.17,-74.58 4162.51,-76.22"/>
+<polygon fill="black" stroke="black" points="4172.04,-77.14 4161.65,-80.66 4168.27,-76.77 4162.08,-76.18 4162.08,-76.18 4162.08,-76.18 4168.27,-76.77 4162.52,-71.7 4172.04,-77.14"/>
+</g>
+<!-- qstrader.trading.trading_session -->
+<g id="node79" class="node">
+<title>qstrader.trading.trading_session</title>
+<polygon fill="none" stroke="black" points="3731.12,-108 3536.27,-108 3536.27,-72 3731.12,-72 3731.12,-108"/>
+<text xml:space="preserve" text-anchor="start" x="3544.27" y="-85.8" font-family="Times,serif" font-size="14.00">qstrader.trading.trading_session</text>
+</g>
+<!-- qstrader.trading.backtest&#45;&gt;qstrader.trading.trading_session -->
+<g id="edge69" class="edge">
+<title>qstrader.trading.backtest-&gt;qstrader.trading.trading_session</title>
+<path fill="none" stroke="black" d="M2326.99,-19.05C2524.81,-19.84 3065.65,-26.29 3525.02,-71.8"/>
+<polygon fill="black" stroke="black" points="3534.64,-72.76 3524.24,-76.24 3530.88,-72.38 3524.69,-71.76 3524.69,-71.76 3524.69,-71.76 3530.88,-72.38 3525.14,-67.29 3534.64,-72.76"/>
+</g>
+<!-- qstrader.utils -->
+<g id="node80" class="node">
+<title>qstrader.utils</title>
+<polygon fill="none" stroke="black" points="9148.05,-36 9059.34,-36 9059.34,0 9148.05,0 9148.05,-36"/>
+<text xml:space="preserve" text-anchor="start" x="9067.34" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.utils</text>
+</g>
+<!-- qstrader.utils.console -->
+<g id="node81" class="node">
+<title>qstrader.utils.console</title>
+<polygon fill="none" stroke="black" points="9301.18,-36 9166.21,-36 9166.21,0 9301.18,0 9301.18,-36"/>
+<text xml:space="preserve" text-anchor="start" x="9174.21" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.utils.console</text>
+</g>
+</g>
+</svg>
