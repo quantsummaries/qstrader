@@ -1,6 +1,6 @@
 import pytest
 
-from qstrader.utils.console import GREEN, BLUE, CYAN, string_colour
+from qstrader.utils.console import RED, GREEN, BLUE, CYAN, string_colour
 
 
 @pytest.mark.parametrize(

@@ -1,0 +1,15 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"qstrader.signals.buffer.AssetPriceBuffers" [color="black", fontcolor="black", label=<{AssetPriceBuffers|assets : list[str]<br ALIGN="LEFT"/>lookbacks : list[int]<br ALIGN="LEFT"/>prices : dict<br ALIGN="LEFT"/>|add_asset(asset: str): None<br ALIGN="LEFT"/>append(asset: str, price: float): None<br ALIGN="LEFT"/>remove_asset(asset: str): None<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"qstrader.signals.momentum.MomentumSignal" [color="black", fontcolor="black", label=<{MomentumSignal|<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.signals.sma.SMASignal" [color="black", fontcolor="black", label=<{SMASignal|<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.signals.signal.Signal" [color="black", fontcolor="black", label=<{Signal|assets<br ALIGN="LEFT"/>buffers<br ALIGN="LEFT"/>lookbacks : list[int]<br ALIGN="LEFT"/>start_dt<br ALIGN="LEFT"/>universe : Universe<br ALIGN="LEFT"/>|append(asset: str, price: float): None<br ALIGN="LEFT"/>update_assets(dt: pd.Timestamp): None<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"qstrader.signals.signals_collection.SignalsCollection" [color="black", fontcolor="black", label=<{SignalsCollection|data_handler : BacktestDataHandler<br ALIGN="LEFT"/>signals : dict[str, Signal]<br ALIGN="LEFT"/>warmup : int<br ALIGN="LEFT"/>|update(dt: pd.Timestamp): None<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"qstrader.signals.vol.VolatilitySignal" [color="black", fontcolor="black", label=<{VolatilitySignal|<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.signals.momentum.MomentumSignal" -> "qstrader.signals.signal.Signal" [arrowhead="empty", arrowtail="none"];
+"qstrader.signals.sma.SMASignal" -> "qstrader.signals.signal.Signal" [arrowhead="empty", arrowtail="none"];
+"qstrader.signals.vol.VolatilitySignal" -> "qstrader.signals.signal.Signal" [arrowhead="empty", arrowtail="none"];
+"qstrader.signals.buffer.AssetPriceBuffers" -> "qstrader.signals.signal.Signal" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="buffers", style="solid"];
+"qstrader.signals.signal.Signal" -> "qstrader.signals.signals_collection.SignalsCollection" [arrowhead="odiamond", arrowtail="none", fontcolor="green", label="signals", style="solid"];
+}

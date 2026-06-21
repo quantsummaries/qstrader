@@ -1,0 +1,14 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"qstrader.system.rebalance.buy_and_hold.BuyAndHoldRebalance" [color="black", fontcolor="black", label=<{BuyAndHoldRebalance|rebalances : list<br ALIGN="LEFT"/>start_dt<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.system.rebalance.daily.DailyRebalance" [color="black", fontcolor="black", label=<{DailyRebalance|end_date<br ALIGN="LEFT"/>market_time : str<br ALIGN="LEFT"/>rebalances<br ALIGN="LEFT"/>start_date<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.system.rebalance.end_of_month.EndOfMonthRebalance" [color="black", fontcolor="black", label=<{EndOfMonthRebalance|end_dt<br ALIGN="LEFT"/>market_time : str<br ALIGN="LEFT"/>rebalances<br ALIGN="LEFT"/>start_dt<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.system.qts.QuantTradingSystem" [color="black", fontcolor="black", label=<{QuantTradingSystem|alpha_model : AlphaModel<br ALIGN="LEFT"/>broker : Broker<br ALIGN="LEFT"/>broker_portfolio_id : str<br ALIGN="LEFT"/>data_handler : BacktestDataHandler<br ALIGN="LEFT"/>execution_handler : ExecutionHandler<br ALIGN="LEFT"/>long_only : bool<br ALIGN="LEFT"/>portfolio_construction_model : PortfolioConstructionModel<br ALIGN="LEFT"/>risk_model : NoneType<br ALIGN="LEFT"/>submit_orders : bool<br ALIGN="LEFT"/>universe : Universe<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.system.rebalance.rebalance.Rebalance" [color="black", fontcolor="black", label=<{Rebalance|<br ALIGN="LEFT"/>|<I>output_rebalances</I>()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"qstrader.system.rebalance.weekly.WeeklyRebalance" [color="black", fontcolor="black", label=<{WeeklyRebalance|end_date<br ALIGN="LEFT"/>pre_market_time : str<br ALIGN="LEFT"/>rebalances<br ALIGN="LEFT"/>start_date<br ALIGN="LEFT"/>weekday<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.system.rebalance.buy_and_hold.BuyAndHoldRebalance" -> "qstrader.system.rebalance.rebalance.Rebalance" [arrowhead="empty", arrowtail="none"];
+"qstrader.system.rebalance.daily.DailyRebalance" -> "qstrader.system.rebalance.rebalance.Rebalance" [arrowhead="empty", arrowtail="none"];
+"qstrader.system.rebalance.end_of_month.EndOfMonthRebalance" -> "qstrader.system.rebalance.rebalance.Rebalance" [arrowhead="empty", arrowtail="none"];
+"qstrader.system.rebalance.weekly.WeeklyRebalance" -> "qstrader.system.rebalance.rebalance.Rebalance" [arrowhead="empty", arrowtail="none"];
+}

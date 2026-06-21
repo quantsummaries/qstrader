@@ -2,36 +2,24 @@ import numpy as np
 import pandas as pd
 
 from qstrader.signals.signal import Signal
+from qstrader.asset.universe.universe import Universe
 
 
 class VolatilitySignal(Signal):
     """
-    Indicator class to calculate lookback-period daily
-    volatility of returns, which is then annualised.
+    Indicator class to calculate lookback-period daily volatility of returns, which is then annualised.
 
-    If the number of available returns is less than the
-    lookback parameter the volatility is calculated on
+    If the number of available returns is less than the lookback parameter, the volatility is calculated on
     this subset.
-
-    Parameters
-    ----------
-    start_dt : `pd.Timestamp`
-        The starting datetime (UTC) of the signal.
-    universe : `Universe`
-        The universe of assets to calculate the signals for.
-    lookbacks : `list[int]`
-        The number of lookback periods to store prices for.
     """
 
-    def __init__(self, start_dt, universe, lookbacks):
-        bumped_lookbacks = [lookback + 1 for lookback in lookbacks]
-        super().__init__(start_dt, universe, bumped_lookbacks)
-
     @staticmethod
-    def _asset_lookback_key(asset, lookback):
+    def _asset_lookback_key(asset: str, lookback: int) -> str:
         """
-        Create the buffer dictionary lookup key based
-        on asset name and lookback period.
+        Create the buffer dictionary lookup key based on asset name and lookback period.
+
+        The lookback is incremented by 1 to account for the fact that volatility is calculated on returns, which are
+        derived from price changes.
 
         Parameters
         ----------
@@ -47,11 +35,26 @@ class VolatilitySignal(Signal):
         """
         return '%s_%s' % (asset, lookback + 1)
 
-    def _annualised_vol(self, asset, lookback):
+    def __init__(self, start_dt: pd.Timestamp, universe: Universe, lookbacks: list[int]):
         """
-        Calculate the annualised volatility for the provided
-        lookback period based on the price buffers for a
-        particular asset.
+        Parameters
+        ----------
+        start_dt : `pd.Timestamp`
+            The starting datetime (UTC) of the signal.
+        universe : `Universe`
+            The universe of assets to calculate the signals for.
+        lookbacks : `list[int]`
+            The number of lookback periods to store prices for. They will be incremented by 1 to account for the fact
+            that volatility is calculated on returns, which are derived from price changes.
+        """
+        bumped_lookbacks = [lookback + 1 for lookback in lookbacks]
+        super().__init__(start_dt, universe, bumped_lookbacks)
+
+    def _annualised_vol(self, asset: str, lookback: int) -> float:
+        """
+        Calculate the annualised volatility for the provided lookback period based on the price buffers for a
+        particular asset. The price series used is assumed to be daily so that the annualisation factor is 252
+        (the number of trading days in a year).
 
         Parameters
         ----------
@@ -65,13 +68,8 @@ class VolatilitySignal(Signal):
         `float`
             The annualised volatility of returns.
         """
-        series = pd.Series(
-            self.buffers.prices[
-                VolatilitySignal._asset_lookback_key(
-                    asset, lookback
-                )
-            ]
-        )
+        series = pd.Series(self.buffers.prices[VolatilitySignal._asset_lookback_key(asset, lookback)])
+
         returns = series.pct_change().dropna().to_numpy()
 
         if len(returns) < 1:
@@ -79,10 +77,9 @@ class VolatilitySignal(Signal):
         else:
             return np.std(returns) * np.sqrt(252)
 
-    def __call__(self, asset, lookback):
+    def __call__(self, asset: str, lookback: int) -> float:
         """
-        Calculate the annualised volatility of
-        returns for the asset.
+        Calculate the annualised volatility of returns for the asset.
 
         Parameters
         ----------

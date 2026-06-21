@@ -1,0 +1,16 @@
+digraph "packages" {
+rankdir=BT
+charset="utf-8"
+"qstrader.system" [color="black", label=<qstrader.system>, shape="box", style="solid"];
+"qstrader.system.qts" [color="black", label=<qstrader.system.qts>, shape="box", style="solid"];
+"qstrader.system.rebalance" [color="black", label=<qstrader.system.rebalance>, shape="box", style="solid"];
+"qstrader.system.rebalance.buy_and_hold" [color="black", label=<qstrader.system.rebalance.buy_and_hold>, shape="box", style="solid"];
+"qstrader.system.rebalance.daily" [color="black", label=<qstrader.system.rebalance.daily>, shape="box", style="solid"];
+"qstrader.system.rebalance.end_of_month" [color="black", label=<qstrader.system.rebalance.end_of_month>, shape="box", style="solid"];
+"qstrader.system.rebalance.rebalance" [color="black", label=<qstrader.system.rebalance.rebalance>, shape="box", style="solid"];
+"qstrader.system.rebalance.weekly" [color="black", label=<qstrader.system.rebalance.weekly>, shape="box", style="solid"];
+"qstrader.system.rebalance.buy_and_hold" -> "qstrader.system.rebalance.rebalance" [arrowhead="open", arrowtail="none"];
+"qstrader.system.rebalance.daily" -> "qstrader.system.rebalance.rebalance" [arrowhead="open", arrowtail="none"];
+"qstrader.system.rebalance.end_of_month" -> "qstrader.system.rebalance.rebalance" [arrowhead="open", arrowtail="none"];
+"qstrader.system.rebalance.weekly" -> "qstrader.system.rebalance.rebalance" [arrowhead="open", arrowtail="none"];
+}

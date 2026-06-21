@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="941pt" height="188pt" viewBox="0.00 0.00 941.00 188.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>packages</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-184 937.46,-184 937.46,4 -4,4"/>
+<!-- qstrader.execution -->
+<g id="node1" class="node">
+<title>qstrader.execution</title>
+<polygon fill="none" stroke="black" points="119.01,-36 0,-36 0,0 119.01,0 119.01,-36"/>
+<text xml:space="preserve" text-anchor="start" x="8" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.execution</text>
+</g>
+<!-- qstrader.execution.execution_algo -->
+<g id="node2" class="node">
+<title>qstrader.execution.execution_algo</title>
+<polygon fill="none" stroke="black" points="345.52,-36 137.49,-36 137.49,0 345.52,0 345.52,-36"/>
+<text xml:space="preserve" text-anchor="start" x="145.49" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.execution.execution_algo</text>
+</g>
+<!-- qstrader.execution.execution_algo.execution_algo -->
+<g id="node3" class="node">
+<title>qstrader.execution.execution_algo.execution_algo</title>
+<polygon fill="none" stroke="black" points="812.04,-108 514.98,-108 514.98,-72 812.04,-72 812.04,-108"/>
+<text xml:space="preserve" text-anchor="start" x="522.98" y="-85.8" font-family="Times,serif" font-size="14.00">qstrader.execution.execution_algo.execution_algo</text>
+</g>
+<!-- qstrader.execution.order -->
+<g id="node6" class="node">
+<title>qstrader.execution.order</title>
+<polygon fill="none" stroke="black" points="739.53,-180 587.48,-180 587.48,-144 739.53,-144 739.53,-180"/>
+<text xml:space="preserve" text-anchor="start" x="595.48" y="-157.8" font-family="Times,serif" font-size="14.00">qstrader.execution.order</text>
+</g>
+<!-- qstrader.execution.execution_algo.execution_algo&#45;&gt;qstrader.execution.order -->
+<g id="edge1" class="edge">
+<title>qstrader.execution.execution_algo.execution_algo-&gt;qstrader.execution.order</title>
+<path fill="none" stroke="black" d="M663.51,-108.3C663.51,-115.68 663.51,-124.48 663.51,-132.75"/>
+<polygon fill="black" stroke="black" points="663.51,-142.68 659.01,-132.68 663.51,-138.9 663.51,-132.68 663.51,-132.68 663.51,-132.68 663.51,-138.9 668.01,-132.68 663.51,-142.68"/>
+</g>
+<!-- qstrader.execution.execution_algo.market_order -->
+<g id="node4" class="node">
+<title>qstrader.execution.execution_algo.market_order</title>
+<polygon fill="none" stroke="black" points="649.98,-36 363.03,-36 363.03,0 649.98,0 649.98,-36"/>
+<text xml:space="preserve" text-anchor="start" x="371.03" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.execution.execution_algo.market_order</text>
+</g>
+<!-- qstrader.execution.execution_algo.market_order&#45;&gt;qstrader.execution.execution_algo.execution_algo -->
+<g id="edge2" class="edge">
+<title>qstrader.execution.execution_algo.market_order-&gt;qstrader.execution.execution_algo.execution_algo</title>
+<path fill="none" stroke="black" d="M545.72,-36.48C566.5,-45.75 592.22,-57.22 614.33,-67.07"/>
+<polygon fill="black" stroke="black" points="623.41,-71.12 612.44,-71.16 619.95,-69.58 614.27,-67.05 614.27,-67.05 614.27,-67.05 619.95,-69.58 616.11,-62.94 623.41,-71.12"/>
+</g>
+<!-- qstrader.execution.execution_algo.market_order&#45;&gt;qstrader.execution.order -->
+<g id="edge3" class="edge">
+<title>qstrader.execution.execution_algo.market_order-&gt;qstrader.execution.order</title>
+<path fill="none" stroke="black" d="M500.76,-36.2C495.45,-55.56 490.44,-87.05 505.51,-108 522.14,-131.12 549.34,-144.3 576.52,-151.76"/>
+<polygon fill="black" stroke="black" points="586.14,-154.14 575.35,-156.1 582.47,-153.23 576.43,-151.73 576.43,-151.73 576.43,-151.73 582.47,-153.23 577.52,-147.37 586.14,-154.14"/>
+</g>
+<!-- qstrader.execution.execution_handler -->
+<g id="node5" class="node">
+<title>qstrader.execution.execution_handler</title>
+<polygon fill="none" stroke="black" points="933.46,-36 707.55,-36 707.55,0 933.46,0 933.46,-36"/>
+<text xml:space="preserve" text-anchor="start" x="715.55" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.execution.execution_handler</text>
+</g>
+<!-- qstrader.execution.execution_handler&#45;&gt;qstrader.execution.execution_algo.execution_algo -->
+<g id="edge4" class="edge">
+<title>qstrader.execution.execution_handler-&gt;qstrader.execution.execution_algo.execution_algo</title>
+<path fill="none" stroke="black" d="M781.29,-36.48C760.51,-45.75 734.79,-57.22 712.69,-67.07"/>
+<polygon fill="black" stroke="black" points="703.6,-71.12 710.9,-62.94 707.06,-69.58 712.74,-67.05 712.74,-67.05 712.74,-67.05 707.06,-69.58 714.57,-71.16 703.6,-71.12"/>
+</g>
+<!-- qstrader.execution.execution_handler&#45;&gt;qstrader.execution.order -->
+<g id="edge5" class="edge">
+<title>qstrader.execution.execution_handler-&gt;qstrader.execution.order</title>
+<path fill="none" stroke="black" d="M826.25,-36.2C831.56,-55.56 836.57,-87.05 821.51,-108 804.88,-131.12 777.67,-144.3 750.49,-151.76"/>
+<polygon fill="black" stroke="black" points="740.87,-154.14 749.5,-147.37 744.54,-153.23 750.58,-151.73 750.58,-151.73 750.58,-151.73 744.54,-153.23 751.66,-156.1 740.87,-154.14"/>
+</g>
+</g>
+</svg>

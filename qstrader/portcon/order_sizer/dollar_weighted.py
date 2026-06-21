@@ -1,6 +1,9 @@
 import numpy as np
+import pandas as pd
 
 from qstrader.portcon.order_sizer.order_sizer import OrderSizer
+from qstrader.broker.broker import Broker
+from qstrader.data.backtest_data_handler import BacktestDataHandler
 
 
 class DollarWeightedCashBufferedOrderSizer(OrderSizer):
@@ -29,10 +32,10 @@ class DollarWeightedCashBufferedOrderSizer(OrderSizer):
 
     def __init__(
         self,
-        broker,
-        broker_portfolio_id,
-        data_handler,
-        cash_buffer_percentage=0.05
+        broker: Broker,
+        broker_portfolio_id: str,
+        data_handler: BacktestDataHandler,
+        cash_buffer_percentage: float = 0.05
     ):
         self.broker = broker
         self.broker_portfolio_id = broker_portfolio_id
@@ -41,7 +44,7 @@ class DollarWeightedCashBufferedOrderSizer(OrderSizer):
             cash_buffer_percentage
         )
 
-    def _check_set_cash_buffer(self, cash_buffer_percentage):
+    def _check_set_cash_buffer(self, cash_buffer_percentage: float) -> float:
         """
         Checks and sets the cash buffer percentage value.
 
@@ -79,7 +82,7 @@ class DollarWeightedCashBufferedOrderSizer(OrderSizer):
         """
         return self.broker.get_portfolio_total_equity(self.broker_portfolio_id)
 
-    def _normalise_weights(self, weights):
+    def _normalise_weights(self, weights: dict[str, float]) -> dict[str, float]:
         """
         Rescale provided weight values to ensure
         weight vector sums to unity.
@@ -112,7 +115,7 @@ class DollarWeightedCashBufferedOrderSizer(OrderSizer):
             for asset, weight in weights.items()
         }
 
-    def __call__(self, dt, weights):
+    def __call__(self, dt: pd.Timestamp, weights: dict[str, float]) -> dict[str, dict]:
         """
         Creates a dollar-weighted cash-buffered target portfolio from the
         provided target weights at a particular timestamp.

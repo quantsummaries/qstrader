@@ -1,12 +1,10 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 
-class TradingSession(object):
+class TradingSession(ABC):
     """
     Interface to a live or backtested trading session.
     """
-
-    __metaclass__ = ABCMeta
 
     @abstractmethod
     def run(self):

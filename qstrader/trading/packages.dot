@@ -1,0 +1,8 @@
+digraph "packages" {
+rankdir=BT
+charset="utf-8"
+"qstrader.trading" [color="black", label=<qstrader.trading>, shape="box", style="solid"];
+"qstrader.trading.backtest" [color="black", label=<qstrader.trading.backtest>, shape="box", style="solid"];
+"qstrader.trading.trading_session" [color="black", label=<qstrader.trading.trading_session>, shape="box", style="solid"];
+"qstrader.trading.backtest" -> "qstrader.trading.trading_session" [arrowhead="open", arrowtail="none"];
+}

@@ -1,0 +1,12 @@
+digraph "packages" {
+rankdir=BT
+charset="utf-8"
+"qstrader.alpha_model" [color="black", label=<qstrader.alpha_model>, shape="box", style="solid"];
+"qstrader.alpha_model.alpha_model" [color="black", label=<qstrader.alpha_model.alpha_model>, shape="box", style="solid"];
+"qstrader.alpha_model.fixed_signals" [color="black", label=<qstrader.alpha_model.fixed_signals>, shape="box", style="solid"];
+"qstrader.alpha_model.single_signal" [color="black", label=<qstrader.alpha_model.single_signal>, shape="box", style="solid"];
+"qstrader.alpha_model.top_n_momentum" [color="black", label=<qstrader.alpha_model.top_n_momentum>, shape="box", style="solid"];
+"qstrader.alpha_model.fixed_signals" -> "qstrader.alpha_model.alpha_model" [arrowhead="open", arrowtail="none"];
+"qstrader.alpha_model.single_signal" -> "qstrader.alpha_model.alpha_model" [arrowhead="open", arrowtail="none"];
+"qstrader.alpha_model.top_n_momentum" -> "qstrader.alpha_model.alpha_model" [arrowhead="open", arrowtail="none"];
+}

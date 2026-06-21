@@ -1,0 +1,10 @@
+digraph "packages" {
+rankdir=BT
+charset="utf-8"
+"qstrader.statistics" [color="black", label=<qstrader.statistics>, shape="box", style="solid"];
+"qstrader.statistics.json_statistics" [color="black", label=<qstrader.statistics.json_statistics>, shape="box", style="solid"];
+"qstrader.statistics.performance" [color="black", label=<qstrader.statistics.performance>, shape="box", style="solid"];
+"qstrader.statistics.statistics" [color="black", label=<qstrader.statistics.statistics>, shape="box", style="solid"];
+"qstrader.statistics.tearsheet" [color="black", label=<qstrader.statistics.tearsheet>, shape="box", style="solid"];
+"qstrader.statistics.tearsheet" -> "qstrader.statistics.statistics" [arrowhead="open", arrowtail="none"];
+}

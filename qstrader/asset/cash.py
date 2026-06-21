@@ -13,7 +13,7 @@ class Cash(Asset):
 
     def __init__(
         self,
-        currency='USD'
+        currency: str='USD'
     ):
         self.cash_like = True
         self.currency = currency

@@ -1,0 +1,16 @@
+digraph "packages" {
+rankdir=BT
+charset="utf-8"
+"qstrader.signals" [color="black", label=<qstrader.signals>, shape="box", style="solid"];
+"qstrader.signals.buffer" [color="black", label=<qstrader.signals.buffer>, shape="box", style="solid"];
+"qstrader.signals.momentum" [color="black", label=<qstrader.signals.momentum>, shape="box", style="solid"];
+"qstrader.signals.signal" [color="black", label=<qstrader.signals.signal>, shape="box", style="solid"];
+"qstrader.signals.signals_collection" [color="black", label=<qstrader.signals.signals_collection>, shape="box", style="solid"];
+"qstrader.signals.sma" [color="black", label=<qstrader.signals.sma>, shape="box", style="solid"];
+"qstrader.signals.vol" [color="black", label=<qstrader.signals.vol>, shape="box", style="solid"];
+"qstrader.signals.momentum" -> "qstrader.signals.signal" [arrowhead="open", arrowtail="none"];
+"qstrader.signals.signal" -> "qstrader.signals.buffer" [arrowhead="open", arrowtail="none"];
+"qstrader.signals.signals_collection" -> "qstrader.signals.signal" [arrowhead="open", arrowtail="none"];
+"qstrader.signals.sma" -> "qstrader.signals.signal" [arrowhead="open", arrowtail="none"];
+"qstrader.signals.vol" -> "qstrader.signals.signal" [arrowhead="open", arrowtail="none"];
+}

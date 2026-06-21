@@ -27,10 +27,10 @@ class WeeklyRebalance(Rebalance):
 
     def __init__(
         self,
-        start_date,
-        end_date,
-        weekday,
-        pre_market=False
+        start_date: pd.Timestamp,
+        end_date: pd.Timestamp,
+        weekday: str,
+        pre_market: bool=False
     ):
         self.weekday = self._set_weekday(weekday)
         self.start_date = start_date
@@ -38,7 +38,7 @@ class WeeklyRebalance(Rebalance):
         self.pre_market_time = self._set_market_time(pre_market)
         self.rebalances = self._generate_rebalances()
 
-    def _set_weekday(self, weekday):
+    def _set_weekday(self, weekday: str) -> str:
         """
         Checks that the weekday string corresponds to
         a business weekday.
@@ -64,7 +64,7 @@ class WeeklyRebalance(Rebalance):
         else:
             return weekday.upper()
 
-    def _set_market_time(self, pre_market):
+    def _set_market_time(self, pre_market: bool) -> str:
         """
         Determines whether to use market open or market close
         as the rebalance time.
@@ -82,7 +82,7 @@ class WeeklyRebalance(Rebalance):
         """
         return "14:30:00" if pre_market else "21:00:00"
 
-    def _generate_rebalances(self):
+    def _generate_rebalances(self) -> list[pd.Timestamp]:
         """
         Output the rebalance timestamp list.
 
@@ -105,3 +105,6 @@ class WeeklyRebalance(Rebalance):
         ]
 
         return rebalance_times
+
+    def output_rebalances(self):
+        pass

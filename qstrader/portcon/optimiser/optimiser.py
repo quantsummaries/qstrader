@@ -1,7 +1,11 @@
-from abc import ABCMeta, abstractmethod
+from __future__ import annotations
+
+from abc import ABC, abstractmethod
+
+import pandas as pd
 
 
-class PortfolioOptimiser(object):
+class PortfolioOptimiser(ABC):
     """
     Abstract interface for a PortfolioOptimiser callable.
 
@@ -17,10 +21,8 @@ class PortfolioOptimiser(object):
     Asset and with a scalar value as the weight.
     """
 
-    __metaclass__ = ABCMeta
-
     @abstractmethod
-    def __call__(self, dt):
+    def __call__(self, dt: pd.Timestamp, initial_weights: dict[str, float]) -> dict:
         raise NotImplementedError(
             "Should implement __call__()"
         )

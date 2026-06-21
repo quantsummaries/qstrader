@@ -1,15 +1,25 @@
+from __future__ import annotations
+
 from qstrader import settings
 from qstrader.execution.order import Order
+from qstrader.broker.broker import Broker
+from qstrader.asset.universe.universe import Universe
+from qstrader.portcon.optimiser.optimiser import PortfolioOptimiser
+from qstrader.portcon.order_sizer.order_sizer import OrderSizer
+from qstrader.alpha_model.alpha_model import AlphaModel
+from qstrader.risk_model.risk_model import RiskModel
+from qstrader.data.backtest_data_handler import BacktestDataHandler
+
 
 
 class PortfolioConstructionModel(object):
     """
     Encapsulates the process of generating a target weight vector
     for a universe of assets, based on input from an AlphaModel,
-    a RiskModel and a TransactionCostModel.
+    a RiskModel and an optional future transaction cost model.
 
-    The optimisation process itself is delegated to a TargetWeightGenerator
-    instance provided an instantiation.
+    The optimisation process itself is delegated to a
+    PortfolioOptimiser instance provided at instantiation.
 
     Parameters
     ----------
@@ -19,7 +29,7 @@ class PortfolioConstructionModel(object):
         The specific portfolio at the Broker to obtain positions from.
     universe : `Universe`
         The Universe on which to construct a portfolio.
-    order_sizer : `OrderSizeGenerator`
+    order_sizer : `OrderSizer`
         Converts target weights into integral positions.
     optimiser : `PortfolioOptimiser`
         The optimisation mechanism for generating the target weights,
@@ -27,23 +37,23 @@ class PortfolioConstructionModel(object):
         The optional alpha/forecasting signal model for Assets in the Universe,
     risk_model : `RiskModel`, optional
         The optional risk model for Assets in the Universe.
-    cost_model : `TransactionCostModel`, optional
-        The optional transaction cost model for Assets in the Universe.
+    cost_model : optional
+        Reserved for a future transaction cost model implementation.
     data_handler : `DataHandler`, optional
         The optional data handler used within portfolio construction.
     """
 
     def __init__(
         self,
-        broker,
-        broker_portfolio_id,
-        universe,
-        order_sizer,
-        optimiser,
-        alpha_model=None,
-        risk_model=None,
+        broker: Broker,
+        broker_portfolio_id: str,
+        universe: Universe,
+        order_sizer: OrderSizer,
+        optimiser: PortfolioOptimiser,
+        alpha_model: AlphaModel|None=None,
+        risk_model: RiskModel|None=None,
         cost_model=None,
-        data_handler=None,
+        data_handler: BacktestDataHandler|None=None,
     ):
         self.broker = broker
         self.broker_portfolio_id = broker_portfolio_id

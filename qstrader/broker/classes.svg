@@ -1,0 +1,246 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2515pt" height="1282pt" viewBox="0.00 0.00 2515.00 1282.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 1277.6)">
+<title>classes</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-1277.6 2511.16,-1277.6 2511.16,4 -4,4"/>
+<!-- qstrader.broker.broker.Broker -->
+<g id="node1" class="node">
+<title>qstrader.broker.broker.Broker</title>
+<polygon fill="none" stroke="black" points="29.73,-1047.5 29.73,-1273.1 405.06,-1273.1 405.06,-1047.5 29.73,-1047.5"/>
+<text xml:space="preserve" text-anchor="start" x="197.95" y="-1256.5" font-family="Times,serif" font-size="14.00">Broker</text>
+<polyline fill="none" stroke="black" points="29.73,-1248.3 405.06,-1248.3"/>
+<polyline fill="none" stroke="black" points="29.73,-1223.5 405.06,-1223.5"/>
+<text xml:space="preserve" text-anchor="start" x="37.73" y="-1207.9" font-family="Times,serif" font-style="italic" font-size="14.00">create_portfolio</text>
+<text xml:space="preserve" text-anchor="start" x="128.71" y="-1207.9" font-family="Times,serif" font-size="14.00">(portfolio_id: str, name: str)</text>
+<text xml:space="preserve" text-anchor="start" x="37.73" y="-1193.9" font-family="Times,serif" font-style="italic" font-size="14.00">get_account_cash_balance</text>
+<text xml:space="preserve" text-anchor="start" x="190.13" y="-1193.9" font-family="Times,serif" font-size="14.00">(currency: str | None): float</text>
+<text xml:space="preserve" text-anchor="start" x="37.73" y="-1179.9" font-family="Times,serif" font-style="italic" font-size="14.00">get_account_total_equity</text>
+<text xml:space="preserve" text-anchor="start" x="180.02" y="-1179.9" font-family="Times,serif" font-size="14.00">(): dict[str, float]</text>
+<text xml:space="preserve" text-anchor="start" x="37.73" y="-1165.9" font-family="Times,serif" font-style="italic" font-size="14.00">get_portfolio_as_dict</text>
+<text xml:space="preserve" text-anchor="start" x="158.28" y="-1165.9" font-family="Times,serif" font-size="14.00">(portfolio_id: str)</text>
+<text xml:space="preserve" text-anchor="start" x="37.73" y="-1151.9" font-family="Times,serif" font-style="italic" font-size="14.00">get_portfolio_cash_balance</text>
+<text xml:space="preserve" text-anchor="start" x="194.82" y="-1151.9" font-family="Times,serif" font-size="14.00">(portfolio_id: str)</text>
+<text xml:space="preserve" text-anchor="start" x="37.73" y="-1137.9" font-family="Times,serif" font-style="italic" font-size="14.00">get_portfolio_total_equity</text>
+<text xml:space="preserve" text-anchor="start" x="184.71" y="-1137.9" font-family="Times,serif" font-size="14.00">(portfolio_id: str)</text>
+<text xml:space="preserve" text-anchor="start" x="37.73" y="-1123.9" font-family="Times,serif" font-style="italic" font-size="14.00">list_all_portfolios</text>
+<text xml:space="preserve" text-anchor="start" x="138.08" y="-1123.9" font-family="Times,serif" font-size="14.00">()</text>
+<text xml:space="preserve" text-anchor="start" x="37.73" y="-1109.9" font-family="Times,serif" font-style="italic" font-size="14.00">submit_order</text>
+<text xml:space="preserve" text-anchor="start" x="113.17" y="-1109.9" font-family="Times,serif" font-size="14.00">(portfolio_id: str, order: Order)</text>
+<text xml:space="preserve" text-anchor="start" x="37.73" y="-1095.9" font-family="Times,serif" font-style="italic" font-size="14.00">subscribe_funds_to_account</text>
+<text xml:space="preserve" text-anchor="start" x="197.93" y="-1095.9" font-family="Times,serif" font-size="14.00">(amount: float)</text>
+<text xml:space="preserve" text-anchor="start" x="37.73" y="-1081.9" font-family="Times,serif" font-style="italic" font-size="14.00">subscribe_funds_to_portfolio</text>
+<text xml:space="preserve" text-anchor="start" x="202.62" y="-1081.9" font-family="Times,serif" font-size="14.00">(portfolio_id: str, amount: float)</text>
+<text xml:space="preserve" text-anchor="start" x="37.73" y="-1067.9" font-family="Times,serif" font-style="italic" font-size="14.00">withdraw_funds_from_account</text>
+<text xml:space="preserve" text-anchor="start" x="212.73" y="-1067.9" font-family="Times,serif" font-size="14.00">(amount: float)</text>
+<text xml:space="preserve" text-anchor="start" x="37.73" y="-1053.9" font-family="Times,serif" font-style="italic" font-size="14.00">withdraw_funds_from_portfolio</text>
+<text xml:space="preserve" text-anchor="start" x="217.42" y="-1053.9" font-family="Times,serif" font-size="14.00">(portfolio_id: str, amount: float)</text>
+</g>
+<!-- qstrader.broker.fee_model.fee_model.FeeModel -->
+<g id="node2" class="node">
+<title>qstrader.broker.fee_model.fee_model.FeeModel</title>
+<polygon fill="none" stroke="black" points="442.43,-716.7 442.43,-791.1 922.35,-791.1 922.35,-716.7 442.43,-716.7"/>
+<text xml:space="preserve" text-anchor="start" x="654.01" y="-774.5" font-family="Times,serif" font-size="14.00">FeeModel</text>
+<polyline fill="none" stroke="black" points="442.43,-766.3 922.35,-766.3"/>
+<polyline fill="none" stroke="black" points="442.43,-741.5 922.35,-741.5"/>
+<text xml:space="preserve" text-anchor="start" x="450.43" y="-725.9" font-family="Times,serif" font-style="italic" font-size="14.00">calc_total_cost</text>
+<text xml:space="preserve" text-anchor="start" x="535.97" y="-725.9" font-family="Times,serif" font-size="14.00">(asset: str, quantity: int, consideration: float, broker: Broker | None)</text>
+</g>
+<!-- qstrader.broker.fee_model.percent_fee_model.PercentFeeModel -->
+<g id="node3" class="node">
+<title>qstrader.broker.fee_model.percent_fee_model.PercentFeeModel</title>
+<polygon fill="none" stroke="black" points="452.7,-176.9 452.7,-268.1 964.08,-268.1 964.08,-176.9 452.7,-176.9"/>
+<text xml:space="preserve" text-anchor="start" x="659.02" y="-251.5" font-family="Times,serif" font-size="14.00">PercentFeeModel</text>
+<polyline fill="none" stroke="black" points="452.7,-243.3 964.08,-243.3"/>
+<text xml:space="preserve" text-anchor="start" x="644.23" y="-226.7" font-family="Times,serif" font-size="14.00">commission_pct : float</text>
+<text xml:space="preserve" text-anchor="start" x="644.23" y="-209.9" font-family="Times,serif" font-size="14.00">tax_pct : float</text>
+<polyline fill="none" stroke="black" points="452.7,-201.7 964.08,-201.7"/>
+<text xml:space="preserve" text-anchor="start" x="460.7" y="-185.1" font-family="Times,serif" font-size="14.00">calc_total_cost(asset: str, quantity: int, consideration: float, broker: Broker | None): float</text>
+</g>
+<!-- qstrader.broker.fee_model.percent_fee_model.PercentFeeModel&#45;&gt;qstrader.broker.fee_model.fee_model.FeeModel -->
+<g id="edge1" class="edge">
+<title>qstrader.broker.fee_model.percent_fee_model.PercentFeeModel-&gt;qstrader.broker.fee_model.fee_model.FeeModel</title>
+<path fill="none" stroke="black" d="M706.2,-268.18C701.35,-366.97 689.74,-603.24 684.75,-704.97"/>
+<polygon fill="none" stroke="black" points="681.25,-704.73 684.26,-714.89 688.24,-705.08 681.25,-704.73"/>
+</g>
+<!-- qstrader.broker.portfolio.portfolio.Portfolio -->
+<g id="node4" class="node">
+<title>qstrader.broker.portfolio.portfolio.Portfolio</title>
+<polygon fill="none" stroke="black" points="940.64,-557.1 940.64,-950.7 1512.15,-950.7 1512.15,-557.1 940.64,-557.1"/>
+<text xml:space="preserve" text-anchor="start" x="1201.5" y="-934.1" font-family="Times,serif" font-size="14.00">Portfolio</text>
+<polyline fill="none" stroke="black" points="940.64,-925.9 1512.15,-925.9"/>
+<text xml:space="preserve" text-anchor="start" x="1136.19" y="-909.3" font-family="Times,serif" font-size="14.00">cash : float</text>
+<text xml:space="preserve" text-anchor="start" x="1136.19" y="-892.5" font-family="Times,serif" font-size="14.00">currency : str</text>
+<text xml:space="preserve" text-anchor="start" x="1136.19" y="-875.7" font-family="Times,serif" font-size="14.00">current_dt : datetime</text>
+<text xml:space="preserve" text-anchor="start" x="1136.19" y="-858.9" font-family="Times,serif" font-size="14.00">history : list</text>
+<text xml:space="preserve" text-anchor="start" x="1136.19" y="-842.1" font-family="Times,serif" font-size="14.00">logger : NoneType, RootLogger</text>
+<text xml:space="preserve" text-anchor="start" x="1136.19" y="-825.3" font-family="Times,serif" font-size="14.00">name : str | None</text>
+<text xml:space="preserve" text-anchor="start" x="1136.19" y="-808.5" font-family="Times,serif" font-size="14.00">portfolio_id : str | None</text>
+<text xml:space="preserve" text-anchor="start" x="1136.19" y="-791.7" font-family="Times,serif" font-size="14.00">pos_handler</text>
+<text xml:space="preserve" text-anchor="start" x="1136.19" y="-774.9" font-family="Times,serif" font-size="14.00">start_dt : datetime</text>
+<text xml:space="preserve" text-anchor="start" x="1136.19" y="-758.1" font-family="Times,serif" font-size="14.00">starting_cash : float</text>
+<text xml:space="preserve" text-anchor="start" x="1136.19" y="-741.3" font-family="Times,serif" font-size="14.00">total_equity : float</text>
+<text xml:space="preserve" text-anchor="start" x="1136.19" y="-724.5" font-family="Times,serif" font-size="14.00">total_market_value : float</text>
+<text xml:space="preserve" text-anchor="start" x="1136.19" y="-707.7" font-family="Times,serif" font-size="14.00">total_pnl : float</text>
+<text xml:space="preserve" text-anchor="start" x="1136.19" y="-690.9" font-family="Times,serif" font-size="14.00">total_realised_pnl : float</text>
+<text xml:space="preserve" text-anchor="start" x="1136.19" y="-674.1" font-family="Times,serif" font-size="14.00">total_unrealised_pnl : float</text>
+<polyline fill="none" stroke="black" points="940.64,-665.9 1512.15,-665.9"/>
+<text xml:space="preserve" text-anchor="start" x="948.64" y="-649.3" font-family="Times,serif" font-size="14.00">history_to_df(): pd.DataFrame</text>
+<text xml:space="preserve" text-anchor="start" x="948.64" y="-632.5" font-family="Times,serif" font-size="14.00">portfolio_to_dict()</text>
+<text xml:space="preserve" text-anchor="start" x="948.64" y="-615.7" font-family="Times,serif" font-size="14.00">subscribe_funds(dt: datetime.datetime, amount: float): None</text>
+<text xml:space="preserve" text-anchor="start" x="948.64" y="-598.9" font-family="Times,serif" font-size="14.00">transact_asset(txn: Transaction): None</text>
+<text xml:space="preserve" text-anchor="start" x="948.64" y="-582.1" font-family="Times,serif" font-size="14.00">update_market_value_of_asset(asset: str, current_price: float, current_dt: datetime.datetime): None</text>
+<text xml:space="preserve" text-anchor="start" x="948.64" y="-565.3" font-family="Times,serif" font-size="14.00">withdraw_funds(dt: datetime.datetime, amount: float): None</text>
+</g>
+<!-- qstrader.broker.portfolio.portfolio_event.PortfolioEvent -->
+<g id="node5" class="node">
+<title>qstrader.broker.portfolio.portfolio_event.PortfolioEvent</title>
+<polygon fill="none" stroke="black" points="1335.43,-126.5 1335.43,-318.5 1837.35,-318.5 1837.35,-126.5 1335.43,-126.5"/>
+<text xml:space="preserve" text-anchor="start" x="1545.17" y="-301.9" font-family="Times,serif" font-size="14.00">PortfolioEvent</text>
+<polyline fill="none" stroke="black" points="1335.43,-293.7 1837.35,-293.7"/>
+<text xml:space="preserve" text-anchor="start" x="1542.84" y="-277.1" font-family="Times,serif" font-size="14.00">balance : float</text>
+<text xml:space="preserve" text-anchor="start" x="1542.84" y="-260.3" font-family="Times,serif" font-size="14.00">credit : float</text>
+<text xml:space="preserve" text-anchor="start" x="1542.84" y="-243.5" font-family="Times,serif" font-size="14.00">debit : float</text>
+<text xml:space="preserve" text-anchor="start" x="1542.84" y="-226.7" font-family="Times,serif" font-size="14.00">description : str</text>
+<text xml:space="preserve" text-anchor="start" x="1542.84" y="-209.9" font-family="Times,serif" font-size="14.00">dt : datetime</text>
+<text xml:space="preserve" text-anchor="start" x="1542.84" y="-193.1" font-family="Times,serif" font-size="14.00">type : str</text>
+<polyline fill="none" stroke="black" points="1335.43,-184.9 1837.35,-184.9"/>
+<text xml:space="preserve" text-anchor="start" x="1343.43" y="-168.3" font-family="Times,serif" font-size="14.00">create_subscription(dt: datetime.datetime, credit: float, balance: float): 'PortfolioEvent'</text>
+<text xml:space="preserve" text-anchor="start" x="1343.43" y="-151.5" font-family="Times,serif" font-size="14.00">create_withdrawal(dt: datetime.datetime, debit: float, balance: float): 'PortfolioEvent'</text>
+<text xml:space="preserve" text-anchor="start" x="1343.43" y="-134.7" font-family="Times,serif" font-size="14.00">to_dict(): dict</text>
+</g>
+<!-- qstrader.broker.portfolio.position.Position -->
+<g id="node6" class="node">
+<title>qstrader.broker.portfolio.position.Position</title>
+<polygon fill="none" stroke="black" points="1855.01,-0.5 1855.01,-444.5 2289.77,-444.5 2289.77,-0.5 1855.01,-0.5"/>
+<text xml:space="preserve" text-anchor="start" x="2049.44" y="-427.9" font-family="Times,serif" font-size="14.00">Position</text>
+<polyline fill="none" stroke="black" points="1855.01,-419.7 2289.77,-419.7"/>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-403.1" font-family="Times,serif" font-size="14.00">asset : str</text>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-386.3" font-family="Times,serif" font-size="14.00">avg_bought : float</text>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-369.5" font-family="Times,serif" font-size="14.00">avg_price : float</text>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-352.7" font-family="Times,serif" font-size="14.00">avg_sold : float</text>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-335.9" font-family="Times,serif" font-size="14.00">buy_commission : float</text>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-319.1" font-family="Times,serif" font-size="14.00">buy_quantity : int</text>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-302.3" font-family="Times,serif" font-size="14.00">commission : float</text>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-285.5" font-family="Times,serif" font-size="14.00">current_dt</text>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-268.7" font-family="Times,serif" font-size="14.00">current_price : float</text>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-251.9" font-family="Times,serif" font-size="14.00">direction : int</text>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-235.1" font-family="Times,serif" font-size="14.00">market_value : float</text>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-218.3" font-family="Times,serif" font-size="14.00">net_incl_commission : float</text>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-201.5" font-family="Times,serif" font-size="14.00">net_quantity : int</text>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-184.7" font-family="Times,serif" font-size="14.00">net_total : float</text>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-167.9" font-family="Times,serif" font-size="14.00">realised_pnl : float</text>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-151.1" font-family="Times,serif" font-size="14.00">sell_commission : float</text>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-134.3" font-family="Times,serif" font-size="14.00">sell_quantity : int</text>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-117.5" font-family="Times,serif" font-size="14.00">total_bought : float</text>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-100.7" font-family="Times,serif" font-size="14.00">total_pnl : float</text>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-83.9" font-family="Times,serif" font-size="14.00">total_sold : float</text>
+<text xml:space="preserve" text-anchor="start" x="1994.24" y="-67.1" font-family="Times,serif" font-size="14.00">unrealised_pnl : float</text>
+<polyline fill="none" stroke="black" points="1855.01,-58.9 2289.77,-58.9"/>
+<text xml:space="preserve" text-anchor="start" x="1863.01" y="-42.3" font-family="Times,serif" font-size="14.00">open_from_transaction(transaction: Transaction): 'Position'</text>
+<text xml:space="preserve" text-anchor="start" x="1863.01" y="-25.5" font-family="Times,serif" font-size="14.00">transact(transaction: Transaction): None</text>
+<text xml:space="preserve" text-anchor="start" x="1863.01" y="-8.7" font-family="Times,serif" font-size="14.00">update_current_price(market_price: float, dt: pd.Timestamp | None): None</text>
+</g>
+<!-- qstrader.broker.portfolio.position_handler.PositionHandler -->
+<g id="node7" class="node">
+<title>qstrader.broker.portfolio.position_handler.PositionHandler</title>
+<polygon fill="none" stroke="black" points="1135.19,-151.7 1135.19,-293.3 1317.59,-293.3 1317.59,-151.7 1135.19,-151.7"/>
+<text xml:space="preserve" text-anchor="start" x="1180.9" y="-276.7" font-family="Times,serif" font-size="14.00">PositionHandler</text>
+<polyline fill="none" stroke="black" points="1135.19,-268.5 1317.59,-268.5"/>
+<text xml:space="preserve" text-anchor="start" x="1160.68" y="-251.9" font-family="Times,serif" font-size="14.00">positions : OrderedDict</text>
+<polyline fill="none" stroke="black" points="1135.19,-243.7 1317.59,-243.7"/>
+<text xml:space="preserve" text-anchor="start" x="1143.19" y="-227.1" font-family="Times,serif" font-size="14.00">total_market_value()</text>
+<text xml:space="preserve" text-anchor="start" x="1143.19" y="-210.3" font-family="Times,serif" font-size="14.00">total_pnl()</text>
+<text xml:space="preserve" text-anchor="start" x="1143.19" y="-193.5" font-family="Times,serif" font-size="14.00">total_realised_pnl()</text>
+<text xml:space="preserve" text-anchor="start" x="1143.19" y="-176.7" font-family="Times,serif" font-size="14.00">total_unrealised_pnl()</text>
+<text xml:space="preserve" text-anchor="start" x="1143.19" y="-159.9" font-family="Times,serif" font-size="14.00">transact_position(transaction)</text>
+</g>
+<!-- qstrader.broker.portfolio.position_handler.PositionHandler&#45;&gt;qstrader.broker.portfolio.portfolio.Portfolio -->
+<g id="edge5" class="edge">
+<title>qstrader.broker.portfolio.position_handler.PositionHandler-&gt;qstrader.broker.portfolio.portfolio.Portfolio</title>
+<path fill="none" stroke="black" d="M1226.39,-293.53C1226.39,-357.34 1226.39,-454.91 1226.39,-543.74"/>
+<polygon fill="black" stroke="black" points="1226.39,-543.88 1230.39,-549.88 1226.39,-555.88 1222.39,-549.88 1226.39,-543.88"/>
+<text xml:space="preserve" text-anchor="middle" x="1260.61" y="-467.2" font-family="Times,serif" font-size="14.00" fill="green">pos_handler</text>
+</g>
+<!-- qstrader.broker.simulated_broker.SimulatedBroker -->
+<g id="node8" class="node">
+<title>qstrader.broker.simulated_broker.SimulatedBroker</title>
+<polygon fill="none" stroke="black" points="10.12,-498.3 10.12,-1009.5 424.66,-1009.5 424.66,-498.3 10.12,-498.3"/>
+<text xml:space="preserve" text-anchor="start" x="169.57" y="-992.9" font-family="Times,serif" font-size="14.00">SimulatedBroker</text>
+<polyline fill="none" stroke="black" points="10.12,-984.7 424.66,-984.7"/>
+<text xml:space="preserve" text-anchor="start" x="115.94" y="-968.1" font-family="Times,serif" font-size="14.00">account_id : str | None</text>
+<text xml:space="preserve" text-anchor="start" x="115.94" y="-951.3" font-family="Times,serif" font-size="14.00">base_currency : str</text>
+<text xml:space="preserve" text-anchor="start" x="115.94" y="-934.5" font-family="Times,serif" font-size="14.00">cash_balances : dict</text>
+<text xml:space="preserve" text-anchor="start" x="115.94" y="-917.7" font-family="Times,serif" font-size="14.00">current_dt</text>
+<text xml:space="preserve" text-anchor="start" x="115.94" y="-900.9" font-family="Times,serif" font-size="14.00">data_handler : BacktestDataHandler</text>
+<text xml:space="preserve" text-anchor="start" x="115.94" y="-884.1" font-family="Times,serif" font-size="14.00">exchange : Exchange</text>
+<text xml:space="preserve" text-anchor="start" x="115.94" y="-867.3" font-family="Times,serif" font-size="14.00">fee_model</text>
+<text xml:space="preserve" text-anchor="start" x="115.94" y="-850.5" font-family="Times,serif" font-size="14.00">initial_funds : float</text>
+<text xml:space="preserve" text-anchor="start" x="115.94" y="-833.7" font-family="Times,serif" font-size="14.00">market_impact_model : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="115.94" y="-816.9" font-family="Times,serif" font-size="14.00">open_orders : dict</text>
+<text xml:space="preserve" text-anchor="start" x="115.94" y="-800.1" font-family="Times,serif" font-size="14.00">portfolios : dict</text>
+<text xml:space="preserve" text-anchor="start" x="115.94" y="-783.3" font-family="Times,serif" font-size="14.00">slippage_model : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="115.94" y="-766.5" font-family="Times,serif" font-size="14.00">start_dt</text>
+<polyline fill="none" stroke="black" points="10.12,-758.3 424.66,-758.3"/>
+<text xml:space="preserve" text-anchor="start" x="18.12" y="-741.7" font-family="Times,serif" font-size="14.00">create_portfolio(portfolio_id: str, name): None</text>
+<text xml:space="preserve" text-anchor="start" x="18.12" y="-724.9" font-family="Times,serif" font-size="14.00">get_account_cash_balance(currency: str | None): float</text>
+<text xml:space="preserve" text-anchor="start" x="18.12" y="-708.1" font-family="Times,serif" font-size="14.00">get_account_total_equity(): dict[str, float]</text>
+<text xml:space="preserve" text-anchor="start" x="18.12" y="-691.3" font-family="Times,serif" font-size="14.00">get_account_total_market_value(): float</text>
+<text xml:space="preserve" text-anchor="start" x="18.12" y="-674.5" font-family="Times,serif" font-size="14.00">get_portfolio_as_dict(portfolio_id: str): dict[str, float]</text>
+<text xml:space="preserve" text-anchor="start" x="18.12" y="-657.7" font-family="Times,serif" font-size="14.00">get_portfolio_cash_balance(portfolio_id: str): float</text>
+<text xml:space="preserve" text-anchor="start" x="18.12" y="-640.9" font-family="Times,serif" font-size="14.00">get_portfolio_total_equity(portfolio_id: str): float</text>
+<text xml:space="preserve" text-anchor="start" x="18.12" y="-624.1" font-family="Times,serif" font-size="14.00">get_portfolio_total_market_value(portfolio_id: str): float</text>
+<text xml:space="preserve" text-anchor="start" x="18.12" y="-607.3" font-family="Times,serif" font-size="14.00">list_all_portfolios(): list</text>
+<text xml:space="preserve" text-anchor="start" x="18.12" y="-590.5" font-family="Times,serif" font-size="14.00">submit_order(portfolio_id: str, order: Order): None</text>
+<text xml:space="preserve" text-anchor="start" x="18.12" y="-573.7" font-family="Times,serif" font-size="14.00">subscribe_funds_to_account(amount: float): None</text>
+<text xml:space="preserve" text-anchor="start" x="18.12" y="-556.9" font-family="Times,serif" font-size="14.00">subscribe_funds_to_portfolio(portfolio_id: str, amount: float): None</text>
+<text xml:space="preserve" text-anchor="start" x="18.12" y="-540.1" font-family="Times,serif" font-size="14.00">update(dt: pd.Timestamp): None</text>
+<text xml:space="preserve" text-anchor="start" x="18.12" y="-523.3" font-family="Times,serif" font-size="14.00">withdraw_funds_from_account(amount: float): None</text>
+<text xml:space="preserve" text-anchor="start" x="18.12" y="-506.5" font-family="Times,serif" font-size="14.00">withdraw_funds_from_portfolio(portfolio_id: str, amount: float): None</text>
+</g>
+<!-- qstrader.broker.simulated_broker.SimulatedBroker&#45;&gt;qstrader.broker.broker.Broker -->
+<g id="edge3" class="edge">
+<title>qstrader.broker.simulated_broker.SimulatedBroker-&gt;qstrader.broker.broker.Broker</title>
+<path fill="none" stroke="black" d="M217.39,-1009.87C217.39,-1018.65 217.39,-1027.29 217.39,-1035.71"/>
+<polygon fill="none" stroke="black" points="213.89,-1035.55 217.39,-1045.55 220.89,-1035.55 213.89,-1035.55"/>
+</g>
+<!-- qstrader.broker.transaction.transaction.Transaction -->
+<g id="node9" class="node">
+<title>qstrader.broker.transaction.transaction.Transaction</title>
+<polygon fill="none" stroke="black" points="2307.62,-118.1 2307.62,-326.9 2507.16,-326.9 2507.16,-118.1 2307.62,-118.1"/>
+<text xml:space="preserve" text-anchor="start" x="2374.35" y="-310.3" font-family="Times,serif" font-size="14.00">Transaction</text>
+<polyline fill="none" stroke="black" points="2307.62,-302.1 2507.16,-302.1"/>
+<text xml:space="preserve" text-anchor="start" x="2315.62" y="-285.5" font-family="Times,serif" font-size="14.00">asset : str</text>
+<text xml:space="preserve" text-anchor="start" x="2315.62" y="-268.7" font-family="Times,serif" font-size="14.00">commission : float</text>
+<text xml:space="preserve" text-anchor="start" x="2315.62" y="-251.9" font-family="Times,serif" font-size="14.00">cost_with_commission : float</text>
+<text xml:space="preserve" text-anchor="start" x="2315.62" y="-235.1" font-family="Times,serif" font-size="14.00">cost_without_commission : float</text>
+<text xml:space="preserve" text-anchor="start" x="2315.62" y="-218.3" font-family="Times,serif" font-size="14.00">direction</text>
+<text xml:space="preserve" text-anchor="start" x="2315.62" y="-201.5" font-family="Times,serif" font-size="14.00">dt</text>
+<text xml:space="preserve" text-anchor="start" x="2315.62" y="-184.7" font-family="Times,serif" font-size="14.00">order_id : int</text>
+<text xml:space="preserve" text-anchor="start" x="2315.62" y="-167.9" font-family="Times,serif" font-size="14.00">price : float</text>
+<text xml:space="preserve" text-anchor="start" x="2315.62" y="-151.1" font-family="Times,serif" font-size="14.00">quantity : int</text>
+<polyline fill="none" stroke="black" points="2307.62,-142.9 2507.16,-142.9"/>
+<text xml:space="preserve" text-anchor="start" x="2405.64" y="-126.3" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.broker.fee_model.zero_fee_model.ZeroFeeModel -->
+<g id="node10" class="node">
+<title>qstrader.broker.fee_model.zero_fee_model.ZeroFeeModel</title>
+<polygon fill="none" stroke="black" points="0,-185.3 0,-259.7 434.78,-259.7 434.78,-185.3 0,-185.3"/>
+<text xml:space="preserve" text-anchor="start" x="175.79" y="-243.1" font-family="Times,serif" font-size="14.00">ZeroFeeModel</text>
+<polyline fill="none" stroke="black" points="0,-234.9 434.78,-234.9"/>
+<polyline fill="none" stroke="black" points="0,-210.1 434.78,-210.1"/>
+<text xml:space="preserve" text-anchor="start" x="8" y="-193.5" font-family="Times,serif" font-size="14.00">calc_total_cost(asset, quantity, consideration, broker: Broker | None): float</text>
+</g>
+<!-- qstrader.broker.fee_model.zero_fee_model.ZeroFeeModel&#45;&gt;qstrader.broker.fee_model.fee_model.FeeModel -->
+<g id="edge2" class="edge">
+<title>qstrader.broker.fee_model.zero_fee_model.ZeroFeeModel-&gt;qstrader.broker.fee_model.fee_model.FeeModel</title>
+<path fill="none" stroke="black" d="M249.35,-259.89C331.9,-353.86 552.05,-604.51 642.62,-707.62"/>
+<polygon fill="none" stroke="black" points="639.98,-709.92 649.21,-715.12 645.24,-705.3 639.98,-709.92"/>
+</g>
+<!-- qstrader.broker.fee_model.zero_fee_model.ZeroFeeModel&#45;&gt;qstrader.broker.simulated_broker.SimulatedBroker -->
+<g id="edge4" class="edge">
+<title>qstrader.broker.fee_model.zero_fee_model.ZeroFeeModel-&gt;qstrader.broker.simulated_broker.SimulatedBroker</title>
+<path fill="none" stroke="black" d="M217.39,-259.89C217.39,-307.75 217.39,-396.26 217.39,-485.22"/>
+<polygon fill="black" stroke="black" points="217.39,-485.16 221.39,-491.16 217.39,-497.16 213.39,-491.16 217.39,-485.16"/>
+<text xml:space="preserve" text-anchor="middle" x="246.93" y="-467.2" font-family="Times,serif" font-size="14.00" fill="green">fee_model</text>
+</g>
+</g>
+</svg>

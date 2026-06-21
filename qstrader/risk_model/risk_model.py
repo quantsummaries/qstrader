@@ -1,7 +1,9 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
+
+import pandas as pd
 
 
-class RiskModel(object):
+class RiskModel(ABC):
     """
     Abstract interface for an RiskModel callable.
 
@@ -16,10 +18,8 @@ class RiskModel(object):
     Asset and with a scalar value as the signal.
     """
 
-    __metaclass__ = ABCMeta
-
     @abstractmethod
-    def __call__(self, dt, weights):
+    def __call__(self, dt: pd.Timestamp, weights: list[float]):
         raise NotImplementedError(
             "Should implement __call__()"
         )

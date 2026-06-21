@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 import matplotlib.dates as mdates
 import numpy as np
+import pandas as pd
 import seaborn as sns
 
 import qstrader.statistics.performance as perf
@@ -54,6 +55,41 @@ class TearsheetStatistics(Statistics):
         statistics["returns"] = equity_df["returns"]
         statistics["cum_returns"] = equity_df["cum_returns"]
         return statistics
+
+    @staticmethod
+    def _calculate_trade_returns(returns) -> np.ndarray:
+        """
+        Aggregate period returns into synthetic trade returns by summing
+        consecutive non-zero returns with the same sign.
+        """
+        returns_array = returns.dropna().values
+        if len(returns_array) == 0:
+            return np.array([])
+
+        trade_returns = []
+        current_trade = 0.0
+        current_sign = 0
+
+        for ret in returns_array:
+            if ret == 0:
+                if current_trade != 0.0:
+                    trade_returns.append(current_trade)
+                    current_trade = 0.0
+                    current_sign = 0
+                continue
+
+            sign = int(np.sign(ret))
+            if current_sign != 0 and sign != current_sign:
+                trade_returns.append(current_trade)
+                current_trade = 0.0
+
+            current_trade += ret
+            current_sign = sign
+
+        if current_trade != 0.0:
+            trade_returns.append(current_trade)
+
+        return np.array(trade_returns)
 
     def _plot_equity(self, strat_stats, bench_stats=None, ax=None, **kwargs):
         """
@@ -201,6 +237,13 @@ class TearsheetStatistics(Statistics):
         sortino = perf.create_sortino_ratio(returns, self.periods)
         dd, dd_max, dd_dur = perf.create_drawdowns(cum_returns)
 
+        # Calculate trades per year from synthetic sign-consistent trade runs.
+        trade_returns = self._calculate_trade_returns(returns)
+
+        num_trades = len(trade_returns)
+        years = len(returns) / float(self.periods)
+        trd_yr = num_trades / years if years > 0 else 0
+
         # Benchmark statistics
         if bench_stats is not None:
             bench_returns = bench_stats["returns"]
@@ -232,8 +275,8 @@ class TearsheetStatistics(Statistics):
         ax.text(0.25, 1.9, 'Max Daily Drawdown', fontsize=8)
         ax.text(7.50, 1.9, '{:.2%}'.format(dd_max), color='red', fontweight='bold', horizontalalignment='right', fontsize=8)
 
-        ax.text(0.25, 0.9, 'Max Drawdown Duration (Days)', fontsize=8)
-        ax.text(7.50, 0.9, '{:.0f}'.format(dd_dur), fontweight='bold', horizontalalignment='right', fontsize=8)
+        ax.text(0.25, 0.9, 'Trades per Year', fontsize=8)
+        ax.text(7.50, 0.9, '{:.1f}'.format(trd_yr), fontweight='bold', horizontalalignment='right', fontsize=8)
 
         # Benchmark Values
         if bench_stats is not None:
@@ -244,9 +287,177 @@ class TearsheetStatistics(Statistics):
             ax.text(10.0, 3.9, '{:.2f}'.format(bench_sortino), fontweight='bold', horizontalalignment='right', fontsize=8)
             ax.text(10.0, 2.9, '{:.2%}'.format(bench_returns.std() * np.sqrt(252)), fontweight='bold', horizontalalignment='right', fontsize=8)
             ax.text(10.0, 1.9, '{:.2%}'.format(bench_dd_max), color='red', fontweight='bold', horizontalalignment='right', fontsize=8)
-            ax.text(10.0, 0.9, '{:.0f}'.format(bench_dd_dur), fontweight='bold', horizontalalignment='right', fontsize=8)
+            ax.set_title('Curve vs. Benchmark', fontweight='bold')
+        else:
+            ax.set_title('Equity Curve', fontweight='bold')
 
-        ax.set_title('Equity Curve', fontweight='bold')
+        ax.grid(False)
+        ax.spines['top'].set_linewidth(2.0)
+        ax.spines['bottom'].set_linewidth(2.0)
+        ax.spines['right'].set_visible(False)
+        ax.spines['left'].set_visible(False)
+        ax.get_yaxis().set_visible(False)
+        ax.get_xaxis().set_visible(False)
+        ax.set_ylabel('')
+        ax.set_xlabel('')
+
+        ax.axis([0, 10, 0, 10])
+        return ax
+
+    def _plot_txt_trade(self, stats, ax=None, **kwargs):
+        """
+        Outputs the statistics for the trades. Referenced https://github.com/mhallsmoore/qstrader/blob/advanced-algorithmic-trading/qstrader/statistics/tearsheet.py and need
+        a code review. See docs/legacy/*.md for details.
+        """
+        def format_perc(x, pos):
+            return '%.0f%%' % x
+
+        if ax is None:
+            ax = plt.gca()
+
+        returns = stats["returns"]
+        
+        # A "trade" is a run of consecutive non-zero returns with identical sign.
+        trade_returns = self._calculate_trade_returns(returns)
+
+        # Calculate trade metrics
+        if len(trade_returns) > 0:
+            num_trades = len(trade_returns)
+            winning_trades = trade_returns[trade_returns > 0]
+            losing_trades = trade_returns[trade_returns < 0]
+            
+            win_pct = len(winning_trades) / float(num_trades)
+            win_pct_str = '{:.0%}'.format(win_pct)
+            avg_trd_pct = '{:.2%}'.format(np.mean(trade_returns))
+            avg_win_pct = '{:.2%}'.format(np.mean(winning_trades)) if len(winning_trades) > 0 else "N/A"
+            avg_loss_pct = '{:.2%}'.format(np.mean(losing_trades)) if len(losing_trades) > 0 else "N/A"
+            max_win_pct = '{:.2%}'.format(np.max(trade_returns))
+            max_loss_pct = '{:.2%}'.format(np.min(trade_returns))
+        else:
+            num_trades = 0
+            win_pct_str = "N/A"
+            avg_trd_pct = "N/A"
+            avg_win_pct = "N/A"
+            avg_loss_pct = "N/A"
+            max_win_pct = "N/A"
+            max_loss_pct = "N/A"
+
+        max_loss_dt = 'TBD'
+        avg_dit = '0.0'
+
+        y_axis_formatter = FuncFormatter(format_perc)
+        ax.yaxis.set_major_formatter(FuncFormatter(y_axis_formatter))
+
+        ax.text(0.5, 8.9, 'Trade Winning %', fontsize=8)
+        ax.text(9.5, 8.9, win_pct_str, fontsize=8, fontweight='bold', horizontalalignment='right')
+
+        ax.text(0.5, 7.9, 'Average Trade %', fontsize=8)
+        ax.text(9.5, 7.9, avg_trd_pct, fontsize=8, fontweight='bold', horizontalalignment='right')
+
+        ax.text(0.5, 6.9, 'Average Win %', fontsize=8)
+        color = 'green' if avg_win_pct != "N/A" and float(avg_win_pct.rstrip('%')) >= 0 else 'red'
+        ax.text(9.5, 6.9, avg_win_pct, fontsize=8, fontweight='bold', color=color, horizontalalignment='right')
+
+        ax.text(0.5, 5.9, 'Average Loss %', fontsize=8)
+        color = 'red' if avg_loss_pct != "N/A" else 'black'
+        ax.text(9.5, 5.9, avg_loss_pct, fontsize=8, fontweight='bold', color=color, horizontalalignment='right')
+
+        ax.text(0.5, 4.9, 'Best Trade %', fontsize=8)
+        ax.text(9.5, 4.9, max_win_pct, fontsize=8, fontweight='bold', color='green', horizontalalignment='right')
+
+        ax.text(0.5, 3.9, 'Worst Trade %', fontsize=8)
+        ax.text(9.5, 3.9, max_loss_pct, color='red', fontsize=8, fontweight='bold', horizontalalignment='right')
+
+        ax.text(0.5, 2.9, 'Worst Trade Date', fontsize=8)
+        ax.text(9.5, 2.9, max_loss_dt, fontsize=8, fontweight='bold', horizontalalignment='right')
+
+        ax.text(0.5, 1.9, 'Avg Days in Trade', fontsize=8)
+        ax.text(9.5, 1.9, avg_dit, fontsize=8, fontweight='bold', horizontalalignment='right')
+
+        ax.text(0.5, 0.9, 'Trades', fontsize=8)
+        ax.text(9.5, 0.9, '{:.0f}'.format(num_trades), fontsize=8, fontweight='bold', horizontalalignment='right')
+
+        ax.set_title('Trade', fontweight='bold')
+        ax.grid(False)
+        ax.spines['top'].set_linewidth(2.0)
+        ax.spines['bottom'].set_linewidth(2.0)
+        ax.spines['right'].set_visible(False)
+        ax.spines['left'].set_visible(False)
+        ax.get_yaxis().set_visible(False)
+        ax.get_xaxis().set_visible(False)
+        ax.set_ylabel('')
+        ax.set_xlabel('')
+
+        ax.axis([0, 10, 0, 10])
+        return ax
+
+    def _plot_txt_time(self, stats, ax=None, **kwargs):
+        """
+        Outputs the statistics for various time frames. Referenced legacy code https://github.com/mhallsmoore/qstrader/blob/advanced-algorithmic-trading/qstrader/statistics/tearsheet.py and need
+        a code review. See docs/legacy/*.md for details.
+        """
+        def format_perc(x, pos):
+            return '%.0f%%' % x
+
+        returns = stats['returns']
+
+        if ax is None:
+            ax = plt.gca()
+
+        y_axis_formatter = FuncFormatter(format_perc)
+        ax.yaxis.set_major_formatter(FuncFormatter(y_axis_formatter))
+
+        mly_ret = perf.aggregate_returns(returns, 'monthly')
+        yly_ret = perf.aggregate_returns(returns, 'yearly')
+
+        mly_pct = mly_ret[mly_ret >= 0].shape[0] / float(mly_ret.shape[0])
+        mly_avg_win_pct = np.mean(mly_ret[mly_ret >= 0])
+        mly_avg_loss_pct = np.mean(mly_ret[mly_ret < 0])
+        mly_max_win_pct = np.max(mly_ret)
+        mly_max_loss_pct = np.min(mly_ret)
+        yly_pct = yly_ret[yly_ret >= 0].shape[0] / float(yly_ret.shape[0])
+        yly_max_win_pct = np.max(yly_ret)
+        yly_max_loss_pct = np.min(yly_ret)
+
+        ax.text(0.5, 8.9, 'Winning Months %', fontsize=8)
+        ax.text(9.5, 8.9, '{:.0%}'.format(mly_pct), fontsize=8, fontweight='bold',
+                horizontalalignment='right')
+
+        ax.text(0.5, 7.9, 'Average Winning Month %', fontsize=8)
+        ax.text(9.5, 7.9, '{:.2%}'.format(mly_avg_win_pct), fontsize=8, fontweight='bold',
+                color='red' if mly_avg_win_pct < 0 else 'green',
+                horizontalalignment='right')
+
+        ax.text(0.5, 6.9, 'Average Losing Month %', fontsize=8)
+        ax.text(9.5, 6.9, '{:.2%}'.format(mly_avg_loss_pct), fontsize=8, fontweight='bold',
+                color='red' if mly_avg_loss_pct < 0 else 'green',
+                horizontalalignment='right')
+
+        ax.text(0.5, 5.9, 'Best Month %', fontsize=8)
+        ax.text(9.5, 5.9, '{:.2%}'.format(mly_max_win_pct), fontsize=8, fontweight='bold',
+                color='red' if mly_max_win_pct < 0 else 'green',
+                horizontalalignment='right')
+
+        ax.text(0.5, 4.9, 'Worst Month %', fontsize=8)
+        ax.text(9.5, 4.9, '{:.2%}'.format(mly_max_loss_pct), fontsize=8, fontweight='bold',
+                color='red' if mly_max_loss_pct < 0 else 'green',
+                horizontalalignment='right')
+
+        ax.text(0.5, 3.9, 'Winning Years %', fontsize=8)
+        ax.text(9.5, 3.9, '{:.0%}'.format(yly_pct), fontsize=8, fontweight='bold',
+                horizontalalignment='right')
+
+        ax.text(0.5, 2.9, 'Best Year %', fontsize=8)
+        ax.text(9.5, 2.9, '{:.2%}'.format(yly_max_win_pct), fontsize=8,
+                fontweight='bold', color='red' if yly_max_win_pct < 0 else 'green',
+                horizontalalignment='right')
+
+        ax.text(0.5, 1.9, 'Worst Year %', fontsize=8)
+        ax.text(9.5, 1.9, '{:.2%}'.format(yly_max_loss_pct), fontsize=8,
+                fontweight='bold', color='red' if yly_max_loss_pct < 0 else 'green',
+                horizontalalignment='right')
+
+        ax.set_title('Time', fontweight='bold')
 
         ax.grid(False)
         ax.spines['top'].set_linewidth(2.0)
@@ -305,16 +516,16 @@ class TearsheetStatistics(Statistics):
         ax_monthly_returns = plt.subplot(gs[3, :2])
         ax_yearly_returns = plt.subplot(gs[3, 2])
         ax_txt_curve = plt.subplot(gs[4, 0])
-        # ax_txt_trade = plt.subplot(gs[4, 1])
-        # ax_txt_time = plt.subplot(gs[4, 2])
+        ax_txt_trade = plt.subplot(gs[4, 1])
+        ax_txt_time = plt.subplot(gs[4, 2])
 
         self._plot_equity(stats, bench_stats=bench_stats, ax=ax_equity)
         self._plot_drawdown(stats, ax=ax_drawdown)
         self._plot_monthly_returns(stats, ax=ax_monthly_returns)
         self._plot_yearly_returns(stats, ax=ax_yearly_returns)
         self._plot_txt_curve(stats, bench_stats=bench_stats, ax=ax_txt_curve)
-        # self._plot_txt_trade(stats, ax=ax_txt_trade)
-        # self._plot_txt_time(stats, ax=ax_txt_time)
+        self._plot_txt_trade(stats, ax=ax_txt_trade)
+        self._plot_txt_time(stats, ax=ax_txt_time)
 
         # Save the figure
         if filename:
@@ -327,3 +538,17 @@ class TearsheetStatistics(Statistics):
         if settings.PRINT_EVENTS:
             print('Plotting the tearsheet...')
         plt.show()
+
+    def save(self, filename: str) -> None:
+        """
+        Save statistics results to filename
+        """
+        pass
+
+    def update(self, dt: pd.Timestamp) -> None:
+        """
+        Update all the statistics according to values of the portfolio
+        and open positions. This should be called from within the
+        event loop.
+        """
+        pass

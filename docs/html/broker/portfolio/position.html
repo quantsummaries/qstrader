@@ -1,0 +1,969 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>qstrader.broker.portfolio.position API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>qstrader.broker.portfolio.position</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="qstrader.broker.portfolio.position.Position"><code class="flex name class">
+<span>class <span class="ident">Position</span></span>
+<span>(</span><span>asset: str,<br>current_price: float,<br>current_dt: pandas.Timestamp,<br>buy_quantity: int,<br>sell_quantity: int,<br>avg_bought: float,<br>avg_sold: float,<br>buy_commission: float,<br>sell_commission: float)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Position(object):
+    &#34;&#34;&#34;
+    Handles the accounting of entering a new position in an
+    Asset along with subsequent modifications via additional
+    trades.
+
+    The approach taken here separates the long and short side
+    for accounting purposes. It also includes an unrealised and
+    realised running profit &amp; loss of the position.
+
+    Parameters
+    ----------
+    asset : `str`
+        The Asset symbol string.
+    current_price : `float`
+        The initial price of the Position.
+    current_dt : `pd.Timestamp`
+        The time at which the Position was created.
+    buy_quantity : `int`
+        The amount of the asset bought.
+    sell_quantity : `int`
+        The amount of the asset sold.
+    avg_bought : `float`
+        The initial price paid for buying assets.
+    avg_sold : `float`
+        The initial price paid for selling assets.
+    buy_commission : `float`
+        The commission spent on buying assets for this position.
+    sell_commission : `float`
+        The commission spent on selling assets for this position.
+    &#34;&#34;&#34;
+
+    def __init__(
+        self,
+        asset: str,
+        current_price: float,
+        current_dt: pd.Timestamp,
+        buy_quantity: int,
+        sell_quantity: int,
+        avg_bought: float,
+        avg_sold: float,
+        buy_commission: float,
+        sell_commission: float
+    ):
+        self.asset = asset
+        self.current_price = current_price
+        self.current_dt = current_dt
+        self.buy_quantity = buy_quantity
+        self.sell_quantity = sell_quantity
+        self.avg_bought = avg_bought
+        self.avg_sold = avg_sold
+        self.buy_commission = buy_commission
+        self.sell_commission = sell_commission
+
+    @classmethod
+    def open_from_transaction(cls, transaction: Transaction) -&gt; &#34;Position&#34;:
+        &#34;&#34;&#34;
+        Constructs a new Position instance from the provided
+        Transaction.
+
+        Parameters
+        ----------
+        transaction : `Transaction`
+            The transaction with which to open the Position.
+
+        Returns
+        -------
+        `Position`
+            The instantiated position.
+        &#34;&#34;&#34;
+        asset = transaction.asset
+        current_price = transaction.price
+        current_dt = transaction.dt
+
+        if transaction.quantity &gt; 0:
+            buy_quantity = transaction.quantity
+            sell_quantity = 0
+            avg_bought = current_price
+            avg_sold = 0.0
+            buy_commission = transaction.commission
+            sell_commission = 0.0
+        else:
+            buy_quantity = 0
+            sell_quantity = -1.0 * transaction.quantity
+            avg_bought = 0.0
+            avg_sold = current_price
+            buy_commission = 0.0
+            sell_commission = transaction.commission
+
+        return cls(
+            asset,
+            current_price,
+            current_dt,
+            buy_quantity,
+            sell_quantity,
+            avg_bought,
+            avg_sold,
+            buy_commission,
+            sell_commission
+        )
+
+    def _check_set_dt(self, dt: pd.Timestamp) -&gt; None:
+        &#34;&#34;&#34;
+        Checks that the provided timestamp is valid and if so sets
+        the new current time of the Position.
+
+        Parameters
+        ----------
+        dt : `pd.Timestamp`
+            The timestamp to be checked and potentially used as
+            the new current time.
+        &#34;&#34;&#34;
+        if dt is not None:
+            if (dt &lt; self.current_dt):
+                raise ValueError(
+                    &#39;Supplied update time of &#34;%s&#34; is earlier than &#39;
+                    &#39;the current time of &#34;%s&#34;.&#39; % (dt, self.current_dt)
+                )
+            else:
+                self.current_dt = dt
+
+    @property
+    def direction(self) -&gt; int:
+        &#34;&#34;&#34;
+        Returns an integer value representing the direction.
+
+        Returns
+        -------
+        `int`
+            1 - Long, 0 - No direction, -1 - Short.
+        &#34;&#34;&#34;
+        if self.net_quantity == 0:
+            return 0
+        else:
+            return np.copysign(1, self.net_quantity)
+
+    @property
+    def market_value(self) -&gt; float:
+        &#34;&#34;&#34;
+        Return the market value (respecting the direction) of the
+        Position based on the current price available to the Position.
+
+        Returns
+        -------
+        `float`
+            The current market value of the Position.
+        &#34;&#34;&#34;
+        return self.current_price * self.net_quantity
+
+    @property
+    def avg_price(self) -&gt; float:
+        &#34;&#34;&#34;
+        The average price paid for all assets on the long or short side.
+
+        Returns
+        -------
+        `float`
+            The average price on either the long or short side.
+        &#34;&#34;&#34;
+        if self.net_quantity == 0:
+            return 0.0
+        elif self.net_quantity &gt; 0:
+            return (self.avg_bought * self.buy_quantity + self.buy_commission) / self.buy_quantity
+        else:
+            return (self.avg_sold * self.sell_quantity - self.sell_commission) / self.sell_quantity
+
+    @property
+    def net_quantity(self) -&gt; int:
+        &#34;&#34;&#34;
+        The difference in the quantity of assets bought and sold to date.
+
+        Returns
+        -------
+        `int`
+            The net quantity of assets.
+        &#34;&#34;&#34;
+        return self.buy_quantity - self.sell_quantity
+
+    @property
+    def total_bought(self) -&gt; float:
+        &#34;&#34;&#34;
+        Calculates the total average cost of assets bought.
+
+        Returns
+        -------
+        `float`
+            The total average cost of assets bought.
+        &#34;&#34;&#34;
+        return self.avg_bought * self.buy_quantity
+
+    @property
+    def total_sold(self) -&gt; float:
+        &#34;&#34;&#34;
+        Calculates the total average cost of assets sold.
+
+        Returns
+        -------
+        `float`
+            The total average cost of assets solds.
+        &#34;&#34;&#34;
+        return self.avg_sold * self.sell_quantity
+
+    @property
+    def net_total(self) -&gt; float:
+        &#34;&#34;&#34;
+        Calculates the net total average cost of assets
+        bought and sold.
+
+        Returns
+        -------
+        `float`
+            The net total average cost of assets bought
+            and sold.
+        &#34;&#34;&#34;
+        return self.total_sold - self.total_bought
+
+    @property
+    def commission(self) -&gt; float:
+        &#34;&#34;&#34;
+        Calculates the total commission from assets bought and sold.
+
+        Returns
+        -------
+        `float`
+            The total commission from assets bought and sold.
+        &#34;&#34;&#34;
+        return self.buy_commission + self.sell_commission
+
+    @property
+    def net_incl_commission(self) -&gt; float:
+        &#34;&#34;&#34;
+        Calculates the net total average cost of assets bought
+        and sold including the commission.
+
+        Returns
+        -------
+        `float`
+            The net total average cost of assets bought and
+            sold including the commission.
+        &#34;&#34;&#34;
+        return self.net_total - self.commission
+
+    @property
+    def realised_pnl(self) -&gt; float:
+        &#34;&#34;&#34;
+        Calculates the profit &amp; loss (P&amp;L) that has been &#39;realised&#39; via
+        two opposing asset transactions in the Position to date.
+
+        Returns
+        -------
+        `float`
+            The calculated realised P&amp;L.
+        &#34;&#34;&#34;
+        if self.direction == 1:
+            if self.sell_quantity == 0:
+                return 0.0
+            else:
+                return (
+                    ((self.avg_sold - self.avg_bought) * self.sell_quantity) -
+                    ((self.sell_quantity / self.buy_quantity) * self.buy_commission) -
+                    self.sell_commission
+                )
+        elif self.direction == -1:
+            if self.buy_quantity == 0:
+                return 0.0
+            else:
+                return (
+                    ((self.avg_sold - self.avg_bought) * self.buy_quantity) -
+                    ((self.buy_quantity / self.sell_quantity) * self.sell_commission) -
+                    self.buy_commission
+                )
+        else:
+            return self.net_incl_commission
+
+    @property
+    def unrealised_pnl(self) -&gt; float:
+        &#34;&#34;&#34;
+        Calculates the profit &amp; loss (P&amp;L) that has yet to be &#39;realised&#39;
+        in the remaining non-zero quantity of assets, due to the current
+        market price.
+
+        Returns
+        -------
+        `float`
+            The calculated unrealised P&amp;L.
+        &#34;&#34;&#34;
+        return (self.current_price - self.avg_price) * self.net_quantity
+
+    @property
+    def total_pnl(self) -&gt; float:
+        &#34;&#34;&#34;
+        Calculates the sum of the unrealised and realised profit &amp; loss (P&amp;L).
+
+        Returns
+        -------
+        `float`
+            The sum of the unrealised and realised P&amp;L.
+        &#34;&#34;&#34;
+        return self.realised_pnl + self.unrealised_pnl
+
+    def update_current_price(self, market_price: float, dt: pd.Timestamp | None = None) -&gt; None:
+        &#34;&#34;&#34;
+        Updates the Position&#39;s awareness of the current market price
+        of the Asset, with an optional timestamp.
+
+        Parameters
+        ----------
+        market_price : `float`
+            The current market price.
+        dt : `pd.Timestamp`, optional
+            The optional timestamp of the current market price.
+        &#34;&#34;&#34;
+        self._check_set_dt(dt)
+
+        if market_price &lt;= 0.0:
+            raise ValueError(
+                &#39;Market price &#34;%s&#34; of asset &#34;%s&#34; must be positive to &#39;
+                &#39;update the position.&#39; % (market_price, self.asset)
+            )
+        else:
+            self.current_price = market_price
+
+    def _transact_buy(self, quantity: int, price: float, commission: float) -&gt; None:
+        &#34;&#34;&#34;
+        Handle the accounting for creating a new long leg for the
+        Position.
+
+        Parameters
+        ----------
+        quantity : `int`
+            The additional quantity of assets to purchase.
+        price : `float`
+            The price at which this leg was purchased.
+        commission : `float`
+            The commission paid to the broker for the purchase.
+        &#34;&#34;&#34;
+        self.avg_bought = ((self.avg_bought * self.buy_quantity) + (quantity * price)) / (self.buy_quantity + quantity)
+        self.buy_quantity += quantity
+        self.buy_commission += commission
+
+    def _transact_sell(self, quantity: int, price: float, commission: float) -&gt; None:
+        &#34;&#34;&#34;
+        Handle the accounting for creating a new short leg for the
+        Position.
+
+        Parameters
+        ----------
+        quantity : `int`
+            The additional quantity of assets to sell.
+        price : `float`
+            The price at which this leg was sold.
+        commission : `float`
+            The commission paid to the broker for the sale.
+        &#34;&#34;&#34;
+        self.avg_sold = ((self.avg_sold * self.sell_quantity) + (quantity * price)) / (self.sell_quantity + quantity)
+        self.sell_quantity += quantity
+        self.sell_commission += commission
+
+    def transact(self, transaction: Transaction) -&gt; None:
+        &#34;&#34;&#34;
+        Calculates the adjustments to the Position that occur
+        once new units in an Asset are bought and sold.
+
+        Parameters
+        ----------
+        transaction : `Transaction`
+            The Transaction to update the Position with.
+        &#34;&#34;&#34;
+        if self.asset != transaction.asset:
+            raise ValueError(
+                &#39;Failed to update Position with asset %s when &#39;
+                &#39;carrying out transaction in asset %s. &#39; % (
+                    self.asset, transaction.asset
+                )
+            )
+
+        # Nothing to do if the transaction has no quantity
+        if int(floor(transaction.quantity)) == 0:
+            return
+
+        # Depending upon the direction of the transaction
+        # ensure the correct calculation is called
+        if transaction.quantity &gt; 0:
+            self._transact_buy(
+                transaction.quantity,
+                transaction.price,
+                transaction.commission
+            )
+        else:
+            self._transact_sell(
+                -1.0 * transaction.quantity,
+                transaction.price,
+                transaction.commission
+            )
+
+        # Update the current trade information
+        self.update_current_price(transaction.price, transaction.dt)
+        self.current_dt = transaction.dt</code></pre>
+</details>
+<div class="desc"><p>Handles the accounting of entering a new position in an
+Asset along with subsequent modifications via additional
+trades.</p>
+<p>The approach taken here separates the long and short side
+for accounting purposes. It also includes an unrealised and
+realised running profit &amp; loss of the position.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>asset</code></strong> :&ensp;<code>str</code></dt>
+<dd>The Asset symbol string.</dd>
+<dt><strong><code>current_price</code></strong> :&ensp;<code>float</code></dt>
+<dd>The initial price of the Position.</dd>
+<dt><strong><code>current_dt</code></strong> :&ensp;<code>pd.Timestamp</code></dt>
+<dd>The time at which the Position was created.</dd>
+<dt><strong><code>buy_quantity</code></strong> :&ensp;<code>int</code></dt>
+<dd>The amount of the asset bought.</dd>
+<dt><strong><code>sell_quantity</code></strong> :&ensp;<code>int</code></dt>
+<dd>The amount of the asset sold.</dd>
+<dt><strong><code>avg_bought</code></strong> :&ensp;<code>float</code></dt>
+<dd>The initial price paid for buying assets.</dd>
+<dt><strong><code>avg_sold</code></strong> :&ensp;<code>float</code></dt>
+<dd>The initial price paid for selling assets.</dd>
+<dt><strong><code>buy_commission</code></strong> :&ensp;<code>float</code></dt>
+<dd>The commission spent on buying assets for this position.</dd>
+<dt><strong><code>sell_commission</code></strong> :&ensp;<code>float</code></dt>
+<dd>The commission spent on selling assets for this position.</dd>
+</dl></div>
+<h3>Static methods</h3>
+<dl>
+<dt id="qstrader.broker.portfolio.position.Position.open_from_transaction"><code class="name flex">
+<span>def <span class="ident">open_from_transaction</span></span>(<span>transaction: <a title="qstrader.broker.transaction.transaction.Transaction" href="../transaction/transaction.html#qstrader.broker.transaction.transaction.Transaction">Transaction</a>) ‑> <a title="qstrader.broker.portfolio.position.Position" href="#qstrader.broker.portfolio.position.Position">Position</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Constructs a new Position instance from the provided
+Transaction.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>transaction</code></strong> :&ensp;<code>Transaction</code></dt>
+<dd>The transaction with which to open the Position.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p><code><a title="qstrader.broker.portfolio.position.Position" href="#qstrader.broker.portfolio.position.Position">Position</a></code>
+The instantiated position.</p></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="qstrader.broker.portfolio.position.Position.avg_price"><code class="name">prop <span class="ident">avg_price</span> : float</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def avg_price(self) -&gt; float:
+    &#34;&#34;&#34;
+    The average price paid for all assets on the long or short side.
+
+    Returns
+    -------
+    `float`
+        The average price on either the long or short side.
+    &#34;&#34;&#34;
+    if self.net_quantity == 0:
+        return 0.0
+    elif self.net_quantity &gt; 0:
+        return (self.avg_bought * self.buy_quantity + self.buy_commission) / self.buy_quantity
+    else:
+        return (self.avg_sold * self.sell_quantity - self.sell_commission) / self.sell_quantity</code></pre>
+</details>
+<div class="desc"><p>The average price paid for all assets on the long or short side.</p>
+<h2 id="returns">Returns</h2>
+<p><code>float</code>
+The average price on either the long or short side.</p></div>
+</dd>
+<dt id="qstrader.broker.portfolio.position.Position.commission"><code class="name">prop <span class="ident">commission</span> : float</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def commission(self) -&gt; float:
+    &#34;&#34;&#34;
+    Calculates the total commission from assets bought and sold.
+
+    Returns
+    -------
+    `float`
+        The total commission from assets bought and sold.
+    &#34;&#34;&#34;
+    return self.buy_commission + self.sell_commission</code></pre>
+</details>
+<div class="desc"><p>Calculates the total commission from assets bought and sold.</p>
+<h2 id="returns">Returns</h2>
+<p><code>float</code>
+The total commission from assets bought and sold.</p></div>
+</dd>
+<dt id="qstrader.broker.portfolio.position.Position.direction"><code class="name">prop <span class="ident">direction</span> : int</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def direction(self) -&gt; int:
+    &#34;&#34;&#34;
+    Returns an integer value representing the direction.
+
+    Returns
+    -------
+    `int`
+        1 - Long, 0 - No direction, -1 - Short.
+    &#34;&#34;&#34;
+    if self.net_quantity == 0:
+        return 0
+    else:
+        return np.copysign(1, self.net_quantity)</code></pre>
+</details>
+<div class="desc"><p>Returns an integer value representing the direction.</p>
+<h2 id="returns">Returns</h2>
+<p><code>int</code>
+1 - Long, 0 - No direction, -1 - Short.</p></div>
+</dd>
+<dt id="qstrader.broker.portfolio.position.Position.market_value"><code class="name">prop <span class="ident">market_value</span> : float</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def market_value(self) -&gt; float:
+    &#34;&#34;&#34;
+    Return the market value (respecting the direction) of the
+    Position based on the current price available to the Position.
+
+    Returns
+    -------
+    `float`
+        The current market value of the Position.
+    &#34;&#34;&#34;
+    return self.current_price * self.net_quantity</code></pre>
+</details>
+<div class="desc"><p>Return the market value (respecting the direction) of the
+Position based on the current price available to the Position.</p>
+<h2 id="returns">Returns</h2>
+<p><code>float</code>
+The current market value of the Position.</p></div>
+</dd>
+<dt id="qstrader.broker.portfolio.position.Position.net_incl_commission"><code class="name">prop <span class="ident">net_incl_commission</span> : float</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def net_incl_commission(self) -&gt; float:
+    &#34;&#34;&#34;
+    Calculates the net total average cost of assets bought
+    and sold including the commission.
+
+    Returns
+    -------
+    `float`
+        The net total average cost of assets bought and
+        sold including the commission.
+    &#34;&#34;&#34;
+    return self.net_total - self.commission</code></pre>
+</details>
+<div class="desc"><p>Calculates the net total average cost of assets bought
+and sold including the commission.</p>
+<h2 id="returns">Returns</h2>
+<p><code>float</code>
+The net total average cost of assets bought and
+sold including the commission.</p></div>
+</dd>
+<dt id="qstrader.broker.portfolio.position.Position.net_quantity"><code class="name">prop <span class="ident">net_quantity</span> : int</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def net_quantity(self) -&gt; int:
+    &#34;&#34;&#34;
+    The difference in the quantity of assets bought and sold to date.
+
+    Returns
+    -------
+    `int`
+        The net quantity of assets.
+    &#34;&#34;&#34;
+    return self.buy_quantity - self.sell_quantity</code></pre>
+</details>
+<div class="desc"><p>The difference in the quantity of assets bought and sold to date.</p>
+<h2 id="returns">Returns</h2>
+<p><code>int</code>
+The net quantity of assets.</p></div>
+</dd>
+<dt id="qstrader.broker.portfolio.position.Position.net_total"><code class="name">prop <span class="ident">net_total</span> : float</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def net_total(self) -&gt; float:
+    &#34;&#34;&#34;
+    Calculates the net total average cost of assets
+    bought and sold.
+
+    Returns
+    -------
+    `float`
+        The net total average cost of assets bought
+        and sold.
+    &#34;&#34;&#34;
+    return self.total_sold - self.total_bought</code></pre>
+</details>
+<div class="desc"><p>Calculates the net total average cost of assets
+bought and sold.</p>
+<h2 id="returns">Returns</h2>
+<p><code>float</code>
+The net total average cost of assets bought
+and sold.</p></div>
+</dd>
+<dt id="qstrader.broker.portfolio.position.Position.realised_pnl"><code class="name">prop <span class="ident">realised_pnl</span> : float</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def realised_pnl(self) -&gt; float:
+    &#34;&#34;&#34;
+    Calculates the profit &amp; loss (P&amp;L) that has been &#39;realised&#39; via
+    two opposing asset transactions in the Position to date.
+
+    Returns
+    -------
+    `float`
+        The calculated realised P&amp;L.
+    &#34;&#34;&#34;
+    if self.direction == 1:
+        if self.sell_quantity == 0:
+            return 0.0
+        else:
+            return (
+                ((self.avg_sold - self.avg_bought) * self.sell_quantity) -
+                ((self.sell_quantity / self.buy_quantity) * self.buy_commission) -
+                self.sell_commission
+            )
+    elif self.direction == -1:
+        if self.buy_quantity == 0:
+            return 0.0
+        else:
+            return (
+                ((self.avg_sold - self.avg_bought) * self.buy_quantity) -
+                ((self.buy_quantity / self.sell_quantity) * self.sell_commission) -
+                self.buy_commission
+            )
+    else:
+        return self.net_incl_commission</code></pre>
+</details>
+<div class="desc"><p>Calculates the profit &amp; loss (P&amp;L) that has been 'realised' via
+two opposing asset transactions in the Position to date.</p>
+<h2 id="returns">Returns</h2>
+<p><code>float</code>
+The calculated realised P&amp;L.</p></div>
+</dd>
+<dt id="qstrader.broker.portfolio.position.Position.total_bought"><code class="name">prop <span class="ident">total_bought</span> : float</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def total_bought(self) -&gt; float:
+    &#34;&#34;&#34;
+    Calculates the total average cost of assets bought.
+
+    Returns
+    -------
+    `float`
+        The total average cost of assets bought.
+    &#34;&#34;&#34;
+    return self.avg_bought * self.buy_quantity</code></pre>
+</details>
+<div class="desc"><p>Calculates the total average cost of assets bought.</p>
+<h2 id="returns">Returns</h2>
+<p><code>float</code>
+The total average cost of assets bought.</p></div>
+</dd>
+<dt id="qstrader.broker.portfolio.position.Position.total_pnl"><code class="name">prop <span class="ident">total_pnl</span> : float</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def total_pnl(self) -&gt; float:
+    &#34;&#34;&#34;
+    Calculates the sum of the unrealised and realised profit &amp; loss (P&amp;L).
+
+    Returns
+    -------
+    `float`
+        The sum of the unrealised and realised P&amp;L.
+    &#34;&#34;&#34;
+    return self.realised_pnl + self.unrealised_pnl</code></pre>
+</details>
+<div class="desc"><p>Calculates the sum of the unrealised and realised profit &amp; loss (P&amp;L).</p>
+<h2 id="returns">Returns</h2>
+<p><code>float</code>
+The sum of the unrealised and realised P&amp;L.</p></div>
+</dd>
+<dt id="qstrader.broker.portfolio.position.Position.total_sold"><code class="name">prop <span class="ident">total_sold</span> : float</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def total_sold(self) -&gt; float:
+    &#34;&#34;&#34;
+    Calculates the total average cost of assets sold.
+
+    Returns
+    -------
+    `float`
+        The total average cost of assets solds.
+    &#34;&#34;&#34;
+    return self.avg_sold * self.sell_quantity</code></pre>
+</details>
+<div class="desc"><p>Calculates the total average cost of assets sold.</p>
+<h2 id="returns">Returns</h2>
+<p><code>float</code>
+The total average cost of assets solds.</p></div>
+</dd>
+<dt id="qstrader.broker.portfolio.position.Position.unrealised_pnl"><code class="name">prop <span class="ident">unrealised_pnl</span> : float</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def unrealised_pnl(self) -&gt; float:
+    &#34;&#34;&#34;
+    Calculates the profit &amp; loss (P&amp;L) that has yet to be &#39;realised&#39;
+    in the remaining non-zero quantity of assets, due to the current
+    market price.
+
+    Returns
+    -------
+    `float`
+        The calculated unrealised P&amp;L.
+    &#34;&#34;&#34;
+    return (self.current_price - self.avg_price) * self.net_quantity</code></pre>
+</details>
+<div class="desc"><p>Calculates the profit &amp; loss (P&amp;L) that has yet to be 'realised'
+in the remaining non-zero quantity of assets, due to the current
+market price.</p>
+<h2 id="returns">Returns</h2>
+<p><code>float</code>
+The calculated unrealised P&amp;L.</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="qstrader.broker.portfolio.position.Position.transact"><code class="name flex">
+<span>def <span class="ident">transact</span></span>(<span>self,<br>transaction: <a title="qstrader.broker.transaction.transaction.Transaction" href="../transaction/transaction.html#qstrader.broker.transaction.transaction.Transaction">Transaction</a>) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def transact(self, transaction: Transaction) -&gt; None:
+    &#34;&#34;&#34;
+    Calculates the adjustments to the Position that occur
+    once new units in an Asset are bought and sold.
+
+    Parameters
+    ----------
+    transaction : `Transaction`
+        The Transaction to update the Position with.
+    &#34;&#34;&#34;
+    if self.asset != transaction.asset:
+        raise ValueError(
+            &#39;Failed to update Position with asset %s when &#39;
+            &#39;carrying out transaction in asset %s. &#39; % (
+                self.asset, transaction.asset
+            )
+        )
+
+    # Nothing to do if the transaction has no quantity
+    if int(floor(transaction.quantity)) == 0:
+        return
+
+    # Depending upon the direction of the transaction
+    # ensure the correct calculation is called
+    if transaction.quantity &gt; 0:
+        self._transact_buy(
+            transaction.quantity,
+            transaction.price,
+            transaction.commission
+        )
+    else:
+        self._transact_sell(
+            -1.0 * transaction.quantity,
+            transaction.price,
+            transaction.commission
+        )
+
+    # Update the current trade information
+    self.update_current_price(transaction.price, transaction.dt)
+    self.current_dt = transaction.dt</code></pre>
+</details>
+<div class="desc"><p>Calculates the adjustments to the Position that occur
+once new units in an Asset are bought and sold.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>transaction</code></strong> :&ensp;<code>Transaction</code></dt>
+<dd>The Transaction to update the Position with.</dd>
+</dl></div>
+</dd>
+<dt id="qstrader.broker.portfolio.position.Position.update_current_price"><code class="name flex">
+<span>def <span class="ident">update_current_price</span></span>(<span>self, market_price: float, dt: pandas.Timestamp | None = None) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_current_price(self, market_price: float, dt: pd.Timestamp | None = None) -&gt; None:
+    &#34;&#34;&#34;
+    Updates the Position&#39;s awareness of the current market price
+    of the Asset, with an optional timestamp.
+
+    Parameters
+    ----------
+    market_price : `float`
+        The current market price.
+    dt : `pd.Timestamp`, optional
+        The optional timestamp of the current market price.
+    &#34;&#34;&#34;
+    self._check_set_dt(dt)
+
+    if market_price &lt;= 0.0:
+        raise ValueError(
+            &#39;Market price &#34;%s&#34; of asset &#34;%s&#34; must be positive to &#39;
+            &#39;update the position.&#39; % (market_price, self.asset)
+        )
+    else:
+        self.current_price = market_price</code></pre>
+</details>
+<div class="desc"><p>Updates the Position's awareness of the current market price
+of the Asset, with an optional timestamp.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>market_price</code></strong> :&ensp;<code>float</code></dt>
+<dd>The current market price.</dd>
+<dt><strong><code>dt</code></strong> :&ensp;<code>pd.Timestamp</code>, optional</dt>
+<dd>The optional timestamp of the current market price.</dd>
+</dl></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="qstrader.broker.portfolio" href="index.html">qstrader.broker.portfolio</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="qstrader.broker.portfolio.position.Position" href="#qstrader.broker.portfolio.position.Position">Position</a></code></h4>
+<ul class="">
+<li><code><a title="qstrader.broker.portfolio.position.Position.avg_price" href="#qstrader.broker.portfolio.position.Position.avg_price">avg_price</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.position.Position.commission" href="#qstrader.broker.portfolio.position.Position.commission">commission</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.position.Position.direction" href="#qstrader.broker.portfolio.position.Position.direction">direction</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.position.Position.market_value" href="#qstrader.broker.portfolio.position.Position.market_value">market_value</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.position.Position.net_incl_commission" href="#qstrader.broker.portfolio.position.Position.net_incl_commission">net_incl_commission</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.position.Position.net_quantity" href="#qstrader.broker.portfolio.position.Position.net_quantity">net_quantity</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.position.Position.net_total" href="#qstrader.broker.portfolio.position.Position.net_total">net_total</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.position.Position.open_from_transaction" href="#qstrader.broker.portfolio.position.Position.open_from_transaction">open_from_transaction</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.position.Position.realised_pnl" href="#qstrader.broker.portfolio.position.Position.realised_pnl">realised_pnl</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.position.Position.total_bought" href="#qstrader.broker.portfolio.position.Position.total_bought">total_bought</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.position.Position.total_pnl" href="#qstrader.broker.portfolio.position.Position.total_pnl">total_pnl</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.position.Position.total_sold" href="#qstrader.broker.portfolio.position.Position.total_sold">total_sold</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.position.Position.transact" href="#qstrader.broker.portfolio.position.Position.transact">transact</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.position.Position.unrealised_pnl" href="#qstrader.broker.portfolio.position.Position.unrealised_pnl">unrealised_pnl</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.position.Position.update_current_price" href="#qstrader.broker.portfolio.position.Position.update_current_price">update_current_price</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

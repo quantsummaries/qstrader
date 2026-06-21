@@ -1,3 +1,6 @@
+import datetime
+
+
 class PortfolioEvent(object):
     """
     Stores an individual instance of a portfolio event used to create
@@ -9,7 +12,7 @@ class PortfolioEvent(object):
         Datetime of the event.
     type : `str`
         The type of portfolio event, e.g. 'subscription', 'withdrawal'.
-    description ; `str`
+    description : `str`
         Human-readable portfolio event type.
     debit : `float`
         A debit to the cash balance of the portfolio.
@@ -21,12 +24,12 @@ class PortfolioEvent(object):
 
     def __init__(
         self,
-        dt,
-        type,
-        description,
-        debit,
-        credit,
-        balance
+        dt: datetime.datetime,
+        type: str,
+        description: str,
+        debit: float,
+        credit: float,
+        balance: float
     ):
         self.dt = dt
         self.type = type
@@ -35,7 +38,7 @@ class PortfolioEvent(object):
         self.credit = credit
         self.balance = balance
 
-    def __eq__(self, other):
+    def __eq__(self, other: "PortfolioEvent") -> bool:
         if self.dt != other.dt:
             return False
         if self.type != other.type:
@@ -50,7 +53,7 @@ class PortfolioEvent(object):
             return False
         return True
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return (
             "PortfolioEvent(dt=%s, type=%s, description=%s, "
             "debit=%s, credit=%s, balance=%s)" % (
@@ -60,20 +63,20 @@ class PortfolioEvent(object):
         )
 
     @classmethod
-    def create_subscription(cls, dt, credit, balance):
+    def create_subscription(cls, dt: datetime.datetime, credit: float, balance: float) -> 'PortfolioEvent':
         return cls(
             dt, type='subscription', description='SUBSCRIPTION',
             debit=0.0, credit=round(credit, 2), balance=round(balance, 2)
         )
 
     @classmethod
-    def create_withdrawal(cls, dt, debit, balance):
+    def create_withdrawal(cls, dt: datetime.datetime, debit: float, balance: float) -> 'PortfolioEvent':
         return cls(
             dt, type='withdrawal', description='WITHDRAWAL',
             debit=round(debit, 2), credit=0.0, balance=round(balance, 2)
         )
 
-    def to_dict(self):
+    def to_dict(self) -> dict:
         return {
             'dt': self.dt,
             'type': self.type,

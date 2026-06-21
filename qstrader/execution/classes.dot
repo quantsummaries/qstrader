@@ -1,0 +1,9 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"qstrader.execution.execution_algo.execution_algo.ExecutionAlgorithm" [color="black", fontcolor="black", label=<{ExecutionAlgorithm|<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.execution.execution_handler.ExecutionHandler" [color="black", fontcolor="black", label=<{ExecutionHandler|broker : Broker<br ALIGN="LEFT"/>broker_portfolio_id : str<br ALIGN="LEFT"/>data_handler : BacktestDataHandler \| None<br ALIGN="LEFT"/>execution_algo : ExecutionAlgorithm \| None<br ALIGN="LEFT"/>submit_orders : bool<br ALIGN="LEFT"/>universe : Universe<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.execution.execution_algo.market_order.MarketOrderExecutionAlgorithm" [color="black", fontcolor="black", label=<{MarketOrderExecutionAlgorithm|<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.execution.order.Order" [color="black", fontcolor="black", label=<{Order|asset : Asset<br ALIGN="LEFT"/>commission : float<br ALIGN="LEFT"/>created_dt<br ALIGN="LEFT"/>cur_dt<br ALIGN="LEFT"/>direction<br ALIGN="LEFT"/>order_id : str<br ALIGN="LEFT"/>quantity : int<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.execution.execution_algo.market_order.MarketOrderExecutionAlgorithm" -> "qstrader.execution.execution_algo.execution_algo.ExecutionAlgorithm" [arrowhead="empty", arrowtail="none"];
+}

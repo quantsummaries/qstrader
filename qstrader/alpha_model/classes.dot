@@ -1,0 +1,11 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"qstrader.alpha_model.alpha_model.AlphaModel" [color="black", fontcolor="black", label=<{AlphaModel|<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.alpha_model.fixed_signals.FixedSignalsAlphaModel" [color="black", fontcolor="black", label=<{FixedSignalsAlphaModel|data_handler : NoneType<br ALIGN="LEFT"/>signal_weights : dict[str, float]<br ALIGN="LEFT"/>universe : Universe \| None<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.alpha_model.single_signal.SingleSignalAlphaModel" [color="black", fontcolor="black", label=<{SingleSignalAlphaModel|data_handler : NoneType<br ALIGN="LEFT"/>signal : float<br ALIGN="LEFT"/>universe : Universe<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.alpha_model.top_n_momentum.TopNMomentumAlphaModel" [color="black", fontcolor="black", label=<{TopNMomentumAlphaModel|data_handler : BacktestDataHandler<br ALIGN="LEFT"/>mom_lookback : int<br ALIGN="LEFT"/>mom_top_n : int<br ALIGN="LEFT"/>signals : SignalsCollection<br ALIGN="LEFT"/>universe : Universe<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.alpha_model.fixed_signals.FixedSignalsAlphaModel" -> "qstrader.alpha_model.alpha_model.AlphaModel" [arrowhead="empty", arrowtail="none"];
+"qstrader.alpha_model.single_signal.SingleSignalAlphaModel" -> "qstrader.alpha_model.alpha_model.AlphaModel" [arrowhead="empty", arrowtail="none"];
+"qstrader.alpha_model.top_n_momentum.TopNMomentumAlphaModel" -> "qstrader.alpha_model.alpha_model.AlphaModel" [arrowhead="empty", arrowtail="none"];
+}

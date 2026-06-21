@@ -1,15 +1,14 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
+import pandas as pd
 
-class Universe(object):
+class Universe(ABC):
     """
     Interface specification for an Asset Universe.
     """
 
-    __metaclass__ = ABCMeta
-
     @abstractmethod
-    def get_assets(self, dt):
+    def get_assets(self, dt: pd.Timestamp) -> list[str]:
         raise NotImplementedError(
             "Should implement get_assets()"
         )

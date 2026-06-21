@@ -1,0 +1,17 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"qstrader.portcon.order_sizer.dollar_weighted.DollarWeightedCashBufferedOrderSizer" [color="black", fontcolor="black", label=<{DollarWeightedCashBufferedOrderSizer|broker : Broker<br ALIGN="LEFT"/>broker_portfolio_id : str<br ALIGN="LEFT"/>cash_buffer_percentage : float<br ALIGN="LEFT"/>data_handler : BacktestDataHandler<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.portcon.optimiser.equal_weight.EqualWeightPortfolioOptimiser" [color="black", fontcolor="black", label=<{EqualWeightPortfolioOptimiser|data_handler : BacktestDataHandler \| None<br ALIGN="LEFT"/>scale : float<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.portcon.optimiser.fixed_weight.FixedWeightPortfolioOptimiser" [color="black", fontcolor="black", label=<{FixedWeightPortfolioOptimiser|data_handler : BacktestDataHandler \| None<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.portcon.order_sizer.long_short.LongShortLeveragedOrderSizer" [color="black", fontcolor="black", label=<{LongShortLeveragedOrderSizer|broker : Broker<br ALIGN="LEFT"/>broker_portfolio_id : str<br ALIGN="LEFT"/>data_handler : BacktestDataHandler<br ALIGN="LEFT"/>gross_leverage : float<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.portcon.order_sizer.order_sizer.OrderSizer" [color="black", fontcolor="black", label=<{OrderSizer|<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.portcon.pcm.PortfolioConstructionModel" [color="black", fontcolor="black", label=<{PortfolioConstructionModel|alpha_model : AlphaModel \| None<br ALIGN="LEFT"/>broker : Broker<br ALIGN="LEFT"/>broker_portfolio_id : str<br ALIGN="LEFT"/>cost_model : NoneType<br ALIGN="LEFT"/>data_handler : BacktestDataHandler \| None<br ALIGN="LEFT"/>optimiser<br ALIGN="LEFT"/>order_sizer<br ALIGN="LEFT"/>risk_model : RiskModel \| None<br ALIGN="LEFT"/>universe : Universe<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.portcon.optimiser.optimiser.PortfolioOptimiser" [color="black", fontcolor="black", label=<{PortfolioOptimiser|<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"qstrader.portcon.optimiser.equal_weight.EqualWeightPortfolioOptimiser" -> "qstrader.portcon.optimiser.optimiser.PortfolioOptimiser" [arrowhead="empty", arrowtail="none"];
+"qstrader.portcon.optimiser.fixed_weight.FixedWeightPortfolioOptimiser" -> "qstrader.portcon.optimiser.optimiser.PortfolioOptimiser" [arrowhead="empty", arrowtail="none"];
+"qstrader.portcon.order_sizer.dollar_weighted.DollarWeightedCashBufferedOrderSizer" -> "qstrader.portcon.order_sizer.order_sizer.OrderSizer" [arrowhead="empty", arrowtail="none"];
+"qstrader.portcon.order_sizer.long_short.LongShortLeveragedOrderSizer" -> "qstrader.portcon.order_sizer.order_sizer.OrderSizer" [arrowhead="empty", arrowtail="none"];
+"qstrader.portcon.optimiser.optimiser.PortfolioOptimiser" -> "qstrader.portcon.pcm.PortfolioConstructionModel" [arrowhead="odiamond", arrowtail="none", fontcolor="green", label="optimiser", style="solid"];
+"qstrader.portcon.order_sizer.order_sizer.OrderSizer" -> "qstrader.portcon.pcm.PortfolioConstructionModel" [arrowhead="odiamond", arrowtail="none", fontcolor="green", label="order_sizer", style="solid"];
+}

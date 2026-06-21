@@ -6,9 +6,10 @@ import pytz
 
 from qstrader.alpha_model.alpha_model import AlphaModel
 from qstrader.alpha_model.fixed_signals import FixedSignalsAlphaModel
-from qstrader.asset.equity import Equity
+from qstrader.asset.universe.universe import Universe
 from qstrader.asset.universe.dynamic import DynamicUniverse
 from qstrader.asset.universe.static import StaticUniverse
+from qstrader.constants import DATA_DIR
 from qstrader.signals.momentum import MomentumSignal
 from qstrader.signals.signals_collection import SignalsCollection
 from qstrader.data.backtest_data_handler import BacktestDataHandler
@@ -20,7 +21,7 @@ from qstrader.trading.backtest import BacktestTradingSession
 class TopNMomentumAlphaModel(AlphaModel):
 
     def __init__(
-        self, signals, mom_lookback, mom_top_n, universe, data_handler
+        self, signals: SignalsCollection, mom_lookback: int, mom_top_n: int, universe: Universe, data_handler: BacktestDataHandler
     ):
         """
         Initialise the TopNMomentumAlphaModel
@@ -30,15 +31,15 @@ class TopNMomentumAlphaModel(AlphaModel):
         signals : `SignalsCollection`
             The entity for interfacing with various pre-calculated
             signals. In this instance we want to use 'momentum'.
-        mom_lookback : `integer`
+        mom_lookback : `int`
             The number of business days to calculate momentum
             lookback over.
-        mom_top_n : `integer`
+        mom_top_n : `int`
             The number of assets to include in the portfolio,
             ranking from highest momentum descending.
         universe : `Universe`
             The collection of assets utilised for signal generation.
-        data_handler : `DataHandler`
+        data_handler : `BacktestDataHandler`
             The interface to the CSV data.
 
         Returns
@@ -52,7 +53,7 @@ class TopNMomentumAlphaModel(AlphaModel):
         self.data_handler = data_handler
 
     def _highest_momentum_asset(
-        self, dt
+        self, dt: pd.Timestamp
     ):
         """
         Calculates the ordered list of highest performing momentum
@@ -92,7 +93,7 @@ class TopNMomentumAlphaModel(AlphaModel):
         ][:self.mom_top_n]
 
     def _generate_signals(
-        self, dt, weights
+        self, dt: pd.Timestamp, weights: dict[str, float]
     ):
         """
         Calculate the highest performing momentum for each
@@ -118,7 +119,7 @@ class TopNMomentumAlphaModel(AlphaModel):
         return weights
 
     def __call__(
-        self, dt
+        self, dt: pd.Timestamp
     ):
         """
         Calculates the signal weights for the top N
@@ -171,8 +172,8 @@ if __name__ == "__main__":
 
     # To avoid loading all CSV files in the directory, set the
     # data source to load only those provided symbols
-    csv_dir = os.environ.get('QSTRADER_CSV_DATA_DIR', '.')
-    strategy_data_source = CSVDailyBarDataSource(csv_dir, Equity, csv_symbols=strategy_symbols)
+    csv_dir = os.environ.get('QSTRADER_CSV_DATA_DIR', DATA_DIR)
+    strategy_data_source = CSVDailyBarDataSource(str(csv_dir), 'Equity', csv_symbols=strategy_symbols)
     strategy_data_handler = BacktestDataHandler(strategy_universe, data_sources=[strategy_data_source])
 
     # Generate the signals (in this case holding-period return based
@@ -204,7 +205,7 @@ if __name__ == "__main__":
     benchmark_symbols = ['SPY']
     benchmark_assets = ['EQ:SPY']
     benchmark_universe = StaticUniverse(benchmark_assets)
-    benchmark_data_source = CSVDailyBarDataSource(csv_dir, Equity, csv_symbols=benchmark_symbols)
+    benchmark_data_source = CSVDailyBarDataSource(str(csv_dir), 'Equity', csv_symbols=benchmark_symbols)
     benchmark_data_handler = BacktestDataHandler(benchmark_universe, data_sources=[benchmark_data_source])
 
     # Construct a benchmark Alpha Model that provides

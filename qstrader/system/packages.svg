@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1389pt" height="116pt" viewBox="0.00 0.00 1389.00 116.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>packages</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-112 1385,-112 1385,4 -4,4"/>
+<!-- qstrader.system -->
+<g id="node1" class="node">
+<title>qstrader.system</title>
+<polygon fill="none" stroke="black" points="103.48,-36 0,-36 0,0 103.48,0 103.48,-36"/>
+<text xml:space="preserve" text-anchor="start" x="8" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.system</text>
+</g>
+<!-- qstrader.system.qts -->
+<g id="node2" class="node">
+<title>qstrader.system.qts</title>
+<polygon fill="none" stroke="black" points="244.4,-36 121.08,-36 121.08,0 244.4,0 244.4,-36"/>
+<text xml:space="preserve" text-anchor="start" x="129.08" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.system.qts</text>
+</g>
+<!-- qstrader.system.rebalance -->
+<g id="node3" class="node">
+<title>qstrader.system.rebalance</title>
+<polygon fill="none" stroke="black" points="423.04,-36 262.44,-36 262.44,0 423.04,0 423.04,-36"/>
+<text xml:space="preserve" text-anchor="start" x="270.44" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.system.rebalance</text>
+</g>
+<!-- qstrader.system.rebalance.buy_and_hold -->
+<g id="node4" class="node">
+<title>qstrader.system.rebalance.buy_and_hold</title>
+<polygon fill="none" stroke="black" points="684.84,-36 440.64,-36 440.64,0 684.84,0 684.84,-36"/>
+<text xml:space="preserve" text-anchor="start" x="448.64" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.system.rebalance.buy_and_hold</text>
+</g>
+<!-- qstrader.system.rebalance.rebalance -->
+<g id="node7" class="node">
+<title>qstrader.system.rebalance.rebalance</title>
+<polygon fill="none" stroke="black" points="1025.6,-108 807.88,-108 807.88,-72 1025.6,-72 1025.6,-108"/>
+<text xml:space="preserve" text-anchor="start" x="815.88" y="-85.8" font-family="Times,serif" font-size="14.00">qstrader.system.rebalance.rebalance</text>
+</g>
+<!-- qstrader.system.rebalance.buy_and_hold&#45;&gt;qstrader.system.rebalance.rebalance -->
+<g id="edge1" class="edge">
+<title>qstrader.system.rebalance.buy_and_hold-&gt;qstrader.system.rebalance.rebalance</title>
+<path fill="none" stroke="black" d="M651.16,-36.48C701.73,-46.48 765.29,-59.05 817.56,-69.39"/>
+<polygon fill="black" stroke="black" points="827.34,-71.32 816.65,-73.8 823.63,-70.59 817.53,-69.38 817.53,-69.38 817.53,-69.38 823.63,-70.59 818.4,-64.97 827.34,-71.32"/>
+</g>
+<!-- qstrader.system.rebalance.daily -->
+<g id="node5" class="node">
+<title>qstrader.system.rebalance.daily</title>
+<polygon fill="none" stroke="black" points="894.79,-36 702.69,-36 702.69,0 894.79,0 894.79,-36"/>
+<text xml:space="preserve" text-anchor="start" x="710.69" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.system.rebalance.daily</text>
+</g>
+<!-- qstrader.system.rebalance.daily&#45;&gt;qstrader.system.rebalance.rebalance -->
+<g id="edge2" class="edge">
+<title>qstrader.system.rebalance.daily-&gt;qstrader.system.rebalance.rebalance</title>
+<path fill="none" stroke="black" d="M828.21,-36.48C843.39,-45.49 862.08,-56.58 878.37,-66.24"/>
+<polygon fill="black" stroke="black" points="886.6,-71.12 875.7,-69.89 883.34,-69.19 877.99,-66.02 877.99,-66.02 877.99,-66.02 883.34,-69.19 880.29,-62.15 886.6,-71.12"/>
+</g>
+<!-- qstrader.system.rebalance.end_of_month -->
+<g id="node6" class="node">
+<title>qstrader.system.rebalance.end_of_month</title>
+<polygon fill="none" stroke="black" points="1158.62,-36 912.86,-36 912.86,0 1158.62,0 1158.62,-36"/>
+<text xml:space="preserve" text-anchor="start" x="920.86" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.system.rebalance.end_of_month</text>
+</g>
+<!-- qstrader.system.rebalance.end_of_month&#45;&gt;qstrader.system.rebalance.rebalance -->
+<g id="edge3" class="edge">
+<title>qstrader.system.rebalance.end_of_month-&gt;qstrader.system.rebalance.rebalance</title>
+<path fill="none" stroke="black" d="M1006.02,-36.48C990.71,-45.49 971.86,-56.58 955.43,-66.24"/>
+<polygon fill="black" stroke="black" points="947.13,-71.12 953.47,-62.17 950.39,-69.2 955.75,-66.05 955.75,-66.05 955.75,-66.05 950.39,-69.2 958.03,-69.93 947.13,-71.12"/>
+</g>
+<!-- qstrader.system.rebalance.weekly -->
+<g id="node8" class="node">
+<title>qstrader.system.rebalance.weekly</title>
+<polygon fill="none" stroke="black" points="1381,-36 1176.48,-36 1176.48,0 1381,0 1381,-36"/>
+<text xml:space="preserve" text-anchor="start" x="1184.48" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.system.rebalance.weekly</text>
+</g>
+<!-- qstrader.system.rebalance.weekly&#45;&gt;qstrader.system.rebalance.rebalance -->
+<g id="edge4" class="edge">
+<title>qstrader.system.rebalance.weekly-&gt;qstrader.system.rebalance.rebalance</title>
+<path fill="none" stroke="black" d="M1188.33,-36.48C1136.5,-46.5 1071.34,-59.11 1017.83,-69.45"/>
+<polygon fill="black" stroke="black" points="1008.14,-71.33 1017.1,-65.01 1011.85,-70.61 1017.96,-69.43 1017.96,-69.43 1017.96,-69.43 1011.85,-70.61 1018.81,-73.85 1008.14,-71.33"/>
+</g>
+</g>
+</svg>

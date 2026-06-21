@@ -1,13 +1,11 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 
-class Rebalance(object):
+class Rebalance(ABC):
     """
     Interface to a generic list of system logic and
     trade order rebalance timestamps.
     """
-
-    __metaclass__ = ABCMeta
 
     @abstractmethod
     def output_rebalances(self):

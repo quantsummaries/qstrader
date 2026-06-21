@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="305pt" height="615pt" viewBox="0.00 0.00 305.00 615.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 610.8)">
+<title>classes</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-610.8 300.75,-610.8 300.75,4 -4,4"/>
+<!-- qstrader.trading.backtest.BacktestTradingSession -->
+<g id="node1" class="node">
+<title>qstrader.trading.backtest.BacktestTradingSession</title>
+<polygon fill="none" stroke="black" points="0,-0.5 0,-494.9 296.75,-494.9 296.75,-0.5 0,-0.5"/>
+<text xml:space="preserve" text-anchor="start" x="80.72" y="-478.3" font-family="Times,serif" font-size="14.00">BacktestTradingSession</text>
+<polyline fill="none" stroke="black" points="0,-470.1 296.75,-470.1"/>
+<text xml:space="preserve" text-anchor="start" x="8" y="-453.5" font-family="Times,serif" font-size="14.00">account_name : str</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-436.7" font-family="Times,serif" font-size="14.00">alpha_model : AlphaModel</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-419.9" font-family="Times,serif" font-size="14.00">broker : SimulatedBroker</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-403.1" font-family="Times,serif" font-size="14.00">burn_in_dt : pd.Timestamp | None</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-386.3" font-family="Times,serif" font-size="14.00">data_handler : BacktestDataHandler</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-369.5" font-family="Times,serif" font-size="14.00">end_dt</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-352.7" font-family="Times,serif" font-size="14.00">equity_curve : list</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-335.9" font-family="Times,serif" font-size="14.00">exchange : SimulatedExchange</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-319.1" font-family="Times,serif" font-size="14.00">fee_model : FeeModel</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-302.3" font-family="Times,serif" font-size="14.00">initial_cash : float</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-285.5" font-family="Times,serif" font-size="14.00">long_only : bool</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-268.7" font-family="Times,serif" font-size="14.00">portfolio_id : str</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-251.9" font-family="Times,serif" font-size="14.00">portfolio_name : str</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-235.1" font-family="Times,serif" font-size="14.00">qts : QuantTradingSystem</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-218.3" font-family="Times,serif" font-size="14.00">rebalance : str</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-201.5" font-family="Times,serif" font-size="14.00">rebalance_schedule : list</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-184.7" font-family="Times,serif" font-size="14.00">rebalance_weekday</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-167.9" font-family="Times,serif" font-size="14.00">risk_model : RiskModel | None</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-151.1" font-family="Times,serif" font-size="14.00">signals : SignalsCollection | None</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-134.3" font-family="Times,serif" font-size="14.00">sim_engine : DailyBusinessDaySimulationEngine</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-117.5" font-family="Times,serif" font-size="14.00">start_dt</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-100.7" font-family="Times,serif" font-size="14.00">target_allocations : list</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-83.9" font-family="Times,serif" font-size="14.00">universe : Universe</text>
+<polyline fill="none" stroke="black" points="0,-75.7 296.75,-75.7"/>
+<text xml:space="preserve" text-anchor="start" x="38.36" y="-59.1" font-family="Times,serif" font-size="14.00">get_equity_curve(): pd.DataFrame</text>
+<text xml:space="preserve" text-anchor="start" x="38.36" y="-42.3" font-family="Times,serif" font-size="14.00">get_target_allocations(): pd.DataFrame</text>
+<text xml:space="preserve" text-anchor="start" x="38.36" y="-25.5" font-family="Times,serif" font-size="14.00">output_holdings(): None</text>
+<text xml:space="preserve" text-anchor="start" x="38.36" y="-8.7" font-family="Times,serif" font-size="14.00">run(results: bool): None</text>
+</g>
+<!-- qstrader.trading.trading_session.TradingSession -->
+<g id="node2" class="node">
+<title>qstrader.trading.trading_session.TradingSession</title>
+<polygon fill="none" stroke="black" points="96.82,-531.9 96.82,-606.3 199.93,-606.3 199.93,-531.9 96.82,-531.9"/>
+<text xml:space="preserve" text-anchor="start" x="104.82" y="-589.7" font-family="Times,serif" font-size="14.00">TradingSession</text>
+<polyline fill="none" stroke="black" points="96.82,-581.5 199.93,-581.5"/>
+<polyline fill="none" stroke="black" points="96.82,-556.7 199.93,-556.7"/>
+<text xml:space="preserve" text-anchor="start" x="133.99" y="-541.1" font-family="Times,serif" font-style="italic" font-size="14.00">run</text>
+<text xml:space="preserve" text-anchor="start" x="153.44" y="-541.1" font-family="Times,serif" font-size="14.00">()</text>
+</g>
+<!-- qstrader.trading.backtest.BacktestTradingSession&#45;&gt;qstrader.trading.trading_session.TradingSession -->
+<g id="edge1" class="edge">
+<title>qstrader.trading.backtest.BacktestTradingSession-&gt;qstrader.trading.trading_session.TradingSession</title>
+<path fill="none" stroke="black" d="M148.38,-495.22C148.38,-504.11 148.38,-512.48 148.38,-520.16"/>
+<polygon fill="none" stroke="black" points="144.88,-520.11 148.38,-530.11 151.88,-520.12 144.88,-520.11"/>
+</g>
+</g>
+</svg>

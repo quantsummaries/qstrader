@@ -5,6 +5,12 @@ __pycache__
 out
 cover
 
+# Ignore ONLY the root data folder containing raw CSVs
+/data/
+
+# Explicitly ensure the python package directory is NEVER ignored
+!/qstrader/data/
+
 # environment
 env/
 venv/
@@ -42,3 +48,6 @@ pip-log.txt
 
 # Textmate (a Mac editor) meta files
 ._*
+
+.idea/
+TODO.md

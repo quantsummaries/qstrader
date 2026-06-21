@@ -1,0 +1,20 @@
+digraph "packages" {
+rankdir=BT
+charset="utf-8"
+"qstrader.portcon" [color="black", label=<qstrader.portcon>, shape="box", style="solid"];
+"qstrader.portcon.optimiser" [color="black", label=<qstrader.portcon.optimiser>, shape="box", style="solid"];
+"qstrader.portcon.optimiser.equal_weight" [color="black", label=<qstrader.portcon.optimiser.equal_weight>, shape="box", style="solid"];
+"qstrader.portcon.optimiser.fixed_weight" [color="black", label=<qstrader.portcon.optimiser.fixed_weight>, shape="box", style="solid"];
+"qstrader.portcon.optimiser.optimiser" [color="black", label=<qstrader.portcon.optimiser.optimiser>, shape="box", style="solid"];
+"qstrader.portcon.order_sizer" [color="black", label=<qstrader.portcon.order_sizer>, shape="box", style="solid"];
+"qstrader.portcon.order_sizer.dollar_weighted" [color="black", label=<qstrader.portcon.order_sizer.dollar_weighted>, shape="box", style="solid"];
+"qstrader.portcon.order_sizer.long_short" [color="black", label=<qstrader.portcon.order_sizer.long_short>, shape="box", style="solid"];
+"qstrader.portcon.order_sizer.order_sizer" [color="black", label=<qstrader.portcon.order_sizer.order_sizer>, shape="box", style="solid"];
+"qstrader.portcon.pcm" [color="black", label=<qstrader.portcon.pcm>, shape="box", style="solid"];
+"qstrader.portcon.optimiser.equal_weight" -> "qstrader.portcon.optimiser.optimiser" [arrowhead="open", arrowtail="none"];
+"qstrader.portcon.optimiser.fixed_weight" -> "qstrader.portcon.optimiser.optimiser" [arrowhead="open", arrowtail="none"];
+"qstrader.portcon.order_sizer.dollar_weighted" -> "qstrader.portcon.order_sizer.order_sizer" [arrowhead="open", arrowtail="none"];
+"qstrader.portcon.order_sizer.long_short" -> "qstrader.portcon.order_sizer.order_sizer" [arrowhead="open", arrowtail="none"];
+"qstrader.portcon.pcm" -> "qstrader.portcon.optimiser.optimiser" [arrowhead="open", arrowtail="none"];
+"qstrader.portcon.pcm" -> "qstrader.portcon.order_sizer.order_sizer" [arrowhead="open", arrowtail="none"];
+}

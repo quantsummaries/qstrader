@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="305pt" height="116pt" viewBox="0.00 0.00 305.00 116.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>packages</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-112 300.55,-112 300.55,4 -4,4"/>
+<!-- qstrader.trading -->
+<g id="node1" class="node">
+<title>qstrader.trading</title>
+<polygon fill="none" stroke="black" points="104.25,-36 0,-36 0,0 104.25,0 104.25,-36"/>
+<text xml:space="preserve" text-anchor="start" x="8" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.trading</text>
+</g>
+<!-- qstrader.trading.backtest -->
+<g id="node2" class="node">
+<title>qstrader.trading.backtest</title>
+<polygon fill="none" stroke="black" points="275.93,-36 122.32,-36 122.32,0 275.93,0 275.93,-36"/>
+<text xml:space="preserve" text-anchor="start" x="130.32" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.trading.backtest</text>
+</g>
+<!-- qstrader.trading.trading_session -->
+<g id="node3" class="node">
+<title>qstrader.trading.trading_session</title>
+<polygon fill="none" stroke="black" points="296.55,-108 101.7,-108 101.7,-72 296.55,-72 296.55,-108"/>
+<text xml:space="preserve" text-anchor="start" x="109.7" y="-85.8" font-family="Times,serif" font-size="14.00">qstrader.trading.trading_session</text>
+</g>
+<!-- qstrader.trading.backtest&#45;&gt;qstrader.trading.trading_session -->
+<g id="edge1" class="edge">
+<title>qstrader.trading.backtest-&gt;qstrader.trading.trading_session</title>
+<path fill="none" stroke="black" d="M199.12,-36.3C199.12,-43.68 199.12,-52.48 199.12,-60.75"/>
+<polygon fill="black" stroke="black" points="199.12,-70.68 194.62,-60.68 199.12,-66.9 199.12,-60.68 199.12,-60.68 199.12,-60.68 199.12,-66.9 203.62,-60.68 199.12,-70.68"/>
+</g>
+</g>
+</svg>

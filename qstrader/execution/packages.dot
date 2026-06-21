@@ -1,0 +1,15 @@
+digraph "packages" {
+rankdir=BT
+charset="utf-8"
+"qstrader.execution" [color="black", label=<qstrader.execution>, shape="box", style="solid"];
+"qstrader.execution.execution_algo" [color="black", label=<qstrader.execution.execution_algo>, shape="box", style="solid"];
+"qstrader.execution.execution_algo.execution_algo" [color="black", label=<qstrader.execution.execution_algo.execution_algo>, shape="box", style="solid"];
+"qstrader.execution.execution_algo.market_order" [color="black", label=<qstrader.execution.execution_algo.market_order>, shape="box", style="solid"];
+"qstrader.execution.execution_handler" [color="black", label=<qstrader.execution.execution_handler>, shape="box", style="solid"];
+"qstrader.execution.order" [color="black", label=<qstrader.execution.order>, shape="box", style="solid"];
+"qstrader.execution.execution_algo.execution_algo" -> "qstrader.execution.order" [arrowhead="open", arrowtail="none"];
+"qstrader.execution.execution_algo.market_order" -> "qstrader.execution.execution_algo.execution_algo" [arrowhead="open", arrowtail="none"];
+"qstrader.execution.execution_algo.market_order" -> "qstrader.execution.order" [arrowhead="open", arrowtail="none"];
+"qstrader.execution.execution_handler" -> "qstrader.execution.execution_algo.execution_algo" [arrowhead="open", arrowtail="none"];
+"qstrader.execution.execution_handler" -> "qstrader.execution.order" [arrowhead="open", arrowtail="none"];
+}

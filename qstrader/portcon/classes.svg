@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1044pt" height="509pt" viewBox="0.00 0.00 1044.00 509.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 504.8)">
+<title>classes</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-504.8 1040.2,-504.8 1040.2,4 -4,4"/>
+<!-- qstrader.portcon.order_sizer.dollar_weighted.DollarWeightedCashBufferedOrderSizer -->
+<g id="node1" class="node">
+<title>qstrader.portcon.order_sizer.dollar_weighted.DollarWeightedCashBufferedOrderSizer</title>
+<polygon fill="none" stroke="black" points="0,-0.5 0,-125.3 245.35,-125.3 245.35,-0.5 0,-0.5"/>
+<text xml:space="preserve" text-anchor="start" x="8" y="-108.7" font-family="Times,serif" font-size="14.00">DollarWeightedCashBufferedOrderSizer</text>
+<polyline fill="none" stroke="black" points="0,-100.5 245.35,-100.5"/>
+<text xml:space="preserve" text-anchor="start" x="21.22" y="-83.9" font-family="Times,serif" font-size="14.00">broker : Broker</text>
+<text xml:space="preserve" text-anchor="start" x="21.22" y="-67.1" font-family="Times,serif" font-size="14.00">broker_portfolio_id : str</text>
+<text xml:space="preserve" text-anchor="start" x="21.22" y="-50.3" font-family="Times,serif" font-size="14.00">cash_buffer_percentage : float</text>
+<text xml:space="preserve" text-anchor="start" x="21.22" y="-33.5" font-family="Times,serif" font-size="14.00">data_handler : BacktestDataHandler</text>
+<polyline fill="none" stroke="black" points="0,-25.3 245.35,-25.3"/>
+<text xml:space="preserve" text-anchor="start" x="120.93" y="-8.7" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.portcon.order_sizer.order_sizer.OrderSizer -->
+<g id="node5" class="node">
+<title>qstrader.portcon.order_sizer.order_sizer.OrderSizer</title>
+<polygon fill="none" stroke="black" points="333.97,-163.3 333.97,-237.7 411.38,-237.7 411.38,-163.3 333.97,-163.3"/>
+<text xml:space="preserve" text-anchor="start" x="341.97" y="-221.1" font-family="Times,serif" font-size="14.00">OrderSizer</text>
+<polyline fill="none" stroke="black" points="333.97,-212.9 411.38,-212.9"/>
+<polyline fill="none" stroke="black" points="333.97,-188.1 411.38,-188.1"/>
+<text xml:space="preserve" text-anchor="start" x="370.93" y="-171.5" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.portcon.order_sizer.dollar_weighted.DollarWeightedCashBufferedOrderSizer&#45;&gt;qstrader.portcon.order_sizer.order_sizer.OrderSizer -->
+<g id="edge3" class="edge">
+<title>qstrader.portcon.order_sizer.dollar_weighted.DollarWeightedCashBufferedOrderSizer-&gt;qstrader.portcon.order_sizer.order_sizer.OrderSizer</title>
+<path fill="none" stroke="black" d="M236.7,-125.75C267.26,-142.32 298.7,-159.38 323.64,-172.91"/>
+<polygon fill="none" stroke="black" points="321.77,-175.87 332.23,-177.56 325.11,-169.72 321.77,-175.87"/>
+</g>
+<!-- qstrader.portcon.optimiser.equal_weight.EqualWeightPortfolioOptimiser -->
+<g id="node2" class="node">
+<title>qstrader.portcon.optimiser.equal_weight.EqualWeightPortfolioOptimiser</title>
+<polygon fill="none" stroke="black" points="500.16,-17.3 500.16,-108.5 759.2,-108.5 759.2,-17.3 500.16,-17.3"/>
+<text xml:space="preserve" text-anchor="start" x="539.86" y="-91.9" font-family="Times,serif" font-size="14.00">EqualWeightPortfolioOptimiser</text>
+<polyline fill="none" stroke="black" points="500.16,-83.7 759.2,-83.7"/>
+<text xml:space="preserve" text-anchor="start" x="508.16" y="-67.1" font-family="Times,serif" font-size="14.00">data_handler : BacktestDataHandler | None</text>
+<text xml:space="preserve" text-anchor="start" x="508.16" y="-50.3" font-family="Times,serif" font-size="14.00">scale : float</text>
+<polyline fill="none" stroke="black" points="500.16,-42.1 759.2,-42.1"/>
+<text xml:space="preserve" text-anchor="start" x="627.93" y="-25.5" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.portcon.optimiser.optimiser.PortfolioOptimiser -->
+<g id="node7" class="node">
+<title>qstrader.portcon.optimiser.optimiser.PortfolioOptimiser</title>
+<polygon fill="none" stroke="black" points="568.79,-163.3 568.79,-237.7 690.56,-237.7 690.56,-163.3 568.79,-163.3"/>
+<text xml:space="preserve" text-anchor="start" x="576.79" y="-221.1" font-family="Times,serif" font-size="14.00">PortfolioOptimiser</text>
+<polyline fill="none" stroke="black" points="568.79,-212.9 690.56,-212.9"/>
+<polyline fill="none" stroke="black" points="568.79,-188.1 690.56,-188.1"/>
+<text xml:space="preserve" text-anchor="start" x="627.93" y="-171.5" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.portcon.optimiser.equal_weight.EqualWeightPortfolioOptimiser&#45;&gt;qstrader.portcon.optimiser.optimiser.PortfolioOptimiser -->
+<g id="edge1" class="edge">
+<title>qstrader.portcon.optimiser.equal_weight.EqualWeightPortfolioOptimiser-&gt;qstrader.portcon.optimiser.optimiser.PortfolioOptimiser</title>
+<path fill="none" stroke="black" d="M629.68,-108.68C629.68,-122.42 629.68,-137.59 629.68,-151.54"/>
+<polygon fill="none" stroke="black" points="626.18,-151.39 629.68,-161.39 633.18,-151.39 626.18,-151.39"/>
+</g>
+<!-- qstrader.portcon.optimiser.fixed_weight.FixedWeightPortfolioOptimiser -->
+<g id="node3" class="node">
+<title>qstrader.portcon.optimiser.fixed_weight.FixedWeightPortfolioOptimiser</title>
+<polygon fill="none" stroke="black" points="777.16,-25.7 777.16,-100.1 1036.2,-100.1 1036.2,-25.7 777.16,-25.7"/>
+<text xml:space="preserve" text-anchor="start" x="817.24" y="-83.5" font-family="Times,serif" font-size="14.00">FixedWeightPortfolioOptimiser</text>
+<polyline fill="none" stroke="black" points="777.16,-75.3 1036.2,-75.3"/>
+<text xml:space="preserve" text-anchor="start" x="785.16" y="-58.7" font-family="Times,serif" font-size="14.00">data_handler : BacktestDataHandler | None</text>
+<polyline fill="none" stroke="black" points="777.16,-50.5 1036.2,-50.5"/>
+<text xml:space="preserve" text-anchor="start" x="904.93" y="-33.9" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.portcon.optimiser.fixed_weight.FixedWeightPortfolioOptimiser&#45;&gt;qstrader.portcon.optimiser.optimiser.PortfolioOptimiser -->
+<g id="edge2" class="edge">
+<title>qstrader.portcon.optimiser.fixed_weight.FixedWeightPortfolioOptimiser-&gt;qstrader.portcon.optimiser.optimiser.PortfolioOptimiser</title>
+<path fill="none" stroke="black" d="M831.72,-100.6C791.04,-120.51 741.02,-145 700.93,-164.62"/>
+<polygon fill="none" stroke="black" points="699.5,-161.42 692.05,-168.96 702.58,-167.71 699.5,-161.42"/>
+</g>
+<!-- qstrader.portcon.order_sizer.long_short.LongShortLeveragedOrderSizer -->
+<g id="node4" class="node">
+<title>qstrader.portcon.order_sizer.long_short.LongShortLeveragedOrderSizer</title>
+<polygon fill="none" stroke="black" points="263.22,-0.5 263.22,-125.3 482.13,-125.3 482.13,-0.5 263.22,-0.5"/>
+<text xml:space="preserve" text-anchor="start" x="282.49" y="-108.7" font-family="Times,serif" font-size="14.00">LongShortLeveragedOrderSizer</text>
+<polyline fill="none" stroke="black" points="263.22,-100.5 482.13,-100.5"/>
+<text xml:space="preserve" text-anchor="start" x="271.22" y="-83.9" font-family="Times,serif" font-size="14.00">broker : Broker</text>
+<text xml:space="preserve" text-anchor="start" x="271.22" y="-67.1" font-family="Times,serif" font-size="14.00">broker_portfolio_id : str</text>
+<text xml:space="preserve" text-anchor="start" x="271.22" y="-50.3" font-family="Times,serif" font-size="14.00">data_handler : BacktestDataHandler</text>
+<text xml:space="preserve" text-anchor="start" x="271.22" y="-33.5" font-family="Times,serif" font-size="14.00">gross_leverage : float</text>
+<polyline fill="none" stroke="black" points="263.22,-25.3 482.13,-25.3"/>
+<text xml:space="preserve" text-anchor="start" x="370.93" y="-8.7" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.portcon.order_sizer.long_short.LongShortLeveragedOrderSizer&#45;&gt;qstrader.portcon.order_sizer.order_sizer.OrderSizer -->
+<g id="edge4" class="edge">
+<title>qstrader.portcon.order_sizer.long_short.LongShortLeveragedOrderSizer-&gt;qstrader.portcon.order_sizer.order_sizer.OrderSizer</title>
+<path fill="none" stroke="black" d="M372.68,-125.75C372.68,-134.39 372.68,-143.16 372.68,-151.49"/>
+<polygon fill="none" stroke="black" points="369.18,-151.41 372.68,-161.41 376.18,-151.41 369.18,-151.41"/>
+</g>
+<!-- qstrader.portcon.pcm.PortfolioConstructionModel -->
+<g id="node6" class="node">
+<title>qstrader.portcon.pcm.PortfolioConstructionModel</title>
+<polygon fill="none" stroke="black" points="371.16,-291.5 371.16,-500.3 630.2,-500.3 630.2,-291.5 371.16,-291.5"/>
+<text xml:space="preserve" text-anchor="start" x="421.35" y="-483.7" font-family="Times,serif" font-size="14.00">PortfolioConstructionModel</text>
+<polyline fill="none" stroke="black" points="371.16,-475.5 630.2,-475.5"/>
+<text xml:space="preserve" text-anchor="start" x="379.16" y="-458.9" font-family="Times,serif" font-size="14.00">alpha_model : AlphaModel | None</text>
+<text xml:space="preserve" text-anchor="start" x="379.16" y="-442.1" font-family="Times,serif" font-size="14.00">broker : Broker</text>
+<text xml:space="preserve" text-anchor="start" x="379.16" y="-425.3" font-family="Times,serif" font-size="14.00">broker_portfolio_id : str</text>
+<text xml:space="preserve" text-anchor="start" x="379.16" y="-408.5" font-family="Times,serif" font-size="14.00">cost_model : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="379.16" y="-391.7" font-family="Times,serif" font-size="14.00">data_handler : BacktestDataHandler | None</text>
+<text xml:space="preserve" text-anchor="start" x="379.16" y="-374.9" font-family="Times,serif" font-size="14.00">optimiser</text>
+<text xml:space="preserve" text-anchor="start" x="379.16" y="-358.1" font-family="Times,serif" font-size="14.00">order_sizer</text>
+<text xml:space="preserve" text-anchor="start" x="379.16" y="-341.3" font-family="Times,serif" font-size="14.00">risk_model : RiskModel | None</text>
+<text xml:space="preserve" text-anchor="start" x="379.16" y="-324.5" font-family="Times,serif" font-size="14.00">universe : Universe</text>
+<polyline fill="none" stroke="black" points="371.16,-316.3 630.2,-316.3"/>
+<text xml:space="preserve" text-anchor="start" x="498.93" y="-299.7" font-family="Times,serif" font-size="14.00"> </text>
+</g>
+<!-- qstrader.portcon.order_sizer.order_sizer.OrderSizer&#45;&gt;qstrader.portcon.pcm.PortfolioConstructionModel -->
+<g id="edge6" class="edge">
+<title>qstrader.portcon.order_sizer.order_sizer.OrderSizer-&gt;qstrader.portcon.pcm.PortfolioConstructionModel</title>
+<path fill="none" stroke="black" d="M396.75,-237.88C405.05,-250.41 414.84,-265.2 425.03,-280.6"/>
+<polygon fill="none" stroke="black" points="425.02,-280.59 431.67,-283.38 431.64,-290.59 425,-287.8 425.02,-280.59"/>
+<text xml:space="preserve" text-anchor="middle" x="449.22" y="-260.4" font-family="Times,serif" font-size="14.00" fill="green">order_sizer</text>
+</g>
+<!-- qstrader.portcon.optimiser.optimiser.PortfolioOptimiser&#45;&gt;qstrader.portcon.pcm.PortfolioConstructionModel -->
+<g id="edge5" class="edge">
+<title>qstrader.portcon.optimiser.optimiser.PortfolioOptimiser-&gt;qstrader.portcon.pcm.PortfolioConstructionModel</title>
+<path fill="none" stroke="black" d="M605.41,-237.88C597.05,-250.41 587.19,-265.2 576.91,-280.6"/>
+<polygon fill="none" stroke="black" points="576.91,-280.61 576.91,-287.82 570.25,-290.6 570.25,-283.39 576.91,-280.61"/>
+<text xml:space="preserve" text-anchor="middle" x="618" y="-260.4" font-family="Times,serif" font-size="14.00" fill="green">optimiser</text>
+</g>
+</g>
+</svg>

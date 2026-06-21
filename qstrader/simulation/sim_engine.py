@@ -1,9 +1,9 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 
-class SimulationEngine(object):
+class SimulationEngine(ABC):
     """
-    Interface to a tradinh event simulation engine.
+    Interface to a trading event simulation engine.
 
     Subclasses are designed to take starting and ending
     timestamps to generate events at a specific frequency.
@@ -18,8 +18,6 @@ class SimulationEngine(object):
     capital changes, performance calculations and trading
     orders.
     """
-
-    __metaclass__ = ABCMeta
 
     @abstractmethod
     def __iter__(self):

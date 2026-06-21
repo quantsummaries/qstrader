@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="464pt" height="385pt" viewBox="0.00 0.00 464.00 385.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 381.2)">
+<title>classes</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-381.2 459.58,-381.2 459.58,4 -4,4"/>
+<!-- qstrader.statistics.json_statistics.JSONStatistics -->
+<g id="node1" class="node">
+<title>qstrader.statistics.json_statistics.JSONStatistics</title>
+<polygon fill="none" stroke="black" points="0,-0.5 0,-226.1 246.99,-226.1 246.99,-0.5 0,-0.5"/>
+<text xml:space="preserve" text-anchor="start" x="81.49" y="-209.5" font-family="Times,serif" font-size="14.00">JSONStatistics</text>
+<polyline fill="none" stroke="black" points="0,-201.3 246.99,-201.3"/>
+<text xml:space="preserve" text-anchor="start" x="8" y="-184.7" font-family="Times,serif" font-size="14.00">benchmark_curve : pd.DataFrame | None</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-167.9" font-family="Times,serif" font-size="14.00">benchmark_id : str | None</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-151.1" font-family="Times,serif" font-size="14.00">benchmark_name : str | None</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-134.3" font-family="Times,serif" font-size="14.00">equity_curve : DataFrame</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-117.5" font-family="Times,serif" font-size="14.00">output_filename : str</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-100.7" font-family="Times,serif" font-size="14.00">periods : int</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-83.9" font-family="Times,serif" font-size="14.00">statistics : dict</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-67.1" font-family="Times,serif" font-size="14.00">strategy_id : str | None</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-50.3" font-family="Times,serif" font-size="14.00">strategy_name : str | None</text>
+<text xml:space="preserve" text-anchor="start" x="8" y="-33.5" font-family="Times,serif" font-size="14.00">target_allocations</text>
+<polyline fill="none" stroke="black" points="0,-25.3 246.99,-25.3"/>
+<text xml:space="preserve" text-anchor="start" x="81.71" y="-8.7" font-family="Times,serif" font-size="14.00">to_file(): None</text>
+</g>
+<!-- qstrader.statistics.statistics.Statistics -->
+<g id="node2" class="node">
+<title>qstrader.statistics.statistics.Statistics</title>
+<polygon fill="none" stroke="black" points="310.91,-263.1 310.91,-376.7 410.08,-376.7 410.08,-263.1 310.91,-263.1"/>
+<text xml:space="preserve" text-anchor="start" x="335.22" y="-360.1" font-family="Times,serif" font-size="14.00">Statistics</text>
+<polyline fill="none" stroke="black" points="310.91,-351.9 410.08,-351.9"/>
+<polyline fill="none" stroke="black" points="310.91,-327.1 410.08,-327.1"/>
+<text xml:space="preserve" text-anchor="start" x="318.91" y="-311.5" font-family="Times,serif" font-style="italic" font-size="14.00">get_results</text>
+<text xml:space="preserve" text-anchor="start" x="380.35" y="-311.5" font-family="Times,serif" font-size="14.00">()</text>
+<text xml:space="preserve" text-anchor="start" x="318.91" y="-297.5" font-family="Times,serif" font-style="italic" font-size="14.00">plot_results</text>
+<text xml:space="preserve" text-anchor="start" x="385.03" y="-297.5" font-family="Times,serif" font-size="14.00">()</text>
+<text xml:space="preserve" text-anchor="start" x="318.91" y="-283.5" font-family="Times,serif" font-style="italic" font-size="14.00">save</text>
+<text xml:space="preserve" text-anchor="start" x="343.79" y="-283.5" font-family="Times,serif" font-size="14.00">(filename)</text>
+<text xml:space="preserve" text-anchor="start" x="318.91" y="-269.5" font-family="Times,serif" font-style="italic" font-size="14.00">update</text>
+<text xml:space="preserve" text-anchor="start" x="357.01" y="-269.5" font-family="Times,serif" font-size="14.00">(dt)</text>
+</g>
+<!-- qstrader.statistics.tearsheet.TearsheetStatistics -->
+<g id="node3" class="node">
+<title>qstrader.statistics.tearsheet.TearsheetStatistics</title>
+<polygon fill="none" stroke="black" points="265.41,-42.5 265.41,-184.1 455.58,-184.1 455.58,-42.5 265.41,-42.5"/>
+<text xml:space="preserve" text-anchor="start" x="308.01" y="-167.5" font-family="Times,serif" font-size="14.00">TearsheetStatistics</text>
+<polyline fill="none" stroke="black" points="265.41,-159.3 455.58,-159.3"/>
+<text xml:space="preserve" text-anchor="start" x="273.41" y="-142.7" font-family="Times,serif" font-size="14.00">benchmark_equity : NoneType</text>
+<text xml:space="preserve" text-anchor="start" x="273.41" y="-125.9" font-family="Times,serif" font-size="14.00">periods : int</text>
+<text xml:space="preserve" text-anchor="start" x="273.41" y="-109.1" font-family="Times,serif" font-size="14.00">strategy_equity</text>
+<text xml:space="preserve" text-anchor="start" x="273.41" y="-92.3" font-family="Times,serif" font-size="14.00">title : NoneType</text>
+<polyline fill="none" stroke="black" points="265.41,-84.1 455.58,-84.1"/>
+<text xml:space="preserve" text-anchor="start" x="298.68" y="-67.5" font-family="Times,serif" font-size="14.00">get_results(equity_df)</text>
+<text xml:space="preserve" text-anchor="start" x="298.68" y="-50.7" font-family="Times,serif" font-size="14.00">plot_results(filename)</text>
+</g>
+<!-- qstrader.statistics.tearsheet.TearsheetStatistics&#45;&gt;qstrader.statistics.statistics.Statistics -->
+<g id="edge1" class="edge">
+<title>qstrader.statistics.tearsheet.TearsheetStatistics-&gt;qstrader.statistics.statistics.Statistics</title>
+<path fill="none" stroke="black" d="M360.5,-184.43C360.5,-206.1 360.5,-229.91 360.5,-251.4"/>
+<polygon fill="none" stroke="black" points="357,-251.22 360.5,-261.22 364,-251.22 357,-251.22"/>
+</g>
+</g>
+</svg>

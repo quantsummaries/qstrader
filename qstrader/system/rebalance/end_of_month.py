@@ -26,16 +26,16 @@ class EndOfMonthRebalance(Rebalance):
 
     def __init__(
         self,
-        start_dt,
-        end_dt,
-        pre_market=False
+        start_dt: pd.Timestamp,
+        end_dt: pd.Timestamp,
+        pre_market: bool=False
     ):
         self.start_dt = start_dt
         self.end_dt = end_dt
         self.market_time = self._set_market_time(pre_market)
         self.rebalances = self._generate_rebalances()
 
-    def _set_market_time(self, pre_market):
+    def _set_market_time(self, pre_market: bool) -> str:
         """
         Determines whether to use market open or market close
         as the rebalance time.
@@ -52,7 +52,7 @@ class EndOfMonthRebalance(Rebalance):
         """
         return "14:30:00" if pre_market else "21:00:00"
 
-    def _generate_rebalances(self):
+    def _generate_rebalances(self) -> list[pd.Timestamp]:
         """
         Utilise the Pandas date_range method to create the appropriate
         list of rebalance timestamps.
@@ -75,3 +75,6 @@ class EndOfMonthRebalance(Rebalance):
             for date in rebalance_dates
         ]
         return rebalance_times
+
+    def output_rebalances(self):
+        pass

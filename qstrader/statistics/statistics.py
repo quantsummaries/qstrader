@@ -1,7 +1,7 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 
 
-class Statistics(object):
+class Statistics(ABC):
     """
     Statistics is an abstract class providing an interface for
     all inherited statistic classes (live, historic, custom, etc).
@@ -17,8 +17,6 @@ class Statistics(object):
     may require different metrics or frequencies-of-metrics to be updated,
     however the example given is suitable for longer timeframes.
     """
-
-    __metaclass__ = ABCMeta
 
     @abstractmethod
     def update(self, dt):

@@ -28,13 +28,13 @@ class DailyBusinessDaySimulationEngine(SimulationEngine):
         The starting day of the simulation.
     ending_day : `pd.Timestamp`
         The ending day of the simulation.
-    pre_market : `Boolean`, optional
+    pre_market : `bool`, optional
         Whether to include a pre-market event
-    post_market : `Boolean`, optional
+    post_market : `bool`, optional
         Whether to include a post-market event
     """
 
-    def __init__(self, starting_day, ending_day, pre_market=True, post_market=True):
+    def __init__(self, starting_day: pd.Timestamp, ending_day: pd.Timestamp, pre_market: bool = True, post_market: bool = True):
         if ending_day < starting_day:
             raise ValueError(
                 "Ending date time %s is earlier than starting date time %s. "
@@ -48,7 +48,7 @@ class DailyBusinessDaySimulationEngine(SimulationEngine):
         self.post_market = post_market
         self.business_days = self._generate_business_days()
 
-    def _generate_business_days(self):
+    def _generate_business_days(self) -> list[pd.Timestamp]:
         """
         Generate the list of business days using midnight UTC as
         the timestamp.
@@ -61,7 +61,7 @@ class DailyBusinessDaySimulationEngine(SimulationEngine):
         days = pd.date_range(
             self.starting_day, self.ending_day, freq=BDay()
         )
-        return days
+        return list(days)
 
     def __iter__(self):
         """
@@ -105,3 +105,14 @@ class DailyBusinessDaySimulationEngine(SimulationEngine):
                         datetime.datetime(year, month, day, 23, 59), tz='UTC'
                     ), event_type="post_market"
                 )
+
+if __name__ == '__main__':
+    starting_day = pd.Timestamp('2023-01-01', tz='UTC')
+    ending_day = pd.Timestamp('2023-01-10', tz='UTC')
+
+    sim_engine = DailyBusinessDaySimulationEngine(
+        starting_day, ending_day, pre_market=True, post_market=True
+    )
+
+    for event in sim_engine:
+        print(event.ts, event.event_type)

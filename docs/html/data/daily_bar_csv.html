@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>qstrader.data.daily_bar_csv API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>qstrader.data.daily_bar_csv</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="qstrader.data.daily_bar_csv.CSVDailyBarDataSource"><code class="flex name class">
+<span>class <span class="ident">CSVDailyBarDataSource</span></span>
+<span>(</span><span>csv_dir: str,<br>asset_type: str,<br>adjust_prices: bool = True,<br>csv_symbols: list[str] | None = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CSVDailyBarDataSource(object):
+    &#34;&#34;&#34;
+    Encapsulates loading, preparation and querying of CSV files of
+    daily &#39;bar&#39; OHLCV data for multiple assets. The CSV files are converted into a intraday
+    timestamped Pandas DataFrame with opening and closing prices.
+
+    Optionally utilises adjusted closing prices (if available) to
+    adjust both the close and open.
+
+    Parameters
+    ----------
+    csv_dir : `str`
+        The full path to the directory where the CSV is located.
+    asset_type : `str`
+        The asset type that the price/volume data is for.
+        TODO: Unused at this stage and currently hardcoded to Equity.
+    adjust_prices : `Boolean`, optional
+        Whether to utilise corporate-action adjusted prices for both
+        the open and closing prices. Defaults to True.
+    csv_symbols : `list`, optional
+        An optional list of CSV symbols to restrict the data source to.
+        The alternative is to convert all CSVs found within the
+        provided directory.
+    &#34;&#34;&#34;
+
+    def __init__(self, csv_dir: str, asset_type: str, adjust_prices: bool=True, csv_symbols: list[str]|None=None):
+        self.csv_dir = csv_dir
+        self.asset_type = asset_type
+        self.adjust_prices = adjust_prices
+        self.csv_symbols = csv_symbols
+
+        self.asset_bar_frames = self._load_csvs_into_dfs()
+        self.asset_bid_ask_frames = self._convert_bars_into_bid_ask_dfs()
+
+    def _obtain_asset_csv_files(self) -&gt; list[str]:
+        &#34;&#34;&#34;
+        Obtain the list of all CSV filenames in the CSV directory.
+
+        Returns
+        -------
+        `list[str]`
+            The list of all CSV filenames.
+        &#34;&#34;&#34;
+        return [
+            file for file in os.listdir(self.csv_dir)
+            if file.endswith(&#39;.csv&#39;)
+        ]
+
+    def _obtain_asset_symbol_from_filename(self, csv_file: str) -&gt; str:
+        &#34;&#34;&#34;
+        Return the QSTrader symbology for the asset.
+
+        TODO: Remove hardcoding to Equity asset types.
+
+        Parameters
+        ----------
+        csv_file : `str`
+            The name of the CSV file.
+
+        Returns
+        -------
+        `str`
+            The QSTrader symbology of the asset. e.g. &#39;EQ:SPY&#39;.
+        &#34;&#34;&#34;
+        return &#39;EQ:%s&#39; % csv_file.replace(&#39;.csv&#39;, &#39;&#39;)
+
+    def _load_csv_into_df(self, csv_file: str) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        Loads the CSV file into a Pandas DataFrame with dates parsed,
+        sorted on datetime localised to UTC.
+
+        Parameters
+        ----------
+        csv_file : `str`
+            The name of the CSV file.
+
+        Returns
+        -------
+        `pd.DataFrame`
+            DataFrame of the CSV file with timestamps localised to UTC.
+        &#34;&#34;&#34;
+        csv_df = pd.read_csv(
+            os.path.join(self.csv_dir, csv_file),
+            index_col=&#39;Date&#39;,
+            parse_dates=True
+        ).sort_index()
+
+        # Ensure all timestamps are set to UTC for consistency
+        csv_df = csv_df.set_index(csv_df.index.tz_localize(pytz.UTC))
+        return csv_df
+
+    def _load_csvs_into_dfs(self) -&gt; dict[str, pd.DataFrame]:
+        &#34;&#34;&#34;
+        Load all CSVs in the CSV directory into Pandas DataFrames.
+
+        Returns
+        -------
+        `dict{pd.DataFrame}`
+            The asset-symbol keyed dictionary of Pandas DataFrames
+            containing the timestamped price/volume data.
+        &#34;&#34;&#34;
+        if settings.PRINT_EVENTS:
+            print(&#34;Loading CSV files into DataFrames...&#34;)
+        if self.csv_symbols is not None:
+            # TODO/NOTE: This assumes existence of CSV symbols
+            # within the provided directory.
+            csv_files = [&#39;%s.csv&#39; % symbol for symbol in self.csv_symbols]
+        else:
+            csv_files = self._obtain_asset_csv_files()
+
+        asset_frames = {}
+        for csv_file in csv_files:
+            asset_symbol = self._obtain_asset_symbol_from_filename(csv_file)
+            if settings.PRINT_EVENTS:
+                print(&#34;Loading CSV file for symbol &#39;%s&#39;...&#34; % asset_symbol)
+            csv_df = self._load_csv_into_df(csv_file)
+            asset_frames[asset_symbol] = csv_df
+        return asset_frames
+
+    def _convert_bar_frame_into_bid_ask_df(self, bar_df: pd.DataFrame) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        Converts the DataFrame from daily OHLCV &#39;bars&#39; into a DataFrame
+        of open and closing price timestamps.
+
+        Optionally adjusts the open/close prices for corporate actions
+        using any provided &#39;Adjusted Close&#39; column.
+
+        Parameters
+        ----------
+        `pd.DataFrame`
+            The daily &#39;bar&#39; OHLCV DataFrame.
+
+        Returns
+        -------
+        `pd.DataFrame`
+            The individually-timestamped open/closing prices, optionally
+            adjusted for corporate actions.
+        &#34;&#34;&#34;
+        bar_df = bar_df.sort_index()
+        if self.adjust_prices:
+            if &#39;Adj Close&#39; not in bar_df.columns:
+                raise ValueError(
+                    &#34;Unable to locate Adjusted Close pricing column in CSV data file. &#34;
+                    &#34;Prices cannot be adjusted. Exiting.&#34;
+                )
+
+            # Restrict solely to the open/closing prices
+            oc_df = bar_df.loc[:, [&#39;Open&#39;, &#39;Close&#39;, &#39;Adj Close&#39;]]
+
+            # Adjust opening prices
+            oc_df[&#39;Adj Open&#39;] = (oc_df[&#39;Adj Close&#39;] / oc_df[&#39;Close&#39;]) * oc_df[&#39;Open&#39;]
+            oc_df = oc_df.loc[:, [&#39;Adj Open&#39;, &#39;Adj Close&#39;]]
+            oc_df.columns = [&#39;Open&#39;, &#39;Close&#39;]
+        else:
+            oc_df = bar_df.loc[:, [&#39;Open&#39;, &#39;Close&#39;]]
+
+        # Convert bars into separate rows for open/close prices
+        # appropriately timestamped
+        seq_oc_df = oc_df.T.unstack(level=0).reset_index()
+        seq_oc_df.columns = [&#39;Date&#39;, &#39;Market&#39;, &#39;Price&#39;]
+        seq_oc_df.loc[seq_oc_df[&#39;Market&#39;] == &#39;Open&#39;, &#39;Date&#39;] += pd.Timedelta(hours=14, minutes=30)
+        seq_oc_df.loc[seq_oc_df[&#39;Market&#39;] == &#39;Close&#39;, &#39;Date&#39;] += pd.Timedelta(hours=21, minutes=00)
+
+        # Currently, the Bid and Ask are set to the same price: at market open, they are open price; at market close,
+        # they are close price.
+        dp_df = seq_oc_df[[&#39;Date&#39;, &#39;Price&#39;]]
+        dp_df[&#39;Bid&#39;] = dp_df[&#39;Price&#39;]
+        dp_df[&#39;Ask&#39;] = dp_df[&#39;Price&#39;]
+        dp_df = dp_df.loc[:, [&#39;Date&#39;, &#39;Bid&#39;, &#39;Ask&#39;]].ffill().set_index(&#39;Date&#39;).sort_index()
+        return dp_df
+
+    def _convert_bars_into_bid_ask_dfs(self) -&gt; dict[str, pd.DataFrame]:
+        &#34;&#34;&#34;
+        Convert all of the daily OHLCV &#39;bar&#39; based DataFrames into
+        individually-timestamped open/closing price DataFrames.
+
+        Returns
+        -------
+        `dict{pd.DataFrame}`
+            The converted DataFrames.
+        &#34;&#34;&#34;
+        if settings.PRINT_EVENTS:
+            print(&#34;Adjusting pricing in CSV files...&#34;)
+        asset_bid_ask_frames = {}
+        for asset_symbol, bar_df in self.asset_bar_frames.items():
+            if settings.PRINT_EVENTS:
+                print(&#34;Adjusting CSV file for symbol &#39;%s&#39;...&#34; % asset_symbol)
+            asset_bid_ask_frames[asset_symbol] = \
+                self._convert_bar_frame_into_bid_ask_df(bar_df)
+        return asset_bid_ask_frames
+
+    @functools.lru_cache(maxsize=1024 * 1024)
+    def get_bid(self, dt: pd.Timestamp, asset: str) -&gt; float:
+        &#34;&#34;&#34;
+        Obtain the bid price of an asset at the provided timestamp. Currently, it&#39;s set to the open/close price of the
+        daily bar, depending on the time of the query (market open/market close), unadjusted or adjusted depending
+        on the `adjust_prices` flag.
+
+        Parameters
+        ----------
+        dt : `pd.Timestamp`
+            When to obtain the bid price for.
+        asset : `str`
+            The asset symbol to obtain the bid price for.
+
+        Returns
+        -------
+        `float`
+            The bid price.
+        &#34;&#34;&#34;
+        bid_ask_df = self.asset_bid_ask_frames[asset]
+        bid_series = bid_ask_df.iloc[bid_ask_df.index.get_indexer([dt], method=&#39;pad&#39;)][&#39;Bid&#39;]
+        try:
+            bid = bid_series.iloc[0]
+        except KeyError:  # Before start date
+            return np.nan
+        return bid
+
+    @functools.lru_cache(maxsize=1024 * 1024)
+    def get_ask(self, dt: pd.Timestamp, asset: str) -&gt; float:
+        &#34;&#34;&#34;
+        Obtain the ask price of an asset at the provided timestamp. Currently, it&#39;s set to the open/close price of the
+        daily bar, depending on the time of the query (market open/market close), unadjusted or adjusted depending on
+        the `adjust_prices` flag.
+
+        Parameters
+        ----------
+        dt : `pd.Timestamp`
+            When to obtain the ask price for.
+        asset : `str`
+            The asset symbol to obtain the ask price for.
+
+        Returns
+        -------
+        `float`
+            The ask price.
+        &#34;&#34;&#34;
+        bid_ask_df = self.asset_bid_ask_frames[asset]
+        ask_series = bid_ask_df.iloc[bid_ask_df.index.get_indexer([dt], method=&#39;pad&#39;)][&#39;Ask&#39;]
+        try:
+            ask = ask_series.iloc[0]
+        except KeyError:  # Before start date
+            return np.nan
+        return ask
+
+    def get_assets_historical_closes(self, start_dt: pd.Timestamp, end_dt: pd.Timestamp, assets: list[str]) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        Obtain a multi-asset historical range of closing prices as a DataFrame,
+        indexed by timestamp with asset symbols as columns.
+
+        Parameters
+        ----------
+        start_dt : `pd.Timestamp`
+            The starting datetime of the range to obtain.
+        end_dt : `pd.Timestamp`
+            The ending datetime of the range to obtain.
+        assets : `list[str]`
+            The list of asset symbols to obtain closing prices for.
+
+        Returns
+        -------
+        `pd.DataFrame`
+            The multi-asset closing prices DataFrame.
+        &#34;&#34;&#34;
+        close_series = []
+        for asset in assets:
+            if asset in self.asset_bar_frames.keys():
+                asset_close_prices = self.asset_bar_frames[asset][[&#39;Close&#39;]]
+                asset_close_prices.columns = [asset]
+                close_series.append(asset_close_prices)
+
+        prices_df = pd.concat(close_series, axis=1).dropna(how=&#39;all&#39;)
+        prices_df = prices_df.loc[start_dt:end_dt]
+        return prices_df
+
+    def get_asset_bar_frames(self) -&gt; dict[str, pd.DataFrame]:
+        &#34;&#34;&#34;
+        Obtain the asset-bar DataFrames.
+
+        Returns
+        -------
+        `dict{pd.DataFrame}`
+            The asset-bar DataFrames.
+        &#34;&#34;&#34;
+        return self.asset_bar_frames
+
+    def get_asset_bid_ask_frames(self) -&gt; dict[str, pd.DataFrame]:
+        &#34;&#34;&#34;
+        Obtain the asset-bid-ask DataFrames.
+
+        Returns
+        -------
+        `dict{pd.DataFrame}`
+            The asset-bid-ask DataFrames.
+        &#34;&#34;&#34;
+        return self.asset_bid_ask_frames</code></pre>
+</details>
+<div class="desc"><p>Encapsulates loading, preparation and querying of CSV files of
+daily 'bar' OHLCV data for multiple assets. The CSV files are converted into a intraday
+timestamped Pandas DataFrame with opening and closing prices.</p>
+<p>Optionally utilises adjusted closing prices (if available) to
+adjust both the close and open.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>csv_dir</code></strong> :&ensp;<code>str</code></dt>
+<dd>The full path to the directory where the CSV is located.</dd>
+<dt><strong><code>asset_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>The asset type that the price/volume data is for.
+TODO: Unused at this stage and currently hardcoded to Equity.</dd>
+<dt><strong><code>adjust_prices</code></strong> :&ensp;<code>Boolean</code>, optional</dt>
+<dd>Whether to utilise corporate-action adjusted prices for both
+the open and closing prices. Defaults to True.</dd>
+<dt><strong><code>csv_symbols</code></strong> :&ensp;<code>list</code>, optional</dt>
+<dd>An optional list of CSV symbols to restrict the data source to.
+The alternative is to convert all CSVs found within the
+provided directory.</dd>
+</dl></div>
+<h3>Methods</h3>
+<dl>
+<dt id="qstrader.data.daily_bar_csv.CSVDailyBarDataSource.get_ask"><code class="name flex">
+<span>def <span class="ident">get_ask</span></span>(<span>self, dt: pandas.Timestamp, asset: str) ‑> float</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@functools.lru_cache(maxsize=1024 * 1024)
+def get_ask(self, dt: pd.Timestamp, asset: str) -&gt; float:
+    &#34;&#34;&#34;
+    Obtain the ask price of an asset at the provided timestamp. Currently, it&#39;s set to the open/close price of the
+    daily bar, depending on the time of the query (market open/market close), unadjusted or adjusted depending on
+    the `adjust_prices` flag.
+
+    Parameters
+    ----------
+    dt : `pd.Timestamp`
+        When to obtain the ask price for.
+    asset : `str`
+        The asset symbol to obtain the ask price for.
+
+    Returns
+    -------
+    `float`
+        The ask price.
+    &#34;&#34;&#34;
+    bid_ask_df = self.asset_bid_ask_frames[asset]
+    ask_series = bid_ask_df.iloc[bid_ask_df.index.get_indexer([dt], method=&#39;pad&#39;)][&#39;Ask&#39;]
+    try:
+        ask = ask_series.iloc[0]
+    except KeyError:  # Before start date
+        return np.nan
+    return ask</code></pre>
+</details>
+<div class="desc"><p>Obtain the ask price of an asset at the provided timestamp. Currently, it's set to the open/close price of the
+daily bar, depending on the time of the query (market open/market close), unadjusted or adjusted depending on
+the <code>adjust_prices</code> flag.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>dt</code></strong> :&ensp;<code>pd.Timestamp</code></dt>
+<dd>When to obtain the ask price for.</dd>
+<dt><strong><code>asset</code></strong> :&ensp;<code>str</code></dt>
+<dd>The asset symbol to obtain the ask price for.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p><code>float</code>
+The ask price.</p></div>
+</dd>
+<dt id="qstrader.data.daily_bar_csv.CSVDailyBarDataSource.get_asset_bar_frames"><code class="name flex">
+<span>def <span class="ident">get_asset_bar_frames</span></span>(<span>self) ‑> dict[str, pandas.DataFrame]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_asset_bar_frames(self) -&gt; dict[str, pd.DataFrame]:
+    &#34;&#34;&#34;
+    Obtain the asset-bar DataFrames.
+
+    Returns
+    -------
+    `dict{pd.DataFrame}`
+        The asset-bar DataFrames.
+    &#34;&#34;&#34;
+    return self.asset_bar_frames</code></pre>
+</details>
+<div class="desc"><p>Obtain the asset-bar DataFrames.</p>
+<h2 id="returns">Returns</h2>
+<p><code>dict{pd.DataFrame}</code>
+The asset-bar DataFrames.</p></div>
+</dd>
+<dt id="qstrader.data.daily_bar_csv.CSVDailyBarDataSource.get_asset_bid_ask_frames"><code class="name flex">
+<span>def <span class="ident">get_asset_bid_ask_frames</span></span>(<span>self) ‑> dict[str, pandas.DataFrame]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_asset_bid_ask_frames(self) -&gt; dict[str, pd.DataFrame]:
+    &#34;&#34;&#34;
+    Obtain the asset-bid-ask DataFrames.
+
+    Returns
+    -------
+    `dict{pd.DataFrame}`
+        The asset-bid-ask DataFrames.
+    &#34;&#34;&#34;
+    return self.asset_bid_ask_frames</code></pre>
+</details>
+<div class="desc"><p>Obtain the asset-bid-ask DataFrames.</p>
+<h2 id="returns">Returns</h2>
+<p><code>dict{pd.DataFrame}</code>
+The asset-bid-ask DataFrames.</p></div>
+</dd>
+<dt id="qstrader.data.daily_bar_csv.CSVDailyBarDataSource.get_assets_historical_closes"><code class="name flex">
+<span>def <span class="ident">get_assets_historical_closes</span></span>(<span>self, start_dt: pandas.Timestamp, end_dt: pandas.Timestamp, assets: list[str]) ‑> pandas.DataFrame</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_assets_historical_closes(self, start_dt: pd.Timestamp, end_dt: pd.Timestamp, assets: list[str]) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    Obtain a multi-asset historical range of closing prices as a DataFrame,
+    indexed by timestamp with asset symbols as columns.
+
+    Parameters
+    ----------
+    start_dt : `pd.Timestamp`
+        The starting datetime of the range to obtain.
+    end_dt : `pd.Timestamp`
+        The ending datetime of the range to obtain.
+    assets : `list[str]`
+        The list of asset symbols to obtain closing prices for.
+
+    Returns
+    -------
+    `pd.DataFrame`
+        The multi-asset closing prices DataFrame.
+    &#34;&#34;&#34;
+    close_series = []
+    for asset in assets:
+        if asset in self.asset_bar_frames.keys():
+            asset_close_prices = self.asset_bar_frames[asset][[&#39;Close&#39;]]
+            asset_close_prices.columns = [asset]
+            close_series.append(asset_close_prices)
+
+    prices_df = pd.concat(close_series, axis=1).dropna(how=&#39;all&#39;)
+    prices_df = prices_df.loc[start_dt:end_dt]
+    return prices_df</code></pre>
+</details>
+<div class="desc"><p>Obtain a multi-asset historical range of closing prices as a DataFrame,
+indexed by timestamp with asset symbols as columns.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>start_dt</code></strong> :&ensp;<code>pd.Timestamp</code></dt>
+<dd>The starting datetime of the range to obtain.</dd>
+<dt><strong><code>end_dt</code></strong> :&ensp;<code>pd.Timestamp</code></dt>
+<dd>The ending datetime of the range to obtain.</dd>
+<dt><strong><code>assets</code></strong> :&ensp;<code>list[str]</code></dt>
+<dd>The list of asset symbols to obtain closing prices for.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p><code>pd.DataFrame</code>
+The multi-asset closing prices DataFrame.</p></div>
+</dd>
+<dt id="qstrader.data.daily_bar_csv.CSVDailyBarDataSource.get_bid"><code class="name flex">
+<span>def <span class="ident">get_bid</span></span>(<span>self, dt: pandas.Timestamp, asset: str) ‑> float</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@functools.lru_cache(maxsize=1024 * 1024)
+def get_bid(self, dt: pd.Timestamp, asset: str) -&gt; float:
+    &#34;&#34;&#34;
+    Obtain the bid price of an asset at the provided timestamp. Currently, it&#39;s set to the open/close price of the
+    daily bar, depending on the time of the query (market open/market close), unadjusted or adjusted depending
+    on the `adjust_prices` flag.
+
+    Parameters
+    ----------
+    dt : `pd.Timestamp`
+        When to obtain the bid price for.
+    asset : `str`
+        The asset symbol to obtain the bid price for.
+
+    Returns
+    -------
+    `float`
+        The bid price.
+    &#34;&#34;&#34;
+    bid_ask_df = self.asset_bid_ask_frames[asset]
+    bid_series = bid_ask_df.iloc[bid_ask_df.index.get_indexer([dt], method=&#39;pad&#39;)][&#39;Bid&#39;]
+    try:
+        bid = bid_series.iloc[0]
+    except KeyError:  # Before start date
+        return np.nan
+    return bid</code></pre>
+</details>
+<div class="desc"><p>Obtain the bid price of an asset at the provided timestamp. Currently, it's set to the open/close price of the
+daily bar, depending on the time of the query (market open/market close), unadjusted or adjusted depending
+on the <code>adjust_prices</code> flag.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>dt</code></strong> :&ensp;<code>pd.Timestamp</code></dt>
+<dd>When to obtain the bid price for.</dd>
+<dt><strong><code>asset</code></strong> :&ensp;<code>str</code></dt>
+<dd>The asset symbol to obtain the bid price for.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p><code>float</code>
+The bid price.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="qstrader.data" href="index.html">qstrader.data</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="qstrader.data.daily_bar_csv.CSVDailyBarDataSource" href="#qstrader.data.daily_bar_csv.CSVDailyBarDataSource">CSVDailyBarDataSource</a></code></h4>
+<ul class="">
+<li><code><a title="qstrader.data.daily_bar_csv.CSVDailyBarDataSource.get_ask" href="#qstrader.data.daily_bar_csv.CSVDailyBarDataSource.get_ask">get_ask</a></code></li>
+<li><code><a title="qstrader.data.daily_bar_csv.CSVDailyBarDataSource.get_asset_bar_frames" href="#qstrader.data.daily_bar_csv.CSVDailyBarDataSource.get_asset_bar_frames">get_asset_bar_frames</a></code></li>
+<li><code><a title="qstrader.data.daily_bar_csv.CSVDailyBarDataSource.get_asset_bid_ask_frames" href="#qstrader.data.daily_bar_csv.CSVDailyBarDataSource.get_asset_bid_ask_frames">get_asset_bid_ask_frames</a></code></li>
+<li><code><a title="qstrader.data.daily_bar_csv.CSVDailyBarDataSource.get_assets_historical_closes" href="#qstrader.data.daily_bar_csv.CSVDailyBarDataSource.get_assets_historical_closes">get_assets_historical_closes</a></code></li>
+<li><code><a title="qstrader.data.daily_bar_csv.CSVDailyBarDataSource.get_bid" href="#qstrader.data.daily_bar_csv.CSVDailyBarDataSource.get_bid">get_bid</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

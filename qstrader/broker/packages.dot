@@ -1,0 +1,33 @@
+digraph "packages" {
+rankdir=BT
+charset="utf-8"
+"qstrader.broker" [color="black", label=<qstrader.broker>, shape="box", style="solid"];
+"qstrader.broker.broker" [color="black", label=<qstrader.broker.broker>, shape="box", style="solid"];
+"qstrader.broker.fee_model" [color="black", label=<qstrader.broker.fee_model>, shape="box", style="solid"];
+"qstrader.broker.fee_model.fee_model" [color="black", label=<qstrader.broker.fee_model.fee_model>, shape="box", style="solid"];
+"qstrader.broker.fee_model.percent_fee_model" [color="black", label=<qstrader.broker.fee_model.percent_fee_model>, shape="box", style="solid"];
+"qstrader.broker.fee_model.zero_fee_model" [color="black", label=<qstrader.broker.fee_model.zero_fee_model>, shape="box", style="solid"];
+"qstrader.broker.portfolio" [color="black", label=<qstrader.broker.portfolio>, shape="box", style="solid"];
+"qstrader.broker.portfolio.portfolio" [color="black", label=<qstrader.broker.portfolio.portfolio>, shape="box", style="solid"];
+"qstrader.broker.portfolio.portfolio_event" [color="black", label=<qstrader.broker.portfolio.portfolio_event>, shape="box", style="solid"];
+"qstrader.broker.portfolio.position" [color="black", label=<qstrader.broker.portfolio.position>, shape="box", style="solid"];
+"qstrader.broker.portfolio.position_handler" [color="black", label=<qstrader.broker.portfolio.position_handler>, shape="box", style="solid"];
+"qstrader.broker.simulated_broker" [color="black", label=<qstrader.broker.simulated_broker>, shape="box", style="solid"];
+"qstrader.broker.transaction" [color="black", label=<qstrader.broker.transaction>, shape="box", style="solid"];
+"qstrader.broker.transaction.transaction" [color="black", label=<qstrader.broker.transaction.transaction>, shape="box", style="solid"];
+"qstrader.broker.fee_model.fee_model" -> "qstrader.broker.broker" [arrowhead="open", arrowtail="none"];
+"qstrader.broker.fee_model.percent_fee_model" -> "qstrader.broker.broker" [arrowhead="open", arrowtail="none"];
+"qstrader.broker.fee_model.percent_fee_model" -> "qstrader.broker.fee_model.fee_model" [arrowhead="open", arrowtail="none"];
+"qstrader.broker.fee_model.zero_fee_model" -> "qstrader.broker.broker" [arrowhead="open", arrowtail="none"];
+"qstrader.broker.fee_model.zero_fee_model" -> "qstrader.broker.fee_model.fee_model" [arrowhead="open", arrowtail="none"];
+"qstrader.broker.portfolio.portfolio" -> "qstrader.broker.portfolio.portfolio_event" [arrowhead="open", arrowtail="none"];
+"qstrader.broker.portfolio.portfolio" -> "qstrader.broker.portfolio.position_handler" [arrowhead="open", arrowtail="none"];
+"qstrader.broker.portfolio.portfolio" -> "qstrader.broker.transaction.transaction" [arrowhead="open", arrowtail="none"];
+"qstrader.broker.portfolio.position" -> "qstrader.broker.transaction.transaction" [arrowhead="open", arrowtail="none"];
+"qstrader.broker.portfolio.position_handler" -> "qstrader.broker.portfolio.position" [arrowhead="open", arrowtail="none"];
+"qstrader.broker.simulated_broker" -> "qstrader.broker.broker" [arrowhead="open", arrowtail="none"];
+"qstrader.broker.simulated_broker" -> "qstrader.broker.fee_model.fee_model" [arrowhead="open", arrowtail="none"];
+"qstrader.broker.simulated_broker" -> "qstrader.broker.fee_model.zero_fee_model" [arrowhead="open", arrowtail="none"];
+"qstrader.broker.simulated_broker" -> "qstrader.broker.portfolio.portfolio" [arrowhead="open", arrowtail="none"];
+"qstrader.broker.simulated_broker" -> "qstrader.broker.transaction.transaction" [arrowhead="open", arrowtail="none"];
+}

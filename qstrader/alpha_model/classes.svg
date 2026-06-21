@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="872pt" height="116pt" viewBox="0.00 0.00 872.00 116.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>packages</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-112 867.98,-112 867.98,4 -4,4"/>
+<!-- qstrader.alpha_model -->
+<g id="node1" class="node">
+<title>qstrader.alpha_model</title>
+<polygon fill="none" stroke="black" points="136.9,-36 0,-36 0,0 136.9,0 136.9,-36"/>
+<text xml:space="preserve" text-anchor="start" x="8" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.alpha_model</text>
+</g>
+<!-- qstrader.alpha_model.alpha_model -->
+<g id="node2" class="node">
+<title>qstrader.alpha_model.alpha_model</title>
+<polygon fill="none" stroke="black" points="601.81,-108 389.09,-108 389.09,-72 601.81,-72 601.81,-108"/>
+<text xml:space="preserve" text-anchor="start" x="397.09" y="-85.8" font-family="Times,serif" font-size="14.00">qstrader.alpha_model.alpha_model</text>
+</g>
+<!-- qstrader.alpha_model.fixed_signals -->
+<g id="node3" class="node">
+<title>qstrader.alpha_model.fixed_signals</title>
+<polygon fill="none" stroke="black" points="369.98,-36 154.92,-36 154.92,0 369.98,0 369.98,-36"/>
+<text xml:space="preserve" text-anchor="start" x="162.92" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.alpha_model.fixed_signals</text>
+</g>
+<!-- qstrader.alpha_model.fixed_signals&#45;&gt;qstrader.alpha_model.alpha_model -->
+<g id="edge1" class="edge">
+<title>qstrader.alpha_model.fixed_signals-&gt;qstrader.alpha_model.alpha_model</title>
+<path fill="none" stroke="black" d="M320.64,-36.48C352.88,-46.17 393.13,-58.26 426.88,-68.4"/>
+<polygon fill="black" stroke="black" points="436.43,-71.27 425.56,-72.7 432.81,-70.18 426.85,-68.39 426.85,-68.39 426.85,-68.39 432.81,-70.18 428.14,-64.08 436.43,-71.27"/>
+</g>
+<!-- qstrader.alpha_model.single_signal -->
+<g id="node4" class="node">
+<title>qstrader.alpha_model.single_signal</title>
+<polygon fill="none" stroke="black" points="602.59,-36 388.31,-36 388.31,0 602.59,0 602.59,-36"/>
+<text xml:space="preserve" text-anchor="start" x="396.31" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.alpha_model.single_signal</text>
+</g>
+<!-- qstrader.alpha_model.single_signal&#45;&gt;qstrader.alpha_model.alpha_model -->
+<g id="edge2" class="edge">
+<title>qstrader.alpha_model.single_signal-&gt;qstrader.alpha_model.alpha_model</title>
+<path fill="none" stroke="black" d="M495.45,-36.3C495.45,-43.68 495.45,-52.48 495.45,-60.75"/>
+<polygon fill="black" stroke="black" points="495.45,-70.68 490.95,-60.68 495.45,-66.9 495.45,-60.68 495.45,-60.68 495.45,-60.68 495.45,-66.9 499.95,-60.68 495.45,-70.68"/>
+</g>
+<!-- qstrader.alpha_model.top_n_momentum -->
+<g id="node5" class="node">
+<title>qstrader.alpha_model.top_n_momentum</title>
+<polygon fill="none" stroke="black" points="863.98,-36 620.92,-36 620.92,0 863.98,0 863.98,-36"/>
+<text xml:space="preserve" text-anchor="start" x="628.92" y="-13.8" font-family="Times,serif" font-size="14.00">qstrader.alpha_model.top_n_momentum</text>
+</g>
+<!-- qstrader.alpha_model.top_n_momentum&#45;&gt;qstrader.alpha_model.alpha_model -->
+<g id="edge3" class="edge">
+<title>qstrader.alpha_model.top_n_momentum-&gt;qstrader.alpha_model.alpha_model</title>
+<path fill="none" stroke="black" d="M680.76,-36.48C646.29,-46.25 603.18,-58.47 567.21,-68.66"/>
+<polygon fill="black" stroke="black" points="557.96,-71.29 566.35,-64.23 561.59,-70.25 567.58,-68.56 567.58,-68.56 567.58,-68.56 561.59,-70.25 568.8,-72.89 557.96,-71.29"/>
+</g>
+</g>
+</svg>

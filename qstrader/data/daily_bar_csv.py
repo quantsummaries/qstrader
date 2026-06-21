@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import functools
 import os
 
@@ -10,7 +12,7 @@ from qstrader import settings
 class CSVDailyBarDataSource(object):
     """
     Encapsulates loading, preparation and querying of CSV files of
-    daily 'bar' OHLCV data. The CSV files are converted into a intraday
+    daily 'bar' OHLCV data for multiple assets. The CSV files are converted into a intraday
     timestamped Pandas DataFrame with opening and closing prices.
 
     Optionally utilises adjusted closing prices (if available) to
@@ -32,7 +34,7 @@ class CSVDailyBarDataSource(object):
         provided directory.
     """
 
-    def __init__(self, csv_dir, asset_type, adjust_prices=True, csv_symbols=None):
+    def __init__(self, csv_dir: str, asset_type: str, adjust_prices: bool=True, csv_symbols: list[str]|None=None):
         self.csv_dir = csv_dir
         self.asset_type = asset_type
         self.adjust_prices = adjust_prices
@@ -41,7 +43,7 @@ class CSVDailyBarDataSource(object):
         self.asset_bar_frames = self._load_csvs_into_dfs()
         self.asset_bid_ask_frames = self._convert_bars_into_bid_ask_dfs()
 
-    def _obtain_asset_csv_files(self):
+    def _obtain_asset_csv_files(self) -> list[str]:
         """
         Obtain the list of all CSV filenames in the CSV directory.
 
@@ -55,7 +57,7 @@ class CSVDailyBarDataSource(object):
             if file.endswith('.csv')
         ]
 
-    def _obtain_asset_symbol_from_filename(self, csv_file):
+    def _obtain_asset_symbol_from_filename(self, csv_file: str) -> str:
         """
         Return the QSTrader symbology for the asset.
 
@@ -73,7 +75,7 @@ class CSVDailyBarDataSource(object):
         """
         return 'EQ:%s' % csv_file.replace('.csv', '')
 
-    def _load_csv_into_df(self, csv_file):
+    def _load_csv_into_df(self, csv_file: str) -> pd.DataFrame:
         """
         Loads the CSV file into a Pandas DataFrame with dates parsed,
         sorted on datetime localised to UTC.
@@ -98,7 +100,7 @@ class CSVDailyBarDataSource(object):
         csv_df = csv_df.set_index(csv_df.index.tz_localize(pytz.UTC))
         return csv_df
 
-    def _load_csvs_into_dfs(self):
+    def _load_csvs_into_dfs(self) -> dict[str, pd.DataFrame]:
         """
         Load all CSVs in the CSV directory into Pandas DataFrames.
 
@@ -126,7 +128,7 @@ class CSVDailyBarDataSource(object):
             asset_frames[asset_symbol] = csv_df
         return asset_frames
 
-    def _convert_bar_frame_into_bid_ask_df(self, bar_df):
+    def _convert_bar_frame_into_bid_ask_df(self, bar_df: pd.DataFrame) -> pd.DataFrame:
         """
         Converts the DataFrame from daily OHLCV 'bars' into a DataFrame
         of open and closing price timestamps.
@@ -170,14 +172,15 @@ class CSVDailyBarDataSource(object):
         seq_oc_df.loc[seq_oc_df['Market'] == 'Open', 'Date'] += pd.Timedelta(hours=14, minutes=30)
         seq_oc_df.loc[seq_oc_df['Market'] == 'Close', 'Date'] += pd.Timedelta(hours=21, minutes=00)
 
-        # TODO: Unable to distinguish between Bid/Ask, implement later
+        # Currently, the Bid and Ask are set to the same price: at market open, they are open price; at market close,
+        # they are close price.
         dp_df = seq_oc_df[['Date', 'Price']]
         dp_df['Bid'] = dp_df['Price']
         dp_df['Ask'] = dp_df['Price']
         dp_df = dp_df.loc[:, ['Date', 'Bid', 'Ask']].ffill().set_index('Date').sort_index()
         return dp_df
 
-    def _convert_bars_into_bid_ask_dfs(self):
+    def _convert_bars_into_bid_ask_dfs(self) -> dict[str, pd.DataFrame]:
         """
         Convert all of the daily OHLCV 'bar' based DataFrames into
         individually-timestamped open/closing price DataFrames.
@@ -198,9 +201,11 @@ class CSVDailyBarDataSource(object):
         return asset_bid_ask_frames
 
     @functools.lru_cache(maxsize=1024 * 1024)
-    def get_bid(self, dt, asset):
+    def get_bid(self, dt: pd.Timestamp, asset: str) -> float:
         """
-        Obtain the bid price of an asset at the provided timestamp.
+        Obtain the bid price of an asset at the provided timestamp. Currently, it's set to the open/close price of the
+        daily bar, depending on the time of the query (market open/market close), unadjusted or adjusted depending
+        on the `adjust_prices` flag.
 
         Parameters
         ----------
@@ -223,9 +228,11 @@ class CSVDailyBarDataSource(object):
         return bid
 
     @functools.lru_cache(maxsize=1024 * 1024)
-    def get_ask(self, dt, asset):
+    def get_ask(self, dt: pd.Timestamp, asset: str) -> float:
         """
-        Obtain the ask price of an asset at the provided timestamp.
+        Obtain the ask price of an asset at the provided timestamp. Currently, it's set to the open/close price of the
+        daily bar, depending on the time of the query (market open/market close), unadjusted or adjusted depending on
+        the `adjust_prices` flag.
 
         Parameters
         ----------
@@ -247,7 +254,7 @@ class CSVDailyBarDataSource(object):
             return np.nan
         return ask
 
-    def get_assets_historical_closes(self, start_dt, end_dt, assets):
+    def get_assets_historical_closes(self, start_dt: pd.Timestamp, end_dt: pd.Timestamp, assets: list[str]) -> pd.DataFrame:
         """
         Obtain a multi-asset historical range of closing prices as a DataFrame,
         indexed by timestamp with asset symbols as columns.
@@ -276,3 +283,42 @@ class CSVDailyBarDataSource(object):
         prices_df = pd.concat(close_series, axis=1).dropna(how='all')
         prices_df = prices_df.loc[start_dt:end_dt]
         return prices_df
+
+    def get_asset_bar_frames(self) -> dict[str, pd.DataFrame]:
+        """
+        Obtain the asset-bar DataFrames.
+
+        Returns
+        -------
+        `dict{pd.DataFrame}`
+            The asset-bar DataFrames.
+        """
+        return self.asset_bar_frames
+
+    def get_asset_bid_ask_frames(self) -> dict[str, pd.DataFrame]:
+        """
+        Obtain the asset-bid-ask DataFrames.
+
+        Returns
+        -------
+        `dict{pd.DataFrame}`
+            The asset-bid-ask DataFrames.
+        """
+        return self.asset_bid_ask_frames
+
+
+if __name__ == '__main__':
+    # set display width to 200 characters for better visibility of DataFrames
+    pd.set_option('display.width', 200)
+
+    from qstrader.constants import DATA_DIR
+    for adj_flag, symbols in [(True, ['SPY']), (False, ['AAPL'])]:
+        print("Testing CSVDailyBarDataSource with adjust_prices=%s and symbols=%s" % (adj_flag, symbols))
+        csv_dbds = CSVDailyBarDataSource(csv_dir=DATA_DIR, asset_type='Equity', adjust_prices=adj_flag, csv_symbols=symbols)
+        for asset, df in csv_dbds.get_asset_bar_frames().items():
+            print(f"Asset: {asset}")
+            print(df.head())
+        for asset, df in csv_dbds.get_asset_bid_ask_frames().items():
+            print(f"Asset: {asset}")
+            print(df.head())
+

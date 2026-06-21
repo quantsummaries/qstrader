@@ -1,0 +1,8 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"qstrader.statistics.json_statistics.JSONStatistics" [color="black", fontcolor="black", label=<{JSONStatistics|benchmark_curve : pd.DataFrame \| None<br ALIGN="LEFT"/>benchmark_id : str \| None<br ALIGN="LEFT"/>benchmark_name : str \| None<br ALIGN="LEFT"/>equity_curve : DataFrame<br ALIGN="LEFT"/>output_filename : str<br ALIGN="LEFT"/>periods : int<br ALIGN="LEFT"/>statistics : dict<br ALIGN="LEFT"/>strategy_id : str \| None<br ALIGN="LEFT"/>strategy_name : str \| None<br ALIGN="LEFT"/>target_allocations<br ALIGN="LEFT"/>|to_file(): None<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"qstrader.statistics.statistics.Statistics" [color="black", fontcolor="black", label=<{Statistics|<br ALIGN="LEFT"/>|<I>get_results</I>()<br ALIGN="LEFT"/><I>plot_results</I>()<br ALIGN="LEFT"/><I>save</I>(filename)<br ALIGN="LEFT"/><I>update</I>(dt)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"qstrader.statistics.tearsheet.TearsheetStatistics" [color="black", fontcolor="black", label=<{TearsheetStatistics|benchmark_equity : NoneType<br ALIGN="LEFT"/>periods : int<br ALIGN="LEFT"/>strategy_equity<br ALIGN="LEFT"/>title : NoneType<br ALIGN="LEFT"/>|get_results(equity_df)<br ALIGN="LEFT"/>plot_results(filename)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"qstrader.statistics.tearsheet.TearsheetStatistics" -> "qstrader.statistics.statistics.Statistics" [arrowhead="empty", arrowtail="none"];
+}

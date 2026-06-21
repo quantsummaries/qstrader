@@ -63,6 +63,8 @@ pip3 install qstrader
 
 Comprehensive documentation and beginner tutorials for QSTrader can be found on QuantStart.com at [https://www.quantstart.com/qstrader/](https://www.quantstart.com/qstrader/).
 
+In-repository module documentation is available in [`docs/`](docs/), including [`docs/utils.md`](docs/utils.md) and [`docs/statistics.md`](docs/statistics.md).
+
 # Quickstart
 
 The QSTrader repository provides some simple example strategies at [/examples](https://github.com/mhallsmoore/qstrader/tree/master/examples).

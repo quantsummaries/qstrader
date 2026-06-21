@@ -1,4 +1,7 @@
+import pandas as pd
+
 from qstrader.alpha_model.alpha_model import AlphaModel
+from qstrader.asset.universe.universe import Universe
 
 
 class SingleSignalAlphaModel(AlphaModel):
@@ -18,15 +21,15 @@ class SingleSignalAlphaModel(AlphaModel):
 
     def __init__(
         self,
-        universe,
-        signal=1.0,
+        universe: Universe,
+        signal: float=1.0,
         data_handler=None
     ):
         self.universe = universe
         self.signal = signal
         self.data_handler = data_handler
 
-    def __call__(self, dt):
+    def __call__(self, dt: pd.Timestamp) -> dict[str, float]:
         """
         Produce the dictionary of single fixed scalar signals for
         each of the Asset instances within the Universe.
