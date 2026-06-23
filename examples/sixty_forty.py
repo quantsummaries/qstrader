@@ -6,6 +6,7 @@ import pytz
 from qstrader.alpha_model.fixed_signals import FixedSignalsAlphaModel
 from qstrader.asset.equity import Equity
 from qstrader.asset.universe.static import StaticUniverse
+from qstrader.constants import DATA_DIR
 from qstrader.data.backtest_data_handler import BacktestDataHandler
 from qstrader.data.daily_bar_csv import CSVDailyBarDataSource
 from qstrader.statistics.tearsheet import TearsheetStatistics
@@ -23,7 +24,7 @@ if __name__ == "__main__":
 
     # To avoid loading all CSV files in the directory, set the
     # data source to load only those provided symbols
-    csv_dir = os.environ.get('QSTRADER_CSV_DATA_DIR', '.')
+    csv_dir = os.environ.get('QSTRADER_CSV_DATA_DIR', DATA_DIR)
     data_source = CSVDailyBarDataSource(csv_dir, Equity, csv_symbols=strategy_symbols)
     data_handler = BacktestDataHandler(strategy_universe, data_sources=[data_source])
 

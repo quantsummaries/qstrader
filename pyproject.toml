@@ -10,7 +10,9 @@ dependencies = [
     "matplotlib>=3.8",
     "numpy>=2.0.0",
     "pandas>=2.2",
+    "pytz>=2026.2",
     "seaborn>=0.13",
+    "yfinance>=1.2.0",
 ]
 authors = [
     {name="Michael Halls-Moore", email="support@quantstart.com"}
