@@ -18,7 +18,7 @@ class DynamicUniverse(Universe):
     def __init__(self, asset_dates):
         self.asset_dates = asset_dates
 
-    def get_assets(self, dt):
+    def get_assets(self, dt) -> list[str]:
         """
         Obtain the list of assets in the Universe at a particular
         point in time. This will always return a static list

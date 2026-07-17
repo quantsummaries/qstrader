@@ -15,7 +15,7 @@ class StaticUniverse(Universe):
     def __init__(self, asset_list):
         self.asset_list = asset_list
 
-    def get_assets(self, dt):
+    def get_assets(self, dt) -> list[str]:
         """
         Obtain the list of assets in the Universe at a particular
         point in time. This will always return a static list

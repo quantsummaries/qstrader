@@ -9,7 +9,7 @@ class Universe(object):
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def get_assets(self, dt):
+    def get_assets(self, dt) -> list[str]:
         raise NotImplementedError(
             "Should implement get_assets()"
         )
