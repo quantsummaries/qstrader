@@ -41,7 +41,7 @@ class CSVDailyBarDataSource(object):
         self.asset_bar_frames = self._load_csvs_into_dfs()
         self.asset_bid_ask_frames = self._convert_bars_into_bid_ask_dfs()
 
-    def _obtain_asset_csv_files(self):
+    def _obtain_asset_csv_files(self) -> list[str]:
         """
         Obtain the list of all CSV filenames in the CSV directory.
 
@@ -55,7 +55,7 @@ class CSVDailyBarDataSource(object):
             if file.endswith('.csv')
         ]
 
-    def _obtain_asset_symbol_from_filename(self, csv_file):
+    def _obtain_asset_symbol_from_filename(self, csv_file) -> str:
         """
         Return the QSTrader symbology for the asset.
 
@@ -73,7 +73,7 @@ class CSVDailyBarDataSource(object):
         """
         return 'EQ:%s' % csv_file.replace('.csv', '')
 
-    def _load_csv_into_df(self, csv_file):
+    def _load_csv_into_df(self, csv_file) -> pd.DataFrame:
         """
         Loads the CSV file into a Pandas DataFrame with dates parsed,
         sorted on datetime localised to UTC.
@@ -98,7 +98,7 @@ class CSVDailyBarDataSource(object):
         csv_df = csv_df.set_index(csv_df.index.tz_localize(pytz.UTC))
         return csv_df
 
-    def _load_csvs_into_dfs(self):
+    def _load_csvs_into_dfs(self) -> dict[str, pd.DataFrame]:
         """
         Load all CSVs in the CSV directory into Pandas DataFrames.
 
@@ -126,7 +126,7 @@ class CSVDailyBarDataSource(object):
             asset_frames[asset_symbol] = csv_df
         return asset_frames
 
-    def _convert_bar_frame_into_bid_ask_df(self, bar_df):
+    def _convert_bar_frame_into_bid_ask_df(self, bar_df) -> pd.DataFrame:
         """
         Converts the DataFrame from daily OHLCV 'bars' into a DataFrame
         of open and closing price timestamps.
@@ -177,7 +177,7 @@ class CSVDailyBarDataSource(object):
         dp_df = dp_df.loc[:, ['Date', 'Bid', 'Ask']].ffill().set_index('Date').sort_index()
         return dp_df
 
-    def _convert_bars_into_bid_ask_dfs(self):
+    def _convert_bars_into_bid_ask_dfs(self) -> dict[str, pd.DataFrame]:
         """
         Convert all of the daily OHLCV 'bar' based DataFrames into
         individually-timestamped open/closing price DataFrames.
@@ -198,7 +198,7 @@ class CSVDailyBarDataSource(object):
         return asset_bid_ask_frames
 
     @functools.lru_cache(maxsize=1024 * 1024)
-    def get_bid(self, dt, asset):
+    def get_bid(self, dt, asset) -> float:
         """
         Obtain the bid price of an asset at the provided timestamp.
 
@@ -223,7 +223,7 @@ class CSVDailyBarDataSource(object):
         return bid
 
     @functools.lru_cache(maxsize=1024 * 1024)
-    def get_ask(self, dt, asset):
+    def get_ask(self, dt, asset) -> float:
         """
         Obtain the ask price of an asset at the provided timestamp.
 
@@ -247,7 +247,7 @@ class CSVDailyBarDataSource(object):
             return np.nan
         return ask
 
-    def get_assets_historical_closes(self, start_dt, end_dt, assets):
+    def get_assets_historical_closes(self, start_dt, end_dt, assets) -> pd.DataFrame:
         """
         Obtain a multi-asset historical range of closing prices as a DataFrame,
         indexed by timestamp with asset symbols as columns.

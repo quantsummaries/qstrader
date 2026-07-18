@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 
 class BacktestDataHandler(object):
@@ -13,7 +14,7 @@ class BacktestDataHandler(object):
         self.universe = universe
         self.data_sources = data_sources
 
-    def get_asset_latest_bid_price(self, dt, asset_symbol):
+    def get_asset_latest_bid_price(self, dt, asset_symbol) -> float:
         """
         """
         # TODO: Check for asset in Universe
@@ -27,7 +28,7 @@ class BacktestDataHandler(object):
                 bid = np.nan
         return bid
 
-    def get_asset_latest_ask_price(self, dt, asset_symbol):
+    def get_asset_latest_ask_price(self, dt, asset_symbol) -> float:
         """
         """
         # TODO: Check for asset in Universe
@@ -41,7 +42,7 @@ class BacktestDataHandler(object):
                 ask = np.nan
         return ask
 
-    def get_asset_latest_bid_ask_price(self, dt, asset_symbol):
+    def get_asset_latest_bid_ask_price(self, dt, asset_symbol) -> tuple[float, float]:
         """
         """
         # TODO: For the moment this is sufficient for OHLCV
@@ -53,7 +54,7 @@ class BacktestDataHandler(object):
         bid = self.get_asset_latest_bid_price(dt, asset_symbol)
         return (bid, bid)
 
-    def get_asset_latest_mid_price(self, dt, asset_symbol):
+    def get_asset_latest_mid_price(self, dt, asset_symbol) -> float:
         """
         """
         bid_ask = self.get_asset_latest_bid_ask_price(dt, asset_symbol)
@@ -66,7 +67,7 @@ class BacktestDataHandler(object):
 
     def get_assets_historical_range_close_price(
         self, start_dt, end_dt, asset_symbols, adjusted=False
-    ):
+    ) -> pd.DataFrame:
         """
         """
         prices_df = None
