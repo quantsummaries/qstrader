@@ -9,7 +9,7 @@ import yfinance as yf
 
 from qstrader.constants import DATA_DIR
 
-for ticker in ['SPY', 'AGG']:
+for ticker in ['SPY', 'AGG', 'GLD', 'VTI', 'CTA', 'SGOV']:
     stock = yf.Ticker(ticker)
     df = yf.download(ticker, period='max', auto_adjust=False)
     df.columns = df.columns.droplevel('Ticker')
