@@ -47,7 +47,7 @@ class BacktestTradingSession(TradingSession):
     initial_cash : `float`, optional
         The initial account equity (defaults to $1MM)
     rebalance : `str`, optional
-        The rebalance frequency of the backtest, defaulting to 'weekly'.
+        The rebalance frequency of the backtest, 'daily', 'weekly', 'end_of_month', and 'buy_and_hold'; defaulting to 'weekly'.
     account_name : `str`, optional
         The name of the simulated broker account.
     portfolio_id : `str`, optional
