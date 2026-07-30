@@ -93,7 +93,10 @@
 
 ## TODO: system
 
-## TODO: trading
+## trading
+
+- [x] trading_session.py::TradingSession, abstract class that defines the interface for a trading session.
+  - backtest.py::BacktestTradingSession, subclass of TradingSession that implements a backtest trading session.
 
 ## utils
 

@@ -2,13 +2,19 @@ import os
 
 import pandas as pd
 
+from qstrader.alpha_model.alpha_model import AlphaModel
 from qstrader.asset.equity import Equity
+from qstrader.asset.universe.universe import Universe
 from qstrader.broker.simulated_broker import SimulatedBroker
+from qstrader.broker.fee_model.fee_model import FeeModel
 from qstrader.broker.fee_model.zero_fee_model import ZeroFeeModel
 from qstrader.data.backtest_data_handler import BacktestDataHandler
 from qstrader.data.daily_bar_csv import CSVDailyBarDataSource
 from qstrader.exchange.simulated_exchange import SimulatedExchange
+from qstrader.risk_model.risk_model import RiskModel
+from qstrader.signals.signals_collection import SignalsCollection
 from qstrader.simulation.daily_bday import DailyBusinessDaySimulationEngine
+from qstrader.simulation.sim_engine import SimulationEngine
 from qstrader.system.qts import QuantTradingSystem
 from qstrader.system.rebalance.buy_and_hold import BuyAndHoldRebalance
 from qstrader.system.rebalance.daily import DailyRebalance
@@ -66,21 +72,21 @@ class BacktestTradingSession(TradingSession):
 
     def __init__(
         self,
-        start_dt,
-        end_dt,
-        universe,
-        alpha_model,
-        risk_model=None,
-        signals=None,
-        initial_cash=1e6,
-        rebalance='weekly',
-        account_name=DEFAULT_ACCOUNT_NAME,
-        portfolio_id=DEFAULT_PORTFOLIO_ID,
-        portfolio_name=DEFAULT_PORTFOLIO_NAME,
-        long_only=False,
-        fee_model=ZeroFeeModel(),
-        burn_in_dt=None,
-        data_handler=None,
+        start_dt: pd.Timestamp,
+        end_dt: pd.Timestamp,
+        universe: Universe,
+        alpha_model: AlphaModel,
+        risk_model: RiskModel|None= None,
+        signals: SignalsCollection|None= None,
+        initial_cash: float=1e6,
+        rebalance: str='weekly',
+        account_name: str=DEFAULT_ACCOUNT_NAME,
+        portfolio_id: str=DEFAULT_PORTFOLIO_ID,
+        portfolio_name: str=DEFAULT_PORTFOLIO_NAME,
+        long_only: bool=False,
+        fee_model: FeeModel=ZeroFeeModel(),
+        burn_in_dt: pd.Timestamp|None=None,
+        data_handler: BacktestDataHandler|None=None,
         **kwargs
     ):
         self.start_dt = start_dt
@@ -119,7 +125,7 @@ class BacktestTradingSession(TradingSession):
         self.equity_curve = []
         self.target_allocations = []
 
-    def _is_rebalance_event(self, dt):
+    def _is_rebalance_event(self, dt: pd.Timestamp) -> bool:
         """
         Checks if the provided timestamp is part of the rebalance
         schedule of the backtest.
@@ -131,24 +137,24 @@ class BacktestTradingSession(TradingSession):
 
         Returns
         -------
-        `Boolean`
+        `bool`
             Whether the timestamp is part of the rebalance schedule.
         """
         return dt in self.rebalance_schedule
 
-    def _create_exchange(self):
+    def _create_exchange(self) -> SimulatedExchange:
         """
         Generates a simulated exchange instance used for
         market hours and holiday calendar checks.
 
         Returns
         -------
-        `SimulatedExchanage`
+        `SimulatedExchange`
             The simulated exchange instance.
         """
         return SimulatedExchange(self.start_dt)
 
-    def _create_data_handler(self, data_handler):
+    def _create_data_handler(self, data_handler: BacktestDataHandler) -> BacktestDataHandler:
         """
         Creates a DataHandler instance to load the asset pricing data
         used within the backtest.
@@ -192,7 +198,7 @@ class BacktestTradingSession(TradingSession):
         )
         return data_handler
 
-    def _create_broker(self):
+    def _create_broker(self) -> SimulatedBroker:
         """
         Create the SimulatedBroker with an appropriate default
         portfolio identifiers.
@@ -214,7 +220,7 @@ class BacktestTradingSession(TradingSession):
         broker.subscribe_funds_to_portfolio(self.portfolio_id, self.initial_cash)
         return broker
 
-    def _create_simulation_engine(self):
+    def _create_simulation_engine(self) -> SimulationEngine:
         """
         Create a simulation engine instance to generate the events
         used for the quant trading algorithm to act upon.
@@ -230,7 +236,7 @@ class BacktestTradingSession(TradingSession):
             self.start_dt, self.end_dt, pre_market=False, post_market=False
         )
 
-    def _create_rebalance_event_times(self):
+    def _create_rebalance_event_times(self) -> list[pd.Timestamp]:
         """
         Creates the list of rebalance timestamps used to determine when
         to execute the quant trading strategy throughout the backtest.
@@ -258,7 +264,7 @@ class BacktestTradingSession(TradingSession):
             )
         return rebalancer.rebalances
 
-    def _create_quant_trading_system(self, **kwargs):
+    def _create_quant_trading_system(self, **kwargs) -> QuantTradingSystem:
         """
         Creates the quantitative trading system with the provided
         alpha model.
@@ -312,7 +318,7 @@ class BacktestTradingSession(TradingSession):
 
         return qts
 
-    def _update_equity_curve(self, dt):
+    def _update_equity_curve(self, dt: pd.Timestamp) -> None:
         """
         Update the equity curve values.
 
@@ -325,13 +331,13 @@ class BacktestTradingSession(TradingSession):
             (dt, self.broker.get_account_total_equity()["master"])
         )
 
-    def output_holdings(self):
+    def output_holdings(self) -> None:
         """
         Output the portfolio holdings to the console.
         """
         self.broker.portfolios[self.portfolio_id].holdings_to_console()
 
-    def get_equity_curve(self):
+    def get_equity_curve(self) -> pd.DataFrame:
         """
         Returns the equity curve as a Pandas DataFrame.
 
@@ -346,7 +352,7 @@ class BacktestTradingSession(TradingSession):
         equity_df.index = equity_df.index.date
         return equity_df
 
-    def get_target_allocations(self):
+    def get_target_allocations(self) -> pd.DataFrame:
         """
         Returns the target allocations as a Pandas DataFrame
         utilising the same index as the equity curve with
@@ -365,7 +371,7 @@ class BacktestTradingSession(TradingSession):
             alloc_df = alloc_df[self.burn_in_dt.date():]
         return alloc_df
 
-    def run(self, results=False):
+    def run(self, results: bool=False) -> None:
         """
         Execute the simulation engine by iterating over all
         simulation events, rebalancing the quant trading
