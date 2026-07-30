@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# script to backtest a portfolio with fixed percentage of compositions.
+# script of qstrader to backtest a portfolio with fixed percentage of compositions.
 
 import argparse
 import os
@@ -25,6 +25,7 @@ def parse_args():
     parser.add_argument('-sa', '--strategy_allocations', type=str, required=True, help='Comma-separated strategy allocations (in decimals)')
     parser.add_argument('-b', '--benchmark_symbols', type=str, required=True, help='Comma-separated benchmark assets')
     parser.add_argument('-ba', '--benchmark_allocations', type=str, required=True, help='Comma-separated benchmark allocations (in decimals)')
+    parser.add_argument('-dd', '--data_directory', type=str, required=False, help='Data directory (default: DATA_DIR)', default=DATA_DIR)
     parser.add_argument('-f', '--rebalance_frequency', type=str, required=False,
                         help='Rebalance frequency, "daily", "weekly", "end_of_month", and "buy_and_hold"; (default: end_of_month)',
                         default='end_of_month')
@@ -34,7 +35,7 @@ def parse_args():
 
 
 if __name__ == "__main__":
-    # example: uv run python fixed_pct.py -sd 20220308 -ed 20260729 -s VTI,CTA,GLD -sa 0.33,0.34,0.33 -f end_of_month -b SPY,AGG -ba 0.6,0.4
+    # example: uv run python qst_static_alloc.py -sd 20220308 -ed 20260729 -s VTI,CTA,GLD -sa 0.33,0.34,0.33 -f end_of_month -b SPY,AGG -ba 0.6,0.4 -dd ../data/
 
     args = parse_args()
 
@@ -48,6 +49,8 @@ if __name__ == "__main__":
     if len(strategy_allocations) != len(strategy_symbols):
         raise ValueError('Length of strategy allocations should be equal to length of strategy symbols')
 
+    data_dir = args.data_directory
+
     freq = args.rebalance_frequency
 
     benchmark_symbols = args.benchmark_symbols.split(',')
@@ -60,7 +63,7 @@ if __name__ == "__main__":
     strategy_universe = StaticUniverse(strategy_assets)
 
     # To avoid loading all CSV files in the directory, set the data source to load only those provided symbols
-    csv_dir = os.environ.get('QSTRADER_CSV_DATA_DIR', DATA_DIR)
+    csv_dir = data_dir
     data_source = CSVDailyBarDataSource(str(csv_dir), 'Equity', csv_symbols=strategy_symbols)
     data_handler = BacktestDataHandler(strategy_universe, data_sources=[data_source])
 

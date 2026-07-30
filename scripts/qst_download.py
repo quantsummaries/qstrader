@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# script to download data
+# script of qstrader to download data
 
 import argparse
 import datetime
@@ -14,6 +14,7 @@ from qstrader.constants import DATA_DIR
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('-s', '--symbols', type=str, required=True, help='Comma-separated symbols to download')
+    parser.add_argument('-dd', '--data_dir', type=str, required=False, help='Path to data directory (default: DATA_DIR)', default=DATA_DIR)
 
     return parser.parse_args()
 
@@ -32,8 +33,11 @@ def file_exists(symbol: str) -> bool:
 
 
 if __name__ == "__main__":
+    # example: uv run python qst_download.py -s VTI,CTA,GLD,SPY,AGG -dd ../data/
+
     args = parse_args()
     symbols = [x.upper() for x in args.symbols.split(',')]
+    data_dir = args.data_dir
 
     for ticker in symbols:
         if file_exists(ticker):
@@ -43,4 +47,4 @@ if __name__ == "__main__":
         df = yf.download(ticker, period='max', auto_adjust=False)
         df.columns = df.columns.droplevel('Ticker')
         print(df.head())
-        df.to_csv(os.path.join(DATA_DIR, f"{ticker}.csv"), index=True)
+        df.to_csv(os.path.join(data_dir, f"{ticker}.csv"), index=True)
