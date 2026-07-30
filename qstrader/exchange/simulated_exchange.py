@@ -1,5 +1,7 @@
 import datetime
 
+import pandas as pd
+
 from qstrader.exchange.exchange import Exchange
 
 
@@ -18,7 +20,7 @@ class SimulatedExchange(Exchange):
         The starting time of the simulated exchange.
     """
 
-    def __init__(self, start_dt):
+    def __init__(self, start_dt: pd.Timestamp):
         self.start_dt = start_dt
 
         # TODO: Eliminate hardcoding of NYSE
@@ -26,7 +28,7 @@ class SimulatedExchange(Exchange):
         self.open_dt = datetime.time(14, 30)
         self.close_dt = datetime.time(21, 00)
 
-    def is_open_at_datetime(self, dt):
+    def is_open_at_datetime(self, dt: pd.Timestamp) -> bool:
         """
         Check if the SimulatedExchange is open at a particular
         provided pandas Timestamp.

@@ -1,5 +1,7 @@
 from abc import ABCMeta, abstractmethod
 
+import pandas as pd
+
 
 class Exchange(object):
     """
@@ -14,7 +16,7 @@ class Exchange(object):
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def is_open_at_datetime(self, dt):
+    def is_open_at_datetime(self, dt: pd.Timestamp) -> bool:
         raise NotImplementedError(
             "Should implement is_open_at_datetime()"
         )

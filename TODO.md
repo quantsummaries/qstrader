@@ -39,7 +39,10 @@
 - [x] daily_bar_csv.py::CSVDailyBarDataSource, encapsulates loading, preparation and querying of CSV files of daily 'bar' OHLCV data. The CSV files are converted into a intraday
     timestamped Pandas DataFrame with opening and closing prices.
 
-## TODO: exchange
+## exchange
+
+- [x] exchange.py::Exchange, abstract class that defines the interface for an exchange.
+  - simulated_exchange.py::SimulatedExchange, subclass of Exchange that simulates an exchange for backtesting purposes.
 
 ## TODO: execution
 
