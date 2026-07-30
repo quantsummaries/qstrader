@@ -1,5 +1,12 @@
 from qstrader import settings
 from qstrader.execution.order import Order
+from qstrader.broker.broker import Broker
+from qstrader.asset.universe.universe import Universe
+from qstrader.portcon.optimiser.optimiser import PortfolioOptimiser
+from qstrader.alpha_model.alpha_model import AlphaModel
+from qstrader.risk_model.risk_model import RiskModel
+from qstrader.data.backtest_data_handler import BacktestDataHandler
+
 
 
 class PortfolioConstructionModel(object):
@@ -35,9 +42,9 @@ class PortfolioConstructionModel(object):
 
     def __init__(
         self,
-        broker,
-        broker_portfolio_id,
-        universe,
+        broker: Broker,
+        broker_portfolio_id: str,
+        universe: Universe,
         order_sizer,
         optimiser,
         alpha_model=None,

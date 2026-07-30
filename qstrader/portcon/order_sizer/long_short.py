@@ -1,6 +1,9 @@
 import numpy as np
+import pandas as pd
 
 from qstrader.portcon.order_sizer.order_sizer import OrderSizer
+from qstrader.broker.broker import Broker
+from qstrader.data.backtest_data_handler import BacktestDataHandler
 
 
 class LongShortLeveragedOrderSizer(OrderSizer):
@@ -16,7 +19,7 @@ class LongShortLeveragedOrderSizer(OrderSizer):
         The derived Broker instance to obtain portfolio equity from.
     broker_portfolio_id : `str`
         The specific portfolio at the Broker to obtain equity from.
-    data_handler : `DataHandler`
+    data_handler : `BacktestDataHandler`
         To obtain latest asset prices from.
     gross_leverage : `float`, optional
         The amount of percentage leverage to use when sizing orders.
@@ -24,9 +27,9 @@ class LongShortLeveragedOrderSizer(OrderSizer):
 
     def __init__(
         self,
-        broker,
-        broker_portfolio_id,
-        data_handler,
+        broker: Broker,
+        broker_portfolio_id: str,
+        data_handler: BacktestDataHandler,
         gross_leverage=1.0
     ):
         self.broker = broker
@@ -36,7 +39,7 @@ class LongShortLeveragedOrderSizer(OrderSizer):
             gross_leverage
         )
 
-    def _check_set_gross_leverage(self, gross_leverage):
+    def _check_set_gross_leverage(self, gross_leverage: float) -> float:
         """
         Checks and sets the gross leverage percentage value.
 
@@ -61,7 +64,7 @@ class LongShortLeveragedOrderSizer(OrderSizer):
         else:
             return gross_leverage
 
-    def _obtain_broker_portfolio_total_equity(self):
+    def _obtain_broker_portfolio_total_equity(self) -> float:
         """
         Obtain the Broker portfolio total equity.
 
@@ -72,7 +75,7 @@ class LongShortLeveragedOrderSizer(OrderSizer):
         """
         return self.broker.get_portfolio_total_equity(self.broker_portfolio_id)
 
-    def _normalise_weights(self, weights):
+    def _normalise_weights(self, weights: dict[str, float]) -> dict[str, float]:
         """
         Rescale provided weight values to ensure the
         weights are scaled to gross exposure divided by
@@ -102,7 +105,7 @@ class LongShortLeveragedOrderSizer(OrderSizer):
             for asset, weight in weights.items()
         }
 
-    def __call__(self, dt, weights):
+    def __call__(self, dt: pd.Timestamp, weights: dict[str, float]) -> dict[str, dict]:
         """
         Creates a long short leveraged target portfolio from the
         provided target weights at a particular timestamp.

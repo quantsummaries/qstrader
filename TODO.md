@@ -51,7 +51,14 @@
 - [x] execution_algo.py::ExecutionAlgorithm, class that defines the interface for an execution algorithm.
   - market_order.py::MarketOrderExecutionAlgorithm, subclass of ExecutionAlgorithm that represents a market order.
   
-## TODO: portcon
+## portcon
+
+- [x] optimiser.py::PortfolioOptimiser, abstract class that defines the interface for a portfolio optimiser.
+  - equal_weight.py::EqualWeightPortfolioOptimiser, subclass of PortfolioOptimiser that implements an equal weight optimiser.
+  - fixed_weight.py::FixedWeightPortfolioOptimiser, subclass of PortfolioOptimiser that implements a fixed weight optimiser.
+- [x] order_sizer.py::OrderSizer, abstract class that defines the interface for an order sizer.
+  - long_short.py::LongShortLeveragedOrderSizer, subclass of OrderSizer that implements a long/short leveraged order sizer.
+  - dollar_weighted.py::DollarWeightedCashBufferedOrderSizer, subclass of OrderSizer that implements a dollar-weighted cash buffered order sizer.
 
 ## risk_model
 

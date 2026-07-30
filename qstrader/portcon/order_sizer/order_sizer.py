@@ -1,5 +1,7 @@
 from abc import ABCMeta, abstractmethod
 
+import pandas as pd
+
 
 class OrderSizer(object):
     """
@@ -10,7 +12,7 @@ class OrderSizer(object):
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def __call__(self, dt, weights):
+    def __call__(self, dt: pd.Timestamp, weights: dict[str, float]) -> dict[str, dict]:
         raise NotImplementedError(
             "Should implement call()"
         )

@@ -1,5 +1,7 @@
 from abc import ABCMeta, abstractmethod
 
+import pandas as pd
+
 
 class PortfolioOptimiser(object):
     """
@@ -20,7 +22,7 @@ class PortfolioOptimiser(object):
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def __call__(self, dt):
+    def __call__(self, dt: pd.Timestamp, initial_weights: dict[str, float]) -> dict:
         raise NotImplementedError(
             "Should implement __call__()"
         )

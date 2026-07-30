@@ -1,4 +1,7 @@
+import pandas as pd
+
 from qstrader.portcon.optimiser.optimiser import PortfolioOptimiser
+from qstrader.data.backtest_data_handler import BacktestDataHandler
 
 
 class FixedWeightPortfolioOptimiser(PortfolioOptimiser):
@@ -16,11 +19,11 @@ class FixedWeightPortfolioOptimiser(PortfolioOptimiser):
 
     def __init__(
         self,
-        data_handler=None
+        data_handler: BacktestDataHandler|None=None
     ):
         self.data_handler = data_handler
 
-    def __call__(self, dt, initial_weights):
+    def __call__(self, dt: pd.Timestamp, initial_weights: dict[str, float]) -> dict[str, float]:
         """
         Produce the dictionary of target weight
         values for each of the Asset instances provided.
