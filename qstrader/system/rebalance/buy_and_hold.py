@@ -15,11 +15,11 @@ class BuyAndHoldRebalance(Rebalance):
         The starting datetime of the buy and hold rebalance.
     """
 
-    def __init__(self, start_dt):
+    def __init__(self, start_dt: pd.Timestamp):
         self.start_dt = start_dt
         self.rebalances = self._generate_rebalances()
 
-    def _is_business_day(self):
+    def _is_business_day(self) -> bool:
         """
         Checks if the start_dt is a business day.
         
@@ -29,7 +29,7 @@ class BuyAndHoldRebalance(Rebalance):
         """
         return bool(len(pd.bdate_range(self.start_dt, self.start_dt)))
 
-    def _generate_rebalances(self):
+    def _generate_rebalances(self) -> list[pd.Timestamp]:
         """
         Outputs the rebalance timestamp offset to the next
         business day.

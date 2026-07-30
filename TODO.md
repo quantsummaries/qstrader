@@ -91,7 +91,14 @@
 - [x] statistics.py::Statistics, class that defines the interface for a statistics object that can be serialized to JSON and generates a Matplotlib 'one-pager' strategy performance report.
   - tearsheet.py::TearsheetStatistics, subclass of Statistics that generates a Matplotlib 'one-pager' strategy performance report.
 
-## TODO: system
+## system
+
+- [x] rebalance.py::Rebalance, abstract class that defines the interface for a rebalance event.
+  - buy_and_hold.py::BuyAndHoldRebalance, subclass of Rebalance that implements a buy-and-hold rebalance event.
+  - daily.py::DailyRebalance, subclass of Rebalance that implements a daily rebalance event.
+  - end_of_month.py::EndOfMonthRebalance, subclass of Rebalance that implements an end-of-month rebalance event.
+  - weekly.py::WeeklyRebalance, subclass of Rebalance that implements a weekly rebalance event.
+- [x] qts.py::QuantTradingSystem, class that defines the interface for a quant system.
 
 ## trading
 

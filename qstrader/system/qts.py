@@ -1,3 +1,12 @@
+import pandas as pd
+
+from qstrader.asset.universe.universe import Universe
+from qstrader.broker.broker import Broker
+from qstrader.data.backtest_data_handler import BacktestDataHandler
+from qstrader.alpha_model.alpha_model import AlphaModel
+from qstrader.portcon.order_sizer.order_sizer import OrderSizer
+
+
 from qstrader.execution.execution_handler import (
     ExecutionHandler
 )
@@ -48,15 +57,15 @@ class QuantTradingSystem(object):
 
     def __init__(
         self,
-        universe,
-        broker,
-        broker_portfolio_id,
-        data_handler,
-        alpha_model,
+        universe: Universe,
+        broker: Broker,
+        broker_portfolio_id: str,
+        data_handler: BacktestDataHandler,
+        alpha_model: AlphaModel,
         *args,
-        risk_model=None,
-        long_only=False,
-        submit_orders=False,
+        risk_model: AlphaModel|None=None,
+        long_only: bool=False,
+        submit_orders: bool=False,
         **kwargs
     ):
         self.universe = universe
@@ -69,7 +78,7 @@ class QuantTradingSystem(object):
         self.submit_orders = submit_orders
         self._initialise_models(**kwargs)
 
-    def _create_order_sizer(self, **kwargs):
+    def _create_order_sizer(self, **kwargs) -> OrderSizer:
         """
         Depending upon whether the quant trading system has been
         set to be long only, determine the appropriate order sizing
@@ -111,7 +120,7 @@ class QuantTradingSystem(object):
 
         return order_sizer
 
-    def _initialise_models(self, **kwargs):
+    def _initialise_models(self, **kwargs) -> None:
         """
         Initialise the various models for the quantitative
         trading strategy. This includes the portfolio
@@ -151,7 +160,7 @@ class QuantTradingSystem(object):
             data_handler=self.data_handler
         )
 
-    def __call__(self, dt, stats=None):
+    def __call__(self, dt: pd.Timestamp, stats: dict|None=None) -> None:
         """
         Construct the portfolio and (optionally) execute the orders
         with the broker.

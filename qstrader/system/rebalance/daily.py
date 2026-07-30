@@ -25,16 +25,16 @@ class DailyRebalance(Rebalance):
 
     def __init__(
         self,
-        start_date,
-        end_date,
-        pre_market=False
+        start_date: pd.Timestamp,
+        end_date: pd.Timestamp,
+        pre_market: bool=False
     ):
         self.start_date = start_date
         self.end_date = end_date
         self.market_time = self._set_market_time(pre_market)
         self.rebalances = self._generate_rebalances()
 
-    def _set_market_time(self, pre_market):
+    def _set_market_time(self, pre_market: bool) -> str:
         """
         Determines whether to use market open or market close
         as the rebalance time.
@@ -52,7 +52,7 @@ class DailyRebalance(Rebalance):
         """
         return "14:30:00" if pre_market else "21:00:00"
 
-    def _generate_rebalances(self):
+    def _generate_rebalances(self) -> list[pd.Timestamp]:
         """
         Output the rebalance timestamp list.
 
