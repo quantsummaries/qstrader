@@ -1,6 +1,9 @@
 import uuid
 
 import numpy as np
+import pandas as pd
+
+from qstrader.asset.asset import Asset
 
 
 class Order(object):
@@ -29,11 +32,11 @@ class Order(object):
 
     def __init__(
         self,
-        dt,
-        asset,
-        quantity,
-        commission=0.0,
-        order_id=None
+        dt: pd.Timestamp,
+        asset: Asset,
+        quantity: int,
+        commission: float=0.0,
+        order_id: str|None=None
     ):
         self.created_dt = dt
         self.cur_dt = dt
@@ -43,7 +46,7 @@ class Order(object):
         self.direction = np.copysign(1, self.quantity)
         self.order_id = self._set_or_generate_order_id(order_id)
 
-    def _order_attribs_equal(self, other):
+    def _order_attribs_equal(self, other: 'Order') -> bool:
         """
         Asserts whether all attributes of the Order are equal
         with the exception of the order ID.
@@ -74,7 +77,7 @@ class Order(object):
             return False
         return True
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """
         Output a string representation of the object
 
@@ -91,7 +94,7 @@ class Order(object):
             )
         )
 
-    def _set_or_generate_order_id(self, order_id=None):
+    def _set_or_generate_order_id(self, order_id: str|None=None) -> str:
         """
         Sets or generates a unique order ID for the order, using a UUID.
 

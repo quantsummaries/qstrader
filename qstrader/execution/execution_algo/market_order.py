@@ -1,4 +1,5 @@
 from qstrader.execution.execution_algo.execution_algo import ExecutionAlgorithm
+from qstrader.execution.order import Order
 
 
 class MarketOrderExecutionAlgorithm(ExecutionAlgorithm):
@@ -7,7 +8,7 @@ class MarketOrderExecutionAlgorithm(ExecutionAlgorithm):
     of market Orders from the rebalance Orders.
     """
 
-    def __call__(self, dt, initial_orders):
+    def __call__(self, dt, initial_orders: list[Order]) -> list[Order]:
         """
         Simply returns the initial orders list in a 'pass through' manner.
 

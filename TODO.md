@@ -44,8 +44,13 @@
 - [x] exchange.py::Exchange, abstract class that defines the interface for an exchange.
   - simulated_exchange.py::SimulatedExchange, subclass of Exchange that simulates an exchange for backtesting purposes.
 
-## TODO: execution
+## execution
 
+- [x] order.py::Order, class that defines the interface for an order.
+- [x] execution_handler.py::ExecutionHandler, class that defines the interface for an execution handler.
+- [x] execution_algo.py::ExecutionAlgorithm, class that defines the interface for an execution algorithm.
+  - market_order.py::MarketOrderExecutionAlgorithm, subclass of ExecutionAlgorithm that represents a market order.
+  
 ## TODO: portcon
 
 ## TODO: risk_model
