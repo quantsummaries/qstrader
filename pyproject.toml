@@ -42,4 +42,17 @@ Issues = "https://github.com/mhallsmoore/qstrader/issues"
 Documentation = "https://www.quantstart.com/qstrader/"
 Website = "https://www.quantstart.com"
 
+[tool.hatch.build]
+# Prevent Hatchling from applying default directory excludes (like 'data')
+ignore-vcs = false
+exclude = []
 
+# 1. Instruct Hatchling to include qstrader/ explicitly
+[tool.hatch.build.targets.wheel]
+packages = ["qstrader"]
+
+# 2. Tell Hatchling's global file selection NOT to exclude anything inside qstrader/
+[tool.hatch.build.targets.sdist]
+include = [
+  "/qstrader",
+]

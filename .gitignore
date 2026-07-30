@@ -4,7 +4,12 @@
 __pycache__
 out
 cover
-data
+
+# Ignore ONLY the root data folder containing raw CSVs
+/data/
+
+# Explicitly ensure the python package directory is NEVER ignored
+!/qstrader/data/
 
 # environment
 env/
