@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 
-def aggregate_returns(returns, convert_to):
+def aggregate_returns(returns, convert_to: str):
     """
     Aggregates returns by day, week, month, or year.
     """
@@ -26,7 +26,7 @@ def aggregate_returns(returns, convert_to):
         ValueError('convert_to must be weekly, monthly or yearly')
 
 
-def create_cagr(equity, periods=252):
+def create_cagr(equity, periods: int=252) -> float:
     """
     Calculates the Compound Annual Growth Rate (CAGR)
     for the portfolio, by determining the number of years
@@ -41,7 +41,7 @@ def create_cagr(equity, periods=252):
     return (equity.iloc[-1] ** (1.0 / years)) - 1.0
 
 
-def create_sharpe_ratio(returns, periods=252):
+def create_sharpe_ratio(returns, periods: int=252) -> float:
     """
     Create the Sharpe ratio for the strategy, based on a
     benchmark of zero (i.e. no risk-free rate information).
@@ -53,7 +53,7 @@ def create_sharpe_ratio(returns, periods=252):
     return np.sqrt(periods) * (np.mean(returns)) / np.std(returns)
 
 
-def create_sortino_ratio(returns, periods=252):
+def create_sortino_ratio(returns, periods: int=252) -> float:
     """
     Create the Sortino ratio for the strategy, based on a
     benchmark of zero (i.e. no risk-free rate information).

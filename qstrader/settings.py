@@ -14,6 +14,6 @@ LOGGING = {
 PRINT_EVENTS = True
 
 
-def set_print_events(print_events=True):
+def set_print_events(print_events: bool=True):
     global PRINT_EVENTS
     PRINT_EVENTS = print_events

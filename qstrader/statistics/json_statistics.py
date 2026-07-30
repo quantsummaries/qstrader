@@ -2,6 +2,7 @@ import datetime
 import json
 
 import numpy as np
+import pandas as pd
 
 from qstrader import settings
 import qstrader.statistics.performance as perf
@@ -39,15 +40,15 @@ class JSONStatistics(object):
 
     def __init__(
         self,
-        equity_curve,
+        equity_curve: pd.DataFrame,
         target_allocations,
-        strategy_id=None,
-        strategy_name=None,
-        benchmark_curve=None,
-        benchmark_id=None,
-        benchmark_name=None,
-        periods=252,
-        output_filename='statistics.json'
+        strategy_id: str|None=None,
+        strategy_name: str|None=None,
+        benchmark_curve: pd.DataFrame|None=None,
+        benchmark_id: str|None=None,
+        benchmark_name: str|None=None,
+        periods: int=252,
+        output_filename: str='statistics.json'
     ):
         self.equity_curve = equity_curve
         self.target_allocations = target_allocations
@@ -61,7 +62,7 @@ class JSONStatistics(object):
         self.statistics = self._create_full_statistics()
 
     @staticmethod
-    def _series_to_tuple_list(series):
+    def _series_to_tuple_list(series: pd.Series) -> list[tuple]:
         """
         Converts Pandas Series indexed by date-time into
         list of tuples indexed by milliseconds since epoch.
@@ -88,7 +89,7 @@ class JSONStatistics(object):
         ]
 
     @staticmethod
-    def _dataframe_to_column_list(df):
+    def _dataframe_to_column_list(df: pd.DataFrame) -> list[dict]:
         """
         Converts Pandas DataFrame indexed by date-time into
         list of tuples indexed by milliseconds since epoch.
@@ -120,7 +121,7 @@ class JSONStatistics(object):
         return col_list
 
     @staticmethod
-    def _calculate_returns(curve):
+    def _calculate_returns(curve: pd.DataFrame) -> None:
         """
         Appends returns and cumulative returns to the supplied equity
         curve DataFrame.
@@ -133,7 +134,7 @@ class JSONStatistics(object):
         curve['Returns'] = curve['Equity'].pct_change().fillna(0.0)
         curve['CumReturns'] = np.exp(np.log(1 + curve['Returns']).cumsum())
 
-    def _calculate_monthly_aggregated_returns(self, returns):
+    def _calculate_monthly_aggregated_returns(self, returns: pd.Series) -> list[tuple]:
         """
         Calculate the monthly aggregated returns as a list of tuples,
         with the first entry a further tuple of (year, month) and the
@@ -152,7 +153,7 @@ class JSONStatistics(object):
         month_returns = perf.aggregate_returns(returns, 'monthly')
         return list(zip(month_returns.index, month_returns))
 
-    def _calculate_monthly_aggregated_returns_hc(self, returns):
+    def _calculate_monthly_aggregated_returns_hc(self, returns: pd.Series) -> list[list]:
         """
         Calculate the monthly aggregated returns in the format
         utilised by Highcharts. 0% -> 0.0, 100% -> 100.0
@@ -184,7 +185,7 @@ class JSONStatistics(object):
 
         return data
 
-    def _calculate_yearly_aggregated_returns(self, returns):
+    def _calculate_yearly_aggregated_returns(self, returns: pd.Series) -> list[tuple]:
         """
         Calculate the yearly aggregated returns as a list of tuples,
         with the first entry being the year integer and the
@@ -203,7 +204,7 @@ class JSONStatistics(object):
         year_returns = perf.aggregate_returns(returns, 'yearly')
         return list(zip(year_returns.index, year_returns))
 
-    def _calculate_yearly_aggregated_returns_hc(self, returns):
+    def _calculate_yearly_aggregated_returns_hc(self, returns: list[tuple]) -> list[float]:
         """
         Calculate the yearly aggregated returns in the format
         utilised by Highcharts. 0% -> 0.0, 100% -> 100.0
@@ -222,7 +223,7 @@ class JSONStatistics(object):
         year_returns = self._calculate_yearly_aggregated_returns(returns)
         return [year[1] * 100.0 for year in year_returns]
 
-    def _calculate_returns_quantiles_dict(self, returns):
+    def _calculate_returns_quantiles_dict(self, returns: pd.Series|list[float]) -> dict[str, float]:
         """
         Creates a dictionary with quantiles for the
         provided returns series.
@@ -245,7 +246,7 @@ class JSONStatistics(object):
             'max': np.max(returns)
         }
 
-    def _calculate_returns_quantiles(self, daily_returns):
+    def _calculate_returns_quantiles(self, daily_returns: pd.Series) -> dict[str, dict[str, float]]:
         """
         Creates a dict-of-dicts with quantiles for the
         daily, monthly and yearly returns series.
@@ -268,7 +269,7 @@ class JSONStatistics(object):
             'yearly': self._calculate_returns_quantiles_dict(yearly_returns)
         }
 
-    def _calculate_returns_quantiles_hc(self, returns_quantiles):
+    def _calculate_returns_quantiles_hc(self, returns_quantiles: dict[str, dict]):
         """
         Convert the returns quantiles dict-of-dicts into
         a format suitable for Highcharts boxplots.
@@ -290,7 +291,7 @@ class JSONStatistics(object):
             [returns_quantiles['yearly'][stat] * 100.0 for stat in percentiles]
         ]
 
-    def _calculate_statistics(self, curve):
+    def _calculate_statistics(self, curve: pd.DataFrame) -> dict:
         """
         Creates a dictionary of various statistics associated with
         the backtest of a trading strategy via a supplied equity curve.
@@ -343,12 +344,12 @@ class JSONStatistics(object):
 
         return stats
 
-    def _calculate_allocations(self, allocations):
+    def _calculate_allocations(self, allocations: pd.DataFrame) -> list[dict]:
         """
         """
         return JSONStatistics._dataframe_to_column_list(allocations)
 
-    def _create_full_statistics(self):
+    def _create_full_statistics(self) -> dict:
         """
         Create the 'full' statistics dictionary, which has an entry for the
         strategy and an optional entry for any supplied benchmark.
@@ -381,7 +382,7 @@ class JSONStatistics(object):
 
         return full_stats
 
-    def to_file(self):
+    def to_file(self) -> None:
         """
         Outputs the statistics dictionary to a JSON file.
         """

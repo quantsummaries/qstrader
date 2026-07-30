@@ -59,10 +59,22 @@
 
 ## TODO: simulation
 
-## TODO: statistics
+## statistics
+
+- [x] json_statistics.py::JSONStatistics, class that defines the interface for a statistics object that can be serialized to JSON.
+- [x] performance.py
+  - aggregate_returns(...), function that aggregates returns into a single return value.
+  - create_cagr(...), function that calculates the compound annual growth rate (CAGR) of a return series.
+  - create_sharpe_ratio(...), function that calculates the Sharpe ratio of a return series.
+  - create_sortino_ratio(...), function that calculates the Sortino ratio of a return series.
+  - calculate_drawdowns(...), function that calculates the drawdowns of a return series.
+- [x] statistics.py::Statistics, class that defines the interface for a statistics object that can be serialized to JSON and generates a Matplotlib 'one-pager' strategy performance report.
+  - tearsheet.py::TearsheetStatistics, subclass of Statistics that generates a Matplotlib 'one-pager' strategy performance report.
 
 ## TODO: system
 
 ## TODO: trading
 
-## TODO: utils
+## utils
+
+- [x] utils.py::string_colour(...), function that returns a string with ANSI colour codes for terminal output.

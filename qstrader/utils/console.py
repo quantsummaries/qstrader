@@ -1,7 +1,7 @@
 BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE = range(8)
 
 
-def string_colour(text, colour=WHITE):
+def string_colour(text, colour: int=WHITE) -> str:
     """
     Create string text in a particular colour to the terminal.
     """
