@@ -1,3 +1,8 @@
+#!/usr/bin/python
+
+# script to backtest a portfolio with fixed percentage of compositions
+# example: uv run python static_backtest.py --start-date 2015-01-01 --end-date 2020-12-31 --allocations "SPY:0.4,TLT:0.3,GLD:0.3" --title "3-Asset Asset Allocation" --id "three-asset" --tearsheet
+
 from datetime import datetime, timedelta
 import os
 import sys
@@ -9,6 +14,7 @@ import pytz
 from qstrader.alpha_model.fixed_signals import FixedSignalsAlphaModel
 from qstrader.asset.equity import Equity
 from qstrader.asset.universe.static import StaticUniverse
+from qstrader.constants import DATA_DIR
 from qstrader.data.backtest_data_handler import BacktestDataHandler
 from qstrader.data.daily_bar_csv import CSVDailyBarDataSource
 from qstrader.statistics.json_statistics import JSONStatistics
@@ -55,7 +61,7 @@ def obtain_allocations(allocations):
 @click.option('--id', 'strat_id', help='Backtest strategy ID string')
 @click.option('--tearsheet', 'tearsheet', is_flag=True, default=False, help='Whether to display the (blocking) tearsheet plot')
 def cli(start_date, end_date, allocations, strat_title, strat_id, tearsheet):
-    csv_dir = os.environ.get('QSTRADER_CSV_DATA_DIR', '.')
+    csv_dir = os.environ.get('QSTRADER_CSV_DATA_DIR', DATA_DIR)
 
     start_dt = pd.Timestamp('%s 00:00:00' % start_date, tz=pytz.UTC)
 
