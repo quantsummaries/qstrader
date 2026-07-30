@@ -53,11 +53,24 @@
   
 ## TODO: portcon
 
-## TODO: risk_model
+## risk_model
 
-## TODO: signals
+- [x] risk_model.py::RiskModel, abstract class that defines the interface for a risk model.
+  
+## signals
 
-## TODO: simulation
+- [x] buffer.py::AssetPriceBuffers, class that defines the interface for an asset price buffer.
+- [x] signal.py::Signal, class that defines the interface for a signal.
+  - momentum.py::MomentumSignal, subclass of Signal that calculates the price momentum of an asset.
+  - sma.py::SMASignal, subclass of Signal that calculates the price mean reversion of an asset.
+  - vol.py::VolatilitySignal, subclass of Signal that calculates the price volatility of an asset.
+- [x] signals_collection.py::SignalsCollection, class that defines the interface for a collection of signals.
+
+## simulation
+
+- [x] event.py::SimulationEvent, class that defines the interface for a simulation event.
+- [x] sim_engine.py::SimulationEngine, class that defines the interface for a simulation engine.
+  - daily_bday.py::DailyBusinessDaySimulationEngine, subclass of SimulationEngine that simulates a daily business day simulation engine.
 
 ## statistics
 

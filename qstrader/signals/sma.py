@@ -1,6 +1,8 @@
 import numpy as np
+import pandas as pd
 
 from qstrader.signals.signal import Signal
+from qstrader.asset.universe.universe import Universe
 
 
 class SMASignal(Signal):
@@ -18,10 +20,10 @@ class SMASignal(Signal):
         The number of lookback periods to store prices for.
     """
 
-    def __init__(self, start_dt, universe, lookbacks):
+    def __init__(self, start_dt: pd.Timestamp, universe: Universe, lookbacks: list[int]):
         super().__init__(start_dt, universe, lookbacks)
 
-    def _simple_moving_average(self, asset, lookback):
+    def _simple_moving_average(self, asset: str, lookback: int) -> float:
         """
         Calculate the 'trend' for the provided lookback
         period based on the simple moving average of the
@@ -41,7 +43,7 @@ class SMASignal(Signal):
         """
         return np.mean(self.buffers.prices['%s_%s' % (asset, lookback)])
 
-    def __call__(self, asset, lookback):
+    def __call__(self, asset: str, lookback: int) -> float:
         """
         Calculate the lookback-period trend
         for the asset.

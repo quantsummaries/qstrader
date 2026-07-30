@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 
 from qstrader.signals.signal import Signal
+from qstrader.asset.universe.universe import Universe
 
 
 class MomentumSignal(Signal):
@@ -24,12 +25,12 @@ class MomentumSignal(Signal):
         The number of lookback periods to store prices for.
     """
 
-    def __init__(self, start_dt, universe, lookbacks):
+    def __init__(self, start_dt: pd.Timestamp, universe: Universe, lookbacks: list[int]):
         bumped_lookbacks = [lookback + 1 for lookback in lookbacks]
         super().__init__(start_dt, universe, bumped_lookbacks)
 
     @staticmethod
-    def _asset_lookback_key(asset, lookback):
+    def _asset_lookback_key(asset: str, lookback: int) -> str:
         """
         Create the buffer dictionary lookup key based
         on asset name and lookback period.
@@ -48,7 +49,7 @@ class MomentumSignal(Signal):
         """
         return '%s_%s' % (asset, lookback + 1)
 
-    def _cumulative_return(self, asset, lookback):
+    def _cumulative_return(self, asset: str, lookback: int) -> float:
         """
         Calculate the cumulative returns for the provided
         lookback period ('momentum') based on the price
@@ -76,7 +77,7 @@ class MomentumSignal(Signal):
         else:
             return (np.cumprod(1.0 + np.array(returns)) - 1.0)[-1]
 
-    def __call__(self, asset, lookback):
+    def __call__(self, asset: str, lookback: int) -> float:
         """
         Calculate the lookback-period momentum
         for the asset.

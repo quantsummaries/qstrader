@@ -15,13 +15,13 @@ class AssetPriceBuffers(object):
         The number of lookback periods to store prices for.
     """
 
-    def __init__(self, assets, lookbacks=[12]):
+    def __init__(self, assets: list[str], lookbacks: list[int]=[12]):
         self.assets = assets
         self.lookbacks = lookbacks
         self.prices = self._create_all_assets_prices_buffer_dict()
 
     @staticmethod
-    def _asset_lookback_key(asset, lookback):
+    def _asset_lookback_key(asset: str, lookback: int) -> str:
         """
         Create the buffer dictionary lookup key based
         on asset name and lookback period.
@@ -40,7 +40,7 @@ class AssetPriceBuffers(object):
         """
         return '%s_%s' % (asset, lookback)
 
-    def _create_single_asset_prices_buffer_dict(self, asset):
+    def _create_single_asset_prices_buffer_dict(self, asset: str) -> dict[str, deque[float]]:
         """
         Creates a dictionary of asset-lookback pair
         price buffers for a single asset.
@@ -57,7 +57,7 @@ class AssetPriceBuffers(object):
             for lookback in self.lookbacks
         }
 
-    def _create_all_assets_prices_buffer_dict(self):
+    def _create_all_assets_prices_buffer_dict(self) -> dict[str, deque[float]]:
         """
         Creates a dictionary of asset-lookback pair
         price buffers for all assets.
@@ -72,7 +72,7 @@ class AssetPriceBuffers(object):
             prices.update(self._create_single_asset_prices_buffer_dict(asset))
         return prices
 
-    def add_asset(self, asset):
+    def add_asset(self, asset: str) -> None:
         """
         Add an asset to the list of current assets. This is necessary if
         the asset is part of a DynamicUniverse and isn't present at
@@ -91,7 +91,7 @@ class AssetPriceBuffers(object):
         else:
             self.prices.update(self._create_single_asset_prices_buffer_dict(asset))
 
-    def append(self, asset, price):
+    def append(self, asset: str, price: float) -> None:
         """
         Append a new price onto the price deque for
         the specific asset provided.

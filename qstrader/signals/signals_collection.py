@@ -1,3 +1,9 @@
+import pandas as pd
+
+from qstrader.data.backtest_data_handler import BacktestDataHandler
+from qstrader.signals.signal import Signal
+
+
 class SignalsCollection(object):
     """
     Provides a mechanism for aggregating all signals
@@ -13,16 +19,16 @@ class SignalsCollection(object):
     ----------
     signals : `dict{str: Signal}`
         Map of signal name to derived instance of Signal
-    data_handler : `DataHandler`
+    data_handler : `BacktestDataHandler`
         The data handler used to obtain pricing.
     """
 
-    def __init__(self, signals, data_handler):
+    def __init__(self, signals: dict[str, Signal], data_handler: BacktestDataHandler):
         self.signals = signals
         self.data_handler = data_handler
         self.warmup = 0  # Used for 'burn in'
 
-    def __getitem__(self, signal):
+    def __getitem__(self, signal: str) -> Signal:
         """
         Allow Signal to be returned via dictionary-like syntax.
 
@@ -38,7 +44,7 @@ class SignalsCollection(object):
         """
         return self.signals[signal]
 
-    def update(self, dt):
+    def update(self, dt: pd.Timestamp) -> None:
         """
         Updates the universe (if dynamic) for each signal as well
         as the pricing information for this timestamp.
