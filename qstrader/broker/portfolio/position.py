@@ -1,6 +1,9 @@
 from math import floor
 
 import numpy as np
+import pandas as pd
+
+from qstrader.broker.transaction.transaction import Transaction
 
 
 class Position(object):
@@ -37,15 +40,15 @@ class Position(object):
 
     def __init__(
         self,
-        asset,
-        current_price,
-        current_dt,
-        buy_quantity,
-        sell_quantity,
-        avg_bought,
-        avg_sold,
-        buy_commission,
-        sell_commission
+        asset: str,
+        current_price: float,
+        current_dt: pd.Timestamp,
+        buy_quantity: int,
+        sell_quantity: int,
+        avg_bought: float,
+        avg_sold: float,
+        buy_commission: float,
+        sell_commission: float
     ):
         self.asset = asset
         self.current_price = current_price
@@ -58,7 +61,7 @@ class Position(object):
         self.sell_commission = sell_commission
 
     @classmethod
-    def open_from_transaction(cls, transaction):
+    def open_from_transaction(cls, transaction: Transaction) -> "Position":
         """
         Constructs a new Position instance from the provided
         Transaction.
@@ -104,7 +107,7 @@ class Position(object):
             sell_commission
         )
 
-    def _check_set_dt(self, dt):
+    def _check_set_dt(self, dt: pd.Timestamp) -> None:
         """
         Checks that the provided timestamp is valid and if so sets
         the new current time of the Position.
@@ -125,7 +128,7 @@ class Position(object):
                 self.current_dt = dt
 
     @property
-    def direction(self):
+    def direction(self) -> int:
         """
         Returns an integer value representing the direction.
 
@@ -140,7 +143,7 @@ class Position(object):
             return np.copysign(1, self.net_quantity)
 
     @property
-    def market_value(self):
+    def market_value(self) -> float:
         """
         Return the market value (respecting the direction) of the
         Position based on the current price available to the Position.
@@ -153,7 +156,7 @@ class Position(object):
         return self.current_price * self.net_quantity
 
     @property
-    def avg_price(self):
+    def avg_price(self) -> float:
         """
         The average price paid for all assets on the long or short side.
 
@@ -170,7 +173,7 @@ class Position(object):
             return (self.avg_sold * self.sell_quantity - self.sell_commission) / self.sell_quantity
 
     @property
-    def net_quantity(self):
+    def net_quantity(self) -> int:
         """
         The difference in the quantity of assets bought and sold to date.
 
@@ -182,7 +185,7 @@ class Position(object):
         return self.buy_quantity - self.sell_quantity
 
     @property
-    def total_bought(self):
+    def total_bought(self) -> float:
         """
         Calculates the total average cost of assets bought.
 
@@ -194,7 +197,7 @@ class Position(object):
         return self.avg_bought * self.buy_quantity
 
     @property
-    def total_sold(self):
+    def total_sold(self) -> float:
         """
         Calculates the total average cost of assets sold.
 
@@ -206,7 +209,7 @@ class Position(object):
         return self.avg_sold * self.sell_quantity
 
     @property
-    def net_total(self):
+    def net_total(self) -> float:
         """
         Calculates the net total average cost of assets
         bought and sold.
@@ -220,7 +223,7 @@ class Position(object):
         return self.total_sold - self.total_bought
 
     @property
-    def commission(self):
+    def commission(self) -> float:
         """
         Calculates the total commission from assets bought and sold.
 
@@ -232,7 +235,7 @@ class Position(object):
         return self.buy_commission + self.sell_commission
 
     @property
-    def net_incl_commission(self):
+    def net_incl_commission(self) -> float:
         """
         Calculates the net total average cost of assets bought
         and sold including the commission.
@@ -246,7 +249,7 @@ class Position(object):
         return self.net_total - self.commission
 
     @property
-    def realised_pnl(self):
+    def realised_pnl(self) -> float:
         """
         Calculates the profit & loss (P&L) that has been 'realised' via
         two opposing asset transactions in the Position to date.
@@ -278,7 +281,7 @@ class Position(object):
             return self.net_incl_commission
 
     @property
-    def unrealised_pnl(self):
+    def unrealised_pnl(self) -> float:
         """
         Calculates the profit & loss (P&L) that has yet to be 'realised'
         in the remaining non-zero quantity of assets, due to the current
@@ -292,7 +295,7 @@ class Position(object):
         return (self.current_price - self.avg_price) * self.net_quantity
 
     @property
-    def total_pnl(self):
+    def total_pnl(self) -> float:
         """
         Calculates the sum of the unrealised and realised profit & loss (P&L).
 
@@ -303,7 +306,7 @@ class Position(object):
         """
         return self.realised_pnl + self.unrealised_pnl
 
-    def update_current_price(self, market_price, dt=None):
+    def update_current_price(self, market_price: float, dt: pd.Timestamp | None = None) -> None:
         """
         Updates the Position's awareness of the current market price
         of the Asset, with an optional timestamp.
@@ -325,7 +328,7 @@ class Position(object):
         else:
             self.current_price = market_price
 
-    def _transact_buy(self, quantity, price, commission):
+    def _transact_buy(self, quantity: int, price: float, commission: float) -> None:
         """
         Handle the accounting for creating a new long leg for the
         Position.
@@ -343,7 +346,7 @@ class Position(object):
         self.buy_quantity += quantity
         self.buy_commission += commission
 
-    def _transact_sell(self, quantity, price, commission):
+    def _transact_sell(self, quantity: int, price: float, commission: float) -> None:
         """
         Handle the accounting for creating a new short leg for the
         Position.
@@ -361,7 +364,7 @@ class Position(object):
         self.sell_quantity += quantity
         self.sell_commission += commission
 
-    def transact(self, transaction):
+    def transact(self, transaction: Transaction) -> None:
         """
         Calculates the adjustments to the Position that occur
         once new units in an Asset are bought and sold.

@@ -24,14 +24,18 @@ def parse_args():
     parser.add_argument('-ed', '--end_dt', type=int, required=True, help='End date of format YYYYMMDD')
     parser.add_argument('-s', '--strategy_symbols', type=str, required=True, help='Comma-separated strategy symbols')
     parser.add_argument('-a', '--strategy_allocations', type=str, required=True, help='Comma-separated strategy allocations (in decimals)')
-    parser.add_argument('-f', '--rebalance_frequency', type=str, required=False, help='Rebalance frequency, "daily", "weekly", "end_of_month", and "buy_and_hold"; (default: end_of_month)', default='end_of_month')
-    parser.add_argument('-b', '--benchmark', type=str, required=False, help='Benchmark asset (default: "SPY")', default='SPY')
+    parser.add_argument('-b', '--benchmark', type=str, required=True, help='Benchmark asset')
+    parser.add_argument('-f', '--rebalance_frequency', type=str, required=False,
+                        help='Rebalance frequency, "daily", "weekly", "end_of_month", and "buy_and_hold"; (default: end_of_month)',
+                        default='end_of_month')
 
     return parser.parse_args()
 
 
 
 if __name__ == "__main__":
+    # example: uv run ./examples/fixed_pct.py -sd 20220308 -ed 20260729 -s SPY,CTA,GLD -a 0.33,0.34,0.33 -f end_of_month -b SPY
+
     args = parse_args()
 
     start_dt = pd.Timestamp(f'{datetime.strptime(str(args.start_dt), "%Y%m%d").strftime("%Y-%m-%d")} 14:30:00',
@@ -93,6 +97,6 @@ if __name__ == "__main__":
     tearsheet = TearsheetStatistics(
         strategy_equity=strategy_backtest.get_equity_curve(),
         benchmark_equity=benchmark_backtest.get_equity_curve(),
-        title='Gavekal 3 Asset Portfolio'
+        title=f'Fixed Percentage Strategy {dict(zip(strategy_symbols, strategy_allocations))} vs. {benchmark}'
     )
     tearsheet.plot_results()

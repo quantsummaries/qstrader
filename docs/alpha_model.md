@@ -39,7 +39,7 @@ qstrader/alpha_model/
 ```python
 class AlphaModel(object):
     @abstractmethod
-    def __call__(self, dt):
+    def __call__(self, dt: pd.Timestamp) -> dict[str, float]:
         ...
 ```
 
@@ -48,7 +48,7 @@ class AlphaModel(object):
 Implementations must provide:
 
 ```text
-__call__(dt) -> dict[str, float]
+__call__(dt: pd.Timestamp) -> dict[str, float]
 ```
 
 where:
@@ -73,7 +73,7 @@ Returns a fixed dictionary of signal weights every time it is called.
 #### Constructor
 
 ```python
-FixedSignalsAlphaModel(signal_weights, universe=None, data_handler=None)
+FixedSignalsAlphaModel(signal_weights: dict[str, float], universe: Universe|None=None, data_handler=None)
 ```
 
 #### Parameters
@@ -85,7 +85,7 @@ FixedSignalsAlphaModel(signal_weights, universe=None, data_handler=None)
 #### Behavior
 
 ```python
-def __call__(self, dt):
+def __call__(self, dt: pd.Timestamp):
     return self.signal_weights
 ```
 
@@ -108,7 +108,7 @@ Creates a dictionary that applies the same scalar signal to every asset currentl
 #### Constructor
 
 ```python
-SingleSignalAlphaModel(universe, signal=1.0, data_handler=None)
+SingleSignalAlphaModel(universe: Universe, signal: float=1.0, data_handler=None)
 ```
 
 #### Parameters
@@ -120,7 +120,7 @@ SingleSignalAlphaModel(universe, signal=1.0, data_handler=None)
 #### Behavior
 
 ```python
-def __call__(self, dt):
+def __call__(self, dt: pd.Timestamp) -> dict[str, float]:
     assets = self.universe.get_assets(dt)
     return {asset: self.signal for asset in assets}
 ```
@@ -206,9 +206,9 @@ Other examples such as `examples/sixty_forty.py`, `examples/sixty_forty_fees.py`
 
 | Class | Module | Purpose | Key API |
 |---|---|---|---|
-| `AlphaModel` | `qstrader.alpha_model.alpha_model` | Abstract alpha-model interface | `__call__(dt) -> dict[str, float]` |
-| `FixedSignalsAlphaModel` | `qstrader.alpha_model.fixed_signals` | Return fixed symbol->signal mapping | `FixedSignalsAlphaModel(signal_weights, universe=None, data_handler=None)` |
-| `SingleSignalAlphaModel` | `qstrader.alpha_model.single_signal` | Apply one scalar signal to all current universe assets | `SingleSignalAlphaModel(universe, signal=1.0, data_handler=None)` |
+| `AlphaModel` | `qstrader.alpha_model.alpha_model` | Abstract alpha-model interface | `__call__(dt: pd.Timestamp) -> dict[str, float]` |
+| `FixedSignalsAlphaModel` | `qstrader.alpha_model.fixed_signals` | Return fixed symbol->signal mapping | `FixedSignalsAlphaModel(signal_weights: dict[str, float], universe: Universe|None=None, data_handler=None)` |
+| `SingleSignalAlphaModel` | `qstrader.alpha_model.single_signal` | Apply one scalar signal to all current universe assets | `SingleSignalAlphaModel(universe: Universe, signal: float=1.0, data_handler=None)` |
 
 ---
 

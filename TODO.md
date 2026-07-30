@@ -22,6 +22,17 @@
 
 ## broker
 
+- [x] broker.py::Broker, abstract class that defines the interface for a broker.
+  - simulated_broker.py::SimulatedBroker, subclass of Broker that simulates a broker for backtesting purposes.
+- [x] fee_model.py::FeeModel, abstract class that defines the interface for a fee model.
+  - fixed_fee_model.py::FixedFeeModel, subclass of FeeModel that applies a fixed fee per trade.
+  - percentage_fee_model.py::PercentageFeeModel, subclass of FeeModel that applies a percentage fee per trade.
+- [x] transaction.py::Transaction, class that defines the interface for a transaction.
+- [x] portfolio.py::Portfolio, class that defines the interface for a portfolio.
+- [x] portfolio_event.py::PortfolioEvent, class that defines the interface for a portfolio event.
+- [x] position.py::Position, class that defines the interface for a position.
+- [x] position_handler.py::PositionHandler, class that defines the interface for a position handler.
+
 ## data
 
 - [x] backtest_data_handler.py::BacktestDataHandler, provides an asset's latest bid, ask, and mid prices, as well as the historical range close prices. 

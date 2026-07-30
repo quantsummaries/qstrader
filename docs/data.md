@@ -84,8 +84,8 @@ This allows other parts of the system to query “latest bid/ask” at a timesta
 
 ### Constructor
 
-```text
-CSVDailyBarDataSource(csv_dir, asset_type, adjust_prices=True, csv_symbols=None)
+```python
+CSVDailyBarDataSource(csv_dir: str, asset_type: str, adjust_prices: bool=True, csv_symbols: list[str]|None=None)
 ```
 
 ### Parameters
@@ -281,7 +281,7 @@ Applies the bar-to-bid/ask transformation to every loaded asset and stores the r
 
 ### Price query API
 
-#### `get_bid(dt, asset)`
+#### `get_bid(dt: pd.Timestamp, asset: str) -> float`
 
 Returns the latest available bid price for an asset at timestamp `dt`.
 
@@ -291,7 +291,7 @@ Implementation details:
 - returns the most recent known value at or before `dt`
 - if the query is before the first available timestamp, returns `np.nan`
 
-#### `get_ask(dt, asset)`
+#### `get_ask(dt: pd.Timestamp, asset: str) -> float`
 
 Same behavior as `get_bid`, but returns the ask column.
 
@@ -299,7 +299,7 @@ Same behavior as `get_bid`, but returns the ask column.
 
 Both `get_bid` and `get_ask` are wrapped with:
 
-```text
+```python
 @functools.lru_cache(maxsize=1024 * 1024)
 ```
 
@@ -309,7 +309,7 @@ This provides memoization for repeated price lookups during a backtest.
 
 ### Historical close range API
 
-#### `get_assets_historical_closes(start_dt, end_dt, assets)`
+#### `get_assets_historical_closes(start_dt: pd.Timestamp, end_dt: pd.Timestamp, assets: list[str]) -> pd.DataFrame`
 
 Builds a multi-asset DataFrame of historical close prices:
 
@@ -350,15 +350,15 @@ Instead of the rest of QSTrader talking directly to a CSV loader, it queries the
 
 ### Constructor
 
-```text
-BacktestDataHandler(universe, data_sources=None)
+```python
+BacktestDataHandler(universe: Universe, data_sources: list[CSVDailyBarDataSource]|None=None)
 ```
 
 ### Parameters
 
-- `universe`
+- `universe: Universe`
   - The asset universe associated with the backtest.
-- `data_sources`
+- `data_sources: list[CSVDailyBarDataSource] | None = None`
   - A list of data sources to query in order.
 
 ### Stored attributes
@@ -378,7 +378,7 @@ This allows a form of source fallback, although the repository examples generall
 
 ### Methods
 
-#### `get_asset_latest_bid_price(dt, asset_symbol)`
+#### `get_asset_latest_bid_price(dt: pd.Timestamp, asset_symbol: str) -> float`
 
 - tries each data source in order,
 - calls `ds.get_bid(dt, asset_symbol)`,
@@ -387,11 +387,11 @@ This allows a form of source fallback, although the repository examples generall
 
 The method swallows exceptions and continues to the next source.
 
-#### `get_asset_latest_ask_price(dt, asset_symbol)`
+#### `get_asset_latest_ask_price(dt: pd.Timestamp, asset_symbol: str) -> float`
 
 Same logic as bid-price lookup, but using `ds.get_ask(...)`.
 
-#### `get_asset_latest_bid_ask_price(dt, asset_symbol)`
+#### `get_asset_latest_bid_ask_price(dt: pd.Timestamp, asset_symbol: str) -> tuple[float, float]`
 
 Currently returns:
 
@@ -403,7 +403,7 @@ not `(bid, ask)`.
 
 This mirrors the package’s current assumption that daily OHLCV data effectively provides a single tradable price rather than a true spread.
 
-#### `get_asset_latest_mid_price(dt, asset_symbol)`
+#### `get_asset_latest_mid_price(dt: pd.Timestamp, asset_symbol: str) -> float`
 
 Computes:
 
@@ -415,7 +415,7 @@ using the result of `get_asset_latest_bid_ask_price(...)`.
 
 Because the current bid/ask pair is `(bid, bid)`, the mid price is effectively the same as the bid price in the present implementation.
 
-#### `get_assets_historical_range_close_price(start_dt, end_dt, asset_symbols, adjusted=False)`
+#### `get_assets_historical_range_close_price(start_dt: pd.Timestamp, end_dt: pd.Timestamp, asset_symbols: list[str], adjusted: bool = False) -> pd.DataFrame`
 
 Attempts to request a historical closing-price DataFrame from each data source.
 

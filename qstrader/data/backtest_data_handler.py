@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 
+from qstrader.asset.universe.universe import Universe
+from qstrader.data.daily_bar_csv import CSVDailyBarDataSource
 
 class BacktestDataHandler(object):
     """
@@ -8,13 +10,13 @@ class BacktestDataHandler(object):
 
     def __init__(
         self,
-        universe,
-        data_sources=None
+        universe: Universe,
+        data_sources: list[CSVDailyBarDataSource]|None=None
     ):
         self.universe = universe
         self.data_sources = data_sources
 
-    def get_asset_latest_bid_price(self, dt, asset_symbol) -> float:
+    def get_asset_latest_bid_price(self, dt: pd.Timestamp, asset_symbol: str) -> float:
         """
         """
         # TODO: Check for asset in Universe
@@ -28,7 +30,7 @@ class BacktestDataHandler(object):
                 bid = np.nan
         return bid
 
-    def get_asset_latest_ask_price(self, dt, asset_symbol) -> float:
+    def get_asset_latest_ask_price(self, dt: pd.Timestamp, asset_symbol: str) -> float:
         """
         """
         # TODO: Check for asset in Universe
@@ -42,7 +44,7 @@ class BacktestDataHandler(object):
                 ask = np.nan
         return ask
 
-    def get_asset_latest_bid_ask_price(self, dt, asset_symbol) -> tuple[float, float]:
+    def get_asset_latest_bid_ask_price(self, dt: pd.Timestamp, asset_symbol: str) -> tuple[float, float]:
         """
         """
         # TODO: For the moment this is sufficient for OHLCV
@@ -54,7 +56,7 @@ class BacktestDataHandler(object):
         bid = self.get_asset_latest_bid_price(dt, asset_symbol)
         return (bid, bid)
 
-    def get_asset_latest_mid_price(self, dt, asset_symbol) -> float:
+    def get_asset_latest_mid_price(self, dt: pd.Timestamp, asset_symbol: str) -> float:
         """
         """
         bid_ask = self.get_asset_latest_bid_ask_price(dt, asset_symbol)
@@ -66,7 +68,7 @@ class BacktestDataHandler(object):
         return mid
 
     def get_assets_historical_range_close_price(
-        self, start_dt, end_dt, asset_symbols, adjusted=False
+        self, start_dt: pd.Timestamp, end_dt: pd.Timestamp, asset_symbols: list[str], adjusted: bool = False
     ) -> pd.DataFrame:
         """
         """

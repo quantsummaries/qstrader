@@ -107,7 +107,7 @@ Unit tests verify that:
 #### Constructor
 
 ```python
-Equity(name, symbol, tax_exempt=True)
+Equity(name: str, symbol: str, tax_exempt: bool=True)
 ```
 
 #### Parameters
@@ -160,7 +160,7 @@ This concept is used by multiple parts of QSTrader, including:
 - portfolio construction
 - trading sessions/backtests
 
-The central interface is `Universe.get_assets(dt) -> list[str]`.
+The central interface is `Universe.get_assets(dt: pd.Timestamp) -> list[str]`.
 
 ### `Universe`
 
@@ -171,7 +171,7 @@ The central interface is `Universe.get_assets(dt) -> list[str]`.
 #### Method
 
 ```python
-get_assets(dt) -> list[str]
+get_assets(dt: pd.Timestamp) -> list[str]
 ```
 
 #### Contract
@@ -199,7 +199,7 @@ Typical values look like:
 #### Constructor
 
 ```python
-StaticUniverse(asset_list)
+StaticUniverse(asset_list: list[str])
 ```
 
 #### Parameters
@@ -209,7 +209,7 @@ StaticUniverse(asset_list)
 #### Method behavior
 
 ```python
-get_assets(dt) -> list[str]
+get_assets(dt: pd.Timestamp) -> list[str]
 ```
 
 - Ignores the provided timestamp
@@ -244,7 +244,7 @@ Unit tests confirm that the same asset list is returned for different timestamps
 #### Constructor
 
 ```python
-DynamicUniverse(asset_dates)
+DynamicUniverse(asset_dates: dict[str, pd.Timestamp])
 ```
 
 #### Parameters
@@ -254,7 +254,7 @@ DynamicUniverse(asset_dates)
 #### Method behavior
 
 ```python
-get_assets(dt) -> list[str]
+get_assets(dt: pd.Timestamp) -> list[str]
 ```
 
 Returns all assets satisfying both conditions:
@@ -379,10 +379,10 @@ The current `qstrader.asset` package is intentionally simple and acts more as a 
 |---|---|---|---|
 | `Asset` | `qstrader.asset.asset` | Base asset type | inheritance root |
 | `Cash` | `qstrader.asset.cash` | Cash-like asset metadata | `Cash(currency='USD')` |
-| `Equity` | `qstrader.asset.equity` | Equity/ETF metadata | `Equity(name, symbol, tax_exempt=True)` |
-| `Universe` | `qstrader.asset.universe.universe` | Abstract universe interface | `get_assets(dt)` |
-| `StaticUniverse` | `qstrader.asset.universe.static` | Fixed symbol universe | `get_assets(dt)` |
-| `DynamicUniverse` | `qstrader.asset.universe.dynamic` | Time-varying expanding universe | `get_assets(dt)` |
+| `Equity` | `qstrader.asset.equity` | Equity/ETF metadata | `Equity(name: str, symbol: str, tax_exempt: bool=True)` |
+| `Universe` | `qstrader.asset.universe.universe` | Abstract universe interface | `get_assets(dt: pd.Timestamp) -> list[str]` |
+| `StaticUniverse` | `qstrader.asset.universe.static` | Fixed symbol universe | `get_assets(dt: pd.Timestamp) -> list[str]` |
+| `DynamicUniverse` | `qstrader.asset.universe.dynamic` | Time-varying expanding universe | `get_assets(dt: pd.Timestamp) -> list[str]` |
 
 ---
 

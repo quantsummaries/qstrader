@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 
 class Transaction(object):
@@ -24,12 +25,12 @@ class Transaction(object):
 
     def __init__(
         self,
-        asset,
-        quantity,
-        dt,
-        price,
-        order_id,
-        commission=0.0
+        asset: str,
+        quantity: int,
+        dt: pd.Timestamp,
+        price: float,
+        order_id: int,
+        commission: float = 0.0
     ):
         self.asset = asset
         self.quantity = quantity
@@ -39,7 +40,7 @@ class Transaction(object):
         self.order_id = order_id
         self.commission = commission
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """
         Provides a representation of the Transaction
         to allow full recreation of the object.
@@ -57,7 +58,7 @@ class Transaction(object):
             )
 
     @property
-    def cost_without_commission(self):
+    def cost_without_commission(self) -> float:
         """
         Calculate the cost of the transaction without including
         any commission costs.
@@ -70,7 +71,7 @@ class Transaction(object):
         return self.quantity * self.price
 
     @property
-    def cost_with_commission(self):
+    def cost_with_commission(self) -> float:
         """
         Calculate the cost of the transaction including
         any commission costs.

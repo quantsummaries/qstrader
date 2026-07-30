@@ -7,6 +7,7 @@ import pandas as pd
 from qstrader import settings
 from qstrader.broker.portfolio.portfolio_event import PortfolioEvent
 from qstrader.broker.portfolio.position_handler import PositionHandler
+from qstrader.broker.transaction.transaction import Transaction
 
 
 class Portfolio(object):
@@ -32,11 +33,11 @@ class Portfolio(object):
 
     def __init__(
         self,
-        start_dt,
-        starting_cash=0.0,
-        currency="USD",
-        portfolio_id=None,
-        name=None
+        start_dt: datetime.datetime,
+        starting_cash: float = 0.0,
+        currency: str = "USD",
+        portfolio_id: str | None = None,
+        name: str | None = None
     ):
         """
         Initialise the Portfolio object with a PositionHandler,
@@ -64,7 +65,7 @@ class Portfolio(object):
 
         self._initialise_portfolio_with_cash()
 
-    def _initialise_portfolio_with_cash(self):
+    def _initialise_portfolio_with_cash(self) -> None:
         """
         Initialise the portfolio with a (default) currency Cash Asset
         with quantity equal to 'starting_cash'.
@@ -89,41 +90,41 @@ class Portfolio(object):
         )
 
     @property
-    def total_market_value(self):
+    def total_market_value(self) -> float:
         """
         Obtain the total market value of the portfolio excluding cash.
         """
         return self.pos_handler.total_market_value()
 
     @property
-    def total_equity(self):
+    def total_equity(self) -> float:
         """
         Obtain the total market value of the portfolio including cash.
         """
         return self.total_market_value + self.cash
 
     @property
-    def total_unrealised_pnl(self):
+    def total_unrealised_pnl(self) -> float:
         """
         Calculate the sum of all the positions' unrealised P&Ls.
         """
         return self.pos_handler.total_unrealised_pnl()
 
     @property
-    def total_realised_pnl(self):
+    def total_realised_pnl(self) -> float:
         """
         Calculate the sum of all the positions' realised P&Ls.
         """
         return self.pos_handler.total_realised_pnl()
 
     @property
-    def total_pnl(self):
+    def total_pnl(self) -> float:
         """
         Calculate the sum of all the positions' total P&Ls.
         """
         return self.pos_handler.total_pnl()
 
-    def subscribe_funds(self, dt, amount):
+    def subscribe_funds(self, dt: datetime.datetime, amount: float) -> None:
         """
         Credit funds to the portfolio.
         """
@@ -156,7 +157,7 @@ class Portfolio(object):
             )
         )
 
-    def withdraw_funds(self, dt, amount):
+    def withdraw_funds(self, dt: datetime.datetime, amount: float) -> None:
         """
         Withdraw funds from the portfolio if there is enough
         cash to allow it.
@@ -201,7 +202,7 @@ class Portfolio(object):
             )
         )
 
-    def transact_asset(self, txn):
+    def transact_asset(self, txn: Transaction) -> None:
         """
         Adjusts positions to account for a transaction.
         """
@@ -292,8 +293,8 @@ class Portfolio(object):
         return holdings
 
     def update_market_value_of_asset(
-        self, asset, current_price, current_dt
-    ):
+        self, asset: str, current_price: float, current_dt: datetime.datetime
+    ) -> None:
         """
         Update the market value of the asset to the current
         trade price and date.
@@ -322,7 +323,7 @@ class Portfolio(object):
                 current_price, current_dt
             )
 
-    def history_to_df(self):
+    def history_to_df(self) -> pd.DataFrame:
         """
         Creates a Pandas DataFrame of the Portfolio history.
         """

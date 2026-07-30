@@ -22,9 +22,9 @@ class Equity(Asset):
 
     def __init__(
         self,
-        name,
-        symbol,
-        tax_exempt=True
+        name: str,
+        symbol: str,
+        tax_exempt: bool=True
     ):
         self.cash_like = False
         self.name = name

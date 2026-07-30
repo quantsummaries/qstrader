@@ -1,3 +1,4 @@
+from qstrader.broker.broker import Broker
 from qstrader.broker.fee_model.fee_model import FeeModel
 
 
@@ -16,12 +17,12 @@ class PercentFeeModel(FeeModel):
         0-100% is in the range [0.0, 1.0]. Hence, e.g. 0.1% is 0.001
     """
 
-    def __init__(self, commission_pct=0.0, tax_pct=0.0):
+    def __init__(self, commission_pct: float=0.0, tax_pct: float=0.0):
         super().__init__()
         self.commission_pct = commission_pct
         self.tax_pct = tax_pct
 
-    def _calc_commission(self, asset, quantity, consideration, broker=None):
+    def _calc_commission(self, asset: str, quantity: int, consideration: float, broker: Broker|None=None) -> float:
         """
         Returns the percentage commission from the consideration.
 
@@ -44,7 +45,7 @@ class PercentFeeModel(FeeModel):
         """
         return self.commission_pct * abs(consideration)
 
-    def _calc_tax(self, asset, quantity, consideration, broker=None):
+    def _calc_tax(self, asset, quantity, consideration, broker: Broker|None=None) -> float:
         """
         Returns the percentage tax from the consideration.
 
@@ -67,7 +68,7 @@ class PercentFeeModel(FeeModel):
         """
         return self.tax_pct * abs(consideration)
 
-    def calc_total_cost(self, asset, quantity, consideration, broker=None):
+    def calc_total_cost(self, asset: str, quantity: int, consideration: float, broker: Broker|None=None) -> float:
         """
         Calculate the total of any commission and/or tax
         for the trade of size 'consideration'.

@@ -32,7 +32,7 @@ class CSVDailyBarDataSource(object):
         provided directory.
     """
 
-    def __init__(self, csv_dir, asset_type, adjust_prices=True, csv_symbols=None):
+    def __init__(self, csv_dir: str, asset_type: str, adjust_prices: bool=True, csv_symbols: list[str]|None=None):
         self.csv_dir = csv_dir
         self.asset_type = asset_type
         self.adjust_prices = adjust_prices
@@ -55,7 +55,7 @@ class CSVDailyBarDataSource(object):
             if file.endswith('.csv')
         ]
 
-    def _obtain_asset_symbol_from_filename(self, csv_file) -> str:
+    def _obtain_asset_symbol_from_filename(self, csv_file: str) -> str:
         """
         Return the QSTrader symbology for the asset.
 
@@ -73,7 +73,7 @@ class CSVDailyBarDataSource(object):
         """
         return 'EQ:%s' % csv_file.replace('.csv', '')
 
-    def _load_csv_into_df(self, csv_file) -> pd.DataFrame:
+    def _load_csv_into_df(self, csv_file: str) -> pd.DataFrame:
         """
         Loads the CSV file into a Pandas DataFrame with dates parsed,
         sorted on datetime localised to UTC.
@@ -126,7 +126,7 @@ class CSVDailyBarDataSource(object):
             asset_frames[asset_symbol] = csv_df
         return asset_frames
 
-    def _convert_bar_frame_into_bid_ask_df(self, bar_df) -> pd.DataFrame:
+    def _convert_bar_frame_into_bid_ask_df(self, bar_df: pd.DataFrame) -> pd.DataFrame:
         """
         Converts the DataFrame from daily OHLCV 'bars' into a DataFrame
         of open and closing price timestamps.
@@ -198,7 +198,7 @@ class CSVDailyBarDataSource(object):
         return asset_bid_ask_frames
 
     @functools.lru_cache(maxsize=1024 * 1024)
-    def get_bid(self, dt, asset) -> float:
+    def get_bid(self, dt: pd.Timestamp, asset: str) -> float:
         """
         Obtain the bid price of an asset at the provided timestamp.
 
@@ -223,7 +223,7 @@ class CSVDailyBarDataSource(object):
         return bid
 
     @functools.lru_cache(maxsize=1024 * 1024)
-    def get_ask(self, dt, asset) -> float:
+    def get_ask(self, dt: pd.Timestamp, asset: str) -> float:
         """
         Obtain the ask price of an asset at the provided timestamp.
 
@@ -247,7 +247,7 @@ class CSVDailyBarDataSource(object):
             return np.nan
         return ask
 
-    def get_assets_historical_closes(self, start_dt, end_dt, assets) -> pd.DataFrame:
+    def get_assets_historical_closes(self, start_dt: pd.Timestamp, end_dt: pd.Timestamp, assets: list[str]) -> pd.DataFrame:
         """
         Obtain a multi-asset historical range of closing prices as a DataFrame,
         indexed by timestamp with asset symbols as columns.

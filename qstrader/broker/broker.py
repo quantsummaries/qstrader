@@ -1,4 +1,5 @@
 from abc import ABCMeta, abstractmethod
+from qstrader.execution.order import Order
 
 
 class Broker(object):
@@ -29,31 +30,31 @@ class Broker(object):
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def subscribe_funds_to_account(self, amount):
+    def subscribe_funds_to_account(self, amount: float):
         raise NotImplementedError(
             "Should implement subscribe_funds_to_account()"
         )
 
     @abstractmethod
-    def withdraw_funds_from_account(self, amount):
+    def withdraw_funds_from_account(self, amount: float):
         raise NotImplementedError(
             "Should implement withdraw_funds_from_account()"
         )
 
     @abstractmethod
-    def get_account_cash_balance(self, currency=None):
+    def get_account_cash_balance(self, currency: str|None=None) -> float:
         raise NotImplementedError(
             "Should implement get_account_cash_balance()"
         )
 
     @abstractmethod
-    def get_account_total_equity(self):
+    def get_account_total_equity(self) -> dict[str, float]:
         raise NotImplementedError(
             "Should implement get_account_total_equity()"
         )
 
     @abstractmethod
-    def create_portfolio(self, portfolio_id, name):
+    def create_portfolio(self, portfolio_id: str, name: str):
         raise NotImplementedError(
             "Should implement create_portfolio()"
         )
@@ -65,37 +66,37 @@ class Broker(object):
         )
 
     @abstractmethod
-    def subscribe_funds_to_portfolio(self, portfolio_id, amount):
+    def subscribe_funds_to_portfolio(self, portfolio_id: str, amount: float):
         raise NotImplementedError(
             "Should implement subscribe_funds_to_portfolio()"
         )
 
     @abstractmethod
-    def withdraw_funds_from_portfolio(self, portfolio_id, amount):
+    def withdraw_funds_from_portfolio(self, portfolio_id: str, amount: float):
         raise NotImplementedError(
             "Should implement withdraw_funds_from_portfolio()"
         )
 
     @abstractmethod
-    def get_portfolio_cash_balance(self, portfolio_id):
+    def get_portfolio_cash_balance(self, portfolio_id: str):
         raise NotImplementedError(
             "Should implement get_portfolio_cash_balance()"
         )
 
     @abstractmethod
-    def get_portfolio_total_equity(self, portfolio_id):
+    def get_portfolio_total_equity(self, portfolio_id: str):
         raise NotImplementedError(
             "Should implement get_portfolio_total_equity()"
         )
 
     @abstractmethod
-    def get_portfolio_as_dict(self, portfolio_id):
+    def get_portfolio_as_dict(self, portfolio_id: str):
         raise NotImplementedError(
             "Should implement get_portfolio_as_dict()"
         )
 
     @abstractmethod
-    def submit_order(self, portfolio_id, order):
+    def submit_order(self, portfolio_id: str, order: Order):
         raise NotImplementedError(
             "Should implement submit_order()"
         )

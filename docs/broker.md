@@ -71,18 +71,18 @@ Abstract interface that both simulated and (future) live brokers implement. This
 
 | Method | Signature | Purpose |
 |---|---|---|
-| `subscribe_funds_to_account` | `(amount)` | Credit cash to the master account |
-| `withdraw_funds_from_account` | `(amount)` | Debit cash from the master account |
-| `get_account_cash_balance` | `(currency=None)` | Full balance dict, or scalar for one currency |
-| `get_account_total_equity` | `()` | Total equity across all portfolios |
-| `create_portfolio` | `(portfolio_id, name)` | Create a named sub-portfolio |
+| `subscribe_funds_to_account` | `(amount: float)` | Credit cash to the master account |
+| `withdraw_funds_from_account` | `(amount: float)` | Debit cash from the master account |
+| `get_account_cash_balance` | `(currency: str\|None=None) -> float` | Full balance dict, or scalar for one currency |
+| `get_account_total_equity` | `() -> dict[str, float]` | Total equity across all portfolios |
+| `create_portfolio` | `(portfolio_id: str, name: str)` | Create a named sub-portfolio |
 | `list_all_portfolios` | `()` | Sorted list of all Portfolio instances |
-| `subscribe_funds_to_portfolio` | `(portfolio_id, amount)` | Move cash from master → portfolio |
-| `withdraw_funds_from_portfolio` | `(portfolio_id, amount)` | Move cash from portfolio → master |
-| `get_portfolio_cash_balance` | `(portfolio_id)` | Cash balance of one portfolio |
-| `get_portfolio_total_equity` | `(portfolio_id)` | Total equity of one portfolio |
-| `get_portfolio_as_dict` | `(portfolio_id)` | Holdings as a nested dict |
-| `submit_order` | `(portfolio_id, order)` | Queue an order for execution |
+| `subscribe_funds_to_portfolio` | `(portfolio_id: str, amount: float)` | Move cash from master → portfolio |
+| `withdraw_funds_from_portfolio` | `(portfolio_id: str, amount: float)` | Move cash from portfolio → master |
+| `get_portfolio_cash_balance` | `(portfolio_id: str)` | Cash balance of one portfolio |
+| `get_portfolio_total_equity` | `(portfolio_id: str)` | Total equity of one portfolio |
+| `get_portfolio_as_dict` | `(portfolio_id: str)` | Holdings as a nested dict |
+| `submit_order` | `(portfolio_id: str, order: Order)` | Queue an order for execution |
 
 ---
 
@@ -96,13 +96,13 @@ The only concrete `Broker` implementation in the current codebase. Simulates a m
 
 ```python
 SimulatedBroker(
-    start_dt,
-    exchange,
-    data_handler,
-    account_id=None,
-    base_currency='USD',
-    initial_funds=0.0,
-    fee_model=ZeroFeeModel(),
+    start_dt: pd.Timestamp,
+    exchange: Exchange,
+    data_handler: BacktestDataHandler,
+    account_id: str|None=None,
+    base_currency: str="USD",
+    initial_funds: float=0.0,
+    fee_model: FeeModel=ZeroFeeModel(),
     slippage_model=None,          # TODO: not yet implemented
     market_impact_model=None      # TODO: not yet implemented
 )
@@ -222,22 +222,22 @@ _execute_order(dt, portfolio_id, order)
 Abstract base class for all transaction cost models.
 
 ```python
-class FeeModel:
+class FeeModel(object):
     @abstractmethod
-    def _calc_commission(self, asset, quantity, consideration, broker=None) -> float: ...
+    def _calc_commission(self, asset, quantity, consideration, broker=None): ...
 
     @abstractmethod
-    def _calc_tax(self, asset, quantity, consideration, broker=None) -> float: ...
+    def _calc_tax(self, asset, quantity, consideration, broker=None): ...
 
     @abstractmethod
-    def calc_total_cost(self, asset, quantity, consideration, broker=None) -> float: ...
+    def calc_total_cost(self, asset, quantity, consideration, broker=None): ...
 ```
 
 **Parameters shared by all fee model methods:**
 
 | Parameter | Type | Description |
 |---|---|---|
-| `asset` | `str` | Asset symbol string |
+| `asset` | `str` or `Asset` | Asset symbol string or `Asset` instance |
 | `quantity` | `int` | Quantity of assets traded |
 | `consideration` | `float` | `price × quantity` (total notional) |
 | `broker` | `Broker` | Optional reference to the broker, for advanced models |
@@ -265,7 +265,7 @@ Suitable for cost-free backtests or as a baseline when comparing strategy perfor
 Calculates commission and stamp duty as a fixed percentage of the absolute consideration.
 
 ```python
-PercentFeeModel(commission_pct=0.0, tax_pct=0.0)
+PercentFeeModel(commission_pct: float=0.0, tax_pct: float=0.0)
 ```
 
 #### Parameters
@@ -308,12 +308,12 @@ Immutable value object representing a single trade execution. Created by `Simula
 
 ```python
 Transaction(
-    asset,           # str   — asset symbol
-    quantity,        # int   — positive = buy, negative = sell
-    dt,              # pd.Timestamp
-    price,           # float — execution price
-    order_id,        # int   — unique identifier from the originating Order
-    commission=0.0   # float — total commission charged
+    asset: str,                # asset symbol
+    quantity: int,             # positive = buy, negative = sell
+    dt: pd.Timestamp,
+    price: float,              # execution price
+    order_id: str|None=None,   # unique identifier from the originating Order
+    commission: float=0.0      # total commission charged
 )
 ```
 
@@ -350,7 +350,14 @@ An immutable audit-trail record representing one change to portfolio cash.
 ### Constructor
 
 ```python
-PortfolioEvent(dt, type, description, debit, credit, balance)
+PortfolioEvent(
+    dt: pd.Timestamp,
+    type: str,
+    description: str,
+    debit: float,
+    credit: float,
+    balance: float
+)
 ```
 
 | Field | Type | Description |
@@ -397,15 +404,15 @@ Creates a new `Position` from the first `Transaction` for an asset.
 
 ```python
 Position(
-    asset,
-    current_price,
-    current_dt,
-    buy_quantity,
-    sell_quantity,
-    avg_bought,
-    avg_sold,
-    buy_commission,
-    sell_commission
+    asset: str,
+    current_price: float,
+    current_dt: pd.Timestamp,
+    buy_quantity: int=0,
+    sell_quantity: int=0,
+    avg_bought: float=0.0,
+    avg_sold: float=0.0,
+    buy_commission: float=0.0,
+    sell_commission: float=0.0
 )
 ```
 
@@ -517,11 +524,11 @@ Combines a cash balance, a `PositionHandler`, and a `PortfolioEvent` history int
 
 ```python
 Portfolio(
-    start_dt,
-    starting_cash=0.0,
-    currency='USD',
-    portfolio_id=None,
-    name=None
+    start_dt: pd.Timestamp,
+    starting_cash: float=0.0,
+    currency: str='USD',
+    portfolio_id: str|None=None,
+    name: str|None=None
 )
 ```
 

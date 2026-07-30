@@ -1,3 +1,4 @@
+from qstrader.broker.broker import Broker
 from qstrader.broker.fee_model.fee_model import FeeModel
 
 
@@ -8,7 +9,7 @@ class ZeroFeeModel(FeeModel):
     brokerages within QSTrader.
     """
 
-    def _calc_commission(self, asset, quantity, consideration, broker=None):
+    def _calc_commission(self, asset, quantity, consideration, broker: Broker|None=None) -> float:
         """
         Returns zero commission.
 
@@ -31,7 +32,7 @@ class ZeroFeeModel(FeeModel):
         """
         return 0.0
 
-    def _calc_tax(self, asset, quantity, consideration, broker=None):
+    def _calc_tax(self, asset, quantity, consideration, broker: Broker|None=None) -> float:
         """
         Returns zero tax.
 
@@ -54,7 +55,7 @@ class ZeroFeeModel(FeeModel):
         """
         return 0.0
 
-    def calc_total_cost(self, asset, quantity, consideration, broker=None):
+    def calc_total_cost(self, asset, quantity, consideration, broker: Broker|None=None) -> float:
         """
         Calculate the total of any commission and/or tax
         for the trade of size 'consideration'.
