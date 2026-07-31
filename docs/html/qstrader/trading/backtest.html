@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>qstrader.trading.backtest API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>qstrader.trading.backtest</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="qstrader.trading.backtest.BacktestTradingSession"><code class="flex name class">
+<span>class <span class="ident">BacktestTradingSession</span></span>
+<span>(</span><span>start_dt: pandas.Timestamp,<br>end_dt: pandas.Timestamp,<br>universe: <a title="qstrader.asset.universe.universe.Universe" href="../asset/universe/universe.html#qstrader.asset.universe.universe.Universe">Universe</a>,<br>alpha_model: <a title="qstrader.alpha_model.alpha_model.AlphaModel" href="../alpha_model/alpha_model.html#qstrader.alpha_model.alpha_model.AlphaModel">AlphaModel</a>,<br>risk_model: <a title="qstrader.risk_model.risk_model.RiskModel" href="../risk_model/risk_model.html#qstrader.risk_model.risk_model.RiskModel">RiskModel</a> | None = None,<br>signals: <a title="qstrader.signals.signals_collection.SignalsCollection" href="../signals/signals_collection.html#qstrader.signals.signals_collection.SignalsCollection">SignalsCollection</a> | None = None,<br>initial_cash: float = 1000000.0,<br>rebalance: str = 'weekly',<br>account_name: str = 'Backtest Simulated Broker Account',<br>portfolio_id: str = '000001',<br>portfolio_name: str = 'Backtest Simulated Broker Portfolio',<br>long_only: bool = False,<br>fee_model: <a title="qstrader.broker.fee_model.fee_model.FeeModel" href="../broker/fee_model/fee_model.html#qstrader.broker.fee_model.fee_model.FeeModel">FeeModel</a> = &lt;qstrader.broker.fee_model.zero_fee_model.ZeroFeeModel object&gt;,<br>burn_in_dt: pandas.Timestamp | None = None,<br>data_handler: <a title="qstrader.data.backtest_data_handler.BacktestDataHandler" href="../data/backtest_data_handler.html#qstrader.data.backtest_data_handler.BacktestDataHandler">BacktestDataHandler</a> | None = None,<br>**kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BacktestTradingSession(TradingSession):
+    &#34;&#34;&#34;
+    Encaspulates a full trading simulation backtest with externally
+    provided instances for each module.
+
+    Utilises sensible defaults to allow straightforward backtesting of
+    less complex trading strategies.
+
+    Parameters
+    ----------
+    start_dt : `pd.Timestamp`
+        The starting datetime (UTC) of the backtest.
+    end_dt : `pd.Timestamp`
+        The ending datetime (UTC) of the backtest.
+    universe : `Universe`
+        The Asset Universe to utilise for the backtest.
+    alpha_model : `AlphaModel`
+        The signal/forecast alpha model for the quant trading strategy.
+    risk_model : `RiskModel`
+        The optional risk model for the quant trading strategy.
+    signals : `SignalsCollection`, optional
+        An optional collection of signals used in the trading models.
+    initial_cash : `float`, optional
+        The initial account equity (defaults to $1MM)
+    rebalance : `str`, optional
+        The rebalance frequency of the backtest, &#39;daily&#39;, &#39;weekly&#39;, &#39;end_of_month&#39;, and &#39;buy_and_hold&#39;; defaulting to &#39;weekly&#39;.
+    account_name : `str`, optional
+        The name of the simulated broker account.
+    portfolio_id : `str`, optional
+        The ID of the portfolio being used for the backtest.
+    portfolio_name : `str`, optional
+        The name of the portfolio being used for the backtest.
+    long_only : `Boolean`, optional
+        Whether to invoke the long only order sizer or allow
+        long/short leveraged portfolios. Defaults to long/short leveraged.
+    fee_model : `FeeModel` class instance, optional
+        The optional FeeModel derived subclass to use for transaction cost estimates.
+    burn_in_dt : `pd.Timestamp`, optional
+        The optional date provided to begin tracking strategy statistics,
+        which is used for strategies requiring a period of data &#39;burn in&#39;
+    &#34;&#34;&#34;
+
+    def __init__(
+        self,
+        start_dt: pd.Timestamp,
+        end_dt: pd.Timestamp,
+        universe: Universe,
+        alpha_model: AlphaModel,
+        risk_model: RiskModel|None= None,
+        signals: SignalsCollection|None= None,
+        initial_cash: float=1e6,
+        rebalance: str=&#39;weekly&#39;,
+        account_name: str=DEFAULT_ACCOUNT_NAME,
+        portfolio_id: str=DEFAULT_PORTFOLIO_ID,
+        portfolio_name: str=DEFAULT_PORTFOLIO_NAME,
+        long_only: bool=False,
+        fee_model: FeeModel=ZeroFeeModel(),
+        burn_in_dt: pd.Timestamp|None=None,
+        data_handler: BacktestDataHandler|None=None,
+        **kwargs
+    ):
+        self.start_dt = start_dt
+        self.end_dt = end_dt
+        self.universe = universe
+        self.alpha_model = alpha_model
+        self.risk_model = risk_model
+        self.signals = signals
+        self.initial_cash = initial_cash
+        self.rebalance = rebalance
+        self.account_name = account_name
+        self.portfolio_id = portfolio_id
+        self.portfolio_name = portfolio_name
+        self.long_only = long_only
+        self.fee_model = fee_model
+        self.burn_in_dt = burn_in_dt
+
+        self.exchange = self._create_exchange()
+        self.data_handler = self._create_data_handler(data_handler)
+        self.broker = self._create_broker()
+        self.sim_engine = self._create_simulation_engine()
+
+        if rebalance == &#39;weekly&#39;:
+            if &#39;rebalance_weekday&#39; in kwargs:
+                self.rebalance_weekday = kwargs[&#39;rebalance_weekday&#39;]
+            else:
+                raise ValueError(
+                    &#34;Rebalance frequency was set to &#39;weekly&#39; but no specific &#34;
+                    &#34;weekday was provided. Try adding the &#39;rebalance_weekday&#39; &#34;
+                    &#34;keyword argument to the instantiation of &#34;
+                    &#34;BacktestTradingSession, e.g. with &#39;WED&#39;.&#34;
+                )
+        self.rebalance_schedule = self._create_rebalance_event_times()
+
+        self.qts = self._create_quant_trading_system(**kwargs)
+        self.equity_curve = []
+        self.target_allocations = []
+
+    def _is_rebalance_event(self, dt: pd.Timestamp) -&gt; bool:
+        &#34;&#34;&#34;
+        Checks if the provided timestamp is part of the rebalance
+        schedule of the backtest.
+
+        Parameters
+        ----------
+        dt : `pd.Timestamp`
+            The timestamp to check the rebalance schedule for.
+
+        Returns
+        -------
+        `bool`
+            Whether the timestamp is part of the rebalance schedule.
+        &#34;&#34;&#34;
+        return dt in self.rebalance_schedule
+
+    def _create_exchange(self) -&gt; SimulatedExchange:
+        &#34;&#34;&#34;
+        Generates a simulated exchange instance used for
+        market hours and holiday calendar checks.
+
+        Returns
+        -------
+        `SimulatedExchange`
+            The simulated exchange instance.
+        &#34;&#34;&#34;
+        return SimulatedExchange(self.start_dt)
+
+    def _create_data_handler(self, data_handler: BacktestDataHandler) -&gt; BacktestDataHandler:
+        &#34;&#34;&#34;
+        Creates a DataHandler instance to load the asset pricing data
+        used within the backtest.
+
+        TODO: Currently defaults to CSV data sources of daily bar data in
+        the YahooFinance format.
+
+        Parameters
+        ----------
+        `BacktestDataHandler` or None
+            The (potential) backtesting data handler instance.
+
+        Returns
+        -------
+        `BacktestDataHandler`
+            The backtesting data handler instance.
+        &#34;&#34;&#34;
+        if data_handler is not None:
+            return data_handler
+
+        try:
+            os.environ[&#39;QSTRADER_CSV_DATA_DIR&#39;]
+        except KeyError:
+            if settings.PRINT_EVENTS:
+                print(
+                    &#34;The QSTRADER_CSV_DATA_DIR environment variable has not been set. &#34;
+                    &#34;This means that QSTrader will fall back to finding data within the &#34;
+                    &#34;current directory where the backtest has been executed. However &#34;
+                    &#34;it is strongly recommended that a QSTRADER_CSV_DATA_DIR environment &#34;
+                    &#34;variable is set for future backtests.&#34;
+                )
+            csv_dir = &#39;.&#39;
+        else:
+            csv_dir = os.environ.get(&#39;QSTRADER_CSV_DATA_DIR&#39;)
+
+        # TODO: Only equities are supported by QSTrader for now.
+        data_source = CSVDailyBarDataSource(csv_dir, Equity)
+
+        data_handler = BacktestDataHandler(
+            self.universe, data_sources=[data_source]
+        )
+        return data_handler
+
+    def _create_broker(self) -&gt; SimulatedBroker:
+        &#34;&#34;&#34;
+        Create the SimulatedBroker with an appropriate default
+        portfolio identifiers.
+
+        Returns
+        -------
+        `SimulatedBroker`
+            The simulated broker instance.
+        &#34;&#34;&#34;
+        broker = SimulatedBroker(
+            self.start_dt,
+            self.exchange,
+            self.data_handler,
+            account_id=self.account_name,
+            initial_funds=self.initial_cash,
+            fee_model=self.fee_model
+        )
+        broker.create_portfolio(self.portfolio_id, self.portfolio_name)
+        broker.subscribe_funds_to_portfolio(self.portfolio_id, self.initial_cash)
+        return broker
+
+    def _create_simulation_engine(self) -&gt; SimulationEngine:
+        &#34;&#34;&#34;
+        Create a simulation engine instance to generate the events
+        used for the quant trading algorithm to act upon.
+
+        TODO: Currently hardcoded to daily events
+
+        Returns
+        -------
+        `SimulationEngine`
+            The simulation engine generating simulation timestamps.
+        &#34;&#34;&#34;
+        return DailyBusinessDaySimulationEngine(
+            self.start_dt, self.end_dt, pre_market=False, post_market=False
+        )
+
+    def _create_rebalance_event_times(self) -&gt; list[pd.Timestamp]:
+        &#34;&#34;&#34;
+        Creates the list of rebalance timestamps used to determine when
+        to execute the quant trading strategy throughout the backtest.
+
+        Returns
+        -------
+        `List[pd.Timestamp]`
+            The list of rebalance timestamps.
+        &#34;&#34;&#34;
+        if self.rebalance == &#39;buy_and_hold&#39;:
+            rebalancer = BuyAndHoldRebalance(self.start_dt)
+        elif self.rebalance == &#39;daily&#39;:
+            rebalancer = DailyRebalance(
+                self.start_dt, self.end_dt
+            )
+        elif self.rebalance == &#39;weekly&#39;:
+            rebalancer = WeeklyRebalance(
+                self.start_dt, self.end_dt, self.rebalance_weekday
+            )
+        elif self.rebalance == &#39;end_of_month&#39;:
+            rebalancer = EndOfMonthRebalance(self.start_dt, self.end_dt)
+        else:
+            raise ValueError(
+                &#39;Unknown rebalance frequency &#34;%s&#34; provided.&#39; % self.rebalance
+            )
+        return rebalancer.rebalances
+
+    def _create_quant_trading_system(self, **kwargs) -&gt; QuantTradingSystem:
+        &#34;&#34;&#34;
+        Creates the quantitative trading system with the provided
+        alpha model.
+
+        TODO: All portfolio construction/optimisation is hardcoded for
+        sensible defaults.
+
+        Returns
+        -------
+        `QuantTradingSystem`
+            The quantitative trading system.
+        &#34;&#34;&#34;
+        if self.long_only:
+            if &#39;cash_buffer_percentage&#39; not in kwargs:
+                raise ValueError(
+                    &#39;Long only portfolio specified for Quant Trading System &#39;
+                    &#39;but no cash buffer percentage supplied.&#39;
+                )
+            cash_buffer_percentage = kwargs[&#39;cash_buffer_percentage&#39;]
+
+            qts = QuantTradingSystem(
+                self.universe,
+                self.broker,
+                self.portfolio_id,
+                self.data_handler,
+                self.alpha_model,
+                self.risk_model,
+                long_only=self.long_only,
+                cash_buffer_percentage=cash_buffer_percentage,
+                submit_orders=True
+            )
+        else:
+            if &#39;gross_leverage&#39; not in kwargs:
+                raise ValueError(
+                    &#39;Long/short leveraged portfolio specified for Quant &#39;
+                    &#39;Trading System but no gross leverage percentage supplied.&#39;
+                )
+            gross_leverage = kwargs[&#39;gross_leverage&#39;]
+
+            qts = QuantTradingSystem(
+                self.universe,
+                self.broker,
+                self.portfolio_id,
+                self.data_handler,
+                self.alpha_model,
+                self.risk_model,
+                long_only=self.long_only,
+                gross_leverage=gross_leverage,
+                submit_orders=True
+            )
+
+        return qts
+
+    def _update_equity_curve(self, dt: pd.Timestamp) -&gt; None:
+        &#34;&#34;&#34;
+        Update the equity curve values.
+
+        Parameters
+        ----------
+        dt : `pd.Timestamp`
+            The time at which the total account equity is obtained.
+        &#34;&#34;&#34;
+        self.equity_curve.append(
+            (dt, self.broker.get_account_total_equity()[&#34;master&#34;])
+        )
+
+    def output_holdings(self) -&gt; None:
+        &#34;&#34;&#34;
+        Output the portfolio holdings to the console.
+        &#34;&#34;&#34;
+        self.broker.portfolios[self.portfolio_id].holdings_to_console()
+
+    def get_equity_curve(self) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        Returns the equity curve as a Pandas DataFrame.
+
+        Returns
+        -------
+        `pd.DataFrame`
+            The datetime-indexed equity curve of the strategy.
+        &#34;&#34;&#34;
+        equity_df = pd.DataFrame(
+            self.equity_curve, columns=[&#39;Date&#39;, &#39;Equity&#39;]
+        ).set_index(&#39;Date&#39;)
+        equity_df.index = equity_df.index.date
+        return equity_df
+
+    def get_target_allocations(self) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        Returns the target allocations as a Pandas DataFrame
+        utilising the same index as the equity curve with
+        forward-filled dates.
+
+        Returns
+        -------
+        `pd.DataFrame`
+            The datetime-indexed target allocations of the strategy.
+        &#34;&#34;&#34;
+        equity_curve = self.get_equity_curve()
+        alloc_df = pd.DataFrame(self.target_allocations).set_index(&#39;Date&#39;)
+        alloc_df.index = alloc_df.index.date
+        alloc_df = alloc_df.reindex(index=equity_curve.index, method=&#39;ffill&#39;)
+        if self.burn_in_dt is not None:
+            alloc_df = alloc_df[self.burn_in_dt.date():]
+        return alloc_df
+
+    def run(self, results: bool=False) -&gt; None:
+        &#34;&#34;&#34;
+        Execute the simulation engine by iterating over all
+        simulation events, rebalancing the quant trading
+        system at the appropriate schedule.
+
+        Parameters
+        ----------
+        results : `Boolean`, optional
+            Whether to output the current portfolio holdings
+        &#34;&#34;&#34;
+        if settings.PRINT_EVENTS:
+            print(&#34;Beginning backtest simulation...&#34;)
+
+        stats = {&#39;target_allocations&#39;: []}
+
+        for event in self.sim_engine:
+            # Output the system event and timestamp
+            dt = event.ts
+            if settings.PRINT_EVENTS:
+                print(&#34;(%s) - %s&#34; % (event.ts, event.event_type))
+
+            # Update the simulated broker
+            self.broker.update(dt)
+
+            # Update any signals on a daily basis
+            if self.signals is not None and event.event_type == &#34;market_close&#34;:
+                self.signals.update(dt)
+
+            # If we have hit a rebalance time then carry
+            # out a full run of the quant trading system
+            if self.burn_in_dt is not None:
+                if dt &gt;= self.burn_in_dt:
+                    if self._is_rebalance_event(dt):
+                        if settings.PRINT_EVENTS:
+                            print(
+                                &#34;(%s) - trading logic &#34;
+                                &#34;and rebalance&#34; % event.ts
+                            )
+                        self.qts(dt, stats=stats)
+            else:
+                if self._is_rebalance_event(dt):
+                    if settings.PRINT_EVENTS:
+                        print(
+                            &#34;(%s) - trading logic &#34;
+                            &#34;and rebalance&#34; % event.ts
+                        )
+                    self.qts(dt, stats=stats)
+
+            # Out of market hours we want a daily
+            # performance update, but only if we
+            # are past the &#39;burn in&#39; period
+            if event.event_type == &#34;market_close&#34;:
+                if self.burn_in_dt is not None:
+                    if dt &gt;= self.burn_in_dt:
+                        self._update_equity_curve(dt)
+                else:
+                    self._update_equity_curve(dt)
+
+        self.target_allocations = stats[&#39;target_allocations&#39;]
+
+        # At the end of the simulation output the
+        # portfolio holdings if desired
+        if results:
+            self.output_holdings()
+
+        if settings.PRINT_EVENTS:
+            print(&#34;Ending backtest simulation.&#34;)</code></pre>
+</details>
+<div class="desc"><p>Encaspulates a full trading simulation backtest with externally
+provided instances for each module.</p>
+<p>Utilises sensible defaults to allow straightforward backtesting of
+less complex trading strategies.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>start_dt</code></strong> :&ensp;<code>pd.Timestamp</code></dt>
+<dd>The starting datetime (UTC) of the backtest.</dd>
+<dt><strong><code>end_dt</code></strong> :&ensp;<code>pd.Timestamp</code></dt>
+<dd>The ending datetime (UTC) of the backtest.</dd>
+<dt><strong><code>universe</code></strong> :&ensp;<code>Universe</code></dt>
+<dd>The Asset Universe to utilise for the backtest.</dd>
+<dt><strong><code>alpha_model</code></strong> :&ensp;<code>AlphaModel</code></dt>
+<dd>The signal/forecast alpha model for the quant trading strategy.</dd>
+<dt><strong><code>risk_model</code></strong> :&ensp;<code>RiskModel</code></dt>
+<dd>The optional risk model for the quant trading strategy.</dd>
+<dt><strong><code>signals</code></strong> :&ensp;<code>SignalsCollection</code>, optional</dt>
+<dd>An optional collection of signals used in the trading models.</dd>
+<dt><strong><code>initial_cash</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>The initial account equity (defaults to $1MM)</dd>
+<dt><strong><code>rebalance</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The rebalance frequency of the backtest, 'daily', 'weekly', 'end_of_month', and 'buy_and_hold'; defaulting to 'weekly'.</dd>
+<dt><strong><code>account_name</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The name of the simulated broker account.</dd>
+<dt><strong><code>portfolio_id</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The ID of the portfolio being used for the backtest.</dd>
+<dt><strong><code>portfolio_name</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The name of the portfolio being used for the backtest.</dd>
+<dt><strong><code>long_only</code></strong> :&ensp;<code>Boolean</code>, optional</dt>
+<dd>Whether to invoke the long only order sizer or allow
+long/short leveraged portfolios. Defaults to long/short leveraged.</dd>
+<dt><strong><code>fee_model</code></strong> :&ensp;<code><code>FeeModel&lt;/code&gt; class instance</code>, optional</dt>
+<dd>The optional FeeModel derived subclass to use for transaction cost estimates.</dd>
+<dt><strong><code>burn_in_dt</code></strong> :&ensp;<code>pd.Timestamp</code>, optional</dt>
+<dd>The optional date provided to begin tracking strategy statistics,
+which is used for strategies requiring a period of data 'burn in'</dd>
+</dl></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="qstrader.trading.trading_session.TradingSession" href="trading_session.html#qstrader.trading.trading_session.TradingSession">TradingSession</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="qstrader.trading.backtest.BacktestTradingSession.get_equity_curve"><code class="name flex">
+<span>def <span class="ident">get_equity_curve</span></span>(<span>self) ‑> pandas.DataFrame</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_equity_curve(self) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    Returns the equity curve as a Pandas DataFrame.
+
+    Returns
+    -------
+    `pd.DataFrame`
+        The datetime-indexed equity curve of the strategy.
+    &#34;&#34;&#34;
+    equity_df = pd.DataFrame(
+        self.equity_curve, columns=[&#39;Date&#39;, &#39;Equity&#39;]
+    ).set_index(&#39;Date&#39;)
+    equity_df.index = equity_df.index.date
+    return equity_df</code></pre>
+</details>
+<div class="desc"><p>Returns the equity curve as a Pandas DataFrame.</p>
+<h2 id="returns">Returns</h2>
+<p><code>pd.DataFrame</code>
+The datetime-indexed equity curve of the strategy.</p></div>
+</dd>
+<dt id="qstrader.trading.backtest.BacktestTradingSession.get_target_allocations"><code class="name flex">
+<span>def <span class="ident">get_target_allocations</span></span>(<span>self) ‑> pandas.DataFrame</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_target_allocations(self) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    Returns the target allocations as a Pandas DataFrame
+    utilising the same index as the equity curve with
+    forward-filled dates.
+
+    Returns
+    -------
+    `pd.DataFrame`
+        The datetime-indexed target allocations of the strategy.
+    &#34;&#34;&#34;
+    equity_curve = self.get_equity_curve()
+    alloc_df = pd.DataFrame(self.target_allocations).set_index(&#39;Date&#39;)
+    alloc_df.index = alloc_df.index.date
+    alloc_df = alloc_df.reindex(index=equity_curve.index, method=&#39;ffill&#39;)
+    if self.burn_in_dt is not None:
+        alloc_df = alloc_df[self.burn_in_dt.date():]
+    return alloc_df</code></pre>
+</details>
+<div class="desc"><p>Returns the target allocations as a Pandas DataFrame
+utilising the same index as the equity curve with
+forward-filled dates.</p>
+<h2 id="returns">Returns</h2>
+<p><code>pd.DataFrame</code>
+The datetime-indexed target allocations of the strategy.</p></div>
+</dd>
+<dt id="qstrader.trading.backtest.BacktestTradingSession.output_holdings"><code class="name flex">
+<span>def <span class="ident">output_holdings</span></span>(<span>self) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def output_holdings(self) -&gt; None:
+    &#34;&#34;&#34;
+    Output the portfolio holdings to the console.
+    &#34;&#34;&#34;
+    self.broker.portfolios[self.portfolio_id].holdings_to_console()</code></pre>
+</details>
+<div class="desc"><p>Output the portfolio holdings to the console.</p></div>
+</dd>
+<dt id="qstrader.trading.backtest.BacktestTradingSession.run"><code class="name flex">
+<span>def <span class="ident">run</span></span>(<span>self, results: bool = False) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run(self, results: bool=False) -&gt; None:
+    &#34;&#34;&#34;
+    Execute the simulation engine by iterating over all
+    simulation events, rebalancing the quant trading
+    system at the appropriate schedule.
+
+    Parameters
+    ----------
+    results : `Boolean`, optional
+        Whether to output the current portfolio holdings
+    &#34;&#34;&#34;
+    if settings.PRINT_EVENTS:
+        print(&#34;Beginning backtest simulation...&#34;)
+
+    stats = {&#39;target_allocations&#39;: []}
+
+    for event in self.sim_engine:
+        # Output the system event and timestamp
+        dt = event.ts
+        if settings.PRINT_EVENTS:
+            print(&#34;(%s) - %s&#34; % (event.ts, event.event_type))
+
+        # Update the simulated broker
+        self.broker.update(dt)
+
+        # Update any signals on a daily basis
+        if self.signals is not None and event.event_type == &#34;market_close&#34;:
+            self.signals.update(dt)
+
+        # If we have hit a rebalance time then carry
+        # out a full run of the quant trading system
+        if self.burn_in_dt is not None:
+            if dt &gt;= self.burn_in_dt:
+                if self._is_rebalance_event(dt):
+                    if settings.PRINT_EVENTS:
+                        print(
+                            &#34;(%s) - trading logic &#34;
+                            &#34;and rebalance&#34; % event.ts
+                        )
+                    self.qts(dt, stats=stats)
+        else:
+            if self._is_rebalance_event(dt):
+                if settings.PRINT_EVENTS:
+                    print(
+                        &#34;(%s) - trading logic &#34;
+                        &#34;and rebalance&#34; % event.ts
+                    )
+                self.qts(dt, stats=stats)
+
+        # Out of market hours we want a daily
+        # performance update, but only if we
+        # are past the &#39;burn in&#39; period
+        if event.event_type == &#34;market_close&#34;:
+            if self.burn_in_dt is not None:
+                if dt &gt;= self.burn_in_dt:
+                    self._update_equity_curve(dt)
+            else:
+                self._update_equity_curve(dt)
+
+    self.target_allocations = stats[&#39;target_allocations&#39;]
+
+    # At the end of the simulation output the
+    # portfolio holdings if desired
+    if results:
+        self.output_holdings()
+
+    if settings.PRINT_EVENTS:
+        print(&#34;Ending backtest simulation.&#34;)</code></pre>
+</details>
+<div class="desc"><p>Execute the simulation engine by iterating over all
+simulation events, rebalancing the quant trading
+system at the appropriate schedule.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>results</code></strong> :&ensp;<code>Boolean</code>, optional</dt>
+<dd>Whether to output the current portfolio holdings</dd>
+</dl></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="qstrader.trading" href="index.html">qstrader.trading</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="qstrader.trading.backtest.BacktestTradingSession" href="#qstrader.trading.backtest.BacktestTradingSession">BacktestTradingSession</a></code></h4>
+<ul class="">
+<li><code><a title="qstrader.trading.backtest.BacktestTradingSession.get_equity_curve" href="#qstrader.trading.backtest.BacktestTradingSession.get_equity_curve">get_equity_curve</a></code></li>
+<li><code><a title="qstrader.trading.backtest.BacktestTradingSession.get_target_allocations" href="#qstrader.trading.backtest.BacktestTradingSession.get_target_allocations">get_target_allocations</a></code></li>
+<li><code><a title="qstrader.trading.backtest.BacktestTradingSession.output_holdings" href="#qstrader.trading.backtest.BacktestTradingSession.output_holdings">output_holdings</a></code></li>
+<li><code><a title="qstrader.trading.backtest.BacktestTradingSession.run" href="#qstrader.trading.backtest.BacktestTradingSession.run">run</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

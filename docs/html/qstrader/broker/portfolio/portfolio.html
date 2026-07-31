@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>qstrader.broker.portfolio.portfolio API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>qstrader.broker.portfolio.portfolio</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="qstrader.broker.portfolio.portfolio.Portfolio"><code class="flex name class">
+<span>class <span class="ident">Portfolio</span></span>
+<span>(</span><span>start_dt: datetime.datetime,<br>starting_cash: float = 0.0,<br>currency: str = 'USD',<br>portfolio_id: str | None = None,<br>name: str | None = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Portfolio(object):
+    &#34;&#34;&#34;
+    Represents a portfolio of assets. It contains a cash
+    account with the ability to subscribe and withdraw funds.
+    It also contains a list of positions in assets, encapsulated
+    by a PositionHandler instance.
+
+    Parameters
+    ----------
+    start_dt : datetime
+        Portfolio creation datetime.
+    starting_cash : float, optional
+        Starting cash of the portfolio. Defaults to 100,000 USD.
+    currency: str, optional
+        The portfolio denomination currency.
+    portfolio_id: str, optional
+        An identifier for the portfolio.
+    name: str, optional
+        The human-readable name of the portfolio.
+    &#34;&#34;&#34;
+
+    def __init__(
+        self,
+        start_dt: datetime.datetime,
+        starting_cash: float = 0.0,
+        currency: str = &#34;USD&#34;,
+        portfolio_id: str | None = None,
+        name: str | None = None
+    ):
+        &#34;&#34;&#34;
+        Initialise the Portfolio object with a PositionHandler,
+        an event history, along with cash balance. Make sure
+        the portfolio denomination currency is also set.
+        &#34;&#34;&#34;
+        self.start_dt = start_dt
+        self.current_dt = start_dt
+        self.starting_cash = starting_cash
+        self.currency = currency
+        self.portfolio_id = portfolio_id
+        self.name = name
+
+        self.pos_handler = PositionHandler()
+        self.history = []
+
+        self.logger = logging.getLogger(&#39;Portfolio&#39;)
+        self.logger.setLevel(logging.DEBUG)
+        self.logger.info(
+            &#39;(%s) Portfolio &#34;%s&#34; instance initialised&#39; % (
+                self.current_dt.strftime(settings.LOGGING[&#34;DATE_FORMAT&#34;]),
+                self.portfolio_id
+            )
+        )
+
+        self._initialise_portfolio_with_cash()
+
+    def _initialise_portfolio_with_cash(self) -&gt; None:
+        &#34;&#34;&#34;
+        Initialise the portfolio with a (default) currency Cash Asset
+        with quantity equal to &#39;starting_cash&#39;.
+        &#34;&#34;&#34;
+        self.cash = copy.copy(self.starting_cash)
+
+        if self.starting_cash &gt; 0.0:
+            self.history.append(
+                PortfolioEvent.create_subscription(
+                    self.current_dt, self.starting_cash, self.starting_cash
+                )
+            )
+
+        self.logger.info(
+            &#39;(%s) Funds subscribed to portfolio &#34;%s&#34; &#39;
+            &#39;- Credit: %0.2f, Balance: %0.2f&#39; % (
+                self.current_dt.strftime(settings.LOGGING[&#34;DATE_FORMAT&#34;]),
+                self.portfolio_id,
+                round(self.starting_cash, 2),
+                round(self.starting_cash, 2)
+            )
+        )
+
+    @property
+    def total_market_value(self) -&gt; float:
+        &#34;&#34;&#34;
+        Obtain the total market value of the portfolio excluding cash.
+        &#34;&#34;&#34;
+        return self.pos_handler.total_market_value()
+
+    @property
+    def total_equity(self) -&gt; float:
+        &#34;&#34;&#34;
+        Obtain the total market value of the portfolio including cash.
+        &#34;&#34;&#34;
+        return self.total_market_value + self.cash
+
+    @property
+    def total_unrealised_pnl(self) -&gt; float:
+        &#34;&#34;&#34;
+        Calculate the sum of all the positions&#39; unrealised P&amp;Ls.
+        &#34;&#34;&#34;
+        return self.pos_handler.total_unrealised_pnl()
+
+    @property
+    def total_realised_pnl(self) -&gt; float:
+        &#34;&#34;&#34;
+        Calculate the sum of all the positions&#39; realised P&amp;Ls.
+        &#34;&#34;&#34;
+        return self.pos_handler.total_realised_pnl()
+
+    @property
+    def total_pnl(self) -&gt; float:
+        &#34;&#34;&#34;
+        Calculate the sum of all the positions&#39; total P&amp;Ls.
+        &#34;&#34;&#34;
+        return self.pos_handler.total_pnl()
+
+    def subscribe_funds(self, dt: datetime.datetime, amount: float) -&gt; None:
+        &#34;&#34;&#34;
+        Credit funds to the portfolio.
+        &#34;&#34;&#34;
+        if dt &lt; self.current_dt:
+            raise ValueError(
+                &#39;Subscription datetime (%s) is earlier than &#39;
+                &#39;current portfolio datetime (%s). Cannot &#39;
+                &#39;subscribe funds.&#39; % (dt, self.current_dt)
+            )
+        self.current_dt = dt
+
+        if amount &lt; 0.0:
+            raise ValueError(
+                &#39;Cannot credit negative amount: &#39;
+                &#39;%s to the portfolio.&#39; % amount
+            )
+
+        self.cash += amount
+
+        self.history.append(
+            PortfolioEvent.create_subscription(self.current_dt, amount, self.cash)
+        )
+
+        self.logger.info(
+            &#39;(%s) Funds subscribed to portfolio &#34;%s&#34; &#39;
+            &#39;- Credit: %0.2f, Balance: %0.2f&#39; % (
+                self.current_dt.strftime(settings.LOGGING[&#34;DATE_FORMAT&#34;]),
+                self.portfolio_id, round(amount, 2),
+                round(self.cash, 2)
+            )
+        )
+
+    def withdraw_funds(self, dt: datetime.datetime, amount: float) -&gt; None:
+        &#34;&#34;&#34;
+        Withdraw funds from the portfolio if there is enough
+        cash to allow it.
+        &#34;&#34;&#34;
+        # Check that amount is positive and that there is
+        # enough in the portfolio to withdraw the funds
+        if dt &lt; self.current_dt:
+            raise ValueError(
+                &#39;Withdrawal datetime (%s) is earlier than &#39;
+                &#39;current portfolio datetime (%s). Cannot &#39;
+                &#39;withdraw funds.&#39; % (dt, self.current_dt)
+            )
+        self.current_dt = dt
+
+        if amount &lt; 0:
+            raise ValueError(
+                &#39;Cannot debit negative amount: &#39;
+                &#39;%0.2f from the portfolio.&#39; % amount
+            )
+
+        if amount &gt; self.cash:
+            raise ValueError(
+                &#39;Not enough cash in the portfolio to &#39;
+                &#39;withdraw. %s withdrawal request exceeds &#39;
+                &#39;current portfolio cash balance of %s.&#39; % (
+                    amount, self.cash
+                )
+            )
+
+        self.cash -= amount
+
+        self.history.append(
+            PortfolioEvent.create_withdrawal(self.current_dt, amount, self.cash)
+        )
+
+        self.logger.info(
+            &#39;(%s) Funds withdrawn from portfolio &#34;%s&#34; &#39;
+            &#39;- Debit: %0.2f, Balance: %0.2f&#39; % (
+                self.current_dt.strftime(settings.LOGGING[&#34;DATE_FORMAT&#34;]),
+                self.portfolio_id, round(amount, 2),
+                round(self.cash, 2)
+            )
+        )
+
+    def transact_asset(self, txn: Transaction) -&gt; None:
+        &#34;&#34;&#34;
+        Adjusts positions to account for a transaction.
+        &#34;&#34;&#34;
+        if txn.dt &lt; self.current_dt:
+            raise ValueError(
+                &#39;Transaction datetime (%s) is earlier than &#39;
+                &#39;current portfolio datetime (%s). Cannot &#39;
+                &#39;transact assets.&#39; % (txn.dt, self.current_dt)
+            )
+        self.current_dt = txn.dt
+
+        txn_share_cost = txn.price * txn.quantity
+        txn_total_cost = txn_share_cost + txn.commission
+
+        if txn_total_cost &gt; self.cash:
+            if settings.PRINT_EVENTS:
+                print(
+                    &#39;WARNING: Not enough cash in the portfolio to &#39;
+                    &#39;carry out transaction. Transaction cost of %s &#39;
+                    &#39;exceeds remaining cash of %s. Transaction &#39;
+                    &#39;will proceed with a negative cash balance.&#39; % (
+                        txn_total_cost, self.cash
+                    )
+                )
+
+        self.pos_handler.transact_position(txn)
+
+        self.cash -= txn_total_cost
+
+        # Form Portfolio history details
+        direction = &#34;LONG&#34; if txn.direction &gt; 0 else &#34;SHORT&#34;
+        description = &#34;%s %s %s %0.2f %s&#34; % (
+            direction, txn.quantity, txn.asset.upper(),
+            txn.price, datetime.datetime.strftime(txn.dt, &#34;%d/%m/%Y&#34;)
+        )
+        if direction == &#34;LONG&#34;:
+            pe = PortfolioEvent(
+                dt=txn.dt, type=&#39;asset_transaction&#39;,
+                description=description,
+                debit=round(txn_total_cost, 2), credit=0.0,
+                balance=round(self.cash, 2)
+            )
+            self.logger.info(
+                &#39;(%s) Asset &#34;%s&#34; transacted LONG in portfolio &#34;%s&#34; &#39;
+                &#39;- Debit: %0.2f, Balance: %0.2f&#39; % (
+                    txn.dt.strftime(settings.LOGGING[&#34;DATE_FORMAT&#34;]),
+                    txn.asset, self.portfolio_id,
+                    round(txn_total_cost, 2), round(self.cash, 2)
+                )
+            )
+        else:
+            pe = PortfolioEvent(
+                dt=txn.dt, type=&#39;asset_transaction&#39;,
+                description=description,
+                debit=0.0, credit=-1.0 * round(txn_total_cost, 2),
+                balance=round(self.cash, 2)
+            )
+            self.logger.info(
+                &#39;(%s) Asset &#34;%s&#34; transacted SHORT in portfolio &#34;%s&#34; &#39;
+                &#39;- Credit: %0.2f, Balance: %0.2f&#39; % (
+                    txn.dt.strftime(settings.LOGGING[&#34;DATE_FORMAT&#34;]),
+                    txn.asset, self.portfolio_id,
+                    -1.0 * round(txn_total_cost, 2), round(self.cash, 2)
+                )
+            )
+        self.history.append(pe)
+
+    def portfolio_to_dict(self):
+        &#34;&#34;&#34;
+        Output the portfolio holdings information as a dictionary
+        with Assets as keys and sub-dictionaries as values.
+        This excludes cash.
+
+        Returns
+        -------
+        `dict`
+            The portfolio holdings.
+        &#34;&#34;&#34;
+        holdings = {}
+        for asset, pos in self.pos_handler.positions.items():
+            holdings[asset] = {
+                &#34;quantity&#34;: pos.net_quantity,
+                &#34;market_value&#34;: pos.market_value,
+                &#34;unrealised_pnl&#34;: pos.unrealised_pnl,
+                &#34;realised_pnl&#34;: pos.realised_pnl,
+                &#34;total_pnl&#34;: pos.total_pnl
+            }
+        return holdings
+
+    def update_market_value_of_asset(
+        self, asset: str, current_price: float, current_dt: datetime.datetime
+    ) -&gt; None:
+        &#34;&#34;&#34;
+        Update the market value of the asset to the current
+        trade price and date.
+        &#34;&#34;&#34;
+        if asset not in self.pos_handler.positions:
+            return
+        else:
+            if current_price &lt; 0.0:
+                raise ValueError(
+                    &#39;Current trade price of %s is negative for &#39;
+                    &#39;asset %s. Cannot update position.&#39; % (
+                        current_price, asset
+                    )
+                )
+
+            if current_dt &lt; self.current_dt:
+                raise ValueError(
+                    &#39;Current trade date of %s is earlier than &#39;
+                    &#39;current date %s of asset %s. Cannot update &#39;
+                    &#39;position.&#39; % (
+                        current_dt, self.current_dt, asset
+                    )
+                )
+
+            self.pos_handler.positions[asset].update_current_price(
+                current_price, current_dt
+            )
+
+    def history_to_df(self) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;
+        Creates a Pandas DataFrame of the Portfolio history.
+        &#34;&#34;&#34;
+        records = [pe.to_dict() for pe in self.history]
+        return pd.DataFrame.from_records(
+            records, columns=[
+                &#34;date&#34;, &#34;type&#34;, &#34;description&#34;, &#34;debit&#34;, &#34;credit&#34;, &#34;balance&#34;
+            ]
+        ).set_index(keys=[&#34;date&#34;])</code></pre>
+</details>
+<div class="desc"><p>Represents a portfolio of assets. It contains a cash
+account with the ability to subscribe and withdraw funds.
+It also contains a list of positions in assets, encapsulated
+by a PositionHandler instance.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>start_dt</code></strong> :&ensp;<code>datetime</code></dt>
+<dd>Portfolio creation datetime.</dd>
+<dt><strong><code>starting_cash</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>Starting cash of the portfolio. Defaults to 100,000 USD.</dd>
+<dt><strong><code>currency</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The portfolio denomination currency.</dd>
+<dt><strong><code>portfolio_id</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>An identifier for the portfolio.</dd>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The human-readable name of the portfolio.</dd>
+</dl>
+<p>Initialise the Portfolio object with a PositionHandler,
+an event history, along with cash balance. Make sure
+the portfolio denomination currency is also set.</p></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="qstrader.broker.portfolio.portfolio.Portfolio.total_equity"><code class="name">prop <span class="ident">total_equity</span> : float</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def total_equity(self) -&gt; float:
+    &#34;&#34;&#34;
+    Obtain the total market value of the portfolio including cash.
+    &#34;&#34;&#34;
+    return self.total_market_value + self.cash</code></pre>
+</details>
+<div class="desc"><p>Obtain the total market value of the portfolio including cash.</p></div>
+</dd>
+<dt id="qstrader.broker.portfolio.portfolio.Portfolio.total_market_value"><code class="name">prop <span class="ident">total_market_value</span> : float</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def total_market_value(self) -&gt; float:
+    &#34;&#34;&#34;
+    Obtain the total market value of the portfolio excluding cash.
+    &#34;&#34;&#34;
+    return self.pos_handler.total_market_value()</code></pre>
+</details>
+<div class="desc"><p>Obtain the total market value of the portfolio excluding cash.</p></div>
+</dd>
+<dt id="qstrader.broker.portfolio.portfolio.Portfolio.total_pnl"><code class="name">prop <span class="ident">total_pnl</span> : float</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def total_pnl(self) -&gt; float:
+    &#34;&#34;&#34;
+    Calculate the sum of all the positions&#39; total P&amp;Ls.
+    &#34;&#34;&#34;
+    return self.pos_handler.total_pnl()</code></pre>
+</details>
+<div class="desc"><p>Calculate the sum of all the positions' total P&amp;Ls.</p></div>
+</dd>
+<dt id="qstrader.broker.portfolio.portfolio.Portfolio.total_realised_pnl"><code class="name">prop <span class="ident">total_realised_pnl</span> : float</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def total_realised_pnl(self) -&gt; float:
+    &#34;&#34;&#34;
+    Calculate the sum of all the positions&#39; realised P&amp;Ls.
+    &#34;&#34;&#34;
+    return self.pos_handler.total_realised_pnl()</code></pre>
+</details>
+<div class="desc"><p>Calculate the sum of all the positions' realised P&amp;Ls.</p></div>
+</dd>
+<dt id="qstrader.broker.portfolio.portfolio.Portfolio.total_unrealised_pnl"><code class="name">prop <span class="ident">total_unrealised_pnl</span> : float</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def total_unrealised_pnl(self) -&gt; float:
+    &#34;&#34;&#34;
+    Calculate the sum of all the positions&#39; unrealised P&amp;Ls.
+    &#34;&#34;&#34;
+    return self.pos_handler.total_unrealised_pnl()</code></pre>
+</details>
+<div class="desc"><p>Calculate the sum of all the positions' unrealised P&amp;Ls.</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="qstrader.broker.portfolio.portfolio.Portfolio.history_to_df"><code class="name flex">
+<span>def <span class="ident">history_to_df</span></span>(<span>self) ‑> pandas.DataFrame</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def history_to_df(self) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;
+    Creates a Pandas DataFrame of the Portfolio history.
+    &#34;&#34;&#34;
+    records = [pe.to_dict() for pe in self.history]
+    return pd.DataFrame.from_records(
+        records, columns=[
+            &#34;date&#34;, &#34;type&#34;, &#34;description&#34;, &#34;debit&#34;, &#34;credit&#34;, &#34;balance&#34;
+        ]
+    ).set_index(keys=[&#34;date&#34;])</code></pre>
+</details>
+<div class="desc"><p>Creates a Pandas DataFrame of the Portfolio history.</p></div>
+</dd>
+<dt id="qstrader.broker.portfolio.portfolio.Portfolio.portfolio_to_dict"><code class="name flex">
+<span>def <span class="ident">portfolio_to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def portfolio_to_dict(self):
+    &#34;&#34;&#34;
+    Output the portfolio holdings information as a dictionary
+    with Assets as keys and sub-dictionaries as values.
+    This excludes cash.
+
+    Returns
+    -------
+    `dict`
+        The portfolio holdings.
+    &#34;&#34;&#34;
+    holdings = {}
+    for asset, pos in self.pos_handler.positions.items():
+        holdings[asset] = {
+            &#34;quantity&#34;: pos.net_quantity,
+            &#34;market_value&#34;: pos.market_value,
+            &#34;unrealised_pnl&#34;: pos.unrealised_pnl,
+            &#34;realised_pnl&#34;: pos.realised_pnl,
+            &#34;total_pnl&#34;: pos.total_pnl
+        }
+    return holdings</code></pre>
+</details>
+<div class="desc"><p>Output the portfolio holdings information as a dictionary
+with Assets as keys and sub-dictionaries as values.
+This excludes cash.</p>
+<h2 id="returns">Returns</h2>
+<p><code>dict</code>
+The portfolio holdings.</p></div>
+</dd>
+<dt id="qstrader.broker.portfolio.portfolio.Portfolio.subscribe_funds"><code class="name flex">
+<span>def <span class="ident">subscribe_funds</span></span>(<span>self, dt: datetime.datetime, amount: float) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def subscribe_funds(self, dt: datetime.datetime, amount: float) -&gt; None:
+    &#34;&#34;&#34;
+    Credit funds to the portfolio.
+    &#34;&#34;&#34;
+    if dt &lt; self.current_dt:
+        raise ValueError(
+            &#39;Subscription datetime (%s) is earlier than &#39;
+            &#39;current portfolio datetime (%s). Cannot &#39;
+            &#39;subscribe funds.&#39; % (dt, self.current_dt)
+        )
+    self.current_dt = dt
+
+    if amount &lt; 0.0:
+        raise ValueError(
+            &#39;Cannot credit negative amount: &#39;
+            &#39;%s to the portfolio.&#39; % amount
+        )
+
+    self.cash += amount
+
+    self.history.append(
+        PortfolioEvent.create_subscription(self.current_dt, amount, self.cash)
+    )
+
+    self.logger.info(
+        &#39;(%s) Funds subscribed to portfolio &#34;%s&#34; &#39;
+        &#39;- Credit: %0.2f, Balance: %0.2f&#39; % (
+            self.current_dt.strftime(settings.LOGGING[&#34;DATE_FORMAT&#34;]),
+            self.portfolio_id, round(amount, 2),
+            round(self.cash, 2)
+        )
+    )</code></pre>
+</details>
+<div class="desc"><p>Credit funds to the portfolio.</p></div>
+</dd>
+<dt id="qstrader.broker.portfolio.portfolio.Portfolio.transact_asset"><code class="name flex">
+<span>def <span class="ident">transact_asset</span></span>(<span>self,<br>txn: <a title="qstrader.broker.transaction.transaction.Transaction" href="../transaction/transaction.html#qstrader.broker.transaction.transaction.Transaction">Transaction</a>) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def transact_asset(self, txn: Transaction) -&gt; None:
+    &#34;&#34;&#34;
+    Adjusts positions to account for a transaction.
+    &#34;&#34;&#34;
+    if txn.dt &lt; self.current_dt:
+        raise ValueError(
+            &#39;Transaction datetime (%s) is earlier than &#39;
+            &#39;current portfolio datetime (%s). Cannot &#39;
+            &#39;transact assets.&#39; % (txn.dt, self.current_dt)
+        )
+    self.current_dt = txn.dt
+
+    txn_share_cost = txn.price * txn.quantity
+    txn_total_cost = txn_share_cost + txn.commission
+
+    if txn_total_cost &gt; self.cash:
+        if settings.PRINT_EVENTS:
+            print(
+                &#39;WARNING: Not enough cash in the portfolio to &#39;
+                &#39;carry out transaction. Transaction cost of %s &#39;
+                &#39;exceeds remaining cash of %s. Transaction &#39;
+                &#39;will proceed with a negative cash balance.&#39; % (
+                    txn_total_cost, self.cash
+                )
+            )
+
+    self.pos_handler.transact_position(txn)
+
+    self.cash -= txn_total_cost
+
+    # Form Portfolio history details
+    direction = &#34;LONG&#34; if txn.direction &gt; 0 else &#34;SHORT&#34;
+    description = &#34;%s %s %s %0.2f %s&#34; % (
+        direction, txn.quantity, txn.asset.upper(),
+        txn.price, datetime.datetime.strftime(txn.dt, &#34;%d/%m/%Y&#34;)
+    )
+    if direction == &#34;LONG&#34;:
+        pe = PortfolioEvent(
+            dt=txn.dt, type=&#39;asset_transaction&#39;,
+            description=description,
+            debit=round(txn_total_cost, 2), credit=0.0,
+            balance=round(self.cash, 2)
+        )
+        self.logger.info(
+            &#39;(%s) Asset &#34;%s&#34; transacted LONG in portfolio &#34;%s&#34; &#39;
+            &#39;- Debit: %0.2f, Balance: %0.2f&#39; % (
+                txn.dt.strftime(settings.LOGGING[&#34;DATE_FORMAT&#34;]),
+                txn.asset, self.portfolio_id,
+                round(txn_total_cost, 2), round(self.cash, 2)
+            )
+        )
+    else:
+        pe = PortfolioEvent(
+            dt=txn.dt, type=&#39;asset_transaction&#39;,
+            description=description,
+            debit=0.0, credit=-1.0 * round(txn_total_cost, 2),
+            balance=round(self.cash, 2)
+        )
+        self.logger.info(
+            &#39;(%s) Asset &#34;%s&#34; transacted SHORT in portfolio &#34;%s&#34; &#39;
+            &#39;- Credit: %0.2f, Balance: %0.2f&#39; % (
+                txn.dt.strftime(settings.LOGGING[&#34;DATE_FORMAT&#34;]),
+                txn.asset, self.portfolio_id,
+                -1.0 * round(txn_total_cost, 2), round(self.cash, 2)
+            )
+        )
+    self.history.append(pe)</code></pre>
+</details>
+<div class="desc"><p>Adjusts positions to account for a transaction.</p></div>
+</dd>
+<dt id="qstrader.broker.portfolio.portfolio.Portfolio.update_market_value_of_asset"><code class="name flex">
+<span>def <span class="ident">update_market_value_of_asset</span></span>(<span>self, asset: str, current_price: float, current_dt: datetime.datetime) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_market_value_of_asset(
+    self, asset: str, current_price: float, current_dt: datetime.datetime
+) -&gt; None:
+    &#34;&#34;&#34;
+    Update the market value of the asset to the current
+    trade price and date.
+    &#34;&#34;&#34;
+    if asset not in self.pos_handler.positions:
+        return
+    else:
+        if current_price &lt; 0.0:
+            raise ValueError(
+                &#39;Current trade price of %s is negative for &#39;
+                &#39;asset %s. Cannot update position.&#39; % (
+                    current_price, asset
+                )
+            )
+
+        if current_dt &lt; self.current_dt:
+            raise ValueError(
+                &#39;Current trade date of %s is earlier than &#39;
+                &#39;current date %s of asset %s. Cannot update &#39;
+                &#39;position.&#39; % (
+                    current_dt, self.current_dt, asset
+                )
+            )
+
+        self.pos_handler.positions[asset].update_current_price(
+            current_price, current_dt
+        )</code></pre>
+</details>
+<div class="desc"><p>Update the market value of the asset to the current
+trade price and date.</p></div>
+</dd>
+<dt id="qstrader.broker.portfolio.portfolio.Portfolio.withdraw_funds"><code class="name flex">
+<span>def <span class="ident">withdraw_funds</span></span>(<span>self, dt: datetime.datetime, amount: float) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def withdraw_funds(self, dt: datetime.datetime, amount: float) -&gt; None:
+    &#34;&#34;&#34;
+    Withdraw funds from the portfolio if there is enough
+    cash to allow it.
+    &#34;&#34;&#34;
+    # Check that amount is positive and that there is
+    # enough in the portfolio to withdraw the funds
+    if dt &lt; self.current_dt:
+        raise ValueError(
+            &#39;Withdrawal datetime (%s) is earlier than &#39;
+            &#39;current portfolio datetime (%s). Cannot &#39;
+            &#39;withdraw funds.&#39; % (dt, self.current_dt)
+        )
+    self.current_dt = dt
+
+    if amount &lt; 0:
+        raise ValueError(
+            &#39;Cannot debit negative amount: &#39;
+            &#39;%0.2f from the portfolio.&#39; % amount
+        )
+
+    if amount &gt; self.cash:
+        raise ValueError(
+            &#39;Not enough cash in the portfolio to &#39;
+            &#39;withdraw. %s withdrawal request exceeds &#39;
+            &#39;current portfolio cash balance of %s.&#39; % (
+                amount, self.cash
+            )
+        )
+
+    self.cash -= amount
+
+    self.history.append(
+        PortfolioEvent.create_withdrawal(self.current_dt, amount, self.cash)
+    )
+
+    self.logger.info(
+        &#39;(%s) Funds withdrawn from portfolio &#34;%s&#34; &#39;
+        &#39;- Debit: %0.2f, Balance: %0.2f&#39; % (
+            self.current_dt.strftime(settings.LOGGING[&#34;DATE_FORMAT&#34;]),
+            self.portfolio_id, round(amount, 2),
+            round(self.cash, 2)
+        )
+    )</code></pre>
+</details>
+<div class="desc"><p>Withdraw funds from the portfolio if there is enough
+cash to allow it.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="qstrader.broker.portfolio" href="index.html">qstrader.broker.portfolio</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="qstrader.broker.portfolio.portfolio.Portfolio" href="#qstrader.broker.portfolio.portfolio.Portfolio">Portfolio</a></code></h4>
+<ul class="">
+<li><code><a title="qstrader.broker.portfolio.portfolio.Portfolio.history_to_df" href="#qstrader.broker.portfolio.portfolio.Portfolio.history_to_df">history_to_df</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.portfolio.Portfolio.portfolio_to_dict" href="#qstrader.broker.portfolio.portfolio.Portfolio.portfolio_to_dict">portfolio_to_dict</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.portfolio.Portfolio.subscribe_funds" href="#qstrader.broker.portfolio.portfolio.Portfolio.subscribe_funds">subscribe_funds</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.portfolio.Portfolio.total_equity" href="#qstrader.broker.portfolio.portfolio.Portfolio.total_equity">total_equity</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.portfolio.Portfolio.total_market_value" href="#qstrader.broker.portfolio.portfolio.Portfolio.total_market_value">total_market_value</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.portfolio.Portfolio.total_pnl" href="#qstrader.broker.portfolio.portfolio.Portfolio.total_pnl">total_pnl</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.portfolio.Portfolio.total_realised_pnl" href="#qstrader.broker.portfolio.portfolio.Portfolio.total_realised_pnl">total_realised_pnl</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.portfolio.Portfolio.total_unrealised_pnl" href="#qstrader.broker.portfolio.portfolio.Portfolio.total_unrealised_pnl">total_unrealised_pnl</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.portfolio.Portfolio.transact_asset" href="#qstrader.broker.portfolio.portfolio.Portfolio.transact_asset">transact_asset</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.portfolio.Portfolio.update_market_value_of_asset" href="#qstrader.broker.portfolio.portfolio.Portfolio.update_market_value_of_asset">update_market_value_of_asset</a></code></li>
+<li><code><a title="qstrader.broker.portfolio.portfolio.Portfolio.withdraw_funds" href="#qstrader.broker.portfolio.portfolio.Portfolio.withdraw_funds">withdraw_funds</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

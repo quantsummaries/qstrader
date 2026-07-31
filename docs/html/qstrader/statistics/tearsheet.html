@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>qstrader.statistics.tearsheet API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>qstrader.statistics.tearsheet</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="qstrader.statistics.tearsheet.TearsheetStatistics"><code class="flex name class">
+<span>class <span class="ident">TearsheetStatistics</span></span>
+<span>(</span><span>strategy_equity, benchmark_equity=None, title=None, periods=252)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TearsheetStatistics(Statistics):
+    &#34;&#34;&#34;
+    Displays a Matplotlib-generated &#39;one-pager&#39; as often
+    found in institutional strategy performance reports.
+    &#34;&#34;&#34;
+    def __init__(
+        self,
+        strategy_equity,
+        benchmark_equity=None,
+        title=None,
+        periods=252
+    ):
+        self.strategy_equity = strategy_equity
+        self.benchmark_equity = benchmark_equity
+        self.title = title
+        self.periods = periods
+
+    def get_results(self, equity_df):
+        &#34;&#34;&#34;
+        Return a dict with all important results &amp; stats.
+        &#34;&#34;&#34;
+        # Returns
+        equity_df[&#34;returns&#34;] = equity_df[&#34;Equity&#34;].pct_change().fillna(0.0)
+
+        # Cummulative Returns
+        equity_df[&#34;cum_returns&#34;] = np.exp(np.log(1 + equity_df[&#34;returns&#34;]).cumsum())
+
+        # Drawdown, max drawdown, max drawdown duration
+        dd_s, max_dd, dd_dur = perf.create_drawdowns(equity_df[&#34;cum_returns&#34;])
+
+        # Equity statistics
+        statistics = {}
+        statistics[&#34;sharpe&#34;] = perf.create_sharpe_ratio(
+            equity_df[&#34;returns&#34;], self.periods
+        )
+        statistics[&#34;drawdowns&#34;] = dd_s
+        statistics[&#34;max_drawdown&#34;] = max_dd
+        statistics[&#34;max_drawdown_pct&#34;] = max_dd
+        statistics[&#34;max_drawdown_duration&#34;] = dd_dur
+        statistics[&#34;equity&#34;] = equity_df[&#34;Equity&#34;]
+        statistics[&#34;returns&#34;] = equity_df[&#34;returns&#34;]
+        statistics[&#34;cum_returns&#34;] = equity_df[&#34;cum_returns&#34;]
+        return statistics
+
+    def _plot_equity(self, strat_stats, bench_stats=None, ax=None, **kwargs):
+        &#34;&#34;&#34;
+        Plots cumulative rolling returns versus some benchmark.
+        &#34;&#34;&#34;
+        def format_two_dec(x, pos):
+            return &#39;%.2f&#39; % x
+
+        equity = strat_stats[&#39;cum_returns&#39;]
+
+        if ax is None:
+            ax = plt.gca()
+
+        y_axis_formatter = FuncFormatter(format_two_dec)
+        ax.yaxis.set_major_formatter(FuncFormatter(y_axis_formatter))
+        ax.xaxis.set_tick_params(reset=True)
+        ax.yaxis.grid(linestyle=&#39;:&#39;)
+        ax.xaxis.set_major_locator(mdates.YearLocator(1))
+        ax.xaxis.set_major_formatter(mdates.DateFormatter(&#39;%Y&#39;))
+        ax.xaxis.grid(linestyle=&#39;:&#39;)
+
+        equity.plot(lw=2, color=&#39;green&#39;, alpha=0.6, x_compat=False,
+                    label=&#39;Strategy&#39;, ax=ax, **kwargs)
+        if bench_stats is not None:
+            bench_stats[&#39;cum_returns&#39;].plot(
+                lw=2, color=&#39;gray&#39;, alpha=0.6, x_compat=False,
+                label=&#39;Benchmark&#39;, ax=ax, **kwargs
+            )
+
+        ax.axhline(1.0, linestyle=&#39;--&#39;, color=&#39;black&#39;, lw=1)
+        ax.set_ylabel(&#39;Cumulative returns&#39;)
+        ax.legend(loc=&#39;best&#39;)
+        ax.set_xlabel(&#39;&#39;)
+        plt.setp(ax.get_xticklabels(), visible=True, rotation=0, ha=&#39;center&#39;)
+        return ax
+
+    def _plot_drawdown(self, stats, ax=None, **kwargs):
+        &#34;&#34;&#34;
+        Plots the underwater curve
+        &#34;&#34;&#34;
+        def format_perc(x, pos):
+            return &#39;%.0f%%&#39; % x
+
+        drawdown = stats[&#39;drawdowns&#39;]
+
+        if ax is None:
+            ax = plt.gca()
+
+        y_axis_formatter = FuncFormatter(format_perc)
+        ax.yaxis.set_major_formatter(FuncFormatter(y_axis_formatter))
+        ax.yaxis.grid(linestyle=&#39;:&#39;)
+        ax.xaxis.set_tick_params(reset=True)
+        ax.xaxis.set_major_locator(mdates.YearLocator(1))
+        ax.xaxis.set_major_formatter(mdates.DateFormatter(&#39;%Y&#39;))
+        ax.xaxis.grid(linestyle=&#39;:&#39;)
+
+        underwater = -100 * drawdown
+        underwater.plot(ax=ax, lw=2, kind=&#39;area&#39;, color=&#39;red&#39;, alpha=0.3, **kwargs)
+        ax.set_ylabel(&#39;&#39;)
+        ax.set_xlabel(&#39;&#39;)
+        plt.setp(ax.get_xticklabels(), visible=True, rotation=0, ha=&#39;center&#39;)
+        ax.set_title(&#39;Drawdown (%)&#39;, fontweight=&#39;bold&#39;)
+        return ax
+
+    def _plot_monthly_returns(self, stats, ax=None, **kwargs):
+        &#34;&#34;&#34;
+        Plots a heatmap of the monthly returns.
+        &#34;&#34;&#34;
+        returns = stats[&#39;returns&#39;]
+        if ax is None:
+            ax = plt.gca()
+
+        monthly_ret = perf.aggregate_returns(returns, &#39;monthly&#39;)
+        monthly_ret = monthly_ret.unstack()
+        monthly_ret = np.round(monthly_ret, 3)
+        monthly_ret.rename(
+            columns={1: &#39;Jan&#39;, 2: &#39;Feb&#39;, 3: &#39;Mar&#39;, 4: &#39;Apr&#39;,
+                     5: &#39;May&#39;, 6: &#39;Jun&#39;, 7: &#39;Jul&#39;, 8: &#39;Aug&#39;,
+                     9: &#39;Sep&#39;, 10: &#39;Oct&#39;, 11: &#39;Nov&#39;, 12: &#39;Dec&#39;},
+            inplace=True
+        )
+
+        sns.heatmap(
+            monthly_ret.fillna(0) * 100.0,
+            annot=True,
+            fmt=&#34;0.1f&#34;,
+            annot_kws={&#34;size&#34;: 8},
+            alpha=1.0,
+            center=0.0,
+            cbar=False,
+            cmap=cm.RdYlGn,
+            ax=ax, **kwargs)
+        ax.set_title(&#39;Monthly Returns (%)&#39;, fontweight=&#39;bold&#39;)
+        ax.set_ylabel(&#39;&#39;)
+        ax.set_yticklabels(ax.get_yticklabels(), rotation=0)
+        ax.set_xlabel(&#39;&#39;)
+
+        return ax
+
+    def _plot_yearly_returns(self, stats, ax=None, **kwargs):
+        &#34;&#34;&#34;
+        Plots a barplot of returns by year.
+        &#34;&#34;&#34;
+        def format_perc(x, pos):
+            return &#39;%.0f%%&#39; % x
+
+        returns = stats[&#39;returns&#39;]
+
+        if ax is None:
+            ax = plt.gca()
+
+        y_axis_formatter = FuncFormatter(format_perc)
+        ax.yaxis.set_major_formatter(FuncFormatter(y_axis_formatter))
+        ax.yaxis.grid(linestyle=&#39;:&#39;)
+
+        yly_ret = perf.aggregate_returns(returns, &#39;yearly&#39;) * 100.0
+        yly_ret.plot(ax=ax, kind=&#34;bar&#34;)
+        ax.set_title(&#39;Yearly Returns (%)&#39;, fontweight=&#39;bold&#39;)
+        ax.set_ylabel(&#39;&#39;)
+        ax.set_xlabel(&#39;&#39;)
+        ax.set_xticklabels(ax.get_xticklabels(), rotation=45)
+        ax.xaxis.grid(False)
+
+        return ax
+
+    def _plot_txt_curve(self, stats, bench_stats=None, ax=None, **kwargs):
+        &#34;&#34;&#34;
+        Outputs the statistics for the equity curve.
+        &#34;&#34;&#34;
+        def format_perc(x, pos):
+            return &#39;%.0f%%&#39; % x
+
+        if ax is None:
+            ax = plt.gca()
+
+        y_axis_formatter = FuncFormatter(format_perc)
+        ax.yaxis.set_major_formatter(FuncFormatter(y_axis_formatter))
+
+        # Strategy statistics
+        returns = stats[&#34;returns&#34;]
+        cum_returns = stats[&#39;cum_returns&#39;]
+        tot_ret = cum_returns.iloc[-1] - 1.0
+        cagr = perf.create_cagr(cum_returns, self.periods)
+        sharpe = perf.create_sharpe_ratio(returns, self.periods)
+        sortino = perf.create_sortino_ratio(returns, self.periods)
+        dd, dd_max, dd_dur = perf.create_drawdowns(cum_returns)
+
+        # Benchmark statistics
+        if bench_stats is not None:
+            bench_returns = bench_stats[&#34;returns&#34;]
+            bench_cum_returns = bench_stats[&#39;cum_returns&#39;]
+            bench_tot_ret = bench_cum_returns.iloc[-1] - 1.0
+            bench_cagr = perf.create_cagr(bench_cum_returns, self.periods)
+            bench_sharpe = perf.create_sharpe_ratio(bench_returns, self.periods)
+            bench_sortino = perf.create_sortino_ratio(bench_returns, self.periods)
+            bench_dd, bench_dd_max, bench_dd_dur = perf.create_drawdowns(bench_cum_returns)
+
+        # Strategy Values
+        ax.text(7.50, 8.2, &#39;Strategy&#39;, fontweight=&#39;bold&#39;, horizontalalignment=&#39;right&#39;, fontsize=8, color=&#39;green&#39;)
+
+        ax.text(0.25, 6.9, &#39;Total Return&#39;, fontsize=8)
+        ax.text(7.50, 6.9, &#39;{:.0%}&#39;.format(tot_ret), fontweight=&#39;bold&#39;, horizontalalignment=&#39;right&#39;, fontsize=8)
+
+        ax.text(0.25, 5.9, &#39;CAGR&#39;, fontsize=8)
+        ax.text(7.50, 5.9, &#39;{:.2%}&#39;.format(cagr), fontweight=&#39;bold&#39;, horizontalalignment=&#39;right&#39;, fontsize=8)
+
+        ax.text(0.25, 4.9, &#39;Sharpe Ratio&#39;, fontsize=8)
+        ax.text(7.50, 4.9, &#39;{:.2f}&#39;.format(sharpe), fontweight=&#39;bold&#39;, horizontalalignment=&#39;right&#39;, fontsize=8)
+
+        ax.text(0.25, 3.9, &#39;Sortino Ratio&#39;, fontsize=8)
+        ax.text(7.50, 3.9, &#39;{:.2f}&#39;.format(sortino), fontweight=&#39;bold&#39;, horizontalalignment=&#39;right&#39;, fontsize=8)
+
+        ax.text(0.25, 2.9, &#39;Annual Volatility&#39;, fontsize=8)
+        ax.text(7.50, 2.9, &#39;{:.2%}&#39;.format(returns.std() * np.sqrt(252)), fontweight=&#39;bold&#39;, horizontalalignment=&#39;right&#39;, fontsize=8)
+
+        ax.text(0.25, 1.9, &#39;Max Daily Drawdown&#39;, fontsize=8)
+        ax.text(7.50, 1.9, &#39;{:.2%}&#39;.format(dd_max), color=&#39;red&#39;, fontweight=&#39;bold&#39;, horizontalalignment=&#39;right&#39;, fontsize=8)
+
+        ax.text(0.25, 0.9, &#39;Max Drawdown Duration (Days)&#39;, fontsize=8)
+        ax.text(7.50, 0.9, &#39;{:.0f}&#39;.format(dd_dur), fontweight=&#39;bold&#39;, horizontalalignment=&#39;right&#39;, fontsize=8)
+
+        # Benchmark Values
+        if bench_stats is not None:
+            ax.text(10.0, 8.2, &#39;Benchmark&#39;, fontweight=&#39;bold&#39;, horizontalalignment=&#39;right&#39;, fontsize=8, color=&#39;gray&#39;)
+            ax.text(10.0, 6.9, &#39;{:.0%}&#39;.format(bench_tot_ret), fontweight=&#39;bold&#39;, horizontalalignment=&#39;right&#39;, fontsize=8)
+            ax.text(10.0, 5.9, &#39;{:.2%}&#39;.format(bench_cagr), fontweight=&#39;bold&#39;, horizontalalignment=&#39;right&#39;, fontsize=8)
+            ax.text(10.0, 4.9, &#39;{:.2f}&#39;.format(bench_sharpe), fontweight=&#39;bold&#39;, horizontalalignment=&#39;right&#39;, fontsize=8)
+            ax.text(10.0, 3.9, &#39;{:.2f}&#39;.format(bench_sortino), fontweight=&#39;bold&#39;, horizontalalignment=&#39;right&#39;, fontsize=8)
+            ax.text(10.0, 2.9, &#39;{:.2%}&#39;.format(bench_returns.std() * np.sqrt(252)), fontweight=&#39;bold&#39;, horizontalalignment=&#39;right&#39;, fontsize=8)
+            ax.text(10.0, 1.9, &#39;{:.2%}&#39;.format(bench_dd_max), color=&#39;red&#39;, fontweight=&#39;bold&#39;, horizontalalignment=&#39;right&#39;, fontsize=8)
+            ax.text(10.0, 0.9, &#39;{:.0f}&#39;.format(bench_dd_dur), fontweight=&#39;bold&#39;, horizontalalignment=&#39;right&#39;, fontsize=8)
+
+        ax.set_title(&#39;Equity Curve&#39;, fontweight=&#39;bold&#39;)
+
+        ax.grid(False)
+        ax.spines[&#39;top&#39;].set_linewidth(2.0)
+        ax.spines[&#39;bottom&#39;].set_linewidth(2.0)
+        ax.spines[&#39;right&#39;].set_visible(False)
+        ax.spines[&#39;left&#39;].set_visible(False)
+        ax.get_yaxis().set_visible(False)
+        ax.get_xaxis().set_visible(False)
+        ax.set_ylabel(&#39;&#39;)
+        ax.set_xlabel(&#39;&#39;)
+
+        ax.axis([0, 10, 0, 10])
+        return ax
+
+    def plot_results(self, filename=None):
+        &#34;&#34;&#34;
+        Plot the Tearsheet
+
+        Parameters
+        ==========
+        filename : `str`
+            Option to save the tearsheet output when a filename is specified.
+        &#34;&#34;&#34;
+        rc = {
+            &#39;lines.linewidth&#39;: 1.0,
+            &#39;axes.facecolor&#39;: &#39;0.995&#39;,
+            &#39;figure.facecolor&#39;: &#39;0.97&#39;,
+            &#39;font.family&#39;: &#39;serif&#39;,
+            &#39;font.serif&#39;: &#39;Ubuntu&#39;,
+            &#39;font.monospace&#39;: &#39;Ubuntu Mono&#39;,
+            &#39;font.size&#39;: 10,
+            &#39;axes.labelsize&#39;: 10,
+            &#39;axes.labelweight&#39;: &#39;bold&#39;,
+            &#39;axes.titlesize&#39;: 10,
+            &#39;xtick.labelsize&#39;: 8,
+            &#39;ytick.labelsize&#39;: 8,
+            &#39;legend.fontsize&#39;: 10,
+            &#39;figure.titlesize&#39;: 12
+        }
+        sns.set_context(rc)
+        sns.set_style(&#34;whitegrid&#34;)
+        sns.set_palette(&#34;deep&#34;, desat=.6)
+
+        vertical_sections = 5
+        fig = plt.figure(figsize=(16, 12))
+        fig.suptitle(self.title, y=0.94, weight=&#39;bold&#39;)
+        gs = gridspec.GridSpec(vertical_sections, 3, wspace=0.25, hspace=0.5)
+
+        stats = self.get_results(self.strategy_equity)
+        bench_stats = None
+        if self.benchmark_equity is not None:
+            bench_stats = self.get_results(self.benchmark_equity)
+
+        ax_equity = plt.subplot(gs[:2, :])
+        ax_drawdown = plt.subplot(gs[2, :])
+        ax_monthly_returns = plt.subplot(gs[3, :2])
+        ax_yearly_returns = plt.subplot(gs[3, 2])
+        ax_txt_curve = plt.subplot(gs[4, 0])
+        # ax_txt_trade = plt.subplot(gs[4, 1])
+        # ax_txt_time = plt.subplot(gs[4, 2])
+
+        self._plot_equity(stats, bench_stats=bench_stats, ax=ax_equity)
+        self._plot_drawdown(stats, ax=ax_drawdown)
+        self._plot_monthly_returns(stats, ax=ax_monthly_returns)
+        self._plot_yearly_returns(stats, ax=ax_yearly_returns)
+        self._plot_txt_curve(stats, bench_stats=bench_stats, ax=ax_txt_curve)
+        # self._plot_txt_trade(stats, ax=ax_txt_trade)
+        # self._plot_txt_time(stats, ax=ax_txt_time)
+
+        # Save the figure
+        if filename:
+            if settings.PRINT_EVENTS:
+                print(f&#34;Saving tearsheet to {filename}&#34;)
+            fig = plt.gcf()    
+            fig.savefig(filename)
+
+        # Plot the figure
+        if settings.PRINT_EVENTS:
+            print(&#39;Plotting the tearsheet...&#39;)
+        plt.show()</code></pre>
+</details>
+<div class="desc"><p>Displays a Matplotlib-generated 'one-pager' as often
+found in institutional strategy performance reports.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="qstrader.statistics.statistics.Statistics" href="statistics.html#qstrader.statistics.statistics.Statistics">Statistics</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="qstrader.statistics.tearsheet.TearsheetStatistics.get_results"><code class="name flex">
+<span>def <span class="ident">get_results</span></span>(<span>self, equity_df)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_results(self, equity_df):
+    &#34;&#34;&#34;
+    Return a dict with all important results &amp; stats.
+    &#34;&#34;&#34;
+    # Returns
+    equity_df[&#34;returns&#34;] = equity_df[&#34;Equity&#34;].pct_change().fillna(0.0)
+
+    # Cummulative Returns
+    equity_df[&#34;cum_returns&#34;] = np.exp(np.log(1 + equity_df[&#34;returns&#34;]).cumsum())
+
+    # Drawdown, max drawdown, max drawdown duration
+    dd_s, max_dd, dd_dur = perf.create_drawdowns(equity_df[&#34;cum_returns&#34;])
+
+    # Equity statistics
+    statistics = {}
+    statistics[&#34;sharpe&#34;] = perf.create_sharpe_ratio(
+        equity_df[&#34;returns&#34;], self.periods
+    )
+    statistics[&#34;drawdowns&#34;] = dd_s
+    statistics[&#34;max_drawdown&#34;] = max_dd
+    statistics[&#34;max_drawdown_pct&#34;] = max_dd
+    statistics[&#34;max_drawdown_duration&#34;] = dd_dur
+    statistics[&#34;equity&#34;] = equity_df[&#34;Equity&#34;]
+    statistics[&#34;returns&#34;] = equity_df[&#34;returns&#34;]
+    statistics[&#34;cum_returns&#34;] = equity_df[&#34;cum_returns&#34;]
+    return statistics</code></pre>
+</details>
+<div class="desc"><p>Return a dict with all important results &amp; stats.</p></div>
+</dd>
+<dt id="qstrader.statistics.tearsheet.TearsheetStatistics.plot_results"><code class="name flex">
+<span>def <span class="ident">plot_results</span></span>(<span>self, filename=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_results(self, filename=None):
+    &#34;&#34;&#34;
+    Plot the Tearsheet
+
+    Parameters
+    ==========
+    filename : `str`
+        Option to save the tearsheet output when a filename is specified.
+    &#34;&#34;&#34;
+    rc = {
+        &#39;lines.linewidth&#39;: 1.0,
+        &#39;axes.facecolor&#39;: &#39;0.995&#39;,
+        &#39;figure.facecolor&#39;: &#39;0.97&#39;,
+        &#39;font.family&#39;: &#39;serif&#39;,
+        &#39;font.serif&#39;: &#39;Ubuntu&#39;,
+        &#39;font.monospace&#39;: &#39;Ubuntu Mono&#39;,
+        &#39;font.size&#39;: 10,
+        &#39;axes.labelsize&#39;: 10,
+        &#39;axes.labelweight&#39;: &#39;bold&#39;,
+        &#39;axes.titlesize&#39;: 10,
+        &#39;xtick.labelsize&#39;: 8,
+        &#39;ytick.labelsize&#39;: 8,
+        &#39;legend.fontsize&#39;: 10,
+        &#39;figure.titlesize&#39;: 12
+    }
+    sns.set_context(rc)
+    sns.set_style(&#34;whitegrid&#34;)
+    sns.set_palette(&#34;deep&#34;, desat=.6)
+
+    vertical_sections = 5
+    fig = plt.figure(figsize=(16, 12))
+    fig.suptitle(self.title, y=0.94, weight=&#39;bold&#39;)
+    gs = gridspec.GridSpec(vertical_sections, 3, wspace=0.25, hspace=0.5)
+
+    stats = self.get_results(self.strategy_equity)
+    bench_stats = None
+    if self.benchmark_equity is not None:
+        bench_stats = self.get_results(self.benchmark_equity)
+
+    ax_equity = plt.subplot(gs[:2, :])
+    ax_drawdown = plt.subplot(gs[2, :])
+    ax_monthly_returns = plt.subplot(gs[3, :2])
+    ax_yearly_returns = plt.subplot(gs[3, 2])
+    ax_txt_curve = plt.subplot(gs[4, 0])
+    # ax_txt_trade = plt.subplot(gs[4, 1])
+    # ax_txt_time = plt.subplot(gs[4, 2])
+
+    self._plot_equity(stats, bench_stats=bench_stats, ax=ax_equity)
+    self._plot_drawdown(stats, ax=ax_drawdown)
+    self._plot_monthly_returns(stats, ax=ax_monthly_returns)
+    self._plot_yearly_returns(stats, ax=ax_yearly_returns)
+    self._plot_txt_curve(stats, bench_stats=bench_stats, ax=ax_txt_curve)
+    # self._plot_txt_trade(stats, ax=ax_txt_trade)
+    # self._plot_txt_time(stats, ax=ax_txt_time)
+
+    # Save the figure
+    if filename:
+        if settings.PRINT_EVENTS:
+            print(f&#34;Saving tearsheet to {filename}&#34;)
+        fig = plt.gcf()    
+        fig.savefig(filename)
+
+    # Plot the figure
+    if settings.PRINT_EVENTS:
+        print(&#39;Plotting the tearsheet...&#39;)
+    plt.show()</code></pre>
+</details>
+<div class="desc"><p>Plot the Tearsheet</p>
+<h1 id="parameters">Parameters</h1>
+<p>filename : <code>str</code>
+Option to save the tearsheet output when a filename is specified.</p></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="qstrader.statistics.statistics.Statistics" href="statistics.html#qstrader.statistics.statistics.Statistics">Statistics</a></b></code>:
+<ul class="hlist">
+<li><code><a title="qstrader.statistics.statistics.Statistics.save" href="statistics.html#qstrader.statistics.statistics.Statistics.save">save</a></code></li>
+<li><code><a title="qstrader.statistics.statistics.Statistics.update" href="statistics.html#qstrader.statistics.statistics.Statistics.update">update</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="qstrader.statistics" href="index.html">qstrader.statistics</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="qstrader.statistics.tearsheet.TearsheetStatistics" href="#qstrader.statistics.tearsheet.TearsheetStatistics">TearsheetStatistics</a></code></h4>
+<ul class="">
+<li><code><a title="qstrader.statistics.tearsheet.TearsheetStatistics.get_results" href="#qstrader.statistics.tearsheet.TearsheetStatistics.get_results">get_results</a></code></li>
+<li><code><a title="qstrader.statistics.tearsheet.TearsheetStatistics.plot_results" href="#qstrader.statistics.tearsheet.TearsheetStatistics.plot_results">plot_results</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

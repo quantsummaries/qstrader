@@ -1,0 +1,1494 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>qstrader.broker.simulated_broker API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>qstrader.broker.simulated_broker</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="qstrader.broker.simulated_broker.SimulatedBroker"><code class="flex name class">
+<span>class <span class="ident">SimulatedBroker</span></span>
+<span>(</span><span>start_dt: pandas.Timestamp,<br>exchange: <a title="qstrader.exchange.exchange.Exchange" href="../exchange/exchange.html#qstrader.exchange.exchange.Exchange">Exchange</a>,<br>data_handler: <a title="qstrader.data.backtest_data_handler.BacktestDataHandler" href="../data/backtest_data_handler.html#qstrader.data.backtest_data_handler.BacktestDataHandler">BacktestDataHandler</a>,<br>account_id: str | None = None,<br>base_currency: str = 'USD',<br>initial_funds: float = 0.0,<br>fee_model: <a title="qstrader.broker.fee_model.fee_model.FeeModel" href="fee_model/fee_model.html#qstrader.broker.fee_model.fee_model.FeeModel">FeeModel</a> = &lt;qstrader.broker.fee_model.zero_fee_model.ZeroFeeModel object&gt;,<br>slippage_model=None,<br>market_impact_model=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SimulatedBroker(Broker):
+    &#34;&#34;&#34;
+    A class to handle simulation of a brokerage that
+    provides sensible defaults for both currency (USD) and
+    transaction cost handling for execution.
+
+    The default commission/fee model is a ZeroFeeModel
+    that charges no commission or tax (such as stamp duty).
+
+    Parameters
+    ----------
+    start_dt : `pd.Timestamp`
+        The starting datetime of the account
+    exchange : `Exchange`
+        Used to determine whether the simulated exchange venue
+        is open, in order to determine if orders can be executed.
+    data_handler : `DataHandler`
+        The data handler used to obtain latest asset prices.
+    account_id : `str`, optional
+        The account ID for the brokerage account.
+    base_currency : `str`, optional
+        The currency denomination of the brokerage account.
+    initial_funds : `float`, optional
+        An initial amount of cash to add to the broker account.
+    fee_model : `FeeModel`, optional
+        The commission/fee model used to simulate fees/taxes.
+        Defaults to the ZeroFeeModel.
+    slippage_model : `SlippageModel`, optional
+        The model used to simulate trade slippage.
+    market_impact_model : `MarketImpactModel`, optional
+        The model used to simulate market impact of trading.
+    &#34;&#34;&#34;
+
+    def __init__(
+        self,
+        start_dt: pd.Timestamp,
+        exchange: Exchange,
+        data_handler: BacktestDataHandler,
+        account_id: str|None=None,
+        base_currency: str = &#34;USD&#34;,
+        initial_funds: float = 0.0,
+        fee_model: FeeModel = ZeroFeeModel(),
+        slippage_model=None,
+        market_impact_model=None
+    ):
+        self.start_dt = start_dt
+        self.exchange = exchange
+        self.data_handler = data_handler
+        self.current_dt = start_dt
+        self.account_id = account_id
+
+        self.base_currency = self._set_base_currency(base_currency)
+        self.initial_funds = self._set_initial_funds(initial_funds)
+        self.fee_model = self._set_fee_model(fee_model)
+        self.slippage_model = None  # TODO: Implement
+        self.market_impact_model = None  # TODO: Implement
+
+        self.cash_balances = self._set_cash_balances()
+        self.portfolios = self._set_initial_portfolios()
+        self.open_orders = self._set_initial_open_orders()
+
+        if settings.PRINT_EVENTS:
+            print(&#39;Initialising simulated broker &#34;%s&#34;...&#39; % self.account_id)
+
+    def _set_base_currency(self, base_currency: str) -&gt; str:
+        &#34;&#34;&#34;
+        Check and set the base currency from a list of
+        allowed currencies. Raise ValueError if the
+        currency is currently not supported by QSTrader.
+
+        Parameters
+        ----------
+        base_currency : `str`
+            The base currency string.
+
+        Returns
+        -------
+        `str`
+            The base currency string.
+        &#34;&#34;&#34;
+        if base_currency not in settings.SUPPORTED[&#39;CURRENCIES&#39;]:
+            raise ValueError(
+                &#34;Currency &#39;%s&#39; is not supported by QSTrader. Could not &#34;
+                &#34;set the base currency in the SimulatedBroker &#34;
+                &#34;entity.&#34; % base_currency
+            )
+        else:
+            return base_currency
+
+    def _set_initial_funds(self, initial_funds: float) -&gt; float:
+        &#34;&#34;&#34;
+        Check and set the initial funds for the broker
+        master account. Raise ValueError if the
+        amount is negative.
+
+        Parameters
+        ----------
+        initial_funds : `float`
+            The initial cash provided to the Broker.
+
+        Returns
+        -------
+        `float`
+            The checked initial funds.
+        &#34;&#34;&#34;
+        if initial_funds &lt; 0.0:
+            raise ValueError(
+                &#34;Could not create the SimulatedBroker entity as the &#34;
+                &#34;provided initial funds of &#39;%s&#39; were &#34;
+                &#34;negative.&#34; % initial_funds
+            )
+        else:
+            return initial_funds
+
+    def _set_fee_model(self, fee_model: FeeModel) -&gt; FeeModel:
+        &#34;&#34;&#34;
+        Check and set the FeeModel instance for the broker.
+        The class default is no commission (ZeroFeeModel).
+
+        Parameters
+        ----------
+        fee_model : `FeeModel` (class)
+            The commission/fee model class provided to the Broker.
+
+        Returns
+        -------
+        `FeeModel` (instance)
+            The instantiated FeeModel class.
+        &#34;&#34;&#34;
+        if issubclass(fee_model.__class__, FeeModel):
+            return fee_model
+        else:
+            raise TypeError(
+                &#34;Provided fee model &#39;%s&#39; in SimulatedBroker is not a &#34;
+                &#34;FeeModel subclass, so could not create the &#34;
+                &#34;Broker entity.&#34; % fee_model.__class__
+            )
+
+    def _set_cash_balances(self) -&gt; dict[str, float]:
+        &#34;&#34;&#34;
+        Set the appropriate cash balances in the various
+        supported currencies, depending upon the availability
+        of initial funds.
+
+        Returns
+        -------
+        `dict{str: float}`
+            The mapping of cash currency strings to
+            amount stored by broker in local currency.
+        &#34;&#34;&#34;
+        cash_dict = dict(
+            (currency, 0.0)
+            for currency in settings.SUPPORTED[&#39;CURRENCIES&#39;]
+        )
+        if self.initial_funds &gt; 0.0:
+            cash_dict[self.base_currency] = self.initial_funds
+        return cash_dict
+
+    def _set_initial_portfolios(self) -&gt; dict:
+        &#34;&#34;&#34;
+        Set the appropriate initial portfolios dictionary.
+
+        Returns
+        -------
+        `dict`
+            The empty initial portfolio dictionary.
+        &#34;&#34;&#34;
+        return {}
+
+    def _set_initial_open_orders(self) -&gt; dict:
+        &#34;&#34;&#34;
+        Set the appropriate initial open orders dictionary.
+
+        Returns
+        -------
+        `dict`
+            The empty initial open orders dictionary.
+        &#34;&#34;&#34;
+        return {}
+
+    def subscribe_funds_to_account(self, amount: float) -&gt; None:
+        &#34;&#34;&#34;
+        Subscribe an amount of cash in the base currency
+        to the broker master cash account.
+
+        Parameters
+        ----------
+        amount : `float`
+            The amount of cash to subscribe to the master account.
+        &#34;&#34;&#34;
+        if amount &lt; 0.0:
+            raise ValueError(
+                &#34;Cannot credit negative amount: &#34;
+                &#34;&#39;%s&#39; to the broker account.&#34; % amount
+            )
+        self.cash_balances[self.base_currency] += amount
+        if settings.PRINT_EVENTS:
+            print(
+                &#39;(%s) - subscription: %0.2f subscribed to broker account &#34;%s&#34;&#39; % (
+                    self.current_dt, amount, self.account_id
+                )
+            )
+
+    def withdraw_funds_from_account(self, amount: float) -&gt; None:
+        &#34;&#34;&#34;
+        Withdraws an amount of cash in the base currency
+        from the broker master cash account, assuming an
+        amount equal to or more cash is present. If less
+        cash is present, a ValueError is raised.
+
+        Parameters
+        ----------
+        amount : `float`
+            The amount of cash to withdraw from the master account.
+        &#34;&#34;&#34;
+        if amount &lt; 0:
+            raise ValueError(
+                &#34;Cannot debit negative amount: &#34;
+                &#34;&#39;%s&#39; from the broker account.&#34; % amount
+            )
+        if amount &gt; self.cash_balances[self.base_currency]:
+            raise ValueError(
+                &#34;Not enough cash in the broker account to &#34;
+                &#34;withdraw. %0.2f withdrawal request exceeds &#34;
+                &#34;current broker account cash balance of %0.2f.&#34; % (
+                    amount, self.cash_balances[self.base_currency]
+                )
+            )
+        self.cash_balances[self.base_currency] -= amount
+        if settings.PRINT_EVENTS:
+            print(
+                &#39;(%s) - withdrawal: %0.2f withdrawn from broker account &#34;%s&#34;&#39; % (
+                    self.current_dt, amount, self.account_id
+                )
+            )
+
+    def get_account_cash_balance(self, currency: str|None=None) -&gt; float:
+        &#34;&#34;&#34;
+        Retrieve the cash dictionary of the account, or
+        if a currency is provided, the cash value itself.
+        Raises a ValueError if the currency is not
+        found within the currency cash dictionary.
+
+        Parameters
+        ----------
+        currency : `str`, optional
+            The currency string to obtain the cash balance for.
+        &#34;&#34;&#34;
+        if currency is None:
+            return self.cash_balances
+        if currency not in self.cash_balances.keys():
+            raise ValueError(
+                &#34;Currency of type &#39;%s&#39; is not found within the &#34;
+                &#34;broker cash master accounts. Could not retrieve &#34;
+                &#34;cash balance.&#34; % currency
+            )
+        return self.cash_balances[currency]
+
+    def get_account_total_market_value(self) -&gt; float:
+        &#34;&#34;&#34;
+        Retrieve the total market value of the account, across
+        each portfolio.
+
+        Returns
+        -------
+        `dict`
+            The dictionary of each portfolio&#39;s total market value.
+        &#34;&#34;&#34;
+        tmv_dict = {}
+        master_tmv = 0.0
+        for portfolio in self.portfolios.values():
+            pmv = self.get_portfolio_market_value(
+                portfolio.portfolio_id
+            )
+            tmv_dict[portfolio.portfolio_id] = pmv
+            master_tmv += pmv
+        tmv_dict[&#34;master&#34;] = master_tmv
+        return tmv_dict
+
+    def get_account_total_equity(self) -&gt; dict[str, float]:
+        &#34;&#34;&#34;
+        Retrieve the total equity of the account, across
+        each portfolio.
+
+        Returns
+        -------
+        `dict`
+            The dictionary of each portfolio&#39;s total equity.
+        &#34;&#34;&#34;
+        equity_dict = {}
+        master_equity = 0.0
+        for portfolio in self.portfolios.values():
+            port_equity = self.get_portfolio_total_equity(
+                portfolio.portfolio_id
+            )
+            equity_dict[portfolio.portfolio_id] = port_equity
+            master_equity += port_equity
+        equity_dict[&#34;master&#34;] = master_equity
+        return equity_dict
+
+    def create_portfolio(self, portfolio_id: str, name=None) -&gt; None:
+        &#34;&#34;&#34;
+        Create a new sub-portfolio with ID &#39;portfolio_id&#39; and
+        an optional name given by &#39;name&#39;.
+
+        Parameters
+        ----------
+        portfolio_id : `str`
+            The portfolio ID string.
+        name : `str`, optional
+            The optional name string of the portfolio.
+        &#34;&#34;&#34;
+        portfolio_id_str = str(portfolio_id)
+        if portfolio_id_str in self.portfolios.keys():
+            raise ValueError(
+                &#34;Portfolio with ID &#39;%s&#39; already exists. Cannot create &#34;
+                &#34;second portfolio with the same ID.&#34; % portfolio_id_str
+            )
+        else:
+            p = Portfolio(
+                self.current_dt,
+                currency=self.base_currency,
+                portfolio_id=portfolio_id_str,
+                name=name
+            )
+            self.portfolios[portfolio_id_str] = p
+            self.open_orders[portfolio_id_str] = queue.Queue()
+            if settings.PRINT_EVENTS:
+                print(
+                    &#39;(%s) - portfolio creation: Portfolio &#34;%s&#34; created at broker &#34;%s&#34;&#39; % (
+                        self.current_dt, portfolio_id_str, self.account_id
+                    )
+                )
+
+    def list_all_portfolios(self) -&gt; list:
+        &#34;&#34;&#34;
+        List all of the sub-portfolios associated with this
+        broker account in order of portfolio ID.
+
+        Returns
+        -------
+        `list`
+            The list of portfolios associated with the broker account.
+        &#34;&#34;&#34;
+        if self.portfolios == {}:
+            return []
+        return sorted(
+            list(self.portfolios.values()),
+            key=lambda port: port.portfolio_id
+        )
+
+    def subscribe_funds_to_portfolio(self, portfolio_id: str, amount: float) -&gt; None:
+        &#34;&#34;&#34;
+        Subscribe funds to a particular sub-portfolio, assuming
+        it exists and the cash amount is positive. Otherwise raise
+        a ValueError.
+
+        Parameters
+        ----------
+        portfolio_id : `str`
+            The portfolio ID string.
+        amount : `float`
+            The amount of cash to subscribe to the portfolio.
+        &#34;&#34;&#34;
+        if amount &lt; 0.0:
+            raise ValueError(
+                &#34;Cannot add negative amount: &#34;
+                &#34;%0.2f to a portfolio account.&#34; % amount
+            )
+        if portfolio_id not in self.portfolios.keys():
+            raise KeyError(
+                &#34;Portfolio with ID &#39;%s&#39; does not exist. Cannot subscribe &#34;
+                &#34;funds to a non-existent portfolio.&#34; % portfolio_id
+            )
+        if amount &gt; self.cash_balances[self.base_currency]:
+            raise ValueError(
+                &#34;Not enough cash in the broker master account to &#34;
+                &#34;fund portfolio &#39;%s&#39;. %0.2f subscription amount exceeds &#34;
+                &#34;current broker account cash balance of %0.2f.&#34; % (
+                    portfolio_id, amount,
+                    self.cash_balances[self.base_currency]
+                )
+            )
+        self.portfolios[portfolio_id].subscribe_funds(self.current_dt, amount)
+        self.cash_balances[self.base_currency] -= amount
+        if settings.PRINT_EVENTS:
+            print(
+                &#39;(%s) - subscription: %0.2f subscribed to portfolio &#34;%s&#34;&#39; % (
+                    self.current_dt, amount, portfolio_id
+                )
+            )
+
+    def withdraw_funds_from_portfolio(self, portfolio_id: str, amount: float) -&gt; None:
+        &#34;&#34;&#34;
+        Withdraw funds from a particular sub-portfolio, assuming
+        it exists, the cash amount is positive and there is
+        sufficient remaining cash in the sub-portfolio to
+        withdraw. Otherwise raise a ValueError.
+
+        Parameters
+        ----------
+        portfolio_id : `str`
+            The portfolio ID string.
+        amount : `float`
+            The amount of cash to withdraw from the portfolio.
+        &#34;&#34;&#34;
+        if amount &lt; 0.0:
+            raise ValueError(
+                &#34;Cannot withdraw negative amount: &#34;
+                &#34;%0.2f from a portfolio account.&#34; % amount
+            )
+        if portfolio_id not in self.portfolios.keys():
+            raise KeyError(
+                &#34;Portfolio with ID &#39;%s&#39; does not exist. Cannot &#34;
+                &#34;withdraw funds from a non-existent &#34;
+                &#34;portfolio. &#34; % portfolio_id
+            )
+        if amount &gt; self.portfolios[portfolio_id].cash:
+            raise ValueError(
+                &#34;Not enough cash in portfolio &#39;%s&#39; to withdraw &#34;
+                &#34;into brokerage master account. Withdrawal &#34;
+                &#34;amount %0.2f exceeds current portfolio cash &#34;
+                &#34;balance of %0.2f.&#34; % (
+                    portfolio_id, amount,
+                    self.portfolios[portfolio_id].cash
+                )
+            )
+        self.portfolios[portfolio_id].withdraw_funds(
+            self.current_dt, amount
+        )
+        self.cash_balances[self.base_currency] += amount
+        if settings.PRINT_EVENTS:
+            print(
+                &#39;(%s) - withdrawal: %0.2f withdrawn from portfolio &#34;%s&#34;&#39; % (
+                    self.current_dt, amount, portfolio_id
+                )
+            )
+
+    def get_portfolio_cash_balance(self, portfolio_id: str) -&gt; float:
+        &#34;&#34;&#34;
+        Retrieve the cash balance of a sub-portfolio, if
+        it exists. Otherwise raise a ValueError.
+
+        Parameters
+        ----------
+        portfolio_id : `str`
+            The portfolio ID string.
+
+        Returns
+        -------
+        `float`
+            The cash balance of the portfolio.
+        &#34;&#34;&#34;
+        if portfolio_id not in self.portfolios.keys():
+            raise ValueError(
+                &#34;Portfolio with ID &#39;%s&#39; does not exist. Cannot &#34;
+                &#34;retrieve cash balance for non-existent &#34;
+                &#34;portfolio.&#34; % portfolio_id
+            )
+        return self.portfolios[portfolio_id].cash
+
+    def get_portfolio_total_market_value(self, portfolio_id: str) -&gt; float:
+        &#34;&#34;&#34;
+        Returns the current total market value of a Portfolio
+        with ID &#39;portfolio_id&#39;.
+
+        Parameters
+        ----------
+        portfolio_id : `str`
+            The portfolio ID string.
+
+        Returns
+        -------
+        `float`
+            The total market value of the portfolio.
+        &#34;&#34;&#34;
+        if portfolio_id not in self.portfolios.keys():
+            raise KeyError(
+                &#34;Portfolio with ID &#39;%s&#39; does not exist. &#34;
+                &#34;Cannot return total market value for a &#34;
+                &#34;non-existent portfolio.&#34; % portfolio_id
+            )
+        return self.portfolios[portfolio_id].total_market_value
+
+    def get_portfolio_total_equity(self, portfolio_id: str) -&gt; float:
+        &#34;&#34;&#34;
+        Returns the current total equity of a Portfolio
+        with ID &#39;portfolio_id&#39;.
+
+        Parameters
+        ----------
+        portfolio_id : `str`
+            The portfolio ID string.
+
+        Returns
+        -------
+        `float`
+            The total equity of the portfolio.
+        &#34;&#34;&#34;
+        if portfolio_id not in self.portfolios.keys():
+            raise KeyError(
+                &#34;Portfolio with ID &#39;%s&#39; does not exist. &#34;
+                &#34;Cannot return total equity for a &#34;
+                &#34;non-existent portfolio.&#34; % portfolio_id
+            )
+        return self.portfolios[portfolio_id].total_equity
+
+    def get_portfolio_as_dict(self, portfolio_id: str) -&gt; dict[str, float]:
+        &#34;&#34;&#34;
+        Return a particular portfolio with ID &#39;portolio_id&#39; as
+        a dictionary with Asset symbol strings as keys, with various
+        attributes as sub-dictionaries.
+
+        Parameters
+        ----------
+        portfolio_id : `str`
+            The portfolio ID string.
+
+        Returns
+        -------
+        `dict{str}`
+            The portfolio representation of Assets as a dictionary.
+        &#34;&#34;&#34;
+        if portfolio_id not in self.portfolios.keys():
+            raise KeyError(
+                &#34;Cannot return portfolio as dictionary since &#34;
+                &#34;portfolio with ID &#39;%s&#39; does not exist.&#34; % portfolio_id
+            )
+        return self.portfolios[portfolio_id].portfolio_to_dict()
+
+    def _execute_order(self, dt, portfolio_id: str, order: Order) -&gt; None:
+        &#34;&#34;&#34;
+        For a given portfolio ID string, create a Transaction instance from
+        the provided Order and ensure the Portfolio is appropriately updated
+        with the new information.
+
+        Parameters
+        ----------
+        dt : `pd.Timestamp`
+            The current timestamp.
+        portfolio_id : `str`
+            The portfolio ID string.
+        order : `Order`
+            The Order instance to create the Transaction for.
+        &#34;&#34;&#34;
+        # Obtain a price for the asset, if no price then
+        # raise a ValueError
+        price_err_msg = (
+            &#34;Could not obtain a latest market price for &#34;
+            &#34;Asset with ticker symbol &#39;%s&#39;. Order with ID &#39;%s&#39; was &#34;
+            &#34;not executed.&#34; % (
+                order.asset, order.order_id
+            )
+        )
+        bid_ask = self.data_handler.get_asset_latest_bid_ask_price(
+            dt, order.asset
+        )
+        if bid_ask == (np.nan, np.nan):
+            raise ValueError(price_err_msg)
+
+        # Calculate the consideration and total commission
+        # based on the commission model
+        if order.direction &gt; 0:
+            price = bid_ask[1]
+        else:
+            price = bid_ask[0]
+        consideration = round(price * order.quantity)
+        total_commission = self.fee_model.calc_total_cost(
+            order.asset, order.quantity, consideration, self
+        )
+
+        # Check that sufficient cash exists to carry out the
+        # order, else scale it down
+        est_total_cost = consideration + total_commission
+        total_cash = self.portfolios[portfolio_id].cash
+
+        scaled_quantity = order.quantity
+        if est_total_cost &gt; total_cash:
+            if settings.PRINT_EVENTS:
+                print(
+                    &#34;WARNING: Estimated transaction size of %0.2f exceeds &#34;
+                    &#34;available cash of %0.2f. Transaction will still occur &#34;
+                    &#34;with a negative cash balance.&#34; % (est_total_cost, total_cash)
+                )
+
+        # Create a transaction entity and update the portfolio
+        txn = Transaction(
+            order.asset, scaled_quantity, self.current_dt,
+            price, order.order_id, commission=total_commission
+        )
+        self.portfolios[portfolio_id].transact_asset(txn)
+        if settings.PRINT_EVENTS:
+            print(
+                &#34;(%s) - executed order: %s, qty: %s, price: %0.2f, &#34;
+                &#34;consideration: %0.2f, commission: %0.2f, total: %0.2f&#34; % (
+                    self.current_dt, order.asset, scaled_quantity, price,
+                    consideration, total_commission,
+                    consideration + total_commission
+                )
+            )
+
+    def submit_order(self, portfolio_id: str, order: Order) -&gt; None:
+        &#34;&#34;&#34;
+        Execute an Order instance against the sub-portfolio
+        with ID &#39;portfolio_id&#39;. For the SimulatedBroker class
+        specifically there are no restrictions on this occuring
+        beyond having sufficient cash in the sub-portfolio to
+        allow this to occur.
+
+        This does not take into settlement dates, as with most
+        brokerage accounts. The cash is taken immediately upon
+        closing out the position.
+
+        Parameters
+        ----------
+        portfolio_id : `str`
+            The portfolio ID string.
+        order : `Order`
+            The Order instance to submit.
+        &#34;&#34;&#34;
+        # Check that the portfolio actually exists
+        if portfolio_id not in self.portfolios.keys():
+            raise KeyError(
+                &#34;Portfolio with ID &#39;%s&#39; does not exist. Order with &#34;
+                &#34;ID &#39;%s&#39; was not executed.&#34; % (
+                    portfolio_id, order.order_id
+                )
+            )
+        self.open_orders[portfolio_id].put(order)
+        if settings.PRINT_EVENTS:
+            print(
+                &#34;(%s) - submitted order: %s, qty: %s&#34; % (
+                    self.current_dt, order.asset, order.quantity
+                )
+            )
+
+    def update(self, dt: pd.Timestamp) -&gt; None:
+        &#34;&#34;&#34;
+        Updates the current SimulatedBroker timestamp.
+
+        Parameters
+        ----------
+        dt : `pd.Timestamp`
+            The current timestamp to update the Broker to.
+        &#34;&#34;&#34;
+        self.current_dt = dt
+
+        # Update portfolio asset values
+        for portfolio in self.portfolios:
+            for asset in self.portfolios[portfolio].pos_handler.positions:
+                mid_price = self.data_handler.get_asset_latest_mid_price(
+                    dt, asset
+                )
+                self.portfolios[portfolio].update_market_value_of_asset(
+                    asset, mid_price, self.current_dt
+                )
+
+        # Try to execute orders
+        if self.exchange.is_open_at_datetime(self.current_dt):
+            orders = []
+            for portfolio in self.portfolios:
+                while not self.open_orders[portfolio].empty():
+                    orders.append(
+                        (portfolio, self.open_orders[portfolio].get())
+                    )
+
+            sorted_orders = sorted(orders, key=lambda x: x[1].direction)
+            for portfolio, order in sorted_orders:
+                self._execute_order(dt, portfolio, order)</code></pre>
+</details>
+<div class="desc"><p>A class to handle simulation of a brokerage that
+provides sensible defaults for both currency (USD) and
+transaction cost handling for execution.</p>
+<p>The default commission/fee model is a ZeroFeeModel
+that charges no commission or tax (such as stamp duty).</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>start_dt</code></strong> :&ensp;<code>pd.Timestamp</code></dt>
+<dd>The starting datetime of the account</dd>
+<dt><strong><code>exchange</code></strong> :&ensp;<code>Exchange</code></dt>
+<dd>Used to determine whether the simulated exchange venue
+is open, in order to determine if orders can be executed.</dd>
+<dt><strong><code>data_handler</code></strong> :&ensp;<code>DataHandler</code></dt>
+<dd>The data handler used to obtain latest asset prices.</dd>
+<dt><strong><code>account_id</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The account ID for the brokerage account.</dd>
+<dt><strong><code>base_currency</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The currency denomination of the brokerage account.</dd>
+<dt><strong><code>initial_funds</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>An initial amount of cash to add to the broker account.</dd>
+<dt><strong><code>fee_model</code></strong> :&ensp;<code>FeeModel</code>, optional</dt>
+<dd>The commission/fee model used to simulate fees/taxes.
+Defaults to the ZeroFeeModel.</dd>
+<dt><strong><code>slippage_model</code></strong> :&ensp;<code>SlippageModel</code>, optional</dt>
+<dd>The model used to simulate trade slippage.</dd>
+<dt><strong><code>market_impact_model</code></strong> :&ensp;<code>MarketImpactModel</code>, optional</dt>
+<dd>The model used to simulate market impact of trading.</dd>
+</dl></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="qstrader.broker.broker.Broker" href="broker.html#qstrader.broker.broker.Broker">Broker</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="qstrader.broker.simulated_broker.SimulatedBroker.create_portfolio"><code class="name flex">
+<span>def <span class="ident">create_portfolio</span></span>(<span>self, portfolio_id: str, name=None) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_portfolio(self, portfolio_id: str, name=None) -&gt; None:
+    &#34;&#34;&#34;
+    Create a new sub-portfolio with ID &#39;portfolio_id&#39; and
+    an optional name given by &#39;name&#39;.
+
+    Parameters
+    ----------
+    portfolio_id : `str`
+        The portfolio ID string.
+    name : `str`, optional
+        The optional name string of the portfolio.
+    &#34;&#34;&#34;
+    portfolio_id_str = str(portfolio_id)
+    if portfolio_id_str in self.portfolios.keys():
+        raise ValueError(
+            &#34;Portfolio with ID &#39;%s&#39; already exists. Cannot create &#34;
+            &#34;second portfolio with the same ID.&#34; % portfolio_id_str
+        )
+    else:
+        p = Portfolio(
+            self.current_dt,
+            currency=self.base_currency,
+            portfolio_id=portfolio_id_str,
+            name=name
+        )
+        self.portfolios[portfolio_id_str] = p
+        self.open_orders[portfolio_id_str] = queue.Queue()
+        if settings.PRINT_EVENTS:
+            print(
+                &#39;(%s) - portfolio creation: Portfolio &#34;%s&#34; created at broker &#34;%s&#34;&#39; % (
+                    self.current_dt, portfolio_id_str, self.account_id
+                )
+            )</code></pre>
+</details>
+<div class="desc"><p>Create a new sub-portfolio with ID 'portfolio_id' and
+an optional name given by 'name'.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>portfolio_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>The portfolio ID string.</dd>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The optional name string of the portfolio.</dd>
+</dl></div>
+</dd>
+<dt id="qstrader.broker.simulated_broker.SimulatedBroker.get_account_cash_balance"><code class="name flex">
+<span>def <span class="ident">get_account_cash_balance</span></span>(<span>self, currency: str | None = None) ‑> float</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_account_cash_balance(self, currency: str|None=None) -&gt; float:
+    &#34;&#34;&#34;
+    Retrieve the cash dictionary of the account, or
+    if a currency is provided, the cash value itself.
+    Raises a ValueError if the currency is not
+    found within the currency cash dictionary.
+
+    Parameters
+    ----------
+    currency : `str`, optional
+        The currency string to obtain the cash balance for.
+    &#34;&#34;&#34;
+    if currency is None:
+        return self.cash_balances
+    if currency not in self.cash_balances.keys():
+        raise ValueError(
+            &#34;Currency of type &#39;%s&#39; is not found within the &#34;
+            &#34;broker cash master accounts. Could not retrieve &#34;
+            &#34;cash balance.&#34; % currency
+        )
+    return self.cash_balances[currency]</code></pre>
+</details>
+<div class="desc"><p>Retrieve the cash dictionary of the account, or
+if a currency is provided, the cash value itself.
+Raises a ValueError if the currency is not
+found within the currency cash dictionary.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>currency</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The currency string to obtain the cash balance for.</dd>
+</dl></div>
+</dd>
+<dt id="qstrader.broker.simulated_broker.SimulatedBroker.get_account_total_equity"><code class="name flex">
+<span>def <span class="ident">get_account_total_equity</span></span>(<span>self) ‑> dict[str, float]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_account_total_equity(self) -&gt; dict[str, float]:
+    &#34;&#34;&#34;
+    Retrieve the total equity of the account, across
+    each portfolio.
+
+    Returns
+    -------
+    `dict`
+        The dictionary of each portfolio&#39;s total equity.
+    &#34;&#34;&#34;
+    equity_dict = {}
+    master_equity = 0.0
+    for portfolio in self.portfolios.values():
+        port_equity = self.get_portfolio_total_equity(
+            portfolio.portfolio_id
+        )
+        equity_dict[portfolio.portfolio_id] = port_equity
+        master_equity += port_equity
+    equity_dict[&#34;master&#34;] = master_equity
+    return equity_dict</code></pre>
+</details>
+<div class="desc"><p>Retrieve the total equity of the account, across
+each portfolio.</p>
+<h2 id="returns">Returns</h2>
+<p><code>dict</code>
+The dictionary of each portfolio's total equity.</p></div>
+</dd>
+<dt id="qstrader.broker.simulated_broker.SimulatedBroker.get_account_total_market_value"><code class="name flex">
+<span>def <span class="ident">get_account_total_market_value</span></span>(<span>self) ‑> float</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_account_total_market_value(self) -&gt; float:
+    &#34;&#34;&#34;
+    Retrieve the total market value of the account, across
+    each portfolio.
+
+    Returns
+    -------
+    `dict`
+        The dictionary of each portfolio&#39;s total market value.
+    &#34;&#34;&#34;
+    tmv_dict = {}
+    master_tmv = 0.0
+    for portfolio in self.portfolios.values():
+        pmv = self.get_portfolio_market_value(
+            portfolio.portfolio_id
+        )
+        tmv_dict[portfolio.portfolio_id] = pmv
+        master_tmv += pmv
+    tmv_dict[&#34;master&#34;] = master_tmv
+    return tmv_dict</code></pre>
+</details>
+<div class="desc"><p>Retrieve the total market value of the account, across
+each portfolio.</p>
+<h2 id="returns">Returns</h2>
+<p><code>dict</code>
+The dictionary of each portfolio's total market value.</p></div>
+</dd>
+<dt id="qstrader.broker.simulated_broker.SimulatedBroker.get_portfolio_as_dict"><code class="name flex">
+<span>def <span class="ident">get_portfolio_as_dict</span></span>(<span>self, portfolio_id: str) ‑> dict[str, float]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_portfolio_as_dict(self, portfolio_id: str) -&gt; dict[str, float]:
+    &#34;&#34;&#34;
+    Return a particular portfolio with ID &#39;portolio_id&#39; as
+    a dictionary with Asset symbol strings as keys, with various
+    attributes as sub-dictionaries.
+
+    Parameters
+    ----------
+    portfolio_id : `str`
+        The portfolio ID string.
+
+    Returns
+    -------
+    `dict{str}`
+        The portfolio representation of Assets as a dictionary.
+    &#34;&#34;&#34;
+    if portfolio_id not in self.portfolios.keys():
+        raise KeyError(
+            &#34;Cannot return portfolio as dictionary since &#34;
+            &#34;portfolio with ID &#39;%s&#39; does not exist.&#34; % portfolio_id
+        )
+    return self.portfolios[portfolio_id].portfolio_to_dict()</code></pre>
+</details>
+<div class="desc"><p>Return a particular portfolio with ID 'portolio_id' as
+a dictionary with Asset symbol strings as keys, with various
+attributes as sub-dictionaries.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>portfolio_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>The portfolio ID string.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p><code>dict{str}</code>
+The portfolio representation of Assets as a dictionary.</p></div>
+</dd>
+<dt id="qstrader.broker.simulated_broker.SimulatedBroker.get_portfolio_cash_balance"><code class="name flex">
+<span>def <span class="ident">get_portfolio_cash_balance</span></span>(<span>self, portfolio_id: str) ‑> float</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_portfolio_cash_balance(self, portfolio_id: str) -&gt; float:
+    &#34;&#34;&#34;
+    Retrieve the cash balance of a sub-portfolio, if
+    it exists. Otherwise raise a ValueError.
+
+    Parameters
+    ----------
+    portfolio_id : `str`
+        The portfolio ID string.
+
+    Returns
+    -------
+    `float`
+        The cash balance of the portfolio.
+    &#34;&#34;&#34;
+    if portfolio_id not in self.portfolios.keys():
+        raise ValueError(
+            &#34;Portfolio with ID &#39;%s&#39; does not exist. Cannot &#34;
+            &#34;retrieve cash balance for non-existent &#34;
+            &#34;portfolio.&#34; % portfolio_id
+        )
+    return self.portfolios[portfolio_id].cash</code></pre>
+</details>
+<div class="desc"><p>Retrieve the cash balance of a sub-portfolio, if
+it exists. Otherwise raise a ValueError.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>portfolio_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>The portfolio ID string.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p><code>float</code>
+The cash balance of the portfolio.</p></div>
+</dd>
+<dt id="qstrader.broker.simulated_broker.SimulatedBroker.get_portfolio_total_equity"><code class="name flex">
+<span>def <span class="ident">get_portfolio_total_equity</span></span>(<span>self, portfolio_id: str) ‑> float</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_portfolio_total_equity(self, portfolio_id: str) -&gt; float:
+    &#34;&#34;&#34;
+    Returns the current total equity of a Portfolio
+    with ID &#39;portfolio_id&#39;.
+
+    Parameters
+    ----------
+    portfolio_id : `str`
+        The portfolio ID string.
+
+    Returns
+    -------
+    `float`
+        The total equity of the portfolio.
+    &#34;&#34;&#34;
+    if portfolio_id not in self.portfolios.keys():
+        raise KeyError(
+            &#34;Portfolio with ID &#39;%s&#39; does not exist. &#34;
+            &#34;Cannot return total equity for a &#34;
+            &#34;non-existent portfolio.&#34; % portfolio_id
+        )
+    return self.portfolios[portfolio_id].total_equity</code></pre>
+</details>
+<div class="desc"><p>Returns the current total equity of a Portfolio
+with ID 'portfolio_id'.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>portfolio_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>The portfolio ID string.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p><code>float</code>
+The total equity of the portfolio.</p></div>
+</dd>
+<dt id="qstrader.broker.simulated_broker.SimulatedBroker.get_portfolio_total_market_value"><code class="name flex">
+<span>def <span class="ident">get_portfolio_total_market_value</span></span>(<span>self, portfolio_id: str) ‑> float</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_portfolio_total_market_value(self, portfolio_id: str) -&gt; float:
+    &#34;&#34;&#34;
+    Returns the current total market value of a Portfolio
+    with ID &#39;portfolio_id&#39;.
+
+    Parameters
+    ----------
+    portfolio_id : `str`
+        The portfolio ID string.
+
+    Returns
+    -------
+    `float`
+        The total market value of the portfolio.
+    &#34;&#34;&#34;
+    if portfolio_id not in self.portfolios.keys():
+        raise KeyError(
+            &#34;Portfolio with ID &#39;%s&#39; does not exist. &#34;
+            &#34;Cannot return total market value for a &#34;
+            &#34;non-existent portfolio.&#34; % portfolio_id
+        )
+    return self.portfolios[portfolio_id].total_market_value</code></pre>
+</details>
+<div class="desc"><p>Returns the current total market value of a Portfolio
+with ID 'portfolio_id'.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>portfolio_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>The portfolio ID string.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p><code>float</code>
+The total market value of the portfolio.</p></div>
+</dd>
+<dt id="qstrader.broker.simulated_broker.SimulatedBroker.list_all_portfolios"><code class="name flex">
+<span>def <span class="ident">list_all_portfolios</span></span>(<span>self) ‑> list</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def list_all_portfolios(self) -&gt; list:
+    &#34;&#34;&#34;
+    List all of the sub-portfolios associated with this
+    broker account in order of portfolio ID.
+
+    Returns
+    -------
+    `list`
+        The list of portfolios associated with the broker account.
+    &#34;&#34;&#34;
+    if self.portfolios == {}:
+        return []
+    return sorted(
+        list(self.portfolios.values()),
+        key=lambda port: port.portfolio_id
+    )</code></pre>
+</details>
+<div class="desc"><p>List all of the sub-portfolios associated with this
+broker account in order of portfolio ID.</p>
+<h2 id="returns">Returns</h2>
+<p><code>list</code>
+The list of portfolios associated with the broker account.</p></div>
+</dd>
+<dt id="qstrader.broker.simulated_broker.SimulatedBroker.submit_order"><code class="name flex">
+<span>def <span class="ident">submit_order</span></span>(<span>self,<br>portfolio_id: str,<br>order: <a title="qstrader.execution.order.Order" href="../execution/order.html#qstrader.execution.order.Order">Order</a>) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def submit_order(self, portfolio_id: str, order: Order) -&gt; None:
+    &#34;&#34;&#34;
+    Execute an Order instance against the sub-portfolio
+    with ID &#39;portfolio_id&#39;. For the SimulatedBroker class
+    specifically there are no restrictions on this occuring
+    beyond having sufficient cash in the sub-portfolio to
+    allow this to occur.
+
+    This does not take into settlement dates, as with most
+    brokerage accounts. The cash is taken immediately upon
+    closing out the position.
+
+    Parameters
+    ----------
+    portfolio_id : `str`
+        The portfolio ID string.
+    order : `Order`
+        The Order instance to submit.
+    &#34;&#34;&#34;
+    # Check that the portfolio actually exists
+    if portfolio_id not in self.portfolios.keys():
+        raise KeyError(
+            &#34;Portfolio with ID &#39;%s&#39; does not exist. Order with &#34;
+            &#34;ID &#39;%s&#39; was not executed.&#34; % (
+                portfolio_id, order.order_id
+            )
+        )
+    self.open_orders[portfolio_id].put(order)
+    if settings.PRINT_EVENTS:
+        print(
+            &#34;(%s) - submitted order: %s, qty: %s&#34; % (
+                self.current_dt, order.asset, order.quantity
+            )
+        )</code></pre>
+</details>
+<div class="desc"><p>Execute an Order instance against the sub-portfolio
+with ID 'portfolio_id'. For the SimulatedBroker class
+specifically there are no restrictions on this occuring
+beyond having sufficient cash in the sub-portfolio to
+allow this to occur.</p>
+<p>This does not take into settlement dates, as with most
+brokerage accounts. The cash is taken immediately upon
+closing out the position.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>portfolio_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>The portfolio ID string.</dd>
+<dt><strong><code>order</code></strong> :&ensp;<code>Order</code></dt>
+<dd>The Order instance to submit.</dd>
+</dl></div>
+</dd>
+<dt id="qstrader.broker.simulated_broker.SimulatedBroker.subscribe_funds_to_account"><code class="name flex">
+<span>def <span class="ident">subscribe_funds_to_account</span></span>(<span>self, amount: float) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def subscribe_funds_to_account(self, amount: float) -&gt; None:
+    &#34;&#34;&#34;
+    Subscribe an amount of cash in the base currency
+    to the broker master cash account.
+
+    Parameters
+    ----------
+    amount : `float`
+        The amount of cash to subscribe to the master account.
+    &#34;&#34;&#34;
+    if amount &lt; 0.0:
+        raise ValueError(
+            &#34;Cannot credit negative amount: &#34;
+            &#34;&#39;%s&#39; to the broker account.&#34; % amount
+        )
+    self.cash_balances[self.base_currency] += amount
+    if settings.PRINT_EVENTS:
+        print(
+            &#39;(%s) - subscription: %0.2f subscribed to broker account &#34;%s&#34;&#39; % (
+                self.current_dt, amount, self.account_id
+            )
+        )</code></pre>
+</details>
+<div class="desc"><p>Subscribe an amount of cash in the base currency
+to the broker master cash account.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>amount</code></strong> :&ensp;<code>float</code></dt>
+<dd>The amount of cash to subscribe to the master account.</dd>
+</dl></div>
+</dd>
+<dt id="qstrader.broker.simulated_broker.SimulatedBroker.subscribe_funds_to_portfolio"><code class="name flex">
+<span>def <span class="ident">subscribe_funds_to_portfolio</span></span>(<span>self, portfolio_id: str, amount: float) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def subscribe_funds_to_portfolio(self, portfolio_id: str, amount: float) -&gt; None:
+    &#34;&#34;&#34;
+    Subscribe funds to a particular sub-portfolio, assuming
+    it exists and the cash amount is positive. Otherwise raise
+    a ValueError.
+
+    Parameters
+    ----------
+    portfolio_id : `str`
+        The portfolio ID string.
+    amount : `float`
+        The amount of cash to subscribe to the portfolio.
+    &#34;&#34;&#34;
+    if amount &lt; 0.0:
+        raise ValueError(
+            &#34;Cannot add negative amount: &#34;
+            &#34;%0.2f to a portfolio account.&#34; % amount
+        )
+    if portfolio_id not in self.portfolios.keys():
+        raise KeyError(
+            &#34;Portfolio with ID &#39;%s&#39; does not exist. Cannot subscribe &#34;
+            &#34;funds to a non-existent portfolio.&#34; % portfolio_id
+        )
+    if amount &gt; self.cash_balances[self.base_currency]:
+        raise ValueError(
+            &#34;Not enough cash in the broker master account to &#34;
+            &#34;fund portfolio &#39;%s&#39;. %0.2f subscription amount exceeds &#34;
+            &#34;current broker account cash balance of %0.2f.&#34; % (
+                portfolio_id, amount,
+                self.cash_balances[self.base_currency]
+            )
+        )
+    self.portfolios[portfolio_id].subscribe_funds(self.current_dt, amount)
+    self.cash_balances[self.base_currency] -= amount
+    if settings.PRINT_EVENTS:
+        print(
+            &#39;(%s) - subscription: %0.2f subscribed to portfolio &#34;%s&#34;&#39; % (
+                self.current_dt, amount, portfolio_id
+            )
+        )</code></pre>
+</details>
+<div class="desc"><p>Subscribe funds to a particular sub-portfolio, assuming
+it exists and the cash amount is positive. Otherwise raise
+a ValueError.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>portfolio_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>The portfolio ID string.</dd>
+<dt><strong><code>amount</code></strong> :&ensp;<code>float</code></dt>
+<dd>The amount of cash to subscribe to the portfolio.</dd>
+</dl></div>
+</dd>
+<dt id="qstrader.broker.simulated_broker.SimulatedBroker.update"><code class="name flex">
+<span>def <span class="ident">update</span></span>(<span>self, dt: pandas.Timestamp) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update(self, dt: pd.Timestamp) -&gt; None:
+    &#34;&#34;&#34;
+    Updates the current SimulatedBroker timestamp.
+
+    Parameters
+    ----------
+    dt : `pd.Timestamp`
+        The current timestamp to update the Broker to.
+    &#34;&#34;&#34;
+    self.current_dt = dt
+
+    # Update portfolio asset values
+    for portfolio in self.portfolios:
+        for asset in self.portfolios[portfolio].pos_handler.positions:
+            mid_price = self.data_handler.get_asset_latest_mid_price(
+                dt, asset
+            )
+            self.portfolios[portfolio].update_market_value_of_asset(
+                asset, mid_price, self.current_dt
+            )
+
+    # Try to execute orders
+    if self.exchange.is_open_at_datetime(self.current_dt):
+        orders = []
+        for portfolio in self.portfolios:
+            while not self.open_orders[portfolio].empty():
+                orders.append(
+                    (portfolio, self.open_orders[portfolio].get())
+                )
+
+        sorted_orders = sorted(orders, key=lambda x: x[1].direction)
+        for portfolio, order in sorted_orders:
+            self._execute_order(dt, portfolio, order)</code></pre>
+</details>
+<div class="desc"><p>Updates the current SimulatedBroker timestamp.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>dt</code></strong> :&ensp;<code>pd.Timestamp</code></dt>
+<dd>The current timestamp to update the Broker to.</dd>
+</dl></div>
+</dd>
+<dt id="qstrader.broker.simulated_broker.SimulatedBroker.withdraw_funds_from_account"><code class="name flex">
+<span>def <span class="ident">withdraw_funds_from_account</span></span>(<span>self, amount: float) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def withdraw_funds_from_account(self, amount: float) -&gt; None:
+    &#34;&#34;&#34;
+    Withdraws an amount of cash in the base currency
+    from the broker master cash account, assuming an
+    amount equal to or more cash is present. If less
+    cash is present, a ValueError is raised.
+
+    Parameters
+    ----------
+    amount : `float`
+        The amount of cash to withdraw from the master account.
+    &#34;&#34;&#34;
+    if amount &lt; 0:
+        raise ValueError(
+            &#34;Cannot debit negative amount: &#34;
+            &#34;&#39;%s&#39; from the broker account.&#34; % amount
+        )
+    if amount &gt; self.cash_balances[self.base_currency]:
+        raise ValueError(
+            &#34;Not enough cash in the broker account to &#34;
+            &#34;withdraw. %0.2f withdrawal request exceeds &#34;
+            &#34;current broker account cash balance of %0.2f.&#34; % (
+                amount, self.cash_balances[self.base_currency]
+            )
+        )
+    self.cash_balances[self.base_currency] -= amount
+    if settings.PRINT_EVENTS:
+        print(
+            &#39;(%s) - withdrawal: %0.2f withdrawn from broker account &#34;%s&#34;&#39; % (
+                self.current_dt, amount, self.account_id
+            )
+        )</code></pre>
+</details>
+<div class="desc"><p>Withdraws an amount of cash in the base currency
+from the broker master cash account, assuming an
+amount equal to or more cash is present. If less
+cash is present, a ValueError is raised.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>amount</code></strong> :&ensp;<code>float</code></dt>
+<dd>The amount of cash to withdraw from the master account.</dd>
+</dl></div>
+</dd>
+<dt id="qstrader.broker.simulated_broker.SimulatedBroker.withdraw_funds_from_portfolio"><code class="name flex">
+<span>def <span class="ident">withdraw_funds_from_portfolio</span></span>(<span>self, portfolio_id: str, amount: float) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def withdraw_funds_from_portfolio(self, portfolio_id: str, amount: float) -&gt; None:
+    &#34;&#34;&#34;
+    Withdraw funds from a particular sub-portfolio, assuming
+    it exists, the cash amount is positive and there is
+    sufficient remaining cash in the sub-portfolio to
+    withdraw. Otherwise raise a ValueError.
+
+    Parameters
+    ----------
+    portfolio_id : `str`
+        The portfolio ID string.
+    amount : `float`
+        The amount of cash to withdraw from the portfolio.
+    &#34;&#34;&#34;
+    if amount &lt; 0.0:
+        raise ValueError(
+            &#34;Cannot withdraw negative amount: &#34;
+            &#34;%0.2f from a portfolio account.&#34; % amount
+        )
+    if portfolio_id not in self.portfolios.keys():
+        raise KeyError(
+            &#34;Portfolio with ID &#39;%s&#39; does not exist. Cannot &#34;
+            &#34;withdraw funds from a non-existent &#34;
+            &#34;portfolio. &#34; % portfolio_id
+        )
+    if amount &gt; self.portfolios[portfolio_id].cash:
+        raise ValueError(
+            &#34;Not enough cash in portfolio &#39;%s&#39; to withdraw &#34;
+            &#34;into brokerage master account. Withdrawal &#34;
+            &#34;amount %0.2f exceeds current portfolio cash &#34;
+            &#34;balance of %0.2f.&#34; % (
+                portfolio_id, amount,
+                self.portfolios[portfolio_id].cash
+            )
+        )
+    self.portfolios[portfolio_id].withdraw_funds(
+        self.current_dt, amount
+    )
+    self.cash_balances[self.base_currency] += amount
+    if settings.PRINT_EVENTS:
+        print(
+            &#39;(%s) - withdrawal: %0.2f withdrawn from portfolio &#34;%s&#34;&#39; % (
+                self.current_dt, amount, portfolio_id
+            )
+        )</code></pre>
+</details>
+<div class="desc"><p>Withdraw funds from a particular sub-portfolio, assuming
+it exists, the cash amount is positive and there is
+sufficient remaining cash in the sub-portfolio to
+withdraw. Otherwise raise a ValueError.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>portfolio_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>The portfolio ID string.</dd>
+<dt><strong><code>amount</code></strong> :&ensp;<code>float</code></dt>
+<dd>The amount of cash to withdraw from the portfolio.</dd>
+</dl></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="qstrader.broker" href="index.html">qstrader.broker</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="qstrader.broker.simulated_broker.SimulatedBroker" href="#qstrader.broker.simulated_broker.SimulatedBroker">SimulatedBroker</a></code></h4>
+<ul class="">
+<li><code><a title="qstrader.broker.simulated_broker.SimulatedBroker.create_portfolio" href="#qstrader.broker.simulated_broker.SimulatedBroker.create_portfolio">create_portfolio</a></code></li>
+<li><code><a title="qstrader.broker.simulated_broker.SimulatedBroker.get_account_cash_balance" href="#qstrader.broker.simulated_broker.SimulatedBroker.get_account_cash_balance">get_account_cash_balance</a></code></li>
+<li><code><a title="qstrader.broker.simulated_broker.SimulatedBroker.get_account_total_equity" href="#qstrader.broker.simulated_broker.SimulatedBroker.get_account_total_equity">get_account_total_equity</a></code></li>
+<li><code><a title="qstrader.broker.simulated_broker.SimulatedBroker.get_account_total_market_value" href="#qstrader.broker.simulated_broker.SimulatedBroker.get_account_total_market_value">get_account_total_market_value</a></code></li>
+<li><code><a title="qstrader.broker.simulated_broker.SimulatedBroker.get_portfolio_as_dict" href="#qstrader.broker.simulated_broker.SimulatedBroker.get_portfolio_as_dict">get_portfolio_as_dict</a></code></li>
+<li><code><a title="qstrader.broker.simulated_broker.SimulatedBroker.get_portfolio_cash_balance" href="#qstrader.broker.simulated_broker.SimulatedBroker.get_portfolio_cash_balance">get_portfolio_cash_balance</a></code></li>
+<li><code><a title="qstrader.broker.simulated_broker.SimulatedBroker.get_portfolio_total_equity" href="#qstrader.broker.simulated_broker.SimulatedBroker.get_portfolio_total_equity">get_portfolio_total_equity</a></code></li>
+<li><code><a title="qstrader.broker.simulated_broker.SimulatedBroker.get_portfolio_total_market_value" href="#qstrader.broker.simulated_broker.SimulatedBroker.get_portfolio_total_market_value">get_portfolio_total_market_value</a></code></li>
+<li><code><a title="qstrader.broker.simulated_broker.SimulatedBroker.list_all_portfolios" href="#qstrader.broker.simulated_broker.SimulatedBroker.list_all_portfolios">list_all_portfolios</a></code></li>
+<li><code><a title="qstrader.broker.simulated_broker.SimulatedBroker.submit_order" href="#qstrader.broker.simulated_broker.SimulatedBroker.submit_order">submit_order</a></code></li>
+<li><code><a title="qstrader.broker.simulated_broker.SimulatedBroker.subscribe_funds_to_account" href="#qstrader.broker.simulated_broker.SimulatedBroker.subscribe_funds_to_account">subscribe_funds_to_account</a></code></li>
+<li><code><a title="qstrader.broker.simulated_broker.SimulatedBroker.subscribe_funds_to_portfolio" href="#qstrader.broker.simulated_broker.SimulatedBroker.subscribe_funds_to_portfolio">subscribe_funds_to_portfolio</a></code></li>
+<li><code><a title="qstrader.broker.simulated_broker.SimulatedBroker.update" href="#qstrader.broker.simulated_broker.SimulatedBroker.update">update</a></code></li>
+<li><code><a title="qstrader.broker.simulated_broker.SimulatedBroker.withdraw_funds_from_account" href="#qstrader.broker.simulated_broker.SimulatedBroker.withdraw_funds_from_account">withdraw_funds_from_account</a></code></li>
+<li><code><a title="qstrader.broker.simulated_broker.SimulatedBroker.withdraw_funds_from_portfolio" href="#qstrader.broker.simulated_broker.SimulatedBroker.withdraw_funds_from_portfolio">withdraw_funds_from_portfolio</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

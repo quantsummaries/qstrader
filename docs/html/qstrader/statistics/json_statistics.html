@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>qstrader.statistics.json_statistics API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>qstrader.statistics.json_statistics</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="qstrader.statistics.json_statistics.JSONStatistics"><code class="flex name class">
+<span>class <span class="ident">JSONStatistics</span></span>
+<span>(</span><span>equity_curve: pandas.DataFrame,<br>target_allocations,<br>strategy_id: str | None = None,<br>strategy_name: str | None = None,<br>benchmark_curve: pandas.DataFrame | None = None,<br>benchmark_id: str | None = None,<br>benchmark_name: str | None = None,<br>periods: int = 252,<br>output_filename: str = 'statistics.json')</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class JSONStatistics(object):
+    &#34;&#34;&#34;
+    Standalone class to output basic backtesting statistics
+    into a JSON file format.
+
+    Parameters
+    ----------
+    equity_curve : `pd.DataFrame`
+        The equity curve DataFrame indexed by date-time.
+    strategy_id : `str`, optional
+        The optional ID string for the strategy to pass to
+        the statistics dict.
+    strategy_name : `str`, optional
+        The optional name string for the strategy to pass to
+        the statistics dict.
+    benchmark_curve : `pd.DataFrame`, optional
+        The (optional) equity curve DataFrame for the benchmark
+        indexed by time.
+    benchmark_id : `str`, optional
+        The optional ID string for the benchmark to pass to
+        the statistics dict.
+    benchmark_name : `str`, optional
+        The optional name string for the benchmark to pass to
+        the statistics dict.
+    periods : `int`, optional
+        The number of periods to use for Sharpe ratio calculation.
+    output_filename : `str`
+        The filename to output the JSON statistics dictionary to.
+    &#34;&#34;&#34;
+
+    def __init__(
+        self,
+        equity_curve: pd.DataFrame,
+        target_allocations,
+        strategy_id: str|None=None,
+        strategy_name: str|None=None,
+        benchmark_curve: pd.DataFrame|None=None,
+        benchmark_id: str|None=None,
+        benchmark_name: str|None=None,
+        periods: int=252,
+        output_filename: str=&#39;statistics.json&#39;
+    ):
+        self.equity_curve = equity_curve
+        self.target_allocations = target_allocations
+        self.strategy_id = strategy_id
+        self.strategy_name = strategy_name
+        self.benchmark_curve = benchmark_curve
+        self.benchmark_id = benchmark_id
+        self.benchmark_name = benchmark_name
+        self.periods = periods
+        self.output_filename = output_filename
+        self.statistics = self._create_full_statistics()
+
+    @staticmethod
+    def _series_to_tuple_list(series: pd.Series) -&gt; list[tuple]:
+        &#34;&#34;&#34;
+        Converts Pandas Series indexed by date-time into
+        list of tuples indexed by milliseconds since epoch.
+
+        Parameters
+        ----------
+        series : `pd.Series`
+            The Pandas Series to be converted.
+
+        Returns
+        -------
+        `list[tuple]`
+            The list of epoch-indexed tuple values.
+        &#34;&#34;&#34;
+        return [
+            (
+                int(
+                    datetime.datetime.combine(
+                        k, datetime.datetime.min.time()
+                    ).timestamp() * 1000.0
+                ), v if not np.isnan(v) else 0.0
+            )
+            for k, v in series.to_dict().items()
+        ]
+
+    @staticmethod
+    def _dataframe_to_column_list(df: pd.DataFrame) -&gt; list[dict]:
+        &#34;&#34;&#34;
+        Converts Pandas DataFrame indexed by date-time into
+        list of tuples indexed by milliseconds since epoch.
+
+        Parameters
+        ----------
+        df : `pd.DataFrame`
+            The Pandas DataFrame to be converted.
+
+        Returns
+        -------
+        `list[tuple]`
+            The list of epoch-indexed tuple values.
+        &#34;&#34;&#34;
+        col_list = []
+        for k, v in df.to_dict().items():
+            name = k.replace(&#39;EQ:&#39;, &#39;&#39;)
+            date_val_tups = [
+                (
+                    int(
+                        datetime.datetime.combine(
+                            date_key, datetime.datetime.min.time()
+                        ).timestamp() * 1000.0
+                    ), date_val if not np.isnan(date_val) else 0.0
+                )
+                for date_key, date_val in v.items()
+            ]
+            col_list.append({&#39;name&#39;: name, &#39;data&#39;: date_val_tups})
+        return col_list
+
+    @staticmethod
+    def _calculate_returns(curve: pd.DataFrame) -&gt; None:
+        &#34;&#34;&#34;
+        Appends returns and cumulative returns to the supplied equity
+        curve DataFrame.
+
+        Parameters
+        ----------
+        curve : `pd.DataFrame`
+            The equity curve DataFrame.
+        &#34;&#34;&#34;
+        curve[&#39;Returns&#39;] = curve[&#39;Equity&#39;].pct_change().fillna(0.0)
+        curve[&#39;CumReturns&#39;] = np.exp(np.log(1 + curve[&#39;Returns&#39;]).cumsum())
+
+    def _calculate_monthly_aggregated_returns(self, returns: pd.Series) -&gt; list[tuple]:
+        &#34;&#34;&#34;
+        Calculate the monthly aggregated returns as a list of tuples,
+        with the first entry a further tuple of (year, month) and the
+        second entry the returns. 0% -&gt; 0.0, 100% -&gt; 1.0
+
+        Parameters
+        ----------
+        returns : `pd.Series`
+            The Series of daily returns values.
+
+        Returns
+        -------
+        `list[tuple]`
+            The list of tuple-based returns: [((year, month), return)]
+        &#34;&#34;&#34;
+        month_returns = perf.aggregate_returns(returns, &#39;monthly&#39;)
+        return list(zip(month_returns.index, month_returns))
+
+    def _calculate_monthly_aggregated_returns_hc(self, returns: pd.Series) -&gt; list[list]:
+        &#34;&#34;&#34;
+        Calculate the monthly aggregated returns in the format
+        utilised by Highcharts. 0% -&gt; 0.0, 100% -&gt; 100.0
+
+        Parameters
+        ----------
+        returns : `pd.Series`
+            The Series of daily returns values.
+
+        Returns
+        -------
+        `list[list]`
+            The list of list-based returns: [[month, year, return]]
+        &#34;&#34;&#34;
+        month_returns = perf.aggregate_returns(returns, &#39;monthly&#39;)
+
+        data = []
+
+        years = month_returns.index.levels[0].tolist()
+        years_range = range(0, len(years))
+        months_range = range(0, 12)
+
+        for month in months_range:
+            for year in years_range:
+                try:
+                    data.append([month, year, 100.0 * month_returns.loc[(years[year], month + 1)]])
+                except KeyError:  # Truncated year, so no data available
+                    pass
+
+        return data
+
+    def _calculate_yearly_aggregated_returns(self, returns: pd.Series) -&gt; list[tuple]:
+        &#34;&#34;&#34;
+        Calculate the yearly aggregated returns as a list of tuples,
+        with the first entry being the year integer and the
+        second entry the returns. 0% -&gt; 0.0, 100% -&gt; 1.0
+
+        Parameters
+        ----------
+        returns : `pd.Series`
+            The Series of daily returns values.
+
+        Returns
+        -------
+        `list[tuple]`
+            The list of tuple-based returns: [(year, return)]
+        &#34;&#34;&#34;
+        year_returns = perf.aggregate_returns(returns, &#39;yearly&#39;)
+        return list(zip(year_returns.index, year_returns))
+
+    def _calculate_yearly_aggregated_returns_hc(self, returns: list[tuple]) -&gt; list[float]:
+        &#34;&#34;&#34;
+        Calculate the yearly aggregated returns in the format
+        utilised by Highcharts. 0% -&gt; 0.0, 100% -&gt; 100.0
+
+        Parameters
+        ----------
+        returns : `list[tuple]`
+            The list of tuples, with the first index being the year
+            integer and the second index being the return.
+
+        Returns
+        -------
+        `list[float]`
+            The list of returns.
+        &#34;&#34;&#34;
+        year_returns = self._calculate_yearly_aggregated_returns(returns)
+        return [year[1] * 100.0 for year in year_returns]
+
+    def _calculate_returns_quantiles_dict(self, returns: pd.Series|list[float]) -&gt; dict[str, float]:
+        &#34;&#34;&#34;
+        Creates a dictionary with quantiles for the
+        provided returns series.
+
+        Parameters
+        ----------
+        returns : `pd.Series` or `list[float]`
+            The Series/list of returns values.
+
+        Returns
+        -------
+        `dict{str: float}`
+            The quantiles of the provided returns series.
+        &#34;&#34;&#34;
+        return {
+            &#39;min&#39;: np.min(returns),
+            &#39;lq&#39;: np.percentile(returns, 25),
+            &#39;med&#39;: np.median(returns),
+            &#39;uq&#39;: np.percentile(returns, 75),
+            &#39;max&#39;: np.max(returns)
+        }
+
+    def _calculate_returns_quantiles(self, daily_returns: pd.Series) -&gt; dict[str, dict[str, float]]:
+        &#34;&#34;&#34;
+        Creates a dict-of-dicts with quantiles for the
+        daily, monthly and yearly returns series.
+
+        Parameters
+        ----------
+        daily_returns : `pd.Series`
+            The Series of daily returns values.
+
+        Returns
+        -------
+        `dict{str: dict{str: float}}`
+            The quantiles of the daily, monthly and yearly returns.
+        &#34;&#34;&#34;
+        monthly_returns = [m[1] for m in self._calculate_monthly_aggregated_returns(daily_returns)]
+        yearly_returns = [y[1] for y in self._calculate_yearly_aggregated_returns(daily_returns)]
+        return {
+            &#39;daily&#39;: self._calculate_returns_quantiles_dict(daily_returns),
+            &#39;monthly&#39;: self._calculate_returns_quantiles_dict(monthly_returns),
+            &#39;yearly&#39;: self._calculate_returns_quantiles_dict(yearly_returns)
+        }
+
+    def _calculate_returns_quantiles_hc(self, returns_quantiles: dict[str, dict]):
+        &#34;&#34;&#34;
+        Convert the returns quantiles dict-of-dicts into
+        a format suitable for Highcharts boxplots.
+
+        Parameters
+        ----------
+        `dict{str: dict{str: float}}`
+            The quantiles of the daily, monthly and yearly returns.
+
+        Returns
+        -------
+        `list[list[float]]`
+            The list-of-lists of return quantiles (in 0-100 percent terms).
+        &#34;&#34;&#34;
+        percentiles = [&#39;min&#39;, &#39;lq&#39;, &#39;med&#39;, &#39;uq&#39;, &#39;max&#39;]
+        return [
+            [returns_quantiles[&#39;daily&#39;][stat] * 100.0 for stat in percentiles],
+            [returns_quantiles[&#39;monthly&#39;][stat] * 100.0 for stat in percentiles],
+            [returns_quantiles[&#39;yearly&#39;][stat] * 100.0 for stat in percentiles]
+        ]
+
+    def _calculate_statistics(self, curve: pd.DataFrame) -&gt; dict:
+        &#34;&#34;&#34;
+        Creates a dictionary of various statistics associated with
+        the backtest of a trading strategy via a supplied equity curve.
+
+        All Pandas Series indexed by date-time are converted into
+        milliseconds since epoch representation.
+
+        Parameters
+        ----------
+        curve : `pd.DataFrame`
+            The equity curve DataFrame.
+
+        Returns
+        -------
+        `dict`
+            The statistics dictionary.
+        &#34;&#34;&#34;
+        stats = {}
+
+        # Drawdown, max drawdown, max drawdown duration
+        dd_s, max_dd, dd_dur = perf.create_drawdowns(curve[&#39;CumReturns&#39;])
+
+        # Equity curve and returns
+        stats[&#39;equity_curve&#39;] = JSONStatistics._series_to_tuple_list(curve[&#39;Equity&#39;])
+        stats[&#39;returns&#39;] = JSONStatistics._series_to_tuple_list(curve[&#39;Returns&#39;])
+        stats[&#39;cum_returns&#39;] = JSONStatistics._series_to_tuple_list(curve[&#39;CumReturns&#39;])
+
+        # Month/year aggregated returns
+        stats[&#39;monthly_agg_returns&#39;] = self._calculate_monthly_aggregated_returns(curve[&#39;Returns&#39;])
+        stats[&#39;monthly_agg_returns_hc&#39;] = self._calculate_monthly_aggregated_returns_hc(curve[&#39;Returns&#39;])
+        stats[&#39;yearly_agg_returns&#39;] = self._calculate_yearly_aggregated_returns(curve[&#39;Returns&#39;])
+        stats[&#39;yearly_agg_returns_hc&#39;] = self._calculate_yearly_aggregated_returns_hc(curve[&#39;Returns&#39;])
+
+        # Returns quantiles
+        stats[&#39;returns_quantiles&#39;] = self._calculate_returns_quantiles(curve[&#39;Returns&#39;])
+        stats[&#39;returns_quantiles_hc&#39;] = self._calculate_returns_quantiles_hc(stats[&#39;returns_quantiles&#39;])
+
+        # Drawdown statistics
+        stats[&#39;drawdowns&#39;] = JSONStatistics._series_to_tuple_list(dd_s)
+        stats[&#39;max_drawdown&#39;] = max_dd
+        stats[&#39;max_drawdown_duration&#39;] = dd_dur
+
+        # Performance
+        stats[&#39;mean_returns&#39;] = np.mean(curve[&#39;Returns&#39;])
+        stats[&#39;stdev_returns&#39;] = np.std(curve[&#39;Returns&#39;])
+        stats[&#39;cagr&#39;] = perf.create_cagr(curve[&#39;CumReturns&#39;], self.periods)
+        stats[&#39;annualised_vol&#39;] = np.std(curve[&#39;Returns&#39;]) * np.sqrt(self.periods)
+        stats[&#39;sharpe&#39;] = perf.create_sharpe_ratio(curve[&#39;Returns&#39;], self.periods)
+        stats[&#39;sortino&#39;] = perf.create_sortino_ratio(curve[&#39;Returns&#39;], self.periods)
+
+        return stats
+
+    def _calculate_allocations(self, allocations: pd.DataFrame) -&gt; list[dict]:
+        &#34;&#34;&#34;
+        &#34;&#34;&#34;
+        return JSONStatistics._dataframe_to_column_list(allocations)
+
+    def _create_full_statistics(self) -&gt; dict:
+        &#34;&#34;&#34;
+        Create the &#39;full&#39; statistics dictionary, which has an entry for the
+        strategy and an optional entry for any supplied benchmark.
+
+        Returns
+        -------
+        `dict`
+            The strategy and (optional) benchmark statistics dictionary.
+        &#34;&#34;&#34;
+        full_stats = {}
+
+        JSONStatistics._calculate_returns(self.equity_curve)
+        full_stats[&#39;strategy&#39;] = self._calculate_statistics(self.equity_curve)
+        full_stats[&#39;strategy&#39;][&#39;target_allocations&#39;] = self._calculate_allocations(
+            self.target_allocations
+        )
+
+        if self.benchmark_curve is not None:
+            JSONStatistics._calculate_returns(self.benchmark_curve)
+            full_stats[&#39;benchmark&#39;] = self._calculate_statistics(self.benchmark_curve)
+
+        if self.strategy_id is not None:
+            full_stats[&#39;strategy_id&#39;] = self.strategy_id
+        if self.strategy_name is not None:
+            full_stats[&#39;strategy_name&#39;] = self.strategy_name
+        if self.benchmark_id is not None:
+            full_stats[&#39;benchmark_id&#39;] = self.benchmark_id
+        if self.benchmark_name is not None:
+            full_stats[&#39;benchmark_name&#39;] = self.benchmark_name
+
+        return full_stats
+
+    def to_file(self) -&gt; None:
+        &#34;&#34;&#34;
+        Outputs the statistics dictionary to a JSON file.
+        &#34;&#34;&#34;
+        if settings.PRINT_EVENTS:
+            print(&#39;Outputting JSON results to &#34;%s&#34;...&#39; % self.output_filename)
+        with open(self.output_filename, &#39;w&#39;) as outfile:
+            json.dump(self.statistics, outfile)</code></pre>
+</details>
+<div class="desc"><p>Standalone class to output basic backtesting statistics
+into a JSON file format.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>equity_curve</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>The equity curve DataFrame indexed by date-time.</dd>
+<dt><strong><code>strategy_id</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The optional ID string for the strategy to pass to
+the statistics dict.</dd>
+<dt><strong><code>strategy_name</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The optional name string for the strategy to pass to
+the statistics dict.</dd>
+<dt><strong><code>benchmark_curve</code></strong> :&ensp;<code>pd.DataFrame</code>, optional</dt>
+<dd>The (optional) equity curve DataFrame for the benchmark
+indexed by time.</dd>
+<dt><strong><code>benchmark_id</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The optional ID string for the benchmark to pass to
+the statistics dict.</dd>
+<dt><strong><code>benchmark_name</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The optional name string for the benchmark to pass to
+the statistics dict.</dd>
+<dt><strong><code>periods</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>The number of periods to use for Sharpe ratio calculation.</dd>
+<dt><strong><code>output_filename</code></strong> :&ensp;<code>str</code></dt>
+<dd>The filename to output the JSON statistics dictionary to.</dd>
+</dl></div>
+<h3>Methods</h3>
+<dl>
+<dt id="qstrader.statistics.json_statistics.JSONStatistics.to_file"><code class="name flex">
+<span>def <span class="ident">to_file</span></span>(<span>self) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_file(self) -&gt; None:
+    &#34;&#34;&#34;
+    Outputs the statistics dictionary to a JSON file.
+    &#34;&#34;&#34;
+    if settings.PRINT_EVENTS:
+        print(&#39;Outputting JSON results to &#34;%s&#34;...&#39; % self.output_filename)
+    with open(self.output_filename, &#39;w&#39;) as outfile:
+        json.dump(self.statistics, outfile)</code></pre>
+</details>
+<div class="desc"><p>Outputs the statistics dictionary to a JSON file.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="qstrader.statistics" href="index.html">qstrader.statistics</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="qstrader.statistics.json_statistics.JSONStatistics" href="#qstrader.statistics.json_statistics.JSONStatistics">JSONStatistics</a></code></h4>
+<ul class="">
+<li><code><a title="qstrader.statistics.json_statistics.JSONStatistics.to_file" href="#qstrader.statistics.json_statistics.JSONStatistics.to_file">to_file</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

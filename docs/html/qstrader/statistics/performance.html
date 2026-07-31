@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>qstrader.statistics.performance API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>qstrader.statistics.performance</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="qstrader.statistics.performance.aggregate_returns"><code class="name flex">
+<span>def <span class="ident">aggregate_returns</span></span>(<span>returns, convert_to: str)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def aggregate_returns(returns, convert_to: str):
+    &#34;&#34;&#34;
+    Aggregates returns by day, week, month, or year.
+    &#34;&#34;&#34;
+    def cumulate_returns(x):
+        return np.exp(np.log(1 + x).cumsum()).iloc[-1] - 1
+
+    if convert_to == &#39;weekly&#39;:
+        return returns.groupby(
+            [lambda x: x.year,
+             lambda x: x.month,
+             lambda x: x.isocalendar()[1]]).apply(cumulate_returns)
+    elif convert_to == &#39;monthly&#39;:
+        return returns.groupby(
+            [lambda x: x.year, lambda x: x.month]).apply(cumulate_returns)
+    elif convert_to == &#39;yearly&#39;:
+        return returns.groupby(
+            [lambda x: x.year]).apply(cumulate_returns)
+    else:
+        ValueError(&#39;convert_to must be weekly, monthly or yearly&#39;)</code></pre>
+</details>
+<div class="desc"><p>Aggregates returns by day, week, month, or year.</p></div>
+</dd>
+<dt id="qstrader.statistics.performance.create_cagr"><code class="name flex">
+<span>def <span class="ident">create_cagr</span></span>(<span>equity, periods: int = 252) ‑> float</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_cagr(equity, periods: int=252) -&gt; float:
+    &#34;&#34;&#34;
+    Calculates the Compound Annual Growth Rate (CAGR)
+    for the portfolio, by determining the number of years
+    and then creating a compound annualised rate based
+    on the total return.
+
+    Parameters:
+    equity - A pandas Series representing the equity curve.
+    periods - Daily (252), Hourly (252*6.5), Minutely(252*6.5*60) etc.
+    &#34;&#34;&#34;
+    years = len(equity) / float(periods)
+    return (equity.iloc[-1] ** (1.0 / years)) - 1.0</code></pre>
+</details>
+<div class="desc"><p>Calculates the Compound Annual Growth Rate (CAGR)
+for the portfolio, by determining the number of years
+and then creating a compound annualised rate based
+on the total return.</p>
+<p>Parameters:
+equity - A pandas Series representing the equity curve.
+periods - Daily (252), Hourly (252<em>6.5), Minutely(252</em>6.5*60) etc.</p></div>
+</dd>
+<dt id="qstrader.statistics.performance.create_drawdowns"><code class="name flex">
+<span>def <span class="ident">create_drawdowns</span></span>(<span>returns)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_drawdowns(returns):
+    &#34;&#34;&#34;
+    Calculate the largest peak-to-trough drawdown of the equity curve
+    as well as the duration of the drawdown. Requires that the
+    pnl_returns is a pandas Series.
+
+    Parameters:
+    equity - A pandas Series representing period percentage returns.
+
+    Returns:
+    drawdown, drawdown_max, duration
+    &#34;&#34;&#34;
+    # Calculate the cumulative returns curve
+    # and set up the High Water Mark
+    idx = returns.index
+    hwm = np.zeros(len(idx))
+
+    # Create the high water mark
+    for t in range(1, len(idx)):
+        hwm[t] = max(hwm[t - 1], returns.iloc[t])
+
+    # Calculate the drawdown and duration statistics
+    perf = pd.DataFrame(index=idx)
+    perf[&#34;Drawdown&#34;] = (hwm - returns) / hwm
+    perf.loc[perf.index[0], &#39;Drawdown&#39;] = 0.0
+    perf[&#34;DurationCheck&#34;] = np.where(perf[&#34;Drawdown&#34;] == 0, 0, 1)
+    duration = max(
+        sum(1 for i in g if i == 1)
+        for k, g in groupby(perf[&#34;DurationCheck&#34;])
+    )
+    return perf[&#34;Drawdown&#34;], np.max(perf[&#34;Drawdown&#34;]), duration</code></pre>
+</details>
+<div class="desc"><p>Calculate the largest peak-to-trough drawdown of the equity curve
+as well as the duration of the drawdown. Requires that the
+pnl_returns is a pandas Series.</p>
+<p>Parameters:
+equity - A pandas Series representing period percentage returns.</p>
+<p>Returns:
+drawdown, drawdown_max, duration</p></div>
+</dd>
+<dt id="qstrader.statistics.performance.create_sharpe_ratio"><code class="name flex">
+<span>def <span class="ident">create_sharpe_ratio</span></span>(<span>returns, periods: int = 252) ‑> float</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_sharpe_ratio(returns, periods: int=252) -&gt; float:
+    &#34;&#34;&#34;
+    Create the Sharpe ratio for the strategy, based on a
+    benchmark of zero (i.e. no risk-free rate information).
+
+    Parameters:
+    returns - A pandas Series representing period percentage returns.
+    periods - Daily (252), Hourly (252*6.5), Minutely(252*6.5*60) etc.
+    &#34;&#34;&#34;
+    return np.sqrt(periods) * (np.mean(returns)) / np.std(returns)</code></pre>
+</details>
+<div class="desc"><p>Create the Sharpe ratio for the strategy, based on a
+benchmark of zero (i.e. no risk-free rate information).</p>
+<p>Parameters:
+returns - A pandas Series representing period percentage returns.
+periods - Daily (252), Hourly (252<em>6.5), Minutely(252</em>6.5*60) etc.</p></div>
+</dd>
+<dt id="qstrader.statistics.performance.create_sortino_ratio"><code class="name flex">
+<span>def <span class="ident">create_sortino_ratio</span></span>(<span>returns, periods: int = 252) ‑> float</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_sortino_ratio(returns, periods: int=252) -&gt; float:
+    &#34;&#34;&#34;
+    Create the Sortino ratio for the strategy, based on a
+    benchmark of zero (i.e. no risk-free rate information).
+
+    Parameters:
+    returns - A pandas Series representing period percentage returns.
+    periods - Daily (252), Hourly (252*6.5), Minutely(252*6.5*60) etc.
+    &#34;&#34;&#34;
+    return np.sqrt(periods) * (np.mean(returns)) / np.std(returns[returns &lt; 0])</code></pre>
+</details>
+<div class="desc"><p>Create the Sortino ratio for the strategy, based on a
+benchmark of zero (i.e. no risk-free rate information).</p>
+<p>Parameters:
+returns - A pandas Series representing period percentage returns.
+periods - Daily (252), Hourly (252<em>6.5), Minutely(252</em>6.5*60) etc.</p></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="qstrader.statistics" href="index.html">qstrader.statistics</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="qstrader.statistics.performance.aggregate_returns" href="#qstrader.statistics.performance.aggregate_returns">aggregate_returns</a></code></li>
+<li><code><a title="qstrader.statistics.performance.create_cagr" href="#qstrader.statistics.performance.create_cagr">create_cagr</a></code></li>
+<li><code><a title="qstrader.statistics.performance.create_drawdowns" href="#qstrader.statistics.performance.create_drawdowns">create_drawdowns</a></code></li>
+<li><code><a title="qstrader.statistics.performance.create_sharpe_ratio" href="#qstrader.statistics.performance.create_sharpe_ratio">create_sharpe_ratio</a></code></li>
+<li><code><a title="qstrader.statistics.performance.create_sortino_ratio" href="#qstrader.statistics.performance.create_sortino_ratio">create_sortino_ratio</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>
